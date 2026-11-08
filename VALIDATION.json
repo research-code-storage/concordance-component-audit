@@ -1,0 +1,107 @@
+{
+  "status": "PASS",
+  "date": "2026-11-08",
+  "manuscript_version": "v41",
+  "environment": {
+    "python": "3.10.19",
+    "numpy": "1.26.4",
+    "scipy": "1.15.3",
+    "pandas": "2.3.3",
+    "statsmodels": "0.14.6",
+    "torch": "2.5.1",
+    "platform": "Windows"
+  },
+  "default_command": "python reproduce.py",
+  "default_run_started_with_empty_generated_directory": true,
+  "default_stages_passed": [
+    "inputs",
+    "toxicogenomic",
+    "permutation",
+    "clinical",
+    "simulation",
+    "frozen_reference",
+    "fitted_simulation",
+    "theory",
+    "inference",
+    "nonlinear",
+    "report"
+  ],
+  "numerical_comparison": {
+    "status": "PASS",
+    "numerical_tables": 16,
+    "table_rows": 285,
+    "key_results": 87,
+    "targets": "reported/",
+    "outputs": "generated/tables/ and generated/key_results.csv"
+  },
+  "additional_checks": {
+    "parameter_replay": {
+      "status": "PASS",
+      "models": 94,
+      "score_archives": 92,
+      "maximum_score_or_parameter_error": 1.887379141862766e-15,
+      "maximum_objective_error": 7.105427357601002e-15,
+      "method": "feature and parameter replay without refitting"
+    },
+    "small_problem_fits": {
+      "status": "PASS",
+      "independent_heterogeneous_fits": 15,
+      "maximum_parameter_or_objective_error": 2.709525971644755e-10
+    },
+    "real_data_independent_refits": {
+      "status": "PASS",
+      "n_training_compounds": 4,
+      "seed": 0,
+      "training_profiles": 182,
+      "device": "cuda",
+      "comparisons": [
+        {
+          "arm": "historical_centred__softplus_original",
+          "errors": {
+            "a": 4.298644773470528e-15,
+            "b": 4.0939474033052647e-16,
+            "w": 5.551115123125783e-16,
+            "objective": 8.881784197001252e-15
+          }
+        },
+        {
+          "arm": "matched_centred__softplus_original",
+          "errors": {
+            "a": 3.0427049768633196e-15,
+            "b": 1.3877787807814457e-17,
+            "w": 3.3306690738754696e-16,
+            "objective": 7.105427357601002e-15
+          }
+        },
+        {
+          "arm": "revised_origin__softplus_original",
+          "errors": {
+            "a": 4.614364446098307e-15,
+            "b": 4.996003610813204e-16,
+            "w": 1.1102230246251565e-15,
+            "objective": 7.105427357601002e-15
+          }
+        }
+      ]
+    },
+    "frozen_reference_assets": "Recomputed from supplied feature matrices and matched saved values"
+  },
+  "regeneration_scope": {
+    "movement_slack_datasets": 14400,
+    "clinical_training_bootstrap_resamples": 1000,
+    "permutation_drops": 60000,
+    "inference_saved_datasets_reaggregated": 160000,
+    "inference_seeded_datasets_regenerated": 240,
+    "inference_bootstrap_datasets_regenerated": 8,
+    "fitted_simulation_saved_score_evaluations": 2400,
+    "nonlinear_grid_evaluations": 24240
+  },
+  "figures_generated": [
+    "Figure_1.pdf",
+    "Figure_2.pdf",
+    "Figure_S1.pdf"
+  ],
+  "figure_visual_review": "PASS",
+  "fresh_full_optimizer_reruns_in_this_validation": "Three real-data validation fits and 15 synthetic small-problem fits",
+  "full_inference_and_fitted_simulation_regeneration_commands": "REPRODUCTION.md"
+}

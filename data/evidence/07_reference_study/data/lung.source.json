@@ -1,0 +1,17 @@
+{
+  "url": "https://raw.githubusercontent.com/CamDavidsonPilon/lifelines/master/lifelines/datasets/lung.csv",
+  "sha256": "16ebd02c38bbb5708186d600cff80ad84d0764974619436f83ba4a605e77eb44",
+  "rows": 228,
+  "columns": [
+    "inst",
+    "time",
+    "status",
+    "age",
+    "sex",
+    "ph.ecog",
+    "ph.karno",
+    "pat.karno",
+    "meal.cal",
+    "wt.loss"
+  ]
+}

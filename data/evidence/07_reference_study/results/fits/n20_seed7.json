@@ -1,0 +1,38 @@
+{
+  "n": 20,
+  "seed": 7,
+  "steps": 1000,
+  "train_compounds": [
+    "progesterone",
+    "acitretin",
+    "hydroxyurea",
+    "cyproheptadine",
+    "cycloheximide",
+    "flutamide",
+    "itraconazole",
+    "ziram",
+    "chlorpromazine",
+    "sunitinib",
+    "clofibrate",
+    "dasatinib",
+    "azacitidine",
+    "axitinib",
+    "4-cumylphenol",
+    "bifenthrin",
+    "dorsomorphin",
+    "prochloraz",
+    "lazabemide",
+    "butafenacil"
+  ],
+  "train_profiles": 1154,
+  "objective": [
+    22.400919429291182
+  ],
+  "updates": [
+    1000
+  ],
+  "best_update": [
+    999
+  ],
+  "device": "cuda"
+}

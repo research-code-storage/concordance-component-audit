@@ -1,0 +1,1028 @@
+[
+  {
+    "id": "clinical.n_patients",
+    "location": "Section 3.2; Table 4",
+    "output": "generated/survival_example.json",
+    "field": [
+      "n_patients"
+    ],
+    "expected": 69,
+    "reported": "69"
+  },
+  {
+    "id": "clinical.n_comparable_pairs",
+    "location": "Section 3.2; Table 4",
+    "output": "generated/survival_example.json",
+    "field": [
+      "n_comparable_pairs"
+    ],
+    "expected": 1653,
+    "reported": "1653"
+  },
+  {
+    "id": "clinical.concordance_full",
+    "location": "Section 3.2; Table 4",
+    "output": "generated/survival_example.json",
+    "field": [
+      "concordance_full"
+    ],
+    "expected": 0.647610405323654,
+    "reported": "0.6476"
+  },
+  {
+    "id": "clinical.delete_age_sex.concordance_retained",
+    "location": "Section 3.2; Table 4; SI J",
+    "output": "generated/survival_example.json",
+    "field": [
+      "delete_age_sex",
+      "concordance_retained"
+    ],
+    "expected": 0.6385359951603146,
+    "reported": "0.6385"
+  },
+  {
+    "id": "clinical.delete_age_sex.net_change",
+    "location": "Section 3.2; Table 4; SI J",
+    "output": "generated/survival_example.json",
+    "field": [
+      "delete_age_sex",
+      "net_change"
+    ],
+    "expected": 0.00907441016333943,
+    "reported": "0.0091"
+  },
+  {
+    "id": "clinical.delete_age_sex.mean_absolute_pair_change",
+    "location": "Section 3.2; Table 4; SI J",
+    "output": "generated/survival_example.json",
+    "field": [
+      "delete_age_sex",
+      "mean_absolute_pair_change"
+    ],
+    "expected": 0.31820931639443434,
+    "reported": "0.3182"
+  },
+  {
+    "id": "clinical.delete_age_sex.tie_aware_bound",
+    "location": "Section 3.2; Table 4; SI J",
+    "output": "generated/survival_example.json",
+    "field": [
+      "delete_age_sex",
+      "tie_aware_bound"
+    ],
+    "expected": 0.4162129461584997,
+    "reported": "0.4162"
+  },
+  {
+    "id": "clinical.delete_age_sex.strict_reversals",
+    "location": "Section 3.2; Table 4; SI J",
+    "output": "generated/survival_example.json",
+    "field": [
+      "delete_age_sex",
+      "strict_reversals"
+    ],
+    "expected": 240,
+    "reported": "240"
+  },
+  {
+    "id": "clinical.delete_age_sex.tie_transitions",
+    "location": "Section 3.2; Table 4; SI J",
+    "output": "generated/survival_example.json",
+    "field": [
+      "delete_age_sex",
+      "tie_transitions"
+    ],
+    "expected": 572,
+    "reported": "572"
+  },
+  {
+    "id": "clinical.delete_age_sex.changed_pairs",
+    "location": "Section 3.2; Table 4; SI J",
+    "output": "generated/survival_example.json",
+    "field": [
+      "delete_age_sex",
+      "changed_pairs"
+    ],
+    "expected": 812,
+    "reported": "812"
+  },
+  {
+    "id": "clinical.delete_age_sex.reinforced_untied_pairs",
+    "location": "Section 3.2; Table 4; SI J",
+    "output": "generated/survival_example.json",
+    "field": [
+      "delete_age_sex",
+      "reinforced_untied_pairs"
+    ],
+    "expected": 162,
+    "reported": "162"
+  },
+  {
+    "id": "clinical.delete_age_sex.opposed_untied_pairs",
+    "location": "Section 3.2; Table 4; SI J",
+    "output": "generated/survival_example.json",
+    "field": [
+      "delete_age_sex",
+      "opposed_untied_pairs"
+    ],
+    "expected": 240,
+    "reported": "240"
+  },
+  {
+    "id": "clinical.bootstrap.delete_age_sex.net_change_same_fit.lower",
+    "location": "Section 3.2; Table S13",
+    "output": "generated/survival_refit.json",
+    "field": [
+      "delete_age_sex",
+      "training_bootstrap",
+      "net_change_same_fit",
+      "lower"
+    ],
+    "expected": -0.037522686025408286,
+    "reported": "-0.038"
+  },
+  {
+    "id": "clinical.bootstrap.delete_age_sex.net_change_same_fit.upper",
+    "location": "Section 3.2; Table S13",
+    "output": "generated/survival_refit.json",
+    "field": [
+      "delete_age_sex",
+      "training_bootstrap",
+      "net_change_same_fit",
+      "upper"
+    ],
+    "expected": 0.024803387779794295,
+    "reported": "0.025"
+  },
+  {
+    "id": "clinical.bootstrap.delete_age_sex.movement_same_fit.lower",
+    "location": "Section 3.2; Table S13",
+    "output": "generated/survival_refit.json",
+    "field": [
+      "delete_age_sex",
+      "training_bootstrap",
+      "movement_same_fit",
+      "lower"
+    ],
+    "expected": 0.17301875378100423,
+    "reported": "0.173"
+  },
+  {
+    "id": "clinical.bootstrap.delete_age_sex.movement_same_fit.upper",
+    "location": "Section 3.2; Table S13",
+    "output": "generated/survival_refit.json",
+    "field": [
+      "delete_age_sex",
+      "training_bootstrap",
+      "movement_same_fit",
+      "upper"
+    ],
+    "expected": 0.45012099213551116,
+    "reported": "0.450"
+  },
+  {
+    "id": "clinical.bootstrap.delete_age_sex.movement_refit.lower",
+    "location": "Section 3.2; Table S13",
+    "output": "generated/survival_refit.json",
+    "field": [
+      "delete_age_sex",
+      "training_bootstrap",
+      "movement_refit",
+      "lower"
+    ],
+    "expected": 0.17301875378100423,
+    "reported": "0.173"
+  },
+  {
+    "id": "clinical.bootstrap.delete_age_sex.movement_refit.upper",
+    "location": "Section 3.2; Table S13",
+    "output": "generated/survival_refit.json",
+    "field": [
+      "delete_age_sex",
+      "training_bootstrap",
+      "movement_refit",
+      "upper"
+    ],
+    "expected": 0.4513006654567453,
+    "reported": "0.451"
+  },
+  {
+    "id": "clinical.delete_ecog.concordance_retained",
+    "location": "Section 3.2; Table 4; SI J",
+    "output": "generated/survival_example.json",
+    "field": [
+      "delete_ecog",
+      "concordance_retained"
+    ],
+    "expected": 0.5780399274047187,
+    "reported": "0.5780"
+  },
+  {
+    "id": "clinical.delete_ecog.net_change",
+    "location": "Section 3.2; Table 4; SI J",
+    "output": "generated/survival_example.json",
+    "field": [
+      "delete_ecog",
+      "net_change"
+    ],
+    "expected": 0.06957047791893534,
+    "reported": "0.0696"
+  },
+  {
+    "id": "clinical.delete_ecog.mean_absolute_pair_change",
+    "location": "Section 3.2; Table 4; SI J",
+    "output": "generated/survival_example.json",
+    "field": [
+      "delete_ecog",
+      "mean_absolute_pair_change"
+    ],
+    "expected": 0.19540229885057472,
+    "reported": "0.1954"
+  },
+  {
+    "id": "clinical.delete_ecog.tie_aware_bound",
+    "location": "Section 3.2; Table 4; SI J",
+    "output": "generated/survival_example.json",
+    "field": [
+      "delete_ecog",
+      "tie_aware_bound"
+    ],
+    "expected": 0.3986690865093769,
+    "reported": "0.3987"
+  },
+  {
+    "id": "clinical.delete_ecog.strict_reversals",
+    "location": "Section 3.2; Table 4; SI J",
+    "output": "generated/survival_example.json",
+    "field": [
+      "delete_ecog",
+      "strict_reversals"
+    ],
+    "expected": 316,
+    "reported": "316"
+  },
+  {
+    "id": "clinical.delete_ecog.tie_transitions",
+    "location": "Section 3.2; Table 4; SI J",
+    "output": "generated/survival_example.json",
+    "field": [
+      "delete_ecog",
+      "tie_transitions"
+    ],
+    "expected": 14,
+    "reported": "14"
+  },
+  {
+    "id": "clinical.delete_ecog.changed_pairs",
+    "location": "Section 3.2; Table 4; SI J",
+    "output": "generated/survival_example.json",
+    "field": [
+      "delete_ecog",
+      "changed_pairs"
+    ],
+    "expected": 330,
+    "reported": "330"
+  },
+  {
+    "id": "clinical.delete_ecog.reinforced_untied_pairs",
+    "location": "Section 3.2; Table 4; SI J",
+    "output": "generated/survival_example.json",
+    "field": [
+      "delete_ecog",
+      "reinforced_untied_pairs"
+    ],
+    "expected": 336,
+    "reported": "336"
+  },
+  {
+    "id": "clinical.delete_ecog.opposed_untied_pairs",
+    "location": "Section 3.2; Table 4; SI J",
+    "output": "generated/survival_example.json",
+    "field": [
+      "delete_ecog",
+      "opposed_untied_pairs"
+    ],
+    "expected": 316,
+    "reported": "316"
+  },
+  {
+    "id": "clinical.bootstrap.delete_ecog.net_change_same_fit.lower",
+    "location": "Section 3.2; Table S13",
+    "output": "generated/survival_refit.json",
+    "field": [
+      "delete_ecog",
+      "training_bootstrap",
+      "net_change_same_fit",
+      "lower"
+    ],
+    "expected": 0.025393224440411397,
+    "reported": "0.025"
+  },
+  {
+    "id": "clinical.bootstrap.delete_ecog.net_change_same_fit.upper",
+    "location": "Section 3.2; Table S13",
+    "output": "generated/survival_refit.json",
+    "field": [
+      "delete_ecog",
+      "training_bootstrap",
+      "net_change_same_fit",
+      "upper"
+    ],
+    "expected": 0.15003024803387777,
+    "reported": "0.150"
+  },
+  {
+    "id": "clinical.bootstrap.delete_ecog.movement_same_fit.lower",
+    "location": "Section 3.2; Table S13",
+    "output": "generated/survival_refit.json",
+    "field": [
+      "delete_ecog",
+      "training_bootstrap",
+      "movement_same_fit",
+      "lower"
+    ],
+    "expected": 0.054416212946158504,
+    "reported": "0.054"
+  },
+  {
+    "id": "clinical.bootstrap.delete_ecog.movement_same_fit.upper",
+    "location": "Section 3.2; Table S13",
+    "output": "generated/survival_refit.json",
+    "field": [
+      "delete_ecog",
+      "training_bootstrap",
+      "movement_same_fit",
+      "upper"
+    ],
+    "expected": 0.3587416817906836,
+    "reported": "0.359"
+  },
+  {
+    "id": "clinical.bootstrap.delete_ecog.movement_refit.lower",
+    "location": "Section 3.2; Table S13",
+    "output": "generated/survival_refit.json",
+    "field": [
+      "delete_ecog",
+      "training_bootstrap",
+      "movement_refit",
+      "lower"
+    ],
+    "expected": 0.056261343012704176,
+    "reported": "0.056"
+  },
+  {
+    "id": "clinical.bootstrap.delete_ecog.movement_refit.upper",
+    "location": "Section 3.2; Table S13",
+    "output": "generated/survival_refit.json",
+    "field": [
+      "delete_ecog",
+      "training_bootstrap",
+      "movement_refit",
+      "upper"
+    ],
+    "expected": 0.5172413793103449,
+    "reported": "0.517"
+  },
+  {
+    "id": "simulation.aligned.net",
+    "location": "Section 3.1; Table 3",
+    "output": "generated/simulation_usefulness.json",
+    "field": [
+      "by",
+      "component",
+      "aligned",
+      "net"
+    ],
+    "expected": 0.03799593749999999,
+    "reported": "0.0380"
+  },
+  {
+    "id": "simulation.aligned.moved",
+    "location": "Section 3.1; Table 3",
+    "output": "generated/simulation_usefulness.json",
+    "field": [
+      "by",
+      "component",
+      "aligned",
+      "moved"
+    ],
+    "expected": 0.12120054166666668,
+    "reported": "0.1212"
+  },
+  {
+    "id": "simulation.aligned.bound",
+    "location": "Section 3.1; Table 3",
+    "output": "generated/simulation_usefulness.json",
+    "field": [
+      "by",
+      "component",
+      "aligned",
+      "bound"
+    ],
+    "expected": 0.22521810416666663,
+    "reported": "0.2252"
+  },
+  {
+    "id": "simulation.aligned.hidden",
+    "location": "Section 3.1; Table 3",
+    "output": "generated/simulation_usefulness.json",
+    "field": [
+      "by",
+      "component",
+      "aligned",
+      "hidden"
+    ],
+    "expected": 6.4600875461904925,
+    "reported": "6.46"
+  },
+  {
+    "id": "simulation.aligned.slack",
+    "location": "Section 3.1; Table 3",
+    "output": "generated/simulation_usefulness.json",
+    "field": [
+      "by",
+      "component",
+      "aligned",
+      "slack"
+    ],
+    "expected": 1.8906118940868955,
+    "reported": "1.89"
+  },
+  {
+    "id": "simulation.aligned.ratio_of_means",
+    "location": "Section 3.1; Table 3",
+    "output": "generated/simulation_usefulness.json",
+    "field": [
+      "by",
+      "component",
+      "aligned",
+      "ratio_of_means"
+    ],
+    "expected": 3.1898289564948015,
+    "reported": "3.19"
+  },
+  {
+    "id": "simulation.independent.net",
+    "location": "Section 3.1; Table 3",
+    "output": "generated/simulation_usefulness.json",
+    "field": [
+      "by",
+      "component",
+      "independent",
+      "net"
+    ],
+    "expected": 0.028222822916666668,
+    "reported": "0.0282"
+  },
+  {
+    "id": "simulation.independent.moved",
+    "location": "Section 3.1; Table 3",
+    "output": "generated/simulation_usefulness.json",
+    "field": [
+      "by",
+      "component",
+      "independent",
+      "moved"
+    ],
+    "expected": 0.12643667708333334,
+    "reported": "0.1264"
+  },
+  {
+    "id": "simulation.independent.bound",
+    "location": "Section 3.1; Table 3",
+    "output": "generated/simulation_usefulness.json",
+    "field": [
+      "by",
+      "component",
+      "independent",
+      "bound"
+    ],
+    "expected": 0.21167946875,
+    "reported": "0.2117"
+  },
+  {
+    "id": "simulation.independent.hidden",
+    "location": "Section 3.1; Table 3",
+    "output": "generated/simulation_usefulness.json",
+    "field": [
+      "by",
+      "component",
+      "independent",
+      "hidden"
+    ],
+    "expected": 16.824655692182805,
+    "reported": "16.82"
+  },
+  {
+    "id": "simulation.independent.slack",
+    "location": "Section 3.1; Table 3",
+    "output": "generated/simulation_usefulness.json",
+    "field": [
+      "by",
+      "component",
+      "independent",
+      "slack"
+    ],
+    "expected": 1.7554224330157604,
+    "reported": "1.76"
+  },
+  {
+    "id": "simulation.independent.ratio_of_means",
+    "location": "Section 3.1; Table 3",
+    "output": "generated/simulation_usefulness.json",
+    "field": [
+      "by",
+      "component",
+      "independent",
+      "ratio_of_means"
+    ],
+    "expected": 4.479944386026232,
+    "reported": "4.48"
+  },
+  {
+    "id": "simulation.opposed.net",
+    "location": "Section 3.1; Table 3",
+    "output": "generated/simulation_usefulness.json",
+    "field": [
+      "by",
+      "component",
+      "opposed",
+      "net"
+    ],
+    "expected": 0.0798284375,
+    "reported": "0.0798"
+  },
+  {
+    "id": "simulation.opposed.moved",
+    "location": "Section 3.1; Table 3",
+    "output": "generated/simulation_usefulness.json",
+    "field": [
+      "by",
+      "component",
+      "opposed",
+      "moved"
+    ],
+    "expected": 0.14511297916666668,
+    "reported": "0.1451"
+  },
+  {
+    "id": "simulation.opposed.bound",
+    "location": "Section 3.1; Table 3",
+    "output": "generated/simulation_usefulness.json",
+    "field": [
+      "by",
+      "component",
+      "opposed",
+      "bound"
+    ],
+    "expected": 0.22438212500000002,
+    "reported": "0.2244"
+  },
+  {
+    "id": "simulation.opposed.hidden",
+    "location": "Section 3.1; Table 3",
+    "output": "generated/simulation_usefulness.json",
+    "field": [
+      "by",
+      "component",
+      "opposed",
+      "hidden"
+    ],
+    "expected": 2.7244121103955163,
+    "reported": "2.72"
+  },
+  {
+    "id": "simulation.opposed.slack",
+    "location": "Section 3.1; Table 3",
+    "output": "generated/simulation_usefulness.json",
+    "field": [
+      "by",
+      "component",
+      "opposed",
+      "slack"
+    ],
+    "expected": 1.6478195294350633,
+    "reported": "1.65"
+  },
+  {
+    "id": "simulation.opposed.ratio_of_means",
+    "location": "Section 3.1; Table 3",
+    "output": "generated/simulation_usefulness.json",
+    "field": [
+      "by",
+      "component",
+      "opposed",
+      "ratio_of_means"
+    ],
+    "expected": 1.8178105912027487,
+    "reported": "1.82"
+  },
+  {
+    "id": "toxicogenomic.PHH.auc_mean",
+    "location": "Section 3.3; Figure 2; Tables S4-S5",
+    "output": "generated/results.json",
+    "field": [
+      "60|PHH|matched_centred__softplus_original",
+      "auc_mean"
+    ],
+    "expected": 0.875,
+    "reported": "0.8750"
+  },
+  {
+    "id": "toxicogenomic.PHH.budget_max",
+    "location": "Section 3.3; Figure 2; Tables S4-S5",
+    "output": "generated/results.json",
+    "field": [
+      "60|PHH|matched_centred__softplus_original",
+      "budget_max"
+    ],
+    "expected": 0.0,
+    "reported": "0.0000"
+  },
+  {
+    "id": "toxicogenomic.PHH.changed_pairs_max",
+    "location": "Section 3.3; Figure 2; Tables S4-S5",
+    "output": "generated/results.json",
+    "field": [
+      "60|PHH|matched_centred__softplus_original",
+      "changed_pairs_max"
+    ],
+    "expected": 0,
+    "reported": "0"
+  },
+  {
+    "id": "toxicogenomic.PHH.vulnerable_max",
+    "location": "Section 3.3; Figure 2; Tables S4-S5",
+    "output": "generated/results.json",
+    "field": [
+      "60|PHH|matched_centred__softplus_original",
+      "vulnerable_max"
+    ],
+    "expected": 0,
+    "reported": "0"
+  },
+  {
+    "id": "certificate.PHH.t1",
+    "location": "Section 3.3; Figure 2",
+    "output": "generated/results.json",
+    "field": [
+      "60|PHH|matched_centred__softplus_original",
+      "budget_curve",
+      "1"
+    ],
+    "expected": 0.0,
+    "reported": "0.0000"
+  },
+  {
+    "id": "certificate.PHH.t2",
+    "location": "Section 3.3; Figure 2",
+    "output": "generated/results.json",
+    "field": [
+      "60|PHH|matched_centred__softplus_original",
+      "budget_curve",
+      "2"
+    ],
+    "expected": 0.041666666666666664,
+    "reported": "0.0417"
+  },
+  {
+    "id": "certificate.PHH.t4",
+    "location": "Section 3.3; Figure 2",
+    "output": "generated/results.json",
+    "field": [
+      "60|PHH|matched_centred__softplus_original",
+      "budget_curve",
+      "4"
+    ],
+    "expected": 0.125,
+    "reported": "0.1250"
+  },
+  {
+    "id": "certificate.PHH.t8",
+    "location": "Section 3.3; Figure 2",
+    "output": "generated/results.json",
+    "field": [
+      "60|PHH|matched_centred__softplus_original",
+      "budget_curve",
+      "8"
+    ],
+    "expected": 0.2916666666666667,
+    "reported": "0.2917"
+  },
+  {
+    "id": "toxicogenomic.external.auc_mean",
+    "location": "Section 3.3; Figure 2; Tables S4-S5",
+    "output": "generated/results.json",
+    "field": [
+      "60|external|matched_centred__softplus_original",
+      "auc_mean"
+    ],
+    "expected": 0.606439393939394,
+    "reported": "0.6064"
+  },
+  {
+    "id": "toxicogenomic.external.budget_max",
+    "location": "Section 3.3; Figure 2; Tables S4-S5",
+    "output": "generated/results.json",
+    "field": [
+      "60|external|matched_centred__softplus_original",
+      "budget_max"
+    ],
+    "expected": 0.007575757575757576,
+    "reported": "0.0076"
+  },
+  {
+    "id": "toxicogenomic.external.changed_pairs_max",
+    "location": "Section 3.3; Figure 2; Tables S4-S5",
+    "output": "generated/results.json",
+    "field": [
+      "60|external|matched_centred__softplus_original",
+      "changed_pairs_max"
+    ],
+    "expected": 3,
+    "reported": "3"
+  },
+  {
+    "id": "toxicogenomic.external.vulnerable_max",
+    "location": "Section 3.3; Figure 2; Tables S4-S5",
+    "output": "generated/results.json",
+    "field": [
+      "60|external|matched_centred__softplus_original",
+      "vulnerable_max"
+    ],
+    "expected": 4,
+    "reported": "4"
+  },
+  {
+    "id": "certificate.external.t1",
+    "location": "Section 3.3; Figure 2",
+    "output": "generated/results.json",
+    "field": [
+      "60|external|matched_centred__softplus_original",
+      "budget_curve",
+      "1"
+    ],
+    "expected": 0.007575757575757576,
+    "reported": "0.0076"
+  },
+  {
+    "id": "certificate.external.t2",
+    "location": "Section 3.3; Figure 2",
+    "output": "generated/results.json",
+    "field": [
+      "60|external|matched_centred__softplus_original",
+      "budget_curve",
+      "2"
+    ],
+    "expected": 0.011363636363636364,
+    "reported": "0.0114"
+  },
+  {
+    "id": "certificate.external.t4",
+    "location": "Section 3.3; Figure 2",
+    "output": "generated/results.json",
+    "field": [
+      "60|external|matched_centred__softplus_original",
+      "budget_curve",
+      "4"
+    ],
+    "expected": 0.01893939393939394,
+    "reported": "0.0189"
+  },
+  {
+    "id": "certificate.external.t8",
+    "location": "Section 3.3; Figure 2",
+    "output": "generated/results.json",
+    "field": [
+      "60|external|matched_centred__softplus_original",
+      "budget_curve",
+      "8"
+    ],
+    "expected": 0.03787878787878788,
+    "reported": "0.0379"
+  },
+  {
+    "id": "toxicogenomic.source.auc_mean",
+    "location": "Section 3.3; Figure 2; Tables S4-S5",
+    "output": "generated/results.json",
+    "field": [
+      "60|source|matched_centred__softplus_original",
+      "auc_mean"
+    ],
+    "expected": 0.4291666666666666,
+    "reported": "0.4292"
+  },
+  {
+    "id": "toxicogenomic.source.budget_max",
+    "location": "Section 3.3; Figure 2; Tables S4-S5",
+    "output": "generated/results.json",
+    "field": [
+      "60|source|matched_centred__softplus_original",
+      "budget_max"
+    ],
+    "expected": 0.08333333333333333,
+    "reported": "0.0833"
+  },
+  {
+    "id": "toxicogenomic.source.changed_pairs_max",
+    "location": "Section 3.3; Figure 2; Tables S4-S5",
+    "output": "generated/results.json",
+    "field": [
+      "60|source|matched_centred__softplus_original",
+      "changed_pairs_max"
+    ],
+    "expected": 6,
+    "reported": "6"
+  },
+  {
+    "id": "toxicogenomic.source.vulnerable_max",
+    "location": "Section 3.3; Figure 2; Tables S4-S5",
+    "output": "generated/results.json",
+    "field": [
+      "60|source|matched_centred__softplus_original",
+      "vulnerable_max"
+    ],
+    "expected": 8,
+    "reported": "8"
+  },
+  {
+    "id": "certificate.source.t1",
+    "location": "Section 3.3; Figure 2",
+    "output": "generated/results.json",
+    "field": [
+      "60|source|matched_centred__softplus_original",
+      "budget_curve",
+      "1"
+    ],
+    "expected": 0.08333333333333333,
+    "reported": "0.0833"
+  },
+  {
+    "id": "certificate.source.t2",
+    "location": "Section 3.3; Figure 2",
+    "output": "generated/results.json",
+    "field": [
+      "60|source|matched_centred__softplus_original",
+      "budget_curve",
+      "2"
+    ],
+    "expected": 0.3541666666666667,
+    "reported": "0.3542"
+  },
+  {
+    "id": "certificate.source.t4",
+    "location": "Section 3.3; Figure 2",
+    "output": "generated/results.json",
+    "field": [
+      "60|source|matched_centred__softplus_original",
+      "budget_curve",
+      "4"
+    ],
+    "expected": 0.6666666666666666,
+    "reported": "0.6667"
+  },
+  {
+    "id": "certificate.source.t8",
+    "location": "Section 3.3; Figure 2",
+    "output": "generated/results.json",
+    "field": [
+      "60|source|matched_centred__softplus_original",
+      "budget_curve",
+      "8"
+    ],
+    "expected": 0.7708333333333334,
+    "reported": "0.7708"
+  },
+  {
+    "id": "permutation.PHH.deletion_difference_mean",
+    "location": "Section 3.3; Table S6",
+    "output": "generated/permutation_contrast.json",
+    "field": [
+      "PHH|matched_centred",
+      "deletion_difference_mean"
+    ],
+    "expected": 0.0,
+    "reported": "0.0000"
+  },
+  {
+    "id": "permutation.PHH.permutation_importance_mean",
+    "location": "Section 3.3; Table S6",
+    "output": "generated/permutation_contrast.json",
+    "field": [
+      "PHH|matched_centred",
+      "permutation_importance_mean"
+    ],
+    "expected": 0.00817916666666666,
+    "reported": "0.0082"
+  },
+  {
+    "id": "frozen_reference.PHH.n4",
+    "location": "SI H.3",
+    "output": "generated/frozen_reference.json",
+    "field": [
+      "PHH",
+      "4"
+    ],
+    "expected": 0.7458333333333332,
+    "reported": "0.7458"
+  },
+  {
+    "id": "frozen_reference.PHH.n20",
+    "location": "SI H.3",
+    "output": "generated/frozen_reference.json",
+    "field": [
+      "PHH",
+      "20"
+    ],
+    "expected": 0.7249999999999999,
+    "reported": "0.7250"
+  },
+  {
+    "id": "frozen_reference.PHH.n60",
+    "location": "SI H.3",
+    "output": "generated/frozen_reference.json",
+    "field": [
+      "PHH",
+      "60"
+    ],
+    "expected": 0.7124999999999999,
+    "reported": "0.7125"
+  },
+  {
+    "id": "frozen_reference.PHH.n102",
+    "location": "SI H.3",
+    "output": "generated/frozen_reference.json",
+    "field": [
+      "PHH",
+      "102"
+    ],
+    "expected": 0.7083333333333334,
+    "reported": "0.7083"
+  },
+  {
+    "id": "permutation.external.deletion_difference_mean",
+    "location": "Section 3.3; Table S6",
+    "output": "generated/permutation_contrast.json",
+    "field": [
+      "external|matched_centred",
+      "deletion_difference_mean"
+    ],
+    "expected": 0.0017045454545454475,
+    "reported": "0.0017"
+  },
+  {
+    "id": "permutation.external.permutation_importance_mean",
+    "location": "Section 3.3; Table S6",
+    "output": "generated/permutation_contrast.json",
+    "field": [
+      "external|matched_centred",
+      "permutation_importance_mean"
+    ],
+    "expected": 0.0014899621212121148,
+    "reported": "0.0015"
+  },
+  {
+    "id": "frozen_reference.external.n4",
+    "location": "SI H.3",
+    "output": "generated/frozen_reference.json",
+    "field": [
+      "external",
+      "4"
+    ],
+    "expected": 0.634848484848485,
+    "reported": "0.6348"
+  },
+  {
+    "id": "frozen_reference.external.n20",
+    "location": "SI H.3",
+    "output": "generated/frozen_reference.json",
+    "field": [
+      "external",
+      "20"
+    ],
+    "expected": 0.6333333333333335,
+    "reported": "0.6333"
+  },
+  {
+    "id": "frozen_reference.external.n60",
+    "location": "SI H.3",
+    "output": "generated/frozen_reference.json",
+    "field": [
+      "external",
+      "60"
+    ],
+    "expected": 0.6331439393939395,
+    "reported": "0.6331"
+  },
+  {
+    "id": "frozen_reference.external.n102",
+    "location": "SI H.3",
+    "output": "generated/frozen_reference.json",
+    "field": [
+      "external",
+      "102"
+    ],
+    "expected": 0.6325757575757576,
+    "reported": "0.6326"
+  }
+]

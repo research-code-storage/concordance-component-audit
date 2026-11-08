@@ -1,0 +1,76 @@
+{
+  "analysis": "Toxicogenomic application and SI G-H",
+  "evaluation_panels": [
+    "within-source holdout",
+    "DILImap",
+    "PHH"
+  ],
+  "training_compounds": 60,
+  "training_draw_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "source_holdout": {
+    "compounds": 20,
+    "seed": 12345
+  },
+  "coordinate_designs": [
+    "historical_centred",
+    "matched_centred",
+    "revised_origin"
+  ],
+  "readouts": [
+    "softplus_original",
+    "kernel_original",
+    "fixed_sum"
+  ],
+  "C": 20,
+  "lambda": 0.001,
+  "kernel_gamma": 0.0006510416666666666,
+  "optimizer_seed": 0,
+  "dtype": "float64",
+  "optimizer": {
+    "method": "AdamW",
+    "learning_rate": 0.001,
+    "minimum_learning_rate": 1e-05,
+    "schedule": "cosine",
+    "max_updates": 1000,
+    "patience": 80,
+    "minimum_improvement": 0.0001,
+    "gradient_clip": 1.0,
+    "weight_decay": 0.0001
+  },
+  "prototypes": {
+    "tail_quantiles": [
+      0.15,
+      0.85
+    ],
+    "clusters_per_tail": 2,
+    "n_init": 10,
+    "seed": 42
+  },
+  "bootstrap": {
+    "unit": "compound",
+    "stratified_by_class": true,
+    "replicates": 20000,
+    "seed": 20260922
+  },
+  "pairwise_multiplier_grid": [
+    0,
+    0.25,
+    0.5,
+    1,
+    2,
+    4,
+    8
+  ],
+  "feature_starting_point": "supplied embeddings, pathway matrices and metadata"
+}

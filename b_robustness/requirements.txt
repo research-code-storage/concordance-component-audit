@@ -1,0 +1,2 @@
+# Environment used for the additional experiment; original analyses retain ../requirements.txt.
+numpy==2.3.5

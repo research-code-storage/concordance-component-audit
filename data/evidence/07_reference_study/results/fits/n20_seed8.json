@@ -1,0 +1,38 @@
+{
+  "n": 20,
+  "seed": 8,
+  "steps": 1000,
+  "train_compounds": [
+    "5-fluorouracil",
+    "pyraclostrobin",
+    "sunitinib",
+    "fenpyroximate",
+    "cetirizine",
+    "lovastatin",
+    "doxorubicin",
+    "ziram",
+    "thalidomide",
+    "hydroxyurea",
+    "dexamethasone",
+    "itraconazole",
+    "dabrafenib",
+    "fulvestrant",
+    "4-cumylphenol",
+    "artesunate",
+    "2,5-hexanedione",
+    "cyclopamine",
+    "cladribine",
+    "maneb"
+  ],
+  "train_profiles": 1227,
+  "objective": [
+    23.38022474251047
+  ],
+  "updates": [
+    1000
+  ],
+  "best_update": [
+    999
+  ],
+  "device": "cuda"
+}

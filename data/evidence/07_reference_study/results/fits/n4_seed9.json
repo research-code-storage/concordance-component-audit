@@ -1,0 +1,22 @@
+{
+  "n": 4,
+  "seed": 9,
+  "steps": 1000,
+  "train_compounds": [
+    "isotretinoin",
+    "cisplatin",
+    "lazabemide",
+    "iwp-2"
+  ],
+  "train_profiles": 84,
+  "objective": [
+    10.737094564745291
+  ],
+  "updates": [
+    1000
+  ],
+  "best_update": [
+    999
+  ],
+  "device": "cuda"
+}

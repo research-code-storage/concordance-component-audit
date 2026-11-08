@@ -1,0 +1,22 @@
+{
+  "n": 4,
+  "seed": 4,
+  "steps": 1000,
+  "train_compounds": [
+    "amitriptyline",
+    "ibuprofen",
+    "butafenacil",
+    "cladribine"
+  ],
+  "train_profiles": 315,
+  "objective": [
+    13.078507789501984
+  ],
+  "updates": [
+    1000
+  ],
+  "best_update": [
+    999
+  ],
+  "device": "cuda"
+}

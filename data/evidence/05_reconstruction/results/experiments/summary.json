@@ -1,0 +1,1333 @@
+{
+  "fitted_models": 60,
+  "fixed_diagnostic_scores": 30,
+  "summary_cells": 27,
+  "bootstrap_replicates": 20000,
+  "bootstrap_seed": 20260922,
+  "estimand": "mean of ten draw-specific compound AUCs",
+  "cells": [
+    {
+      "training_compounds": 60,
+      "domain": "source",
+      "arm": "historical_centred__softplus_original",
+      "auc_mean": 0.4239583333333334,
+      "draw_sd": 0.01967252149196569,
+      "draw_auc": [
+        0.4375,
+        0.4270833333333333,
+        0.40625,
+        0.4583333333333333,
+        0.4270833333333333,
+        0.4270833333333333,
+        0.3958333333333333,
+        0.4270833333333333,
+        0.3958333333333333,
+        0.4375
+      ],
+      "compound_bootstrap_ci": [
+        0.18747395833333336,
+        0.6906510416666646
+      ],
+      "paired_baseline": "historical_centred__softplus_original",
+      "paired_auc_difference": 0.0,
+      "paired_difference_ci": [
+        0.0,
+        0.0
+      ],
+      "mean_kernel_deletion_difference": 0.010416666666666666,
+      "kernel_deletion_ci": [
+        -0.05625,
+        0.07916666666666666
+      ],
+      "changed_auc_pairs": [
+        7,
+        6,
+        6,
+        7,
+        8,
+        8,
+        3,
+        6,
+        3,
+        4
+      ],
+      "compounds": 20,
+      "positive": 12,
+      "negative": 8
+    },
+    {
+      "training_compounds": 60,
+      "domain": "source",
+      "arm": "historical_centred__kernel_original",
+      "auc_mean": 0.6083333333333333,
+      "draw_sd": 0.12375927449969702,
+      "draw_auc": [
+        0.6770833333333334,
+        0.6354166666666666,
+        0.3229166666666667,
+        0.6770833333333334,
+        0.6979166666666666,
+        0.7083333333333334,
+        0.6770833333333334,
+        0.6666666666666666,
+        0.53125,
+        0.4895833333333333
+      ],
+      "compound_bootstrap_ci": [
+        0.45312499999999994,
+        0.7531249999999999
+      ],
+      "paired_baseline": "historical_centred__softplus_original",
+      "paired_auc_difference": 0.184375,
+      "paired_difference_ci": [
+        -0.14583333333333315,
+        0.478125
+      ],
+      "mean_kernel_deletion_difference": 0.10833333333333334,
+      "kernel_deletion_ci": [
+        -0.046875,
+        0.253125
+      ],
+      "changed_auc_pairs": [
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96
+      ],
+      "compounds": 20,
+      "positive": 12,
+      "negative": 8
+    },
+    {
+      "training_compounds": 60,
+      "domain": "source",
+      "arm": "matched_centred__softplus_original",
+      "auc_mean": 0.4291666666666666,
+      "draw_sd": 0.025420840580171015,
+      "draw_auc": [
+        0.40625,
+        0.4166666666666667,
+        0.4583333333333333,
+        0.46875,
+        0.4270833333333333,
+        0.4375,
+        0.3958333333333333,
+        0.4479166666666667,
+        0.4375,
+        0.3958333333333333
+      ],
+      "compound_bootstrap_ci": [
+        0.17708333333333334,
+        0.696875
+      ],
+      "paired_baseline": "historical_centred__softplus_original",
+      "paired_auc_difference": 0.005208333333333343,
+      "paired_difference_ci": [
+        -0.15416666666666667,
+        0.15625000000000006
+      ],
+      "mean_kernel_deletion_difference": -0.016666666666666666,
+      "kernel_deletion_ci": [
+        -0.065625,
+        0.011458333333333334
+      ],
+      "changed_auc_pairs": [
+        5,
+        2,
+        1,
+        2,
+        1,
+        2,
+        6,
+        1,
+        2,
+        4
+      ],
+      "compounds": 20,
+      "positive": 12,
+      "negative": 8
+    },
+    {
+      "training_compounds": 60,
+      "domain": "source",
+      "arm": "matched_centred__kernel_original",
+      "auc_mean": 0.6083333333333333,
+      "draw_sd": 0.12375927449969702,
+      "draw_auc": [
+        0.6770833333333334,
+        0.6354166666666666,
+        0.3229166666666667,
+        0.6770833333333334,
+        0.6979166666666666,
+        0.7083333333333334,
+        0.6770833333333334,
+        0.6666666666666666,
+        0.53125,
+        0.4895833333333333
+      ],
+      "compound_bootstrap_ci": [
+        0.45312499999999994,
+        0.7531249999999999
+      ],
+      "paired_baseline": "historical_centred__softplus_original",
+      "paired_auc_difference": 0.184375,
+      "paired_difference_ci": [
+        -0.14583333333333315,
+        0.478125
+      ],
+      "mean_kernel_deletion_difference": 0.10833333333333334,
+      "kernel_deletion_ci": [
+        -0.046875,
+        0.253125
+      ],
+      "changed_auc_pairs": [
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96
+      ],
+      "compounds": 20,
+      "positive": 12,
+      "negative": 8
+    },
+    {
+      "training_compounds": 60,
+      "domain": "source",
+      "arm": "revised_origin__softplus_original",
+      "auc_mean": 0.43229166666666663,
+      "draw_sd": 0.17153269786016073,
+      "draw_auc": [
+        0.3125,
+        0.6666666666666666,
+        0.3229166666666667,
+        0.7083333333333334,
+        0.3958333333333333,
+        0.3229166666666667,
+        0.2916666666666667,
+        0.65625,
+        0.3333333333333333,
+        0.3125
+      ],
+      "compound_bootstrap_ci": [
+        0.25937499999999997,
+        0.6322916666666666
+      ],
+      "paired_baseline": "historical_centred__softplus_original",
+      "paired_auc_difference": 0.008333333333333349,
+      "paired_difference_ci": [
+        -0.14479166666666676,
+        0.14166666666666666
+      ],
+      "mean_kernel_deletion_difference": -0.016666666666666673,
+      "kernel_deletion_ci": [
+        -0.11979166666666669,
+        0.07395833333333333
+      ],
+      "changed_auc_pairs": [
+        17,
+        4,
+        0,
+        13,
+        20,
+        21,
+        8,
+        3,
+        5,
+        5
+      ],
+      "compounds": 20,
+      "positive": 12,
+      "negative": 8
+    },
+    {
+      "training_compounds": 60,
+      "domain": "source",
+      "arm": "revised_origin__kernel_original",
+      "auc_mean": 0.6083333333333333,
+      "draw_sd": 0.12375927449969702,
+      "draw_auc": [
+        0.6770833333333334,
+        0.6354166666666666,
+        0.3229166666666667,
+        0.6770833333333334,
+        0.6979166666666666,
+        0.7083333333333334,
+        0.6770833333333334,
+        0.6666666666666666,
+        0.53125,
+        0.4895833333333333
+      ],
+      "compound_bootstrap_ci": [
+        0.45312499999999994,
+        0.7531249999999999
+      ],
+      "paired_baseline": "historical_centred__softplus_original",
+      "paired_auc_difference": 0.184375,
+      "paired_difference_ci": [
+        -0.14583333333333315,
+        0.478125
+      ],
+      "mean_kernel_deletion_difference": 0.10833333333333334,
+      "kernel_deletion_ci": [
+        -0.046875,
+        0.253125
+      ],
+      "changed_auc_pairs": [
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96,
+        96
+      ],
+      "compounds": 20,
+      "positive": 12,
+      "negative": 8
+    },
+    {
+      "training_compounds": 60,
+      "domain": "source",
+      "arm": "historical_centred__fixed_sum",
+      "auc_mean": 0.4125,
+      "draw_sd": 0.010063456073742656,
+      "draw_auc": [
+        0.4270833333333333,
+        0.40625,
+        0.4270833333333333,
+        0.40625,
+        0.40625,
+        0.40625,
+        0.40625,
+        0.40625,
+        0.40625,
+        0.4270833333333333
+      ],
+      "compound_bootstrap_ci": [
+        0.17604166666666665,
+        0.6833333333333332
+      ],
+      "paired_baseline": "historical_centred__softplus_original",
+      "paired_auc_difference": -0.011458333333333326,
+      "paired_difference_ci": [
+        -0.0833333333333332,
+        0.05624999999999997
+      ],
+      "mean_kernel_deletion_difference": 0.0,
+      "kernel_deletion_ci": [
+        0.0,
+        0.0
+      ],
+      "changed_auc_pairs": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "compounds": 20,
+      "positive": 12,
+      "negative": 8
+    },
+    {
+      "training_compounds": 60,
+      "domain": "source",
+      "arm": "matched_centred__fixed_sum",
+      "auc_mean": 0.4458333333333333,
+      "draw_sd": 0.013714178929257984,
+      "draw_auc": [
+        0.4375,
+        0.4375,
+        0.46875,
+        0.46875,
+        0.4375,
+        0.4375,
+        0.4375,
+        0.4583333333333333,
+        0.4375,
+        0.4375
+      ],
+      "compound_bootstrap_ci": [
+        0.18541666666666667,
+        0.7166666666666667
+      ],
+      "paired_baseline": "historical_centred__softplus_original",
+      "paired_auc_difference": 0.021875000000000012,
+      "paired_difference_ci": [
+        -0.14375,
+        0.18958333333333327
+      ],
+      "mean_kernel_deletion_difference": 0.0,
+      "kernel_deletion_ci": [
+        0.0,
+        0.0
+      ],
+      "changed_auc_pairs": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "compounds": 20,
+      "positive": 12,
+      "negative": 8
+    },
+    {
+      "training_compounds": 60,
+      "domain": "source",
+      "arm": "revised_origin__fixed_sum",
+      "auc_mean": 0.4479166666666667,
+      "draw_sd": 0.12256501801890828,
+      "draw_auc": [
+        0.3854166666666667,
+        0.6458333333333334,
+        0.3229166666666667,
+        0.59375,
+        0.4166666666666667,
+        0.375,
+        0.375,
+        0.625,
+        0.375,
+        0.3645833333333333
+      ],
+      "compound_bootstrap_ci": [
+        0.23854166666666668,
+        0.6854166666666667
+      ],
+      "paired_baseline": "historical_centred__softplus_original",
+      "paired_auc_difference": 0.023958333333333352,
+      "paired_difference_ci": [
+        -0.10312500000000002,
+        0.12916666666666654
+      ],
+      "mean_kernel_deletion_difference": 0.0,
+      "kernel_deletion_ci": [
+        0.0,
+        0.0
+      ],
+      "changed_auc_pairs": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "compounds": 20,
+      "positive": 12,
+      "negative": 8
+    },
+    {
+      "training_compounds": 60,
+      "domain": "external",
+      "arm": "historical_centred__softplus_original",
+      "auc_mean": 0.5954545454545455,
+      "draw_sd": 0.015339739947967109,
+      "draw_auc": [
+        0.5738636363636364,
+        0.6098484848484849,
+        0.5852272727272727,
+        0.5965909090909091,
+        0.6079545454545454,
+        0.6003787878787878,
+        0.6098484848484849,
+        0.5890151515151515,
+        0.6117424242424242,
+        0.5700757575757576
+      ],
+      "compound_bootstrap_ci": [
+        0.4231060606060606,
+        0.7613636363636364
+      ],
+      "paired_baseline": "historical_centred__softplus_original",
+      "paired_auc_difference": 0.0,
+      "paired_difference_ci": [
+        0.0,
+        0.0
+      ],
+      "mean_kernel_deletion_difference": 0.0018939393939393938,
+      "kernel_deletion_ci": [
+        0.00018939393939393934,
+        0.004545454545454545
+      ],
+      "changed_auc_pairs": [
+        2,
+        1,
+        0,
+        2,
+        0,
+        1,
+        0,
+        1,
+        1,
+        2
+      ],
+      "compounds": 49,
+      "positive": 33,
+      "negative": 16
+    },
+    {
+      "training_compounds": 60,
+      "domain": "external",
+      "arm": "historical_centred__kernel_original",
+      "auc_mean": 0.4564393939393939,
+      "draw_sd": 0.1462522406184945,
+      "draw_auc": [
+        0.4109848484848485,
+        0.3428030303030303,
+        0.6609848484848485,
+        0.3409090909090909,
+        0.3352272727272727,
+        0.3428030303030303,
+        0.4185606060606061,
+        0.39015151515151514,
+        0.6098484848484849,
+        0.7121212121212122
+      ],
+      "compound_bootstrap_ci": [
+        0.37234848484848476,
+        0.5412878787878792
+      ],
+      "paired_baseline": "historical_centred__softplus_original",
+      "paired_auc_difference": -0.1390151515151515,
+      "paired_difference_ci": [
+        -0.3215909090909091,
+        0.046590909090909405
+      ],
+      "mean_kernel_deletion_difference": -0.043560606060606064,
+      "kernel_deletion_ci": [
+        -0.12765151515151515,
+        0.04128787878787883
+      ],
+      "changed_auc_pairs": [
+        528,
+        528,
+        528,
+        528,
+        528,
+        528,
+        528,
+        528,
+        528,
+        528
+      ],
+      "compounds": 49,
+      "positive": 33,
+      "negative": 16
+    },
+    {
+      "training_compounds": 60,
+      "domain": "external",
+      "arm": "matched_centred__softplus_original",
+      "auc_mean": 0.606439393939394,
+      "draw_sd": 0.006728743734582932,
+      "draw_auc": [
+        0.6079545454545454,
+        0.6022727272727273,
+        0.5984848484848485,
+        0.5965909090909091,
+        0.6079545454545454,
+        0.615530303030303,
+        0.6098484848484849,
+        0.6003787878787878,
+        0.6098484848484849,
+        0.615530303030303
+      ],
+      "compound_bootstrap_ci": [
+        0.4375,
+        0.7687499999999999
+      ],
+      "paired_baseline": "historical_centred__softplus_original",
+      "paired_auc_difference": 0.010984848484848486,
+      "paired_difference_ci": [
+        -0.10984848484848486,
+        0.1416666666666666
+      ],
+      "mean_kernel_deletion_difference": 0.0017045454545454545,
+      "kernel_deletion_ci": [
+        0.0,
+        0.004924242424242424
+      ],
+      "changed_auc_pairs": [
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        3,
+        1,
+        0
+      ],
+      "compounds": 49,
+      "positive": 33,
+      "negative": 16
+    },
+    {
+      "training_compounds": 60,
+      "domain": "external",
+      "arm": "matched_centred__kernel_original",
+      "auc_mean": 0.4564393939393939,
+      "draw_sd": 0.1462522406184945,
+      "draw_auc": [
+        0.4109848484848485,
+        0.3428030303030303,
+        0.6609848484848485,
+        0.3409090909090909,
+        0.3352272727272727,
+        0.3428030303030303,
+        0.4185606060606061,
+        0.39015151515151514,
+        0.6098484848484849,
+        0.7121212121212122
+      ],
+      "compound_bootstrap_ci": [
+        0.37234848484848476,
+        0.5412878787878792
+      ],
+      "paired_baseline": "historical_centred__softplus_original",
+      "paired_auc_difference": -0.1390151515151515,
+      "paired_difference_ci": [
+        -0.3215909090909091,
+        0.046590909090909405
+      ],
+      "mean_kernel_deletion_difference": -0.043560606060606064,
+      "kernel_deletion_ci": [
+        -0.12765151515151515,
+        0.04128787878787883
+      ],
+      "changed_auc_pairs": [
+        528,
+        528,
+        528,
+        528,
+        528,
+        528,
+        528,
+        528,
+        528,
+        528
+      ],
+      "compounds": 49,
+      "positive": 33,
+      "negative": 16
+    },
+    {
+      "training_compounds": 60,
+      "domain": "external",
+      "arm": "revised_origin__softplus_original",
+      "auc_mean": 0.5888257575757574,
+      "draw_sd": 0.026143529735401315,
+      "draw_auc": [
+        0.6231060606060606,
+        0.5549242424242424,
+        0.5871212121212122,
+        0.5662878787878788,
+        0.5757575757575758,
+        0.6117424242424242,
+        0.5928030303030303,
+        0.5511363636363636,
+        0.6079545454545454,
+        0.6174242424242424
+      ],
+      "compound_bootstrap_ci": [
+        0.4594696969696971,
+        0.7138304924242421
+      ],
+      "paired_baseline": "historical_centred__softplus_original",
+      "paired_auc_difference": -0.006628787878787868,
+      "paired_difference_ci": [
+        -0.1314393939393938,
+        0.1270833333333331
+      ],
+      "mean_kernel_deletion_difference": 0.0013257575757575754,
+      "kernel_deletion_ci": [
+        -0.0013257575757575758,
+        0.004356060606060606
+      ],
+      "changed_auc_pairs": [
+        3,
+        0,
+        0,
+        1,
+        3,
+        2,
+        2,
+        2,
+        1,
+        1
+      ],
+      "compounds": 49,
+      "positive": 33,
+      "negative": 16
+    },
+    {
+      "training_compounds": 60,
+      "domain": "external",
+      "arm": "revised_origin__kernel_original",
+      "auc_mean": 0.4564393939393939,
+      "draw_sd": 0.1462522406184945,
+      "draw_auc": [
+        0.4109848484848485,
+        0.3428030303030303,
+        0.6609848484848485,
+        0.3409090909090909,
+        0.3352272727272727,
+        0.3428030303030303,
+        0.4185606060606061,
+        0.39015151515151514,
+        0.6098484848484849,
+        0.7121212121212122
+      ],
+      "compound_bootstrap_ci": [
+        0.37234848484848476,
+        0.5412878787878792
+      ],
+      "paired_baseline": "historical_centred__softplus_original",
+      "paired_auc_difference": -0.1390151515151515,
+      "paired_difference_ci": [
+        -0.3215909090909091,
+        0.046590909090909405
+      ],
+      "mean_kernel_deletion_difference": -0.043560606060606064,
+      "kernel_deletion_ci": [
+        -0.12765151515151515,
+        0.04128787878787883
+      ],
+      "changed_auc_pairs": [
+        528,
+        528,
+        528,
+        528,
+        528,
+        528,
+        528,
+        528,
+        528,
+        528
+      ],
+      "compounds": 49,
+      "positive": 33,
+      "negative": 16
+    },
+    {
+      "training_compounds": 60,
+      "domain": "external",
+      "arm": "historical_centred__fixed_sum",
+      "auc_mean": 0.59375,
+      "draw_sd": 0.016322832668999865,
+      "draw_auc": [
+        0.5700757575757576,
+        0.6079545454545454,
+        0.5852272727272727,
+        0.5928030303030303,
+        0.6079545454545454,
+        0.6003787878787878,
+        0.6098484848484849,
+        0.5871212121212122,
+        0.6098484848484849,
+        0.5662878787878788
+      ],
+      "compound_bootstrap_ci": [
+        0.42159090909090907,
+        0.7596590909090908
+      ],
+      "paired_baseline": "historical_centred__softplus_original",
+      "paired_auc_difference": -0.0017045454545454475,
+      "paired_difference_ci": [
+        -0.004356060606060641,
+        0.0
+      ],
+      "mean_kernel_deletion_difference": 0.0,
+      "kernel_deletion_ci": [
+        0.0,
+        0.0
+      ],
+      "changed_auc_pairs": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "compounds": 49,
+      "positive": 33,
+      "negative": 16
+    },
+    {
+      "training_compounds": 60,
+      "domain": "external",
+      "arm": "matched_centred__fixed_sum",
+      "auc_mean": 0.6053030303030302,
+      "draw_sd": 0.0072642171028497494,
+      "draw_auc": [
+        0.6079545454545454,
+        0.6003787878787878,
+        0.5984848484848485,
+        0.5946969696969697,
+        0.6079545454545454,
+        0.6136363636363636,
+        0.6098484848484849,
+        0.5965909090909091,
+        0.6079545454545454,
+        0.615530303030303
+      ],
+      "compound_bootstrap_ci": [
+        0.4367424242424242,
+        0.767428977272727
+      ],
+      "paired_baseline": "historical_centred__softplus_original",
+      "paired_auc_difference": 0.009848484848484851,
+      "paired_difference_ci": [
+        -0.1111789772727273,
+        0.14053503787878743
+      ],
+      "mean_kernel_deletion_difference": 0.0,
+      "kernel_deletion_ci": [
+        0.0,
+        0.0
+      ],
+      "changed_auc_pairs": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "compounds": 49,
+      "positive": 33,
+      "negative": 16
+    },
+    {
+      "training_compounds": 60,
+      "domain": "external",
+      "arm": "revised_origin__fixed_sum",
+      "auc_mean": 0.5878787878787878,
+      "draw_sd": 0.02668297060513039,
+      "draw_auc": [
+        0.6231060606060606,
+        0.5549242424242424,
+        0.5890151515151515,
+        0.5643939393939394,
+        0.5738636363636364,
+        0.6117424242424242,
+        0.5928030303030303,
+        0.5473484848484849,
+        0.6060606060606061,
+        0.615530303030303
+      ],
+      "compound_bootstrap_ci": [
+        0.4585227272727272,
+        0.7126941287878785
+      ],
+      "paired_baseline": "historical_centred__softplus_original",
+      "paired_auc_difference": -0.007575757575757569,
+      "paired_difference_ci": [
+        -0.1323863636363638,
+        0.1259469696969696
+      ],
+      "mean_kernel_deletion_difference": 0.0,
+      "kernel_deletion_ci": [
+        0.0,
+        0.0
+      ],
+      "changed_auc_pairs": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "compounds": 49,
+      "positive": 33,
+      "negative": 16
+    },
+    {
+      "training_compounds": 60,
+      "domain": "PHH",
+      "arm": "historical_centred__softplus_original",
+      "auc_mean": 0.6666666666666667,
+      "draw_sd": 0.02777777777777779,
+      "draw_auc": [
+        0.7083333333333334,
+        0.625,
+        0.7083333333333334,
+        0.6666666666666666,
+        0.6666666666666666,
+        0.6666666666666666,
+        0.6666666666666666,
+        0.6666666666666666,
+        0.6666666666666666,
+        0.625
+      ],
+      "compound_bootstrap_ci": [
+        0.3,
+        1.0
+      ],
+      "paired_baseline": "historical_centred__softplus_original",
+      "paired_auc_difference": 0.0,
+      "paired_difference_ci": [
+        0.0,
+        0.0
+      ],
+      "mean_kernel_deletion_difference": 0.0,
+      "kernel_deletion_ci": [
+        0.0,
+        0.0
+      ],
+      "changed_auc_pairs": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "compounds": 11,
+      "positive": 8,
+      "negative": 3
+    },
+    {
+      "training_compounds": 60,
+      "domain": "PHH",
+      "arm": "historical_centred__kernel_original",
+      "auc_mean": 0.5166666666666666,
+      "draw_sd": 0.14460461205355968,
+      "draw_auc": [
+        0.5,
+        0.4166666666666667,
+        0.5416666666666666,
+        0.4583333333333333,
+        0.4166666666666667,
+        0.375,
+        0.4583333333333333,
+        0.4583333333333333,
+        0.8333333333333334,
+        0.7083333333333334
+      ],
+      "compound_bootstrap_ci": [
+        0.325,
+        0.7083333333333334
+      ],
+      "paired_baseline": "historical_centred__softplus_original",
+      "paired_auc_difference": -0.15,
+      "paired_difference_ci": [
+        -0.6333333333333333,
+        0.36666666666666664
+      ],
+      "mean_kernel_deletion_difference": 0.016666666666666666,
+      "kernel_deletion_ci": [
+        -0.17500000000000004,
+        0.20833333333333334
+      ],
+      "changed_auc_pairs": [
+        24,
+        24,
+        24,
+        24,
+        24,
+        24,
+        24,
+        24,
+        24,
+        24
+      ],
+      "compounds": 11,
+      "positive": 8,
+      "negative": 3
+    },
+    {
+      "training_compounds": 60,
+      "domain": "PHH",
+      "arm": "matched_centred__softplus_original",
+      "auc_mean": 0.875,
+      "draw_sd": 0.0,
+      "draw_auc": [
+        0.875,
+        0.875,
+        0.875,
+        0.875,
+        0.875,
+        0.875,
+        0.875,
+        0.875,
+        0.875,
+        0.875
+      ],
+      "compound_bootstrap_ci": [
+        0.625,
+        1.0
+      ],
+      "paired_baseline": "historical_centred__softplus_original",
+      "paired_auc_difference": 0.20833333333333334,
+      "paired_difference_ci": [
+        0.0,
+        0.5666666666666667
+      ],
+      "mean_kernel_deletion_difference": 0.0,
+      "kernel_deletion_ci": [
+        0.0,
+        0.0
+      ],
+      "changed_auc_pairs": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "compounds": 11,
+      "positive": 8,
+      "negative": 3
+    },
+    {
+      "training_compounds": 60,
+      "domain": "PHH",
+      "arm": "matched_centred__kernel_original",
+      "auc_mean": 0.5166666666666666,
+      "draw_sd": 0.14460461205355968,
+      "draw_auc": [
+        0.5,
+        0.4166666666666667,
+        0.5416666666666666,
+        0.4583333333333333,
+        0.4166666666666667,
+        0.375,
+        0.4583333333333333,
+        0.4583333333333333,
+        0.8333333333333334,
+        0.7083333333333334
+      ],
+      "compound_bootstrap_ci": [
+        0.325,
+        0.7083333333333334
+      ],
+      "paired_baseline": "historical_centred__softplus_original",
+      "paired_auc_difference": -0.15,
+      "paired_difference_ci": [
+        -0.6333333333333333,
+        0.36666666666666664
+      ],
+      "mean_kernel_deletion_difference": 0.016666666666666666,
+      "kernel_deletion_ci": [
+        -0.17500000000000004,
+        0.20833333333333334
+      ],
+      "changed_auc_pairs": [
+        24,
+        24,
+        24,
+        24,
+        24,
+        24,
+        24,
+        24,
+        24,
+        24
+      ],
+      "compounds": 11,
+      "positive": 8,
+      "negative": 3
+    },
+    {
+      "training_compounds": 60,
+      "domain": "PHH",
+      "arm": "revised_origin__softplus_original",
+      "auc_mean": 0.8208333333333334,
+      "draw_sd": 0.04413957939464086,
+      "draw_auc": [
+        0.7916666666666666,
+        0.875,
+        0.8333333333333334,
+        0.875,
+        0.75,
+        0.7916666666666666,
+        0.7916666666666666,
+        0.875,
+        0.7916666666666666,
+        0.8333333333333334
+      ],
+      "compound_bootstrap_ci": [
+        0.5791666666666667,
+        1.0
+      ],
+      "paired_baseline": "historical_centred__softplus_original",
+      "paired_auc_difference": 0.1541666666666667,
+      "paired_difference_ci": [
+        -0.20000000000000007,
+        0.5
+      ],
+      "mean_kernel_deletion_difference": 0.008333333333333331,
+      "kernel_deletion_ci": [
+        0.0,
+        0.024999999999999994
+      ],
+      "changed_auc_pairs": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "compounds": 11,
+      "positive": 8,
+      "negative": 3
+    },
+    {
+      "training_compounds": 60,
+      "domain": "PHH",
+      "arm": "revised_origin__kernel_original",
+      "auc_mean": 0.5166666666666666,
+      "draw_sd": 0.14460461205355968,
+      "draw_auc": [
+        0.5,
+        0.4166666666666667,
+        0.5416666666666666,
+        0.4583333333333333,
+        0.4166666666666667,
+        0.375,
+        0.4583333333333333,
+        0.4583333333333333,
+        0.8333333333333334,
+        0.7083333333333334
+      ],
+      "compound_bootstrap_ci": [
+        0.325,
+        0.7083333333333334
+      ],
+      "paired_baseline": "historical_centred__softplus_original",
+      "paired_auc_difference": -0.15,
+      "paired_difference_ci": [
+        -0.6333333333333333,
+        0.36666666666666664
+      ],
+      "mean_kernel_deletion_difference": 0.016666666666666666,
+      "kernel_deletion_ci": [
+        -0.17500000000000004,
+        0.20833333333333334
+      ],
+      "changed_auc_pairs": [
+        24,
+        24,
+        24,
+        24,
+        24,
+        24,
+        24,
+        24,
+        24,
+        24
+      ],
+      "compounds": 11,
+      "positive": 8,
+      "negative": 3
+    },
+    {
+      "training_compounds": 60,
+      "domain": "PHH",
+      "arm": "historical_centred__fixed_sum",
+      "auc_mean": 0.6666666666666667,
+      "draw_sd": 0.02777777777777779,
+      "draw_auc": [
+        0.7083333333333334,
+        0.625,
+        0.7083333333333334,
+        0.6666666666666666,
+        0.6666666666666666,
+        0.6666666666666666,
+        0.6666666666666666,
+        0.6666666666666666,
+        0.6666666666666666,
+        0.625
+      ],
+      "compound_bootstrap_ci": [
+        0.3,
+        1.0
+      ],
+      "paired_baseline": "historical_centred__softplus_original",
+      "paired_auc_difference": 0.0,
+      "paired_difference_ci": [
+        0.0,
+        0.0
+      ],
+      "mean_kernel_deletion_difference": 0.0,
+      "kernel_deletion_ci": [
+        0.0,
+        0.0
+      ],
+      "changed_auc_pairs": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "compounds": 11,
+      "positive": 8,
+      "negative": 3
+    },
+    {
+      "training_compounds": 60,
+      "domain": "PHH",
+      "arm": "matched_centred__fixed_sum",
+      "auc_mean": 0.875,
+      "draw_sd": 0.0,
+      "draw_auc": [
+        0.875,
+        0.875,
+        0.875,
+        0.875,
+        0.875,
+        0.875,
+        0.875,
+        0.875,
+        0.875,
+        0.875
+      ],
+      "compound_bootstrap_ci": [
+        0.625,
+        1.0
+      ],
+      "paired_baseline": "historical_centred__softplus_original",
+      "paired_auc_difference": 0.20833333333333334,
+      "paired_difference_ci": [
+        0.0,
+        0.5666666666666667
+      ],
+      "mean_kernel_deletion_difference": 0.0,
+      "kernel_deletion_ci": [
+        0.0,
+        0.0
+      ],
+      "changed_auc_pairs": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "compounds": 11,
+      "positive": 8,
+      "negative": 3
+    },
+    {
+      "training_compounds": 60,
+      "domain": "PHH",
+      "arm": "revised_origin__fixed_sum",
+      "auc_mean": 0.8166666666666667,
+      "draw_sd": 0.04890782461571948,
+      "draw_auc": [
+        0.75,
+        0.875,
+        0.8333333333333334,
+        0.875,
+        0.75,
+        0.7916666666666666,
+        0.7916666666666666,
+        0.875,
+        0.7916666666666666,
+        0.8333333333333334
+      ],
+      "compound_bootstrap_ci": [
+        0.5791666666666667,
+        1.0
+      ],
+      "paired_baseline": "historical_centred__softplus_original",
+      "paired_auc_difference": 0.15,
+      "paired_difference_ci": [
+        -0.20416666666666672,
+        0.5
+      ],
+      "mean_kernel_deletion_difference": 0.0,
+      "kernel_deletion_ci": [
+        0.0,
+        0.0
+      ],
+      "changed_auc_pairs": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "compounds": 11,
+      "positive": 8,
+      "negative": 3
+    }
+  ]
+}

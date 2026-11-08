@@ -1,0 +1,22 @@
+{
+  "n": 4,
+  "seed": 3,
+  "steps": 1000,
+  "train_compounds": [
+    "pyraclostrobin",
+    "cyclosporin a",
+    "lazabemide",
+    "folic acid"
+  ],
+  "train_profiles": 162,
+  "objective": [
+    5.0151373194299
+  ],
+  "updates": [
+    1000
+  ],
+  "best_update": [
+    997
+  ],
+  "device": "cuda"
+}

@@ -1,0 +1,38 @@
+{
+  "n": 20,
+  "seed": 0,
+  "steps": 1000,
+  "train_compounds": [
+    "farglitazar",
+    "itraconazole",
+    "ziram",
+    "fenpyroximate",
+    "carbamazepine",
+    "acitretin",
+    "isotretinoin",
+    "warfarin",
+    "methotrexate",
+    "dasatinib",
+    "amitriptyline",
+    "busulfan",
+    "misoprostol",
+    "vinclozolin",
+    "retinoic acid",
+    "prochloraz",
+    "fomesafen",
+    "triiodothyronine",
+    "4-nonylphenol (branched)",
+    "digoxin"
+  ],
+  "train_profiles": 1160,
+  "objective": [
+    21.032961373286348
+  ],
+  "updates": [
+    1000
+  ],
+  "best_update": [
+    999
+  ],
+  "device": "cuda"
+}

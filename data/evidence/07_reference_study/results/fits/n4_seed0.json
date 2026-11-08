@@ -1,0 +1,22 @@
+{
+  "n": 4,
+  "seed": 0,
+  "steps": 1000,
+  "train_compounds": [
+    "farglitazar",
+    "itraconazole",
+    "misoprostol",
+    "vinclozolin"
+  ],
+  "train_profiles": 283,
+  "objective": [
+    19.56114822784444
+  ],
+  "updates": [
+    1000
+  ],
+  "best_update": [
+    1000
+  ],
+  "device": "cuda"
+}

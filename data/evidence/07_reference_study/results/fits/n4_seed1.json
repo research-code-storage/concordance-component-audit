@@ -1,0 +1,22 @@
+{
+  "n": 4,
+  "seed": 1,
+  "steps": 1000,
+  "train_compounds": [
+    "methotrexate",
+    "pfoa",
+    "dabrafenib",
+    "lazabemide"
+  ],
+  "train_profiles": 166,
+  "objective": [
+    14.623570822431782
+  ],
+  "updates": [
+    1000
+  ],
+  "best_update": [
+    997
+  ],
+  "device": "cuda"
+}

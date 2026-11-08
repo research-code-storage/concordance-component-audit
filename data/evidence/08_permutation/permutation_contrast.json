@@ -1,0 +1,68 @@
+{
+ "PHH|historical_centred": {
+  "panel": "PHH",
+  "design": "Pooled, centred",
+  "pairs": 24,
+  "certificate_bound_max": 0.0,
+  "certificate_changed_max": 0,
+  "deletion_difference_mean": 0.0,
+  "permutation_importance_mean": 0.013470833333333324,
+  "permutation_importance_max": 0.04595833333333337,
+  "permutation_nonzero_fraction": 0.5761
+ },
+ "PHH|matched_centred": {
+  "panel": "PHH",
+  "design": "Matched, centred",
+  "pairs": 24,
+  "certificate_bound_max": 0.0,
+  "certificate_changed_max": 0,
+  "deletion_difference_mean": 0.0,
+  "permutation_importance_mean": 0.00817916666666666,
+  "permutation_importance_max": 0.012083333333333321,
+  "permutation_nonzero_fraction": 0.1963
+ },
+ "PHH|revised_origin": {
+  "panel": "PHH",
+  "design": "Matched, origin preserving",
+  "pairs": 24,
+  "certificate_bound_max": 0.041666666666666664,
+  "certificate_changed_max": 1,
+  "deletion_difference_mean": 0.008333333333333326,
+  "permutation_importance_mean": 0.0045124999999999905,
+  "permutation_importance_max": 0.03191666666666664,
+  "permutation_nonzero_fraction": 0.2466
+ },
+ "external|historical_centred": {
+  "panel": "DILImap",
+  "design": "Pooled, centred",
+  "pairs": 528,
+  "certificate_bound_max": 0.00946969696969697,
+  "certificate_changed_max": 2,
+  "deletion_difference_mean": 0.0018939393939393812,
+  "permutation_importance_mean": 0.001282765151515134,
+  "permutation_importance_max": 0.002113636363636335,
+  "permutation_nonzero_fraction": 0.714
+ },
+ "external|matched_centred": {
+  "panel": "DILImap",
+  "design": "Matched, centred",
+  "pairs": 528,
+  "certificate_bound_max": 0.007575757575757576,
+  "certificate_changed_max": 3,
+  "deletion_difference_mean": 0.0017045454545454475,
+  "permutation_importance_mean": 0.0014899621212121148,
+  "permutation_importance_max": 0.004257575757575723,
+  "permutation_nonzero_fraction": 0.6837
+ },
+ "external|revised_origin": {
+  "panel": "DILImap",
+  "design": "Matched, origin preserving",
+  "pairs": 528,
+  "certificate_bound_max": 0.015151515151515152,
+  "certificate_changed_max": 3,
+  "deletion_difference_mean": 0.0013257575757575691,
+  "permutation_importance_mean": 0.0012454545454545422,
+  "permutation_importance_max": 0.003520833333333358,
+  "permutation_nonzero_fraction": 0.7032999999999999
+ }
+}

@@ -1,0 +1,58 @@
+{
+  "analysis": "Frozen-reference labelled-sample sensitivity, SI H.3",
+  "primary_recipe": {
+    "name": "balanced_origin_all",
+    "weighting": "balanced",
+    "origin": "origin",
+    "pool": "all",
+    "tail_fraction": 0.15,
+    "seed": 42
+  },
+  "reference_compounds": 102,
+  "training_counts": [
+    4,
+    20,
+    60,
+    102
+  ],
+  "draws": {
+    "4": 10,
+    "20": 10,
+    "60": 10,
+    "102": 1
+  },
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "readout": "softplus_original",
+  "evaluation_panels": [
+    "PHH",
+    "DILImap"
+  ],
+  "C": 20,
+  "lambda": 0.001,
+  "kernel_gamma": 0.0006510416666666666,
+  "optimizer": {
+    "method": "AdamW",
+    "learning_rate": 0.001,
+    "minimum_learning_rate": 1e-05,
+    "schedule": "cosine",
+    "max_updates": 1000,
+    "patience": 80,
+    "minimum_improvement": 0.0001,
+    "gradient_clip": 1.0,
+    "weight_decay": 0.0001
+  },
+  "hinge_weight": "C/(2*N_y*m_g)",
+  "optimizer_seed": 0,
+  "dtype": "float64"
+}

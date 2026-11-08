@@ -1,0 +1,5750 @@
+{
+  "design_file": "inference_design.json",
+  "validation": "PASS: ratio projection, fixed-class reduction and bootstrap count algebra",
+  "cells": [
+    {
+      "scenario": {
+        "kind": "binary",
+        "n": 50,
+        "a": 0.01,
+        "s": 1,
+        "geometry": "aligned",
+        "distribution": "normal",
+        "bootstrap": false,
+        "id": 0
+      },
+      "truth": {
+        "value": [
+          0.0015376982291173738,
+          0.003161604654910923,
+          0.006333992510646515
+        ],
+        "integration_error_bound": 4.770054450353488e-14,
+        "method": "adaptive quadrature of independent pair differences"
+      },
+      "replicates": 2000,
+      "metrics": {
+        "Delta": {
+          "estimate_mean": 0.001468,
+          "empirical_sd": 0.0023245467856938136,
+          "mean_se": 0.0028395420106734444,
+          "mean_se_over_sd": 1.2215465088287818,
+          "bias": -6.969822911737393e-05,
+          "normal_coverage": 0.8465,
+          "coverage_mcse": 0.00806032722660811,
+          "zero_se_count": 307,
+          "unavailable_count": 307,
+          "coverage_given_positive_se": 1.0
+        },
+        "A": {
+          "estimate_mean": 0.0031176,
+          "empirical_sd": 0.002290780233247729,
+          "mean_se": 0.0027920034140674864,
+          "mean_se_over_sd": 1.2188002033303533,
+          "bias": -4.400465491092307e-05,
+          "normal_coverage": 0.8465,
+          "coverage_mcse": 0.00806032722660811,
+          "zero_se_count": 307,
+          "unavailable_count": 307,
+          "coverage_given_positive_se": 1.0
+        },
+        "B": {
+          "estimate_mean": 0.0063032,
+          "empirical_sd": 0.0033255374542590617,
+          "mean_se": 0.0043303665570410075,
+          "mean_se_over_sd": 1.302155400924758,
+          "bias": -3.079251064651463e-05,
+          "normal_coverage": 0.8955,
+          "coverage_mcse": 0.006840312492861713,
+          "zero_se_count": 54,
+          "unavailable_count": 54,
+          "coverage_given_positive_se": 0.920349434737924
+        }
+      }
+    },
+    {
+      "scenario": {
+        "kind": "binary",
+        "n": 50,
+        "a": 0.01,
+        "s": 1,
+        "geometry": "aligned",
+        "distribution": "t3",
+        "bootstrap": false,
+        "id": 1
+      },
+      "truth": {
+        "value": [
+          0.0018482494861532359,
+          0.003825357481493345,
+          0.00768414401292002
+        ],
+        "integration_error_bound": 5.825106545449436e-14,
+        "method": "adaptive quadrature of independent pair differences"
+      },
+      "replicates": 2000,
+      "metrics": {
+        "Delta": {
+          "estimate_mean": 0.0018248,
+          "empirical_sd": 0.0027491314668292885,
+          "mean_se": 0.0032606643350295787,
+          "mean_se_over_sd": 1.1860707188333437,
+          "bias": -2.344948615323598e-05,
+          "normal_coverage": 0.896,
+          "coverage_mcse": 0.0068258332824644935,
+          "zero_se_count": 207,
+          "unavailable_count": 207,
+          "coverage_given_positive_se": 0.9994422755158952
+        },
+        "A": {
+          "estimate_mean": 0.0038296000000000003,
+          "empirical_sd": 0.0026153974826010665,
+          "mean_se": 0.003209884620717392,
+          "mean_se_over_sd": 1.2273027874620022,
+          "bias": 4.242518506655368e-06,
+          "normal_coverage": 0.8965,
+          "coverage_mcse": 0.006811304941052046,
+          "zero_se_count": 207,
+          "unavailable_count": 207,
+          "coverage_given_positive_se": 1.0
+        },
+        "B": {
+          "estimate_mean": 0.007607200000000001,
+          "empirical_sd": 0.0038055313945094837,
+          "mean_se": 0.004900145534404381,
+          "mean_se_over_sd": 1.287637658560425,
+          "bias": -7.694401292001902e-05,
+          "normal_coverage": 0.9265,
+          "coverage_mcse": 0.005835141386461857,
+          "zero_se_count": 28,
+          "unavailable_count": 28,
+          "coverage_given_positive_se": 0.9396551724137931
+        }
+      }
+    },
+    {
+      "scenario": {
+        "kind": "binary",
+        "n": 50,
+        "a": 0.01,
+        "s": 1,
+        "geometry": "aligned",
+        "distribution": "rounded_normal",
+        "bootstrap": false,
+        "id": 2
+      },
+      "truth": {
+        "value": [
+          0.04097013888256476,
+          0.12467073268773285,
+          0.12467073268773285
+        ],
+        "integration_error_bound": 0.0,
+        "method": "finite sum of rounded-normal cell probabilities; omitted mass < 1e-28"
+      },
+      "replicates": 2000,
+      "metrics": {
+        "Delta": {
+          "estimate_mean": 0.0408052,
+          "empirical_sd": 0.023124279428980155,
+          "mean_se": 0.024373983899032843,
+          "mean_se_over_sd": 1.0540429583499373,
+          "bias": -0.00016493888256476075,
+          "normal_coverage": 0.961,
+          "coverage_mcse": 0.004328914413568374,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.961
+        },
+        "A": {
+          "estimate_mean": 0.1241172,
+          "empirical_sd": 0.019007001268180217,
+          "mean_se": 0.019326817196623283,
+          "mean_se_over_sd": 1.0168262170307987,
+          "bias": -0.0005535326877328522,
+          "normal_coverage": 0.9525,
+          "coverage_mcse": 0.00475624589355933,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9525
+        },
+        "B": {
+          "estimate_mean": 0.1241172,
+          "empirical_sd": 0.019007001268180217,
+          "mean_se": 0.019326817196623283,
+          "mean_se_over_sd": 1.0168262170307987,
+          "bias": -0.0005535326877328522,
+          "normal_coverage": 0.9525,
+          "coverage_mcse": 0.00475624589355933,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9525
+        }
+      }
+    },
+    {
+      "scenario": {
+        "kind": "binary",
+        "n": 50,
+        "a": 0.01,
+        "s": 0,
+        "geometry": "independent",
+        "distribution": "normal",
+        "bootstrap": true,
+        "id": 3
+      },
+      "truth": {
+        "value": [
+          -7.733911585576774e-06,
+          0.0029090538031107116,
+          0.005818107606221423
+        ],
+        "integration_error_bound": 1.405234744627703e-14,
+        "method": "adaptive quadrature of independent pair differences"
+      },
+      "replicates": 2000,
+      "metrics": {
+        "Delta": {
+          "estimate_mean": -3.7599999999999986e-05,
+          "empirical_sd": 0.002341701950294274,
+          "mean_se": 0.0027416671697578082,
+          "mean_se_over_sd": 1.1708010788534688,
+          "bias": -2.986608841442321e-05,
+          "normal_coverage": 0.832,
+          "coverage_mcse": 0.008359904305672405,
+          "zero_se_count": 336,
+          "unavailable_count": 336,
+          "coverage_given_positive_se": 1.0,
+          "bootstrap": {
+            "replicates": 1000,
+            "resamples_requested": 999,
+            "minimum_valid_resamples": 999,
+            "percentile_coverage": 0.569,
+            "coverage_mcse": 0.015660108556456435,
+            "normal_coverage_same_replicates": 0.83,
+            "zero_width_count": 170,
+            "normal_unavailable_count": 170
+          }
+        },
+        "A": {
+          "estimate_mean": 0.0029432,
+          "empirical_sd": 0.0022710686110987838,
+          "mean_se": 0.0026927892267489973,
+          "mean_se_over_sd": 1.1856925914035585,
+          "bias": 3.414619688928838e-05,
+          "normal_coverage": 0.832,
+          "coverage_mcse": 0.008359904305672405,
+          "zero_se_count": 336,
+          "unavailable_count": 336,
+          "coverage_given_positive_se": 1.0,
+          "bootstrap": {
+            "replicates": 1000,
+            "resamples_requested": 999,
+            "minimum_valid_resamples": 999,
+            "percentile_coverage": 0.83,
+            "coverage_mcse": 0.0118785521003193,
+            "normal_coverage_same_replicates": 0.83,
+            "zero_width_count": 170,
+            "normal_unavailable_count": 170
+          }
+        },
+        "B": {
+          "estimate_mean": 0.0059072000000000005,
+          "empirical_sd": 0.003283799602581582,
+          "mean_se": 0.004156595962641847,
+          "mean_se_over_sd": 1.265788557673894,
+          "bias": 8.909239377857727e-05,
+          "normal_coverage": 0.9685,
+          "coverage_mcse": 0.0039056209493497944,
+          "zero_se_count": 63,
+          "unavailable_count": 63,
+          "coverage_given_positive_se": 1.0,
+          "bootstrap": {
+            "replicates": 1000,
+            "resamples_requested": 999,
+            "minimum_valid_resamples": 999,
+            "percentile_coverage": 0.965,
+            "coverage_mcse": 0.005811626278418119,
+            "normal_coverage_same_replicates": 0.965,
+            "zero_width_count": 35,
+            "normal_unavailable_count": 35
+          }
+        }
+      }
+    },
+    {
+      "scenario": {
+        "kind": "binary",
+        "n": 50,
+        "a": 0.01,
+        "s": 0,
+        "geometry": "independent",
+        "distribution": "t3",
+        "bootstrap": false,
+        "id": 4
+      },
+      "truth": {
+        "value": [
+          -2.3977151014562947e-05,
+          0.0035291488984849693,
+          0.007058297796969939
+        ],
+        "integration_error_bound": 1.720509019538547e-14,
+        "method": "adaptive quadrature of independent pair differences"
+      },
+      "replicates": 2000,
+      "metrics": {
+        "Delta": {
+          "estimate_mean": 2.800000000000001e-05,
+          "empirical_sd": 0.0026612848811446896,
+          "mean_se": 0.0031373701161346384,
+          "mean_se_over_sd": 1.1788929995292994,
+          "bias": 5.1977151014562956e-05,
+          "normal_coverage": 0.8745,
+          "coverage_mcse": 0.007407757757918383,
+          "zero_se_count": 251,
+          "unavailable_count": 251,
+          "coverage_given_positive_se": 1.0
+        },
+        "A": {
+          "estimate_mean": 0.0036232,
+          "empirical_sd": 0.002553398065488501,
+          "mean_se": 0.003081742953373543,
+          "mean_se_over_sd": 1.206918339535893,
+          "bias": 9.40511015150307e-05,
+          "normal_coverage": 0.8745,
+          "coverage_mcse": 0.007407757757918383,
+          "zero_se_count": 251,
+          "unavailable_count": 251,
+          "coverage_given_positive_se": 1.0
+        },
+        "B": {
+          "estimate_mean": 0.0071496,
+          "empirical_sd": 0.003808147953456865,
+          "mean_se": 0.004691763064477362,
+          "mean_se_over_sd": 1.2320327681119612,
+          "bias": 9.130220303006122e-05,
+          "normal_coverage": 0.9115,
+          "coverage_mcse": 0.006350895606133045,
+          "zero_se_count": 39,
+          "unavailable_count": 39,
+          "coverage_given_positive_se": 0.9296277409484957
+        }
+      }
+    },
+    {
+      "scenario": {
+        "kind": "binary",
+        "n": 50,
+        "a": 0.01,
+        "s": 0,
+        "geometry": "independent",
+        "distribution": "rounded_normal",
+        "bootstrap": true,
+        "id": 5
+      },
+      "truth": {
+        "value": [
+          0.0,
+          0.12467073268773285,
+          0.12467073268773285
+        ],
+        "integration_error_bound": 0.0,
+        "method": "finite sum of rounded-normal cell probabilities; omitted mass < 1e-28"
+      },
+      "replicates": 2000,
+      "metrics": {
+        "Delta": {
+          "estimate_mean": -8.600000000000002e-05,
+          "empirical_sd": 0.023279633473646737,
+          "mean_se": 0.02522166164140948,
+          "mean_se_over_sd": 1.0834217673556235,
+          "bias": -8.600000000000002e-05,
+          "normal_coverage": 0.9645,
+          "coverage_mcse": 0.0041376170678302255,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9645,
+          "bootstrap": {
+            "replicates": 1000,
+            "resamples_requested": 999,
+            "minimum_valid_resamples": 999,
+            "percentile_coverage": 0.977,
+            "coverage_mcse": 0.004740358636221528,
+            "normal_coverage_same_replicates": 0.973,
+            "zero_width_count": 0,
+            "normal_unavailable_count": 0
+          }
+        },
+        "A": {
+          "estimate_mean": 0.1242524,
+          "empirical_sd": 0.017928249365251794,
+          "mean_se": 0.019346584215201492,
+          "mean_se_over_sd": 1.0791117314944698,
+          "bias": -0.00041833268773285026,
+          "normal_coverage": 0.9645,
+          "coverage_mcse": 0.0041376170678302255,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9645,
+          "bootstrap": {
+            "replicates": 1000,
+            "resamples_requested": 999,
+            "minimum_valid_resamples": 999,
+            "percentile_coverage": 0.977,
+            "coverage_mcse": 0.004740358636221528,
+            "normal_coverage_same_replicates": 0.969,
+            "zero_width_count": 0,
+            "normal_unavailable_count": 0
+          }
+        },
+        "B": {
+          "estimate_mean": 0.1242524,
+          "empirical_sd": 0.017928249365251794,
+          "mean_se": 0.019346584215201492,
+          "mean_se_over_sd": 1.0791117314944698,
+          "bias": -0.00041833268773285026,
+          "normal_coverage": 0.9645,
+          "coverage_mcse": 0.0041376170678302255,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9645,
+          "bootstrap": {
+            "replicates": 1000,
+            "resamples_requested": 999,
+            "minimum_valid_resamples": 999,
+            "percentile_coverage": 0.977,
+            "coverage_mcse": 0.004740358636221528,
+            "normal_coverage_same_replicates": 0.969,
+            "zero_width_count": 0,
+            "normal_unavailable_count": 0
+          }
+        }
+      }
+    },
+    {
+      "scenario": {
+        "kind": "binary",
+        "n": 50,
+        "a": 0.01,
+        "s": -1,
+        "geometry": "opposed",
+        "distribution": "normal",
+        "bootstrap": false,
+        "id": 6
+      },
+      "truth": {
+        "value": [
+          -0.0015559500524142853,
+          0.003172387855735593,
+          0.006333992510646515
+        ],
+        "integration_error_bound": 4.730592966426205e-14,
+        "method": "adaptive quadrature of independent pair differences"
+      },
+      "replicates": 2000,
+      "metrics": {
+        "Delta": {
+          "estimate_mean": -0.0015760000000000001,
+          "empirical_sd": 0.0024532495218807858,
+          "mean_se": 0.0028872671659294765,
+          "mean_se_over_sd": 1.1769154096139192,
+          "bias": -2.004994758571482e-05,
+          "normal_coverage": 0.8595,
+          "coverage_mcse": 0.007770448828735698,
+          "zero_se_count": 281,
+          "unavailable_count": 281,
+          "coverage_given_positive_se": 1.0
+        },
+        "A": {
+          "estimate_mean": 0.0031919999999999995,
+          "empirical_sd": 0.0023542615134340573,
+          "mean_se": 0.0028479754270997635,
+          "mean_se_over_sd": 1.209710735552716,
+          "bias": 1.9612144264406425e-05,
+          "normal_coverage": 0.8595,
+          "coverage_mcse": 0.007770448828735698,
+          "zero_se_count": 281,
+          "unavailable_count": 281,
+          "coverage_given_positive_se": 1.0
+        },
+        "B": {
+          "estimate_mean": 0.0063176000000000005,
+          "empirical_sd": 0.0034193356325584712,
+          "mean_se": 0.004308970591727595,
+          "mean_se_over_sd": 1.2601777230343039,
+          "bias": -1.639251064651428e-05,
+          "normal_coverage": 0.8915,
+          "coverage_mcse": 0.00695441406590088,
+          "zero_se_count": 56,
+          "unavailable_count": 56,
+          "coverage_given_positive_se": 0.9171810699588477
+        }
+      }
+    },
+    {
+      "scenario": {
+        "kind": "binary",
+        "n": 50,
+        "a": 0.01,
+        "s": -1,
+        "geometry": "opposed",
+        "distribution": "t3",
+        "bootstrap": false,
+        "id": 7
+      },
+      "truth": {
+        "value": [
+          -0.0019048337919984803,
+          0.0038587865314266747,
+          0.00768414401292002
+        ],
+        "integration_error_bound": 5.703184846029545e-14,
+        "method": "adaptive quadrature of independent pair differences"
+      },
+      "replicates": 2000,
+      "metrics": {
+        "Delta": {
+          "estimate_mean": -0.0019448,
+          "empirical_sd": 0.002767840933239455,
+          "mean_se": 0.003284466060870071,
+          "mean_se_over_sd": 1.186652752124004,
+          "bias": -3.996620800151966e-05,
+          "normal_coverage": 0.8915,
+          "coverage_mcse": 0.00695441406590088,
+          "zero_se_count": 217,
+          "unavailable_count": 217,
+          "coverage_given_positive_se": 1.0
+        },
+        "A": {
+          "estimate_mean": 0.0038936,
+          "empirical_sd": 0.0026600257345473608,
+          "mean_se": 0.0032302505553892277,
+          "mean_se_over_sd": 1.214368159464028,
+          "bias": 3.48134685733254e-05,
+          "normal_coverage": 0.8915,
+          "coverage_mcse": 0.00695441406590088,
+          "zero_se_count": 217,
+          "unavailable_count": 217,
+          "coverage_given_positive_se": 1.0
+        },
+        "B": {
+          "estimate_mean": 0.007735200000000001,
+          "empirical_sd": 0.00393031355521683,
+          "mean_se": 0.004941721871189362,
+          "mean_se_over_sd": 1.257335274085208,
+          "bias": 5.105598707998149e-05,
+          "normal_coverage": 0.9365,
+          "coverage_mcse": 0.005452877680637995,
+          "zero_se_count": 25,
+          "unavailable_count": 25,
+          "coverage_given_positive_se": 0.9483544303797469
+        }
+      }
+    },
+    {
+      "scenario": {
+        "kind": "binary",
+        "n": 50,
+        "a": 0.01,
+        "s": -1,
+        "geometry": "opposed",
+        "distribution": "rounded_normal",
+        "bootstrap": false,
+        "id": 8
+      },
+      "truth": {
+        "value": [
+          -0.04097013888256476,
+          0.12467073268773285,
+          0.12467073268773285
+        ],
+        "integration_error_bound": 0.0,
+        "method": "finite sum of rounded-normal cell probabilities; omitted mass < 1e-28"
+      },
+      "replicates": 2000,
+      "metrics": {
+        "Delta": {
+          "estimate_mean": -0.0416568,
+          "empirical_sd": 0.023750795015997802,
+          "mean_se": 0.0244113908769764,
+          "mean_se_over_sd": 1.0278136315240665,
+          "bias": -0.0006866611174352402,
+          "normal_coverage": 0.95,
+          "coverage_mcse": 0.004873397172404485,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.95
+        },
+        "A": {
+          "estimate_mean": 0.12459999999999999,
+          "empirical_sd": 0.01905273690029062,
+          "mean_se": 0.019511976332738486,
+          "mean_se_over_sd": 1.0241035938747918,
+          "bias": -7.073268773286068e-05,
+          "normal_coverage": 0.95,
+          "coverage_mcse": 0.004873397172404485,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.95
+        },
+        "B": {
+          "estimate_mean": 0.12459999999999999,
+          "empirical_sd": 0.01905273690029062,
+          "mean_se": 0.019511976332738486,
+          "mean_se_over_sd": 1.0241035938747918,
+          "bias": -7.073268773286068e-05,
+          "normal_coverage": 0.95,
+          "coverage_mcse": 0.004873397172404485,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.95
+        }
+      }
+    },
+    {
+      "scenario": {
+        "kind": "binary",
+        "n": 50,
+        "a": 0.1,
+        "s": 1,
+        "geometry": "aligned",
+        "distribution": "normal",
+        "bootstrap": false,
+        "id": 9
+      },
+      "truth": {
+        "value": [
+          0.014496848909191003,
+          0.031036325774157058,
+          0.06314044612796861
+        ],
+        "integration_error_bound": 1.1245045897138746e-15,
+        "method": "adaptive quadrature of independent pair differences"
+      },
+      "replicates": 2000,
+      "metrics": {
+        "Delta": {
+          "estimate_mean": 0.014611999999999998,
+          "empirical_sd": 0.010873885077944505,
+          "mean_se": 0.012284888773932334,
+          "mean_se_over_sd": 1.1297607695753349,
+          "bias": 0.00011515109080899484,
+          "normal_coverage": 0.9685,
+          "coverage_mcse": 0.0039056209493497944,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9685
+        },
+        "A": {
+          "estimate_mean": 0.0310776,
+          "empirical_sd": 0.008887791326157959,
+          "mean_se": 0.01094647357475165,
+          "mean_se_over_sd": 1.2316303537116937,
+          "bias": 4.1274225842942436e-05,
+          "normal_coverage": 0.9675,
+          "coverage_mcse": 0.00396508196636589,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9675
+        },
+        "B": {
+          "estimate_mean": 0.0632536,
+          "empirical_sd": 0.01508761296801241,
+          "mean_se": 0.017213077583109047,
+          "mean_se_over_sd": 1.14087481032307,
+          "bias": 0.00011315387203138239,
+          "normal_coverage": 0.9655,
+          "coverage_mcse": 0.00408103847078167,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9655
+        }
+      }
+    },
+    {
+      "scenario": {
+        "kind": "binary",
+        "n": 50,
+        "a": 0.1,
+        "s": 1,
+        "geometry": "aligned",
+        "distribution": "t3",
+        "bootstrap": false,
+        "id": 10
+      },
+      "truth": {
+        "value": [
+          0.015903573861058243,
+          0.03665194346697842,
+          0.07655875664795145
+        ],
+        "integration_error_bound": 1.631534793509975e-15,
+        "method": "adaptive quadrature of independent pair differences"
+      },
+      "replicates": 2000,
+      "metrics": {
+        "Delta": {
+          "estimate_mean": 0.0159736,
+          "empirical_sd": 0.013006067889295769,
+          "mean_se": 0.014326776264361286,
+          "mean_se_over_sd": 1.1015455544525095,
+          "bias": 7.002613894175821e-05,
+          "normal_coverage": 0.968,
+          "coverage_mcse": 0.003935479640399632,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.968
+        },
+        "A": {
+          "estimate_mean": 0.036452,
+          "empirical_sd": 0.011148966127980721,
+          "mean_se": 0.012873246913882617,
+          "mean_se_over_sd": 1.1546583572062743,
+          "bias": -0.00019994346697842225,
+          "normal_coverage": 0.9575,
+          "coverage_mcse": 0.004510751046111944,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9575
+        },
+        "B": {
+          "estimate_mean": 0.076668,
+          "empirical_sd": 0.019836486561373455,
+          "mean_se": 0.021718621925487847,
+          "mean_se_over_sd": 1.0948824963680501,
+          "bias": 0.00010924335204855196,
+          "normal_coverage": 0.9555,
+          "coverage_mcse": 0.004610843198374891,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9555
+        }
+      }
+    },
+    {
+      "scenario": {
+        "kind": "binary",
+        "n": 50,
+        "a": 0.1,
+        "s": 1,
+        "geometry": "aligned",
+        "distribution": "rounded_normal",
+        "bootstrap": false,
+        "id": 11
+      },
+      "truth": {
+        "value": [
+          0.04097013888480537,
+          0.12467073268999074,
+          0.12467073269390609
+        ],
+        "integration_error_bound": 0.0,
+        "method": "finite sum of rounded-normal cell probabilities; omitted mass < 1e-28"
+      },
+      "replicates": 2000,
+      "metrics": {
+        "Delta": {
+          "estimate_mean": 0.0398892,
+          "empirical_sd": 0.023543313002922436,
+          "mean_se": 0.02436389882043258,
+          "mean_se_over_sd": 1.034854305229187,
+          "bias": -0.0010809388848053714,
+          "normal_coverage": 0.955,
+          "coverage_mcse": 0.004635461142108735,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.955
+        },
+        "A": {
+          "estimate_mean": 0.124214,
+          "empirical_sd": 0.01800105060576898,
+          "mean_se": 0.019286098757403655,
+          "mean_se_over_sd": 1.0713873973124013,
+          "bias": -0.0004567326899907326,
+          "normal_coverage": 0.962,
+          "coverage_mcse": 0.004275277768753747,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.962
+        },
+        "B": {
+          "estimate_mean": 0.124214,
+          "empirical_sd": 0.01800105060576898,
+          "mean_se": 0.019286098757403655,
+          "mean_se_over_sd": 1.0713873973124013,
+          "bias": -0.00045673269390608673,
+          "normal_coverage": 0.962,
+          "coverage_mcse": 0.004275277768753747,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.962
+        }
+      }
+    },
+    {
+      "scenario": {
+        "kind": "binary",
+        "n": 50,
+        "a": 0.1,
+        "s": 0,
+        "geometry": "independent",
+        "distribution": "normal",
+        "bootstrap": false,
+        "id": 12
+      },
+      "truth": {
+        "value": [
+          -0.0007680351874395622,
+          0.029012193464804933,
+          0.058024386929609865
+        ],
+        "integration_error_bound": 3.258725284934367e-15,
+        "method": "adaptive quadrature of independent pair differences"
+      },
+      "replicates": 2000,
+      "metrics": {
+        "Delta": {
+          "estimate_mean": -0.00032800000000000006,
+          "empirical_sd": 0.010481579449390103,
+          "mean_se": 0.011921111067834984,
+          "mean_se_over_sd": 1.1373391887544815,
+          "bias": 0.0004400351874395621,
+          "normal_coverage": 0.9815,
+          "coverage_mcse": 0.003013117156700015,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9815
+        },
+        "A": {
+          "estimate_mean": 0.0290128,
+          "empirical_sd": 0.008534547170629726,
+          "mean_se": 0.01032681940632245,
+          "mean_se_over_sd": 1.2100020305541859,
+          "bias": 6.065351950655662e-07,
+          "normal_coverage": 0.96,
+          "coverage_mcse": 0.004381780460041331,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.96
+        },
+        "B": {
+          "estimate_mean": 0.05762479999999999,
+          "empirical_sd": 0.013704814333947176,
+          "mean_se": 0.015900780135193693,
+          "mean_se_over_sd": 1.1602331668081816,
+          "bias": -0.0003995869296098756,
+          "normal_coverage": 0.9625,
+          "coverage_mcse": 0.004248161366991606,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9625
+        }
+      }
+    },
+    {
+      "scenario": {
+        "kind": "binary",
+        "n": 50,
+        "a": 0.1,
+        "s": 0,
+        "geometry": "independent",
+        "distribution": "t3",
+        "bootstrap": false,
+        "id": 13
+      },
+      "truth": {
+        "value": [
+          -0.002352749908304271,
+          0.035180837133742926,
+          0.07036167426748585
+        ],
+        "integration_error_bound": 3.937091066930053e-15,
+        "method": "adaptive quadrature of independent pair differences"
+      },
+      "replicates": 2000,
+      "metrics": {
+        "Delta": {
+          "estimate_mean": -0.0020464000000000003,
+          "empirical_sd": 0.01312222326481705,
+          "mean_se": 0.01401453162671666,
+          "mean_se_over_sd": 1.0679997850891656,
+          "bias": 0.0003063499083042708,
+          "normal_coverage": 0.9715,
+          "coverage_mcse": 0.003720735814324901,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9715
+        },
+        "A": {
+          "estimate_mean": 0.0350128,
+          "empirical_sd": 0.01048223138207575,
+          "mean_se": 0.012342182565854202,
+          "mean_se_over_sd": 1.177438478123933,
+          "bias": -0.00016803713374292928,
+          "normal_coverage": 0.9555,
+          "coverage_mcse": 0.004610843198374891,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9555
+        },
+        "B": {
+          "estimate_mean": 0.07001439999999999,
+          "empirical_sd": 0.018522232294855615,
+          "mean_se": 0.019876367346002663,
+          "mean_se_over_sd": 1.0731086312702787,
+          "bias": -0.00034727426748586143,
+          "normal_coverage": 0.948,
+          "coverage_mcse": 0.0049646752159632785,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.948
+        }
+      }
+    },
+    {
+      "scenario": {
+        "kind": "binary",
+        "n": 50,
+        "a": 0.1,
+        "s": 0,
+        "geometry": "independent",
+        "distribution": "rounded_normal",
+        "bootstrap": false,
+        "id": 14
+      },
+      "truth": {
+        "value": [
+          -8.526204512460358e-14,
+          0.124670732688049,
+          0.12467073268836518
+        ],
+        "integration_error_bound": 0.0,
+        "method": "finite sum of rounded-normal cell probabilities; omitted mass < 1e-28"
+      },
+      "replicates": 2000,
+      "metrics": {
+        "Delta": {
+          "estimate_mean": 0.0003408000000000002,
+          "empirical_sd": 0.023720939206498953,
+          "mean_se": 0.025400773990929132,
+          "mean_se_over_sd": 1.070816537650834,
+          "bias": 0.00034080000008526224,
+          "normal_coverage": 0.9615,
+          "coverage_mcse": 0.004302194207610808,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9615
+        },
+        "A": {
+          "estimate_mean": 0.1251824,
+          "empirical_sd": 0.018013737469187354,
+          "mean_se": 0.01951810072863721,
+          "mean_se_over_sd": 1.083512000883941,
+          "bias": 0.0005116673119510001,
+          "normal_coverage": 0.958,
+          "coverage_mcse": 0.00448530935387962,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.958
+        },
+        "B": {
+          "estimate_mean": 0.1251824,
+          "empirical_sd": 0.018013737469187354,
+          "mean_se": 0.01951810072863721,
+          "mean_se_over_sd": 1.083512000883941,
+          "bias": 0.0005116673116348225,
+          "normal_coverage": 0.958,
+          "coverage_mcse": 0.00448530935387962,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.958
+        }
+      }
+    },
+    {
+      "scenario": {
+        "kind": "binary",
+        "n": 50,
+        "a": 0.1,
+        "s": -1,
+        "geometry": "opposed",
+        "distribution": "normal",
+        "bootstrap": false,
+        "id": 15
+      },
+      "truth": {
+        "value": [
+          -0.01630736424713272,
+          0.03210412035381155,
+          0.06314044612796861
+        ],
+        "integration_error_bound": 1.1245045897138746e-15,
+        "method": "adaptive quadrature of independent pair differences"
+      },
+      "replicates": 2000,
+      "metrics": {
+        "Delta": {
+          "estimate_mean": -0.016228799999999998,
+          "empirical_sd": 0.010991679538156794,
+          "mean_se": 0.012482588085555392,
+          "mean_se_over_sd": 1.1356397393340136,
+          "bias": 7.856424713272026e-05,
+          "normal_coverage": 0.9705,
+          "coverage_mcse": 0.0037835003634200943,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9705
+        },
+        "A": {
+          "estimate_mean": 0.032168,
+          "empirical_sd": 0.00895480375302148,
+          "mean_se": 0.01111971405794094,
+          "mean_se_over_sd": 1.241759659354789,
+          "bias": 6.387964618845277e-05,
+          "normal_coverage": 0.964,
+          "coverage_mcse": 0.0041655731898503495,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.964
+        },
+        "B": {
+          "estimate_mean": 0.063196,
+          "empirical_sd": 0.014866157718881544,
+          "mean_se": 0.01711611787395713,
+          "mean_se_over_sd": 1.1513477925918885,
+          "bias": 5.5553872031391394e-05,
+          "normal_coverage": 0.969,
+          "coverage_mcse": 0.003875499967746099,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.969
+        }
+      }
+    },
+    {
+      "scenario": {
+        "kind": "binary",
+        "n": 50,
+        "a": 0.1,
+        "s": -1,
+        "geometry": "opposed",
+        "distribution": "t3",
+        "bootstrap": false,
+        "id": 16
+      },
+      "truth": {
+        "value": [
+          -0.02143912065508224,
+          0.03990681318097302,
+          0.07655875664795145
+        ],
+        "integration_error_bound": 1.941406992523153e-15,
+        "method": "adaptive quadrature of independent pair differences"
+      },
+      "replicates": 2000,
+      "metrics": {
+        "Delta": {
+          "estimate_mean": -0.0216936,
+          "empirical_sd": 0.013590363793291812,
+          "mean_se": 0.015147102693403473,
+          "mean_se_over_sd": 1.1145472574383966,
+          "bias": -0.00025447934491775945,
+          "normal_coverage": 0.9595,
+          "coverage_mcse": 0.004407933189148855,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9595
+        },
+        "A": {
+          "estimate_mean": 0.0400712,
+          "empirical_sd": 0.011920297702182371,
+          "mean_se": 0.01362457637184297,
+          "mean_se_over_sd": 1.1429728277129,
+          "bias": 0.00016438681902698066,
+          "normal_coverage": 0.9575,
+          "coverage_mcse": 0.004510751046111944,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9575
+        },
+        "B": {
+          "estimate_mean": 0.0764664,
+          "empirical_sd": 0.019873917513632516,
+          "mean_se": 0.02165706853314031,
+          "mean_se_over_sd": 1.0897231770376747,
+          "bias": -9.235664795144427e-05,
+          "normal_coverage": 0.953,
+          "coverage_mcse": 0.004732388403332932,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.953
+        }
+      }
+    },
+    {
+      "scenario": {
+        "kind": "binary",
+        "n": 50,
+        "a": 0.1,
+        "s": -1,
+        "geometry": "opposed",
+        "distribution": "rounded_normal",
+        "bootstrap": false,
+        "id": 17
+      },
+      "truth": {
+        "value": [
+          -0.04097013888647017,
+          0.12467073269164819,
+          0.12467073269390609
+        ],
+        "integration_error_bound": 0.0,
+        "method": "finite sum of rounded-normal cell probabilities; omitted mass < 1e-28"
+      },
+      "replicates": 2000,
+      "metrics": {
+        "Delta": {
+          "estimate_mean": -0.0405604,
+          "empirical_sd": 0.023152303695814194,
+          "mean_se": 0.02446203266131873,
+          "mean_se_over_sd": 1.0565701358582873,
+          "bias": 0.0004097388864701679,
+          "normal_coverage": 0.9605,
+          "coverage_mcse": 0.004355441998236229,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9605
+        },
+        "A": {
+          "estimate_mean": 0.1244356,
+          "empirical_sd": 0.01778270747053134,
+          "mean_se": 0.01943311710864623,
+          "mean_se_over_sd": 1.0928098064285132,
+          "bias": -0.00023513269164819606,
+          "normal_coverage": 0.958,
+          "coverage_mcse": 0.00448530935387962,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.958
+        },
+        "B": {
+          "estimate_mean": 0.1244356,
+          "empirical_sd": 0.01778270747053134,
+          "mean_se": 0.01943311710864623,
+          "mean_se_over_sd": 1.0928098064285132,
+          "bias": -0.00023513269390609826,
+          "normal_coverage": 0.958,
+          "coverage_mcse": 0.00448530935387962,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.958
+        }
+      }
+    },
+    {
+      "scenario": {
+        "kind": "binary",
+        "n": 50,
+        "a": 0.5,
+        "s": 1,
+        "geometry": "aligned",
+        "distribution": "normal",
+        "bootstrap": false,
+        "id": 18
+      },
+      "truth": {
+        "value": [
+          0.05107979553358079,
+          0.13640725466234035,
+          0.29439894691357826
+        ],
+        "integration_error_bound": 1.7447472216879777e-12,
+        "method": "adaptive quadrature of independent pair differences"
+      },
+      "replicates": 2000,
+      "metrics": {
+        "Delta": {
+          "estimate_mean": 0.050510400000000004,
+          "empirical_sd": 0.037749780592837935,
+          "mean_se": 0.03958941326861333,
+          "mean_se_over_sd": 1.0487322746486218,
+          "bias": -0.000569395533580784,
+          "normal_coverage": 0.9655,
+          "coverage_mcse": 0.00408103847078167,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9655
+        },
+        "A": {
+          "estimate_mean": 0.1357024,
+          "empirical_sd": 0.027473580637705892,
+          "mean_se": 0.02976646028563721,
+          "mean_se_over_sd": 1.08345761981911,
+          "bias": -0.000704854662340354,
+          "normal_coverage": 0.9535,
+          "coverage_mcse": 0.004708383480558906,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9535
+        },
+        "B": {
+          "estimate_mean": 0.29369759999999995,
+          "empirical_sd": 0.04715606346378693,
+          "mean_se": 0.049334843646433924,
+          "mean_se_over_sd": 1.0462036061241662,
+          "bias": -0.0007013469135783157,
+          "normal_coverage": 0.9515,
+          "coverage_mcse": 0.004803527349771207,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9515
+        }
+      }
+    },
+    {
+      "scenario": {
+        "kind": "binary",
+        "n": 50,
+        "a": 0.5,
+        "s": 1,
+        "geometry": "aligned",
+        "distribution": "t3",
+        "bootstrap": false,
+        "id": 19
+      },
+      "truth": {
+        "value": [
+          0.03516395763913233,
+          0.14831336330348652,
+          0.34696428756083625
+        ],
+        "integration_error_bound": 3.0076910233294266e-12,
+        "method": "adaptive quadrature of independent pair differences"
+      },
+      "replicates": 2000,
+      "metrics": {
+        "Delta": {
+          "estimate_mean": 0.0349352,
+          "empirical_sd": 0.04510974490620349,
+          "mean_se": 0.04495979200472522,
+          "mean_se_over_sd": 0.9966758202293082,
+          "bias": -0.00022875763913233343,
+          "normal_coverage": 0.9525,
+          "coverage_mcse": 0.00475624589355933,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9525
+        },
+        "A": {
+          "estimate_mean": 0.1476248,
+          "empirical_sd": 0.03200416220054947,
+          "mean_se": 0.03490642226328238,
+          "mean_se_over_sd": 1.0906838318261955,
+          "bias": -0.0006885633034865168,
+          "normal_coverage": 0.9535,
+          "coverage_mcse": 0.004708383480558906,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9535
+        },
+        "B": {
+          "estimate_mean": 0.3455872,
+          "empirical_sd": 0.05595429990625384,
+          "mean_se": 0.05868724519910181,
+          "mean_se_over_sd": 1.0488424535277319,
+          "bias": -0.0013770875608362654,
+          "normal_coverage": 0.9485,
+          "coverage_mcse": 0.004942051699446293,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9485
+        }
+      }
+    },
+    {
+      "scenario": {
+        "kind": "binary",
+        "n": 50,
+        "a": 0.5,
+        "s": 1,
+        "geometry": "aligned",
+        "distribution": "rounded_normal",
+        "bootstrap": false,
+        "id": 20
+      },
+      "truth": {
+        "value": [
+          0.056914069030248905,
+          0.15804283581794895,
+          0.20649731733073573
+        ],
+        "integration_error_bound": 0.0,
+        "method": "finite sum of rounded-normal cell probabilities; omitted mass < 1e-28"
+      },
+      "replicates": 2000,
+      "metrics": {
+        "Delta": {
+          "estimate_mean": 0.0572656,
+          "empirical_sd": 0.03606217099299991,
+          "mean_se": 0.03675651749969251,
+          "mean_se_over_sd": 1.019254151582482,
+          "bias": 0.0003515309697510946,
+          "normal_coverage": 0.959,
+          "coverage_mcse": 0.00443390347211123,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.959
+        },
+        "A": {
+          "estimate_mean": 0.1589168,
+          "empirical_sd": 0.025917388241615574,
+          "mean_se": 0.026780451125628317,
+          "mean_se_over_sd": 1.0333005346050619,
+          "bias": 0.0008739641820510458,
+          "normal_coverage": 0.955,
+          "coverage_mcse": 0.004635461142108735,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.955
+        },
+        "B": {
+          "estimate_mean": 0.2073392,
+          "empirical_sd": 0.03371681472437126,
+          "mean_se": 0.0346725077549115,
+          "mean_se_over_sd": 1.028344700955676,
+          "bias": 0.0008418826692642711,
+          "normal_coverage": 0.943,
+          "coverage_mcse": 0.005184158562389852,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.943
+        }
+      }
+    },
+    {
+      "scenario": {
+        "kind": "binary",
+        "n": 50,
+        "a": 0.5,
+        "s": 0,
+        "geometry": "independent",
+        "distribution": "normal",
+        "bootstrap": false,
+        "id": 21
+      },
+      "truth": {
+        "value": [
+          -0.01648158647378962,
+          0.13655992049625726,
+          0.2731198409925145
+        ],
+        "integration_error_bound": 5.397421074014267e-13,
+        "method": "adaptive quadrature of independent pair differences"
+      },
+      "replicates": 2000,
+      "metrics": {
+        "Delta": {
+          "estimate_mean": -0.016399999999999998,
+          "empirical_sd": 0.03944333820132662,
+          "mean_se": 0.04027748099473226,
+          "mean_se_over_sd": 1.0211478751911922,
+          "bias": 8.158647378962366e-05,
+          "normal_coverage": 0.958,
+          "coverage_mcse": 0.00448530935387962,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.958
+        },
+        "A": {
+          "estimate_mean": 0.13661919999999997,
+          "empirical_sd": 0.026599508986053663,
+          "mean_se": 0.02854245814344189,
+          "mean_se_over_sd": 1.0730445497474006,
+          "bias": 5.927950374270963e-05,
+          "normal_coverage": 0.9545,
+          "coverage_mcse": 0.004659922209651143,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9545
+        },
+        "B": {
+          "estimate_mean": 0.2724848,
+          "empirical_sd": 0.04347386752451143,
+          "mean_se": 0.04517203052650263,
+          "mean_se_over_sd": 1.039061696110514,
+          "bias": -0.0006350409925144906,
+          "normal_coverage": 0.9545,
+          "coverage_mcse": 0.004659922209651143,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9545
+        }
+      }
+    },
+    {
+      "scenario": {
+        "kind": "binary",
+        "n": 50,
+        "a": 0.5,
+        "s": 0,
+        "geometry": "independent",
+        "distribution": "t3",
+        "bootstrap": false,
+        "id": 22
+      },
+      "truth": {
+        "value": [
+          -0.04127615553452453,
+          0.1616689640174866,
+          0.3233379280349732
+        ],
+        "integration_error_bound": 1.5870120310451915e-12,
+        "method": "adaptive quadrature of independent pair differences"
+      },
+      "replicates": 2000,
+      "metrics": {
+        "Delta": {
+          "estimate_mean": -0.0424888,
+          "empirical_sd": 0.04754408580052102,
+          "mean_se": 0.04790736383949633,
+          "mean_se_over_sd": 1.0076408670575663,
+          "bias": -0.0012126444654754695,
+          "normal_coverage": 0.955,
+          "coverage_mcse": 0.004635461142108735,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.955
+        },
+        "A": {
+          "estimate_mean": 0.16187279999999998,
+          "empirical_sd": 0.035286026299173906,
+          "mean_se": 0.03596847188220789,
+          "mean_se_over_sd": 1.019340392064775,
+          "bias": 0.00020383598251338952,
+          "normal_coverage": 0.9435,
+          "coverage_mcse": 0.005162739098579358,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9435
+        },
+        "B": {
+          "estimate_mean": 0.322444,
+          "empirical_sd": 0.05431429540500982,
+          "mean_se": 0.05463360388116312,
+          "mean_se_over_sd": 1.0058789030359738,
+          "bias": -0.0008939280349731793,
+          "normal_coverage": 0.945,
+          "coverage_mcse": 0.005097793640389931,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.945
+        }
+      }
+    },
+    {
+      "scenario": {
+        "kind": "binary",
+        "n": 50,
+        "a": 0.5,
+        "s": 0,
+        "geometry": "independent",
+        "distribution": "rounded_normal",
+        "bootstrap": false,
+        "id": 23
+      },
+      "truth": {
+        "value": [
+          -0.008994237416154934,
+          0.15755628002175184,
+          0.1904418273557707
+        ],
+        "integration_error_bound": 0.0,
+        "method": "finite sum of rounded-normal cell probabilities; omitted mass < 1e-28"
+      },
+      "replicates": 2000,
+      "metrics": {
+        "Delta": {
+          "estimate_mean": -0.010650399999999999,
+          "empirical_sd": 0.03695911860507542,
+          "mean_se": 0.03733682655720085,
+          "mean_se_over_sd": 1.0102196147089277,
+          "bias": -0.0016561625838450653,
+          "normal_coverage": 0.953,
+          "coverage_mcse": 0.004732388403332932,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.953
+        },
+        "A": {
+          "estimate_mean": 0.15782639999999998,
+          "empirical_sd": 0.02355456456392047,
+          "mean_se": 0.025476292552626748,
+          "mean_se_over_sd": 1.0815862243384398,
+          "bias": 0.0002701199782481345,
+          "normal_coverage": 0.963,
+          "coverage_mcse": 0.004220841148396847,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.963
+        },
+        "B": {
+          "estimate_mean": 0.1904088,
+          "empirical_sd": 0.029226335588060866,
+          "mean_se": 0.03116289537294157,
+          "mean_se_over_sd": 1.0662607797356505,
+          "bias": -3.302735577070948e-05,
+          "normal_coverage": 0.9525,
+          "coverage_mcse": 0.00475624589355933,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9525
+        }
+      }
+    },
+    {
+      "scenario": {
+        "kind": "binary",
+        "n": 50,
+        "a": 0.5,
+        "s": -1,
+        "geometry": "opposed",
+        "distribution": "normal",
+        "bootstrap": false,
+        "id": 24
+      },
+      "truth": {
+        "value": [
+          -0.08907112591208113,
+          0.1579916922512379,
+          0.29439894691357826
+        ],
+        "integration_error_bound": 1.4570828756689592e-12,
+        "method": "adaptive quadrature of independent pair differences"
+      },
+      "replicates": 2000,
+      "metrics": {
+        "Delta": {
+          "estimate_mean": -0.08834399999999999,
+          "empirical_sd": 0.041763599499104014,
+          "mean_se": 0.04236389677442547,
+          "mean_se_over_sd": 1.0143736958145655,
+          "bias": 0.0007271259120811419,
+          "normal_coverage": 0.95,
+          "coverage_mcse": 0.004873397172404485,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.95
+        },
+        "A": {
+          "estimate_mean": 0.157704,
+          "empirical_sd": 0.03060514861197018,
+          "mean_se": 0.03218008163167642,
+          "mean_se_over_sd": 1.0514597409630044,
+          "bias": -0.00028769225123789766,
+          "normal_coverage": 0.9505,
+          "coverage_mcse": 0.004850244839180801,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9505
+        },
+        "B": {
+          "estimate_mean": 0.2940008,
+          "empirical_sd": 0.047590778523367634,
+          "mean_se": 0.04913859105086584,
+          "mean_se_over_sd": 1.0325233706092498,
+          "bias": -0.0003981469135782567,
+          "normal_coverage": 0.953,
+          "coverage_mcse": 0.004732388403332932,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.953
+        }
+      }
+    },
+    {
+      "scenario": {
+        "kind": "binary",
+        "n": 50,
+        "a": 0.5,
+        "s": -1,
+        "geometry": "opposed",
+        "distribution": "t3",
+        "bootstrap": false,
+        "id": 25
+      },
+      "truth": {
+        "value": [
+          -0.12804224220098454,
+          0.19865092425734968,
+          0.34696428756083625
+        ],
+        "integration_error_bound": 3.0076910233294266e-12,
+        "method": "adaptive quadrature of independent pair differences"
+      },
+      "replicates": 2000,
+      "metrics": {
+        "Delta": {
+          "estimate_mean": -0.12849439999999998,
+          "empirical_sd": 0.05379993369022434,
+          "mean_se": 0.05274564320920203,
+          "mean_se_over_sd": 0.9804034985044252,
+          "bias": -0.00045215779901544573,
+          "normal_coverage": 0.939,
+          "coverage_mcse": 0.005351588549206677,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.939
+        },
+        "A": {
+          "estimate_mean": 0.20040320000000003,
+          "empirical_sd": 0.04180404787780108,
+          "mean_se": 0.04232239534897117,
+          "mean_se_over_sd": 1.012399456451808,
+          "bias": 0.0017522757426503555,
+          "normal_coverage": 0.938,
+          "coverage_mcse": 0.005392402062161169,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.938
+        },
+        "B": {
+          "estimate_mean": 0.3489192,
+          "empirical_sd": 0.05671487000425726,
+          "mean_se": 0.058579548252825506,
+          "mean_se_over_sd": 1.03287811906169,
+          "bias": 0.0019549124391637362,
+          "normal_coverage": 0.953,
+          "coverage_mcse": 0.004732388403332932,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.953
+        }
+      }
+    },
+    {
+      "scenario": {
+        "kind": "binary",
+        "n": 50,
+        "a": 0.5,
+        "s": -1,
+        "geometry": "opposed",
+        "distribution": "rounded_normal",
+        "bootstrap": false,
+        "id": 26
+      },
+      "truth": {
+        "value": [
+          -0.0794482368672317,
+          0.17312521420051954,
+          0.20649731733073573
+        ],
+        "integration_error_bound": 0.0,
+        "method": "finite sum of rounded-normal cell probabilities; omitted mass < 1e-28"
+      },
+      "replicates": 2000,
+      "metrics": {
+        "Delta": {
+          "estimate_mean": -0.0813168,
+          "empirical_sd": 0.03807849975815639,
+          "mean_se": 0.03954783485984756,
+          "mean_se_over_sd": 1.0385870008278475,
+          "bias": -0.0018685631327683,
+          "normal_coverage": 0.955,
+          "coverage_mcse": 0.004635461142108735,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.955
+        },
+        "A": {
+          "estimate_mean": 0.17496640000000002,
+          "empirical_sd": 0.02658674516651624,
+          "mean_se": 0.028200138479123553,
+          "mean_se_over_sd": 1.0606841229530888,
+          "bias": 0.001841185799480477,
+          "normal_coverage": 0.961,
+          "coverage_mcse": 0.004328914413568374,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.961
+        },
+        "B": {
+          "estimate_mean": 0.20859119999999998,
+          "empirical_sd": 0.033464993582215566,
+          "mean_se": 0.03495603848205055,
+          "mean_se_over_sd": 1.0445553618939696,
+          "bias": 0.0020938826692642465,
+          "normal_coverage": 0.9535,
+          "coverage_mcse": 0.004708383480558906,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9535
+        }
+      }
+    },
+    {
+      "scenario": {
+        "kind": "binary",
+        "n": 50,
+        "a": 1.0,
+        "s": 1,
+        "geometry": "aligned",
+        "distribution": "normal",
+        "bootstrap": false,
+        "id": 27
+      },
+      "truth": {
+        "value": [
+          0.06143350252036271,
+          0.22300111324184826,
+          0.5000000000000001
+        ],
+        "integration_error_bound": 6.555522449597178e-12,
+        "method": "adaptive quadrature of independent pair differences"
+      },
+      "replicates": 2000,
+      "metrics": {
+        "Delta": {
+          "estimate_mean": 0.059372799999999996,
+          "empirical_sd": 0.05900626381787676,
+          "mean_se": 0.060804657694272964,
+          "mean_se_over_sd": 1.030478016400885,
+          "bias": -0.002060702520362716,
+          "normal_coverage": 0.9545,
+          "coverage_mcse": 0.004659922209651143,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9545
+        },
+        "A": {
+          "estimate_mean": 0.2214176,
+          "empirical_sd": 0.03967743489264181,
+          "mean_se": 0.04181480682664584,
+          "mean_se_over_sd": 1.0538687024447844,
+          "bias": -0.0015835132418482722,
+          "normal_coverage": 0.953,
+          "coverage_mcse": 0.004732388403332932,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.953
+        },
+        "B": {
+          "estimate_mean": 0.4985,
+          "empirical_sd": 0.05838732859165621,
+          "mean_se": 0.058935636565995535,
+          "mean_se_over_sd": 1.0093908727726528,
+          "bias": -0.0015000000000001124,
+          "normal_coverage": 0.943,
+          "coverage_mcse": 0.005184158562389852,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.943
+        }
+      }
+    },
+    {
+      "scenario": {
+        "kind": "binary",
+        "n": 50,
+        "a": 1.0,
+        "s": 1,
+        "geometry": "aligned",
+        "distribution": "t3",
+        "bootstrap": false,
+        "id": 28
+      },
+      "truth": {
+        "value": [
+          0.023714996638277717,
+          0.2304106308920642,
+          0.5562740022365877
+        ],
+        "integration_error_bound": 9.531704856291717e-12,
+        "method": "adaptive quadrature of independent pair differences"
+      },
+      "replicates": 2000,
+      "metrics": {
+        "Delta": {
+          "estimate_mean": 0.025004000000000002,
+          "empirical_sd": 0.06539458547850083,
+          "mean_se": 0.06508265204397146,
+          "mean_se_over_sd": 0.9952299807048716,
+          "bias": 0.0012890033617222844,
+          "normal_coverage": 0.9535,
+          "coverage_mcse": 0.004708383480558906,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9535
+        },
+        "A": {
+          "estimate_mean": 0.22909840000000004,
+          "empirical_sd": 0.04538709763529585,
+          "mean_se": 0.046015195781058,
+          "mean_se_over_sd": 1.013838693780536,
+          "bias": -0.00131223089206417,
+          "normal_coverage": 0.9415,
+          "coverage_mcse": 0.0052477495176503994,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9415
+        },
+        "B": {
+          "estimate_mean": 0.5548112,
+          "empirical_sd": 0.06267394519465909,
+          "mean_se": 0.06223920686270493,
+          "mean_se_over_sd": 0.993063491844914,
+          "bias": -0.0014628022365877902,
+          "normal_coverage": 0.9415,
+          "coverage_mcse": 0.0052477495176503994,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9415
+        }
+      }
+    },
+    {
+      "scenario": {
+        "kind": "binary",
+        "n": 50,
+        "a": 1.0,
+        "s": 1,
+        "geometry": "aligned",
+        "distribution": "rounded_normal",
+        "bootstrap": false,
+        "id": 29
+      },
+      "truth": {
+        "value": [
+          0.06938834921562302,
+          0.23261337968901352,
+          0.38657211999279467
+        ],
+        "integration_error_bound": 0.0,
+        "method": "finite sum of rounded-normal cell probabilities; omitted mass < 1e-28"
+      },
+      "replicates": 2000,
+      "metrics": {
+        "Delta": {
+          "estimate_mean": 0.07002959999999998,
+          "empirical_sd": 0.058512026049661096,
+          "mean_se": 0.058005947455623215,
+          "mean_se_over_sd": 0.9913508618961792,
+          "bias": 0.0006412507843769621,
+          "normal_coverage": 0.945,
+          "coverage_mcse": 0.005097793640389931,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.945
+        },
+        "A": {
+          "estimate_mean": 0.2338648,
+          "empirical_sd": 0.038929848285136584,
+          "mean_se": 0.03904430893251348,
+          "mean_se_over_sd": 1.0029401770728348,
+          "bias": 0.0012514203109864896,
+          "normal_coverage": 0.9475,
+          "coverage_mcse": 0.004987171041783106,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9475
+        },
+        "B": {
+          "estimate_mean": 0.3876184,
+          "empirical_sd": 0.046031529110775134,
+          "mean_se": 0.047747363011999736,
+          "mean_se_over_sd": 1.0372751879933304,
+          "bias": 0.0010462800072053025,
+          "normal_coverage": 0.95,
+          "coverage_mcse": 0.004873397172404485,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.95
+        }
+      }
+    },
+    {
+      "scenario": {
+        "kind": "binary",
+        "n": 50,
+        "a": 1.0,
+        "s": 0,
+        "geometry": "independent",
+        "distribution": "normal",
+        "bootstrap": false,
+        "id": 30
+      },
+      "truth": {
+        "value": [
+          -0.04640195754061108,
+          0.2360968965173786,
+          0.4721937930347572
+        ],
+        "integration_error_bound": 8.22666577263828e-12,
+        "method": "adaptive quadrature of independent pair differences"
+      },
+      "replicates": 2000,
+      "metrics": {
+        "Delta": {
+          "estimate_mean": -0.0452368,
+          "empirical_sd": 0.06397445154892296,
+          "mean_se": 0.06353813982725373,
+          "mean_se_over_sd": 0.9931799068048973,
+          "bias": 0.0011651575406110767,
+          "normal_coverage": 0.955,
+          "coverage_mcse": 0.004635461142108735,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.955
+        },
+        "A": {
+          "estimate_mean": 0.2354368,
+          "empirical_sd": 0.03929496014384482,
+          "mean_se": 0.04121737439284617,
+          "mean_se_over_sd": 1.048922666977243,
+          "bias": -0.0006600965173786111,
+          "normal_coverage": 0.9505,
+          "coverage_mcse": 0.004850244839180801,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9505
+        },
+        "B": {
+          "estimate_mean": 0.4714864,
+          "empirical_sd": 0.05458528218811164,
+          "mean_se": 0.05565937404142197,
+          "mean_se_over_sd": 1.0196773161235806,
+          "bias": -0.0007073930347571977,
+          "normal_coverage": 0.941,
+          "coverage_mcse": 0.005268728499363013,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.941
+        }
+      }
+    },
+    {
+      "scenario": {
+        "kind": "binary",
+        "n": 50,
+        "a": 1.0,
+        "s": 0,
+        "geometry": "independent",
+        "distribution": "t3",
+        "bootstrap": false,
+        "id": 31
+      },
+      "truth": {
+        "value": [
+          -0.09140667415228101,
+          0.2647696811813216,
+          0.5295393623626432
+        ],
+        "integration_error_bound": 1.8691644895371823e-11,
+        "method": "adaptive quadrature of independent pair differences"
+      },
+      "replicates": 2000,
+      "metrics": {
+        "Delta": {
+          "estimate_mean": -0.091848,
+          "empirical_sd": 0.06858906856171092,
+          "mean_se": 0.07056070925129265,
+          "mean_se_over_sd": 1.028745698562852,
+          "bias": -0.00044132584771898464,
+          "normal_coverage": 0.956,
+          "coverage_mcse": 0.004586065852122058,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.956
+        },
+        "A": {
+          "estimate_mean": 0.2637552,
+          "empirical_sd": 0.046986657957051876,
+          "mean_se": 0.04858482448212847,
+          "mean_se_over_sd": 1.0340131985240872,
+          "bias": -0.0010144811813215804,
+          "normal_coverage": 0.944,
+          "coverage_mcse": 0.005141206084179083,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.944
+        },
+        "B": {
+          "estimate_mean": 0.5265576000000001,
+          "empirical_sd": 0.058850193159049435,
+          "mean_se": 0.06004312589169161,
+          "mean_se_over_sd": 1.0202706680914053,
+          "bias": -0.0029817623626431367,
+          "normal_coverage": 0.946,
+          "coverage_mcse": 0.005053909377897473,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.946
+        }
+      }
+    },
+    {
+      "scenario": {
+        "kind": "binary",
+        "n": 50,
+        "a": 1.0,
+        "s": 0,
+        "geometry": "independent",
+        "distribution": "rounded_normal",
+        "bootstrap": false,
+        "id": 32
+      },
+      "truth": {
+        "value": [
+          -0.036698769026329965,
+          0.24282192704711442,
+          0.36097312140649596
+        ],
+        "integration_error_bound": 0.0,
+        "method": "finite sum of rounded-normal cell probabilities; omitted mass < 1e-28"
+      },
+      "replicates": 2000,
+      "metrics": {
+        "Delta": {
+          "estimate_mean": -0.0363864,
+          "empirical_sd": 0.059813324200515376,
+          "mean_se": 0.06028340957231172,
+          "mean_se_over_sd": 1.007859208263036,
+          "bias": 0.0003123690263299658,
+          "normal_coverage": 0.946,
+          "coverage_mcse": 0.005053909377897473,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.946
+        },
+        "A": {
+          "estimate_mean": 0.2430216,
+          "empirical_sd": 0.03569478326333006,
+          "mean_se": 0.03735710273798502,
+          "mean_se_over_sd": 1.0465703759115605,
+          "bias": 0.00019967295288558784,
+          "normal_coverage": 0.953,
+          "coverage_mcse": 0.004732388403332932,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.953
+        },
+        "B": {
+          "estimate_mean": 0.36303279999999993,
+          "empirical_sd": 0.04168445898917977,
+          "mean_se": 0.04399375725208796,
+          "mean_se_over_sd": 1.055399501850501,
+          "bias": 0.0020596785935039774,
+          "normal_coverage": 0.9545,
+          "coverage_mcse": 0.004659922209651143,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9545
+        }
+      }
+    },
+    {
+      "scenario": {
+        "kind": "binary",
+        "n": 50,
+        "a": 1.0,
+        "s": -1,
+        "geometry": "opposed",
+        "distribution": "normal",
+        "bootstrap": false,
+        "id": 33
+      },
+      "truth": {
+        "value": [
+          -0.16431337972956375,
+          0.2769988867581519,
+          0.5000000000000001
+        ],
+        "integration_error_bound": 7.874743440013858e-12,
+        "method": "adaptive quadrature of independent pair differences"
+      },
+      "replicates": 2000,
+      "metrics": {
+        "Delta": {
+          "estimate_mean": -0.16530960000000003,
+          "empirical_sd": 0.06398120900227422,
+          "mean_se": 0.06598331698206174,
+          "mean_se_over_sd": 1.031292124844286,
+          "bias": -0.0009962202704362766,
+          "normal_coverage": 0.9525,
+          "coverage_mcse": 0.00475624589355933,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9525
+        },
+        "A": {
+          "estimate_mean": 0.276572,
+          "empirical_sd": 0.04389895551317336,
+          "mean_se": 0.04639224539997616,
+          "mean_se_over_sd": 1.0567961095578824,
+          "bias": -0.0004268867581518898,
+          "normal_coverage": 0.952,
+          "coverage_mcse": 0.004779958158812692,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.952
+        },
+        "B": {
+          "estimate_mean": 0.498996,
+          "empirical_sd": 0.05652381882929995,
+          "mean_se": 0.05905049875211621,
+          "mean_se_over_sd": 1.0447011538701365,
+          "bias": -0.001004000000000116,
+          "normal_coverage": 0.9525,
+          "coverage_mcse": 0.00475624589355933,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9525
+        }
+      }
+    },
+    {
+      "scenario": {
+        "kind": "binary",
+        "n": 50,
+        "a": 1.0,
+        "s": -1,
+        "geometry": "opposed",
+        "distribution": "t3",
+        "bootstrap": false,
+        "id": 34
+      },
+      "truth": {
+        "value": [
+          -0.22056906406189197,
+          0.32586337134452364,
+          0.5562740022365877
+        ],
+        "integration_error_bound": 9.531704856291717e-12,
+        "method": "adaptive quadrature of independent pair differences"
+      },
+      "replicates": 2000,
+      "metrics": {
+        "Delta": {
+          "estimate_mean": -0.222356,
+          "empirical_sd": 0.07254504156403636,
+          "mean_se": 0.07440920394590565,
+          "mean_se_over_sd": 1.0256966202193678,
+          "bias": -0.0017869359381080252,
+          "normal_coverage": 0.955,
+          "coverage_mcse": 0.004635461142108735,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.955
+        },
+        "A": {
+          "estimate_mean": 0.326324,
+          "empirical_sd": 0.05400377716395388,
+          "mean_se": 0.05522430983129978,
+          "mean_se_over_sd": 1.0226008759283707,
+          "bias": 0.00046062865547635834,
+          "normal_coverage": 0.947,
+          "coverage_mcse": 0.005009540897128201,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.947
+        },
+        "B": {
+          "estimate_mean": 0.5585991999999999,
+          "empirical_sd": 0.05962885643394321,
+          "mean_se": 0.06233446090808009,
+          "mean_se_over_sd": 1.0453740795303386,
+          "bias": 0.0023251977634121124,
+          "normal_coverage": 0.958,
+          "coverage_mcse": 0.00448530935387962,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.958
+        }
+      }
+    },
+    {
+      "scenario": {
+        "kind": "binary",
+        "n": 50,
+        "a": 1.0,
+        "s": -1,
+        "geometry": "opposed",
+        "distribution": "rounded_normal",
+        "bootstrap": false,
+        "id": 35
+      },
+      "truth": {
+        "value": [
+          -0.1522830907089386,
+          0.2786294729915142,
+          0.38657211999279467
+        ],
+        "integration_error_bound": 0.0,
+        "method": "finite sum of rounded-normal cell probabilities; omitted mass < 1e-28"
+      },
+      "replicates": 2000,
+      "metrics": {
+        "Delta": {
+          "estimate_mean": -0.15072839999999996,
+          "empirical_sd": 0.06237460259564371,
+          "mean_se": 0.06270853144113123,
+          "mean_se_over_sd": 1.0053536027740695,
+          "bias": 0.0015546907089386552,
+          "normal_coverage": 0.9525,
+          "coverage_mcse": 0.00475624589355933,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9525
+        },
+        "A": {
+          "estimate_mean": 0.278966,
+          "empirical_sd": 0.04051212287760325,
+          "mean_se": 0.04190530827063367,
+          "mean_se_over_sd": 1.0343893455605762,
+          "bias": 0.00033652700848579853,
+          "normal_coverage": 0.939,
+          "coverage_mcse": 0.005351588549206677,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.939
+        },
+        "B": {
+          "estimate_mean": 0.3856988,
+          "empirical_sd": 0.0448306209063116,
+          "mean_se": 0.04760802452661419,
+          "mean_se_over_sd": 1.0619532713166497,
+          "bias": -0.0008733199927946633,
+          "normal_coverage": 0.9555,
+          "coverage_mcse": 0.004610843198374891,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9555
+        }
+      }
+    },
+    {
+      "scenario": {
+        "kind": "binary",
+        "n": 200,
+        "a": 0.01,
+        "s": 1,
+        "geometry": "aligned",
+        "distribution": "normal",
+        "bootstrap": false,
+        "id": 36
+      },
+      "truth": {
+        "value": [
+          0.0015376982291173738,
+          0.003161604654910923,
+          0.006333992510646515
+        ],
+        "integration_error_bound": 4.770054450353488e-14,
+        "method": "adaptive quadrature of independent pair differences"
+      },
+      "replicates": 2000,
+      "metrics": {
+        "Delta": {
+          "estimate_mean": 0.0015419000000000001,
+          "empirical_sd": 0.0007058424022034765,
+          "mean_se": 0.0008849285294558043,
+          "mean_se_over_sd": 1.2537197066841868,
+          "bias": 4.201770882626297e-06,
+          "normal_coverage": 0.9835,
+          "coverage_mcse": 0.002848486440199423,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9835
+        },
+        "A": {
+          "estimate_mean": 0.0031607000000000002,
+          "empirical_sd": 0.0006324836185735422,
+          "mean_se": 0.0008361795746391805,
+          "mean_se_over_sd": 1.3220572835151674,
+          "bias": -9.046549109227239e-07,
+          "normal_coverage": 0.979,
+          "coverage_mcse": 0.00320616593457045,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.979
+        },
+        "B": {
+          "estimate_mean": 0.0063308,
+          "empirical_sd": 0.0009867411966136548,
+          "mean_se": 0.00125152364661656,
+          "mean_se_over_sd": 1.2683403215671933,
+          "bias": -3.1925106465146083e-06,
+          "normal_coverage": 0.9835,
+          "coverage_mcse": 0.002848486440199423,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9835
+        }
+      }
+    },
+    {
+      "scenario": {
+        "kind": "binary",
+        "n": 200,
+        "a": 0.01,
+        "s": 1,
+        "geometry": "aligned",
+        "distribution": "t3",
+        "bootstrap": false,
+        "id": 37
+      },
+      "truth": {
+        "value": [
+          0.0018482494861532359,
+          0.003825357481493345,
+          0.00768414401292002
+        ],
+        "integration_error_bound": 5.825106545449436e-14,
+        "method": "adaptive quadrature of independent pair differences"
+      },
+      "replicates": 2000,
+      "metrics": {
+        "Delta": {
+          "estimate_mean": 0.0018497,
+          "empirical_sd": 0.0008312673533264453,
+          "mean_se": 0.0010181017622293708,
+          "mean_se_over_sd": 1.224758506580679,
+          "bias": 1.4505138467640292e-06,
+          "normal_coverage": 0.9795,
+          "coverage_mcse": 0.0031685761786644775,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9795
+        },
+        "A": {
+          "estimate_mean": 0.0038296999999999997,
+          "empirical_sd": 0.0007262311035806054,
+          "mean_se": 0.0009626996039017013,
+          "mean_se_over_sd": 1.3256105379612813,
+          "bias": 4.342518506654774e-06,
+          "normal_coverage": 0.983,
+          "coverage_mcse": 0.0028905881754411173,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.983
+        },
+        "B": {
+          "estimate_mean": 0.0076818,
+          "empirical_sd": 0.0012304290868916155,
+          "mean_se": 0.0014951602309439913,
+          "mean_se_over_sd": 1.2151535158528766,
+          "bias": -2.344012920019699e-06,
+          "normal_coverage": 0.9775,
+          "coverage_mcse": 0.003316153645415119,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9775
+        }
+      }
+    },
+    {
+      "scenario": {
+        "kind": "binary",
+        "n": 200,
+        "a": 0.01,
+        "s": 1,
+        "geometry": "aligned",
+        "distribution": "rounded_normal",
+        "bootstrap": false,
+        "id": 38
+      },
+      "truth": {
+        "value": [
+          0.04097013888256476,
+          0.12467073268773285,
+          0.12467073268773285
+        ],
+        "integration_error_bound": 0.0,
+        "method": "finite sum of rounded-normal cell probabilities; omitted mass < 1e-28"
+      },
+      "replicates": 2000,
+      "metrics": {
+        "Delta": {
+          "estimate_mean": 0.040945325,
+          "empirical_sd": 0.010601374862198743,
+          "mean_se": 0.01120548734115611,
+          "mean_se_over_sd": 1.0569843522005289,
+          "bias": -2.4813882564762857e-05,
+          "normal_coverage": 0.959,
+          "coverage_mcse": 0.00443390347211123,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.959
+        },
+        "A": {
+          "estimate_mean": 0.124702775,
+          "empirical_sd": 0.008512428370785793,
+          "mean_se": 0.008681209388659995,
+          "mean_se_over_sd": 1.0198275991905494,
+          "bias": 3.2042312267152595e-05,
+          "normal_coverage": 0.9585,
+          "coverage_mcse": 0.004459694496263168,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9585
+        },
+        "B": {
+          "estimate_mean": 0.124702775,
+          "empirical_sd": 0.008512428370785793,
+          "mean_se": 0.008681209388659995,
+          "mean_se_over_sd": 1.0198275991905494,
+          "bias": 3.2042312267152595e-05,
+          "normal_coverage": 0.9585,
+          "coverage_mcse": 0.004459694496263168,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9585
+        }
+      }
+    },
+    {
+      "scenario": {
+        "kind": "binary",
+        "n": 200,
+        "a": 0.01,
+        "s": 0,
+        "geometry": "independent",
+        "distribution": "normal",
+        "bootstrap": true,
+        "id": 39
+      },
+      "truth": {
+        "value": [
+          -7.733911585576774e-06,
+          0.0029090538031107116,
+          0.005818107606221423
+        ],
+        "integration_error_bound": 1.405234744627703e-14,
+        "method": "adaptive quadrature of independent pair differences"
+      },
+      "replicates": 2000,
+      "metrics": {
+        "Delta": {
+          "estimate_mean": -9.399999999999998e-06,
+          "empirical_sd": 0.0006614305596149881,
+          "mean_se": 0.0008478347420723668,
+          "mean_se_over_sd": 1.2818197311081039,
+          "bias": -1.666088414423224e-06,
+          "normal_coverage": 0.987,
+          "coverage_mcse": 0.0025328837320335107,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.987,
+          "bootstrap": {
+            "replicates": 1000,
+            "resamples_requested": 999,
+            "minimum_valid_resamples": 999,
+            "percentile_coverage": 0.993,
+            "coverage_mcse": 0.002636474919281427,
+            "normal_coverage_same_replicates": 0.985,
+            "zero_width_count": 0,
+            "normal_unavailable_count": 0
+          }
+        },
+        "A": {
+          "estimate_mean": 0.0029002999999999998,
+          "empirical_sd": 0.0006018646280645322,
+          "mean_se": 0.0007918081936213938,
+          "mean_se_over_sd": 1.3155918402576332,
+          "bias": -8.753803110711847e-06,
+          "normal_coverage": 0.9825,
+          "coverage_mcse": 0.002932042803234629,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9825,
+          "bootstrap": {
+            "replicates": 1000,
+            "resamples_requested": 999,
+            "minimum_valid_resamples": 999,
+            "percentile_coverage": 0.997,
+            "coverage_mcse": 0.0017294507798720387,
+            "normal_coverage_same_replicates": 0.985,
+            "zero_width_count": 0,
+            "normal_unavailable_count": 0
+          }
+        },
+        "B": {
+          "estimate_mean": 0.00581935,
+          "empirical_sd": 0.000903381772460241,
+          "mean_se": 0.0011786505023461719,
+          "mean_se_over_sd": 1.3047091919247749,
+          "bias": 1.2423937785768432e-06,
+          "normal_coverage": 0.9825,
+          "coverage_mcse": 0.002932042803234629,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9825,
+          "bootstrap": {
+            "replicates": 1000,
+            "resamples_requested": 999,
+            "minimum_valid_resamples": 999,
+            "percentile_coverage": 0.994,
+            "coverage_mcse": 0.002442130217658347,
+            "normal_coverage_same_replicates": 0.981,
+            "zero_width_count": 0,
+            "normal_unavailable_count": 0
+          }
+        }
+      }
+    },
+    {
+      "scenario": {
+        "kind": "binary",
+        "n": 200,
+        "a": 0.01,
+        "s": 0,
+        "geometry": "independent",
+        "distribution": "t3",
+        "bootstrap": false,
+        "id": 40
+      },
+      "truth": {
+        "value": [
+          -2.3977151014562947e-05,
+          0.0035291488984849693,
+          0.007058297796969939
+        ],
+        "integration_error_bound": 1.720509019538547e-14,
+        "method": "adaptive quadrature of independent pair differences"
+      },
+      "replicates": 2000,
+      "metrics": {
+        "Delta": {
+          "estimate_mean": -2.34e-05,
+          "empirical_sd": 0.0007746111613097327,
+          "mean_se": 0.0009761470579990159,
+          "mean_se_over_sd": 1.260176856151312,
+          "bias": 5.771510145629471e-07,
+          "normal_coverage": 0.989,
+          "coverage_mcse": 0.0023322735688593665,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.989
+        },
+        "A": {
+          "estimate_mean": 0.0035265000000000006,
+          "empirical_sd": 0.000698062601560812,
+          "mean_se": 0.0009118723006453756,
+          "mean_se_over_sd": 1.3062901502050135,
+          "bias": -2.648898484968777e-06,
+          "normal_coverage": 0.977,
+          "coverage_mcse": 0.0033519397369284566,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.977
+        },
+        "B": {
+          "estimate_mean": 0.0070614499999999995,
+          "empirical_sd": 0.0010916797973260955,
+          "mean_se": 0.0014005170642544156,
+          "mean_se_over_sd": 1.2829009638950637,
+          "bias": 3.152203030060835e-06,
+          "normal_coverage": 0.979,
+          "coverage_mcse": 0.00320616593457045,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.979
+        }
+      }
+    },
+    {
+      "scenario": {
+        "kind": "binary",
+        "n": 200,
+        "a": 0.01,
+        "s": 0,
+        "geometry": "independent",
+        "distribution": "rounded_normal",
+        "bootstrap": true,
+        "id": 41
+      },
+      "truth": {
+        "value": [
+          0.0,
+          0.12467073268773285,
+          0.12467073268773285
+        ],
+        "integration_error_bound": 0.0,
+        "method": "finite sum of rounded-normal cell probabilities; omitted mass < 1e-28"
+      },
+      "replicates": 2000,
+      "metrics": {
+        "Delta": {
+          "estimate_mean": 7.389999999999994e-05,
+          "empirical_sd": 0.011611445393320378,
+          "mean_se": 0.011607369989947651,
+          "mean_se_over_sd": 0.9996490184266749,
+          "bias": 7.389999999999994e-05,
+          "normal_coverage": 0.944,
+          "coverage_mcse": 0.005141206084179083,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.944,
+          "bootstrap": {
+            "replicates": 1000,
+            "resamples_requested": 999,
+            "minimum_valid_resamples": 999,
+            "percentile_coverage": 0.941,
+            "coverage_mcse": 0.007451107300260817,
+            "normal_coverage_same_replicates": 0.936,
+            "zero_width_count": 0,
+            "normal_unavailable_count": 0
+          }
+        },
+        "A": {
+          "estimate_mean": 0.12450775,
+          "empirical_sd": 0.008230360372026653,
+          "mean_se": 0.008646161814898776,
+          "mean_se_over_sd": 1.050520441885552,
+          "bias": -0.00016298268773284885,
+          "normal_coverage": 0.9605,
+          "coverage_mcse": 0.004355441998236229,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9605,
+          "bootstrap": {
+            "replicates": 1000,
+            "resamples_requested": 999,
+            "minimum_valid_resamples": 999,
+            "percentile_coverage": 0.961,
+            "coverage_mcse": 0.006122009474020767,
+            "normal_coverage_same_replicates": 0.958,
+            "zero_width_count": 0,
+            "normal_unavailable_count": 0
+          }
+        },
+        "B": {
+          "estimate_mean": 0.12450775,
+          "empirical_sd": 0.008230360372026653,
+          "mean_se": 0.008646161814898776,
+          "mean_se_over_sd": 1.050520441885552,
+          "bias": -0.00016298268773284885,
+          "normal_coverage": 0.9605,
+          "coverage_mcse": 0.004355441998236229,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9605,
+          "bootstrap": {
+            "replicates": 1000,
+            "resamples_requested": 999,
+            "minimum_valid_resamples": 999,
+            "percentile_coverage": 0.961,
+            "coverage_mcse": 0.006122009474020767,
+            "normal_coverage_same_replicates": 0.958,
+            "zero_width_count": 0,
+            "normal_unavailable_count": 0
+          }
+        }
+      }
+    },
+    {
+      "scenario": {
+        "kind": "binary",
+        "n": 200,
+        "a": 0.01,
+        "s": -1,
+        "geometry": "opposed",
+        "distribution": "normal",
+        "bootstrap": false,
+        "id": 42
+      },
+      "truth": {
+        "value": [
+          -0.0015559500524142853,
+          0.003172387855735593,
+          0.006333992510646515
+        ],
+        "integration_error_bound": 4.730592966426205e-14,
+        "method": "adaptive quadrature of independent pair differences"
+      },
+      "replicates": 2000,
+      "metrics": {
+        "Delta": {
+          "estimate_mean": -0.00154485,
+          "empirical_sd": 0.0006726289410560425,
+          "mean_se": 0.0008808778733367994,
+          "mean_se_over_sd": 1.309604478144817,
+          "bias": 1.1100052414285367e-05,
+          "normal_coverage": 0.9855,
+          "coverage_mcse": 0.00267298989897081,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9855
+        },
+        "A": {
+          "estimate_mean": 0.00314195,
+          "empirical_sd": 0.0006296136944207146,
+          "mean_se": 0.0008328076382537093,
+          "mean_se_over_sd": 1.3227279610236977,
+          "bias": -3.0437855735592975e-05,
+          "normal_coverage": 0.98,
+          "coverage_mcse": 0.003130495168499707,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.98
+        },
+        "B": {
+          "estimate_mean": 0.006305400000000001,
+          "empirical_sd": 0.0009949350671747113,
+          "mean_se": 0.0012469692464424482,
+          "mean_se_over_sd": 1.2533172139398314,
+          "bias": -2.8592510646513816e-05,
+          "normal_coverage": 0.9785,
+          "coverage_mcse": 0.003243281517229114,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9785
+        }
+      }
+    },
+    {
+      "scenario": {
+        "kind": "binary",
+        "n": 200,
+        "a": 0.01,
+        "s": -1,
+        "geometry": "opposed",
+        "distribution": "t3",
+        "bootstrap": false,
+        "id": 43
+      },
+      "truth": {
+        "value": [
+          -0.0019048337919984803,
+          0.0038587865314266747,
+          0.00768414401292002
+        ],
+        "integration_error_bound": 5.703184846029545e-14,
+        "method": "adaptive quadrature of independent pair differences"
+      },
+      "replicates": 2000,
+      "metrics": {
+        "Delta": {
+          "estimate_mean": -0.0019260500000000001,
+          "empirical_sd": 0.0008449635371953009,
+          "mean_se": 0.00102976350447475,
+          "mean_se_over_sd": 1.2187076236364685,
+          "bias": -2.121620800151977e-05,
+          "normal_coverage": 0.981,
+          "coverage_mcse": 0.0030527856131736483,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.981
+        },
+        "A": {
+          "estimate_mean": 0.00388075,
+          "empirical_sd": 0.000755830720160784,
+          "mean_se": 0.0009728172078930335,
+          "mean_se_over_sd": 1.2870834459944829,
+          "bias": 2.1963468573325384e-05,
+          "normal_coverage": 0.982,
+          "coverage_mcse": 0.002972877394041,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.982
+        },
+        "B": {
+          "estimate_mean": 0.0077025,
+          "empirical_sd": 0.0011969712277494517,
+          "mean_se": 0.0014984113808737649,
+          "mean_se_over_sd": 1.2518357552261985,
+          "bias": 1.8355987079980533e-05,
+          "normal_coverage": 0.9785,
+          "coverage_mcse": 0.003243281517229114,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9785
+        }
+      }
+    },
+    {
+      "scenario": {
+        "kind": "binary",
+        "n": 200,
+        "a": 0.01,
+        "s": -1,
+        "geometry": "opposed",
+        "distribution": "rounded_normal",
+        "bootstrap": false,
+        "id": 44
+      },
+      "truth": {
+        "value": [
+          -0.04097013888256476,
+          0.12467073268773285,
+          0.12467073268773285
+        ],
+        "integration_error_bound": 0.0,
+        "method": "finite sum of rounded-normal cell probabilities; omitted mass < 1e-28"
+      },
+      "replicates": 2000,
+      "metrics": {
+        "Delta": {
+          "estimate_mean": -0.041048625,
+          "empirical_sd": 0.011239942393619326,
+          "mean_se": 0.011198854672777321,
+          "mean_se_over_sd": 0.9963444900869484,
+          "bias": -7.848611743523776e-05,
+          "normal_coverage": 0.951,
+          "coverage_mcse": 0.004826955562256609,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.951
+        },
+        "A": {
+          "estimate_mean": 0.124749375,
+          "empirical_sd": 0.008538608040717849,
+          "mean_se": 0.00867786307032997,
+          "mean_se_over_sd": 1.0163088677859504,
+          "bias": 7.864231226714646e-05,
+          "normal_coverage": 0.95,
+          "coverage_mcse": 0.004873397172404485,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.95
+        },
+        "B": {
+          "estimate_mean": 0.124749375,
+          "empirical_sd": 0.008538608040717849,
+          "mean_se": 0.00867786307032997,
+          "mean_se_over_sd": 1.0163088677859504,
+          "bias": 7.864231226714646e-05,
+          "normal_coverage": 0.95,
+          "coverage_mcse": 0.004873397172404485,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.95
+        }
+      }
+    },
+    {
+      "scenario": {
+        "kind": "binary",
+        "n": 200,
+        "a": 0.1,
+        "s": 1,
+        "geometry": "aligned",
+        "distribution": "normal",
+        "bootstrap": false,
+        "id": 45
+      },
+      "truth": {
+        "value": [
+          0.014496848909191003,
+          0.031036325774157058,
+          0.06314044612796861
+        ],
+        "integration_error_bound": 1.1245045897138746e-15,
+        "method": "adaptive quadrature of independent pair differences"
+      },
+      "replicates": 2000,
+      "metrics": {
+        "Delta": {
+          "estimate_mean": 0.01462425,
+          "empirical_sd": 0.004479441889043618,
+          "mean_se": 0.00473896229277422,
+          "mean_se_over_sd": 1.0579358791025661,
+          "bias": 0.00012740109080899668,
+          "normal_coverage": 0.96,
+          "coverage_mcse": 0.004381780460041331,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.96
+        },
+        "A": {
+          "estimate_mean": 0.03106805,
+          "empirical_sd": 0.0034249889740313208,
+          "mean_se": 0.003735047521480535,
+          "mean_se_over_sd": 1.0905283344851955,
+          "bias": 3.1724225842941906e-05,
+          "normal_coverage": 0.967,
+          "coverage_mcse": 0.003994433626936366,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.967
+        },
+        "B": {
+          "estimate_mean": 0.06323325,
+          "empirical_sd": 0.00627221649717177,
+          "mean_se": 0.006634980885849004,
+          "mean_se_over_sd": 1.0578367135191857,
+          "bias": 9.280387203139395e-05,
+          "normal_coverage": 0.963,
+          "coverage_mcse": 0.004220841148396847,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.963
+        }
+      }
+    },
+    {
+      "scenario": {
+        "kind": "binary",
+        "n": 200,
+        "a": 0.1,
+        "s": 1,
+        "geometry": "aligned",
+        "distribution": "t3",
+        "bootstrap": false,
+        "id": 46
+      },
+      "truth": {
+        "value": [
+          0.015903573861058243,
+          0.03665194346697842,
+          0.07655875664795145
+        ],
+        "integration_error_bound": 1.631534793509975e-15,
+        "method": "adaptive quadrature of independent pair differences"
+      },
+      "replicates": 2000,
+      "metrics": {
+        "Delta": {
+          "estimate_mean": 0.01586375,
+          "empirical_sd": 0.005616712977341366,
+          "mean_se": 0.005897497902793819,
+          "mean_se_over_sd": 1.0499909691994551,
+          "bias": -3.98238610582434e-05,
+          "normal_coverage": 0.961,
+          "coverage_mcse": 0.004328914413568374,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.961
+        },
+        "A": {
+          "estimate_mean": 0.03674855,
+          "empirical_sd": 0.004463741747984123,
+          "mean_se": 0.004875169760011004,
+          "mean_se_over_sd": 1.092171105600517,
+          "bias": 9.660653302157735e-05,
+          "normal_coverage": 0.96,
+          "coverage_mcse": 0.004381780460041331,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.96
+        },
+        "B": {
+          "estimate_mean": 0.07680325,
+          "empirical_sd": 0.00877916461305696,
+          "mean_se": 0.00919845166904098,
+          "mean_se_over_sd": 1.047759334112545,
+          "bias": 0.0002444933520485554,
+          "normal_coverage": 0.9575,
+          "coverage_mcse": 0.004510751046111944,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9575
+        }
+      }
+    },
+    {
+      "scenario": {
+        "kind": "binary",
+        "n": 200,
+        "a": 0.1,
+        "s": 1,
+        "geometry": "aligned",
+        "distribution": "rounded_normal",
+        "bootstrap": false,
+        "id": 47
+      },
+      "truth": {
+        "value": [
+          0.04097013888480537,
+          0.12467073268999074,
+          0.12467073269390609
+        ],
+        "integration_error_bound": 0.0,
+        "method": "finite sum of rounded-normal cell probabilities; omitted mass < 1e-28"
+      },
+      "replicates": 2000,
+      "metrics": {
+        "Delta": {
+          "estimate_mean": 0.04115165,
+          "empirical_sd": 0.011193128375879526,
+          "mean_se": 0.011171893523174955,
+          "mean_se_over_sd": 0.9981028670456126,
+          "bias": 0.00018151111519462693,
+          "normal_coverage": 0.9575,
+          "coverage_mcse": 0.004510751046111944,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9575
+        },
+        "A": {
+          "estimate_mean": 0.1245081,
+          "empirical_sd": 0.008607098405472122,
+          "mean_se": 0.008673639908705798,
+          "mean_se_over_sd": 1.0077310029581366,
+          "bias": -0.00016263268999074099,
+          "normal_coverage": 0.956,
+          "coverage_mcse": 0.004586065852122058,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.956
+        },
+        "B": {
+          "estimate_mean": 0.1245081,
+          "empirical_sd": 0.008607098405472122,
+          "mean_se": 0.008673639908705798,
+          "mean_se_over_sd": 1.0077310029581366,
+          "bias": -0.00016263269390609514,
+          "normal_coverage": 0.956,
+          "coverage_mcse": 0.004586065852122058,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.956
+        }
+      }
+    },
+    {
+      "scenario": {
+        "kind": "binary",
+        "n": 200,
+        "a": 0.1,
+        "s": 0,
+        "geometry": "independent",
+        "distribution": "normal",
+        "bootstrap": false,
+        "id": 48
+      },
+      "truth": {
+        "value": [
+          -0.0007680351874395622,
+          0.029012193464804933,
+          0.058024386929609865
+        ],
+        "integration_error_bound": 3.258725284934367e-15,
+        "method": "adaptive quadrature of independent pair differences"
+      },
+      "replicates": 2000,
+      "metrics": {
+        "Delta": {
+          "estimate_mean": -0.0009291499999999999,
+          "empirical_sd": 0.004263348842069411,
+          "mean_se": 0.0046151189465013,
+          "mean_se_over_sd": 1.082510279468743,
+          "bias": -0.00016111481256043773,
+          "normal_coverage": 0.9645,
+          "coverage_mcse": 0.0041376170678302255,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9645
+        },
+        "A": {
+          "estimate_mean": 0.02898095,
+          "empirical_sd": 0.0029784303955792983,
+          "mean_se": 0.0034228743311940537,
+          "mean_se_over_sd": 1.1492208568225788,
+          "bias": -3.124346480493437e-05,
+          "normal_coverage": 0.975,
+          "coverage_mcse": 0.003491060010942237,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.975
+        },
+        "B": {
+          "estimate_mean": 0.05799485,
+          "empirical_sd": 0.005426937838657481,
+          "mean_se": 0.005929753693315832,
+          "mean_se_over_sd": 1.0926518544356016,
+          "bias": -2.9536929609864926e-05,
+          "normal_coverage": 0.9635,
+          "coverage_mcse": 0.004193313129257102,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9635
+        }
+      }
+    },
+    {
+      "scenario": {
+        "kind": "binary",
+        "n": 200,
+        "a": 0.1,
+        "s": 0,
+        "geometry": "independent",
+        "distribution": "t3",
+        "bootstrap": false,
+        "id": 49
+      },
+      "truth": {
+        "value": [
+          -0.002352749908304271,
+          0.035180837133742926,
+          0.07036167426748585
+        ],
+        "integration_error_bound": 3.937091066930053e-15,
+        "method": "adaptive quadrature of independent pair differences"
+      },
+      "replicates": 2000,
+      "metrics": {
+        "Delta": {
+          "estimate_mean": -0.00229365,
+          "empirical_sd": 0.005527695033528156,
+          "mean_se": 0.005784885993712909,
+          "mean_se_over_sd": 1.046527704336937,
+          "bias": 5.9099908304271163e-05,
+          "normal_coverage": 0.9625,
+          "coverage_mcse": 0.004248161366991606,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9625
+        },
+        "A": {
+          "estimate_mean": 0.035175250000000005,
+          "empirical_sd": 0.004225610053905097,
+          "mean_se": 0.0045820711517584,
+          "mean_se_over_sd": 1.0843573101412611,
+          "bias": -5.587133742920858e-06,
+          "normal_coverage": 0.9605,
+          "coverage_mcse": 0.004355441998236229,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9605
+        },
+        "B": {
+          "estimate_mean": 0.0703608,
+          "empirical_sd": 0.00796672754233926,
+          "mean_se": 0.008279224111641347,
+          "mean_se_over_sd": 1.0392252110595375,
+          "bias": -8.742674858508437e-07,
+          "normal_coverage": 0.95,
+          "coverage_mcse": 0.004873397172404485,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.95
+        }
+      }
+    },
+    {
+      "scenario": {
+        "kind": "binary",
+        "n": 200,
+        "a": 0.1,
+        "s": 0,
+        "geometry": "independent",
+        "distribution": "rounded_normal",
+        "bootstrap": false,
+        "id": 50
+      },
+      "truth": {
+        "value": [
+          -8.526204512460358e-14,
+          0.124670732688049,
+          0.12467073268836518
+        ],
+        "integration_error_bound": 0.0,
+        "method": "finite sum of rounded-normal cell probabilities; omitted mass < 1e-28"
+      },
+      "replicates": 2000,
+      "metrics": {
+        "Delta": {
+          "estimate_mean": 0.00021757500000000007,
+          "empirical_sd": 0.011396182863630509,
+          "mean_se": 0.011610848550074096,
+          "mean_se_over_sd": 1.0188366305641396,
+          "bias": 0.0002175750000852621,
+          "normal_coverage": 0.9595,
+          "coverage_mcse": 0.004407933189148855,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9595
+        },
+        "A": {
+          "estimate_mean": 0.124476825,
+          "empirical_sd": 0.00859624114658844,
+          "mean_se": 0.00867125394657171,
+          "mean_se_over_sd": 1.0087262326293673,
+          "bias": -0.00019390768804899983,
+          "normal_coverage": 0.9495,
+          "coverage_mcse": 0.0048964145045124596,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9495
+        },
+        "B": {
+          "estimate_mean": 0.124476825,
+          "empirical_sd": 0.00859624114658844,
+          "mean_se": 0.00867125394657171,
+          "mean_se_over_sd": 1.0087262326293673,
+          "bias": -0.00019390768836517747,
+          "normal_coverage": 0.9495,
+          "coverage_mcse": 0.0048964145045124596,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9495
+        }
+      }
+    },
+    {
+      "scenario": {
+        "kind": "binary",
+        "n": 200,
+        "a": 0.1,
+        "s": -1,
+        "geometry": "opposed",
+        "distribution": "normal",
+        "bootstrap": false,
+        "id": 51
+      },
+      "truth": {
+        "value": [
+          -0.01630736424713272,
+          0.03210412035381155,
+          0.06314044612796861
+        ],
+        "integration_error_bound": 1.1245045897138746e-15,
+        "method": "adaptive quadrature of independent pair differences"
+      },
+      "replicates": 2000,
+      "metrics": {
+        "Delta": {
+          "estimate_mean": -0.016437600000000004,
+          "empirical_sd": 0.004506933820928938,
+          "mean_se": 0.0048116127302093225,
+          "mean_se_over_sd": 1.0676022594042853,
+          "bias": -0.00013023575286728525,
+          "normal_coverage": 0.9615,
+          "coverage_mcse": 0.004302194207610808,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9615
+        },
+        "A": {
+          "estimate_mean": 0.0321326,
+          "empirical_sd": 0.003342950029158187,
+          "mean_se": 0.003797251731556284,
+          "mean_se_over_sd": 1.1358984425239818,
+          "bias": 2.8479646188447894e-05,
+          "normal_coverage": 0.969,
+          "coverage_mcse": 0.003875499967746099,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.969
+        },
+        "B": {
+          "estimate_mean": 0.0632912,
+          "empirical_sd": 0.006188273581942097,
+          "mean_se": 0.006630245285635021,
+          "mean_se_over_sd": 1.0714208410214174,
+          "bias": 0.000150753872031395,
+          "normal_coverage": 0.961,
+          "coverage_mcse": 0.004328914413568374,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.961
+        }
+      }
+    },
+    {
+      "scenario": {
+        "kind": "binary",
+        "n": 200,
+        "a": 0.1,
+        "s": -1,
+        "geometry": "opposed",
+        "distribution": "t3",
+        "bootstrap": false,
+        "id": 52
+      },
+      "truth": {
+        "value": [
+          -0.02143912065508224,
+          0.03990681318097302,
+          0.07655875664795145
+        ],
+        "integration_error_bound": 1.941406992523153e-15,
+        "method": "adaptive quadrature of independent pair differences"
+      },
+      "replicates": 2000,
+      "metrics": {
+        "Delta": {
+          "estimate_mean": -0.02125225,
+          "empirical_sd": 0.006109086298719523,
+          "mean_se": 0.006246710520092949,
+          "mean_se_over_sd": 1.0225277913330955,
+          "bias": 0.00018687065508224063,
+          "normal_coverage": 0.9555,
+          "coverage_mcse": 0.004610843198374891,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9555
+        },
+        "A": {
+          "estimate_mean": 0.039946749999999996,
+          "empirical_sd": 0.004950947927436734,
+          "mean_se": 0.005234695191414972,
+          "mean_se_over_sd": 1.057311704371963,
+          "bias": 3.9936819026975545e-05,
+          "normal_coverage": 0.9555,
+          "coverage_mcse": 0.004610843198374891,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9555
+        },
+        "B": {
+          "estimate_mean": 0.07669755,
+          "empirical_sd": 0.008970155564031287,
+          "mean_se": 0.009222626400174768,
+          "mean_se_over_sd": 1.0281456474574246,
+          "bias": 0.00013879335204855514,
+          "normal_coverage": 0.9515,
+          "coverage_mcse": 0.004803527349771207,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9515
+        }
+      }
+    },
+    {
+      "scenario": {
+        "kind": "binary",
+        "n": 200,
+        "a": 0.1,
+        "s": -1,
+        "geometry": "opposed",
+        "distribution": "rounded_normal",
+        "bootstrap": false,
+        "id": 53
+      },
+      "truth": {
+        "value": [
+          -0.04097013888647017,
+          0.12467073269164819,
+          0.12467073269390609
+        ],
+        "integration_error_bound": 0.0,
+        "method": "finite sum of rounded-normal cell probabilities; omitted mass < 1e-28"
+      },
+      "replicates": 2000,
+      "metrics": {
+        "Delta": {
+          "estimate_mean": -0.041269824999999996,
+          "empirical_sd": 0.011150300122229128,
+          "mean_se": 0.011216273553242452,
+          "mean_se_over_sd": 1.0059167403827813,
+          "bias": -0.0002996861135298248,
+          "normal_coverage": 0.949,
+          "coverage_mcse": 0.004919298730510276,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.949
+        },
+        "A": {
+          "estimate_mean": 0.125098625,
+          "empirical_sd": 0.008366985423790097,
+          "mean_se": 0.008677175629839695,
+          "mean_se_over_sd": 1.0370731141908798,
+          "bias": 0.0004278923083518016,
+          "normal_coverage": 0.959,
+          "coverage_mcse": 0.00443390347211123,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.959
+        },
+        "B": {
+          "estimate_mean": 0.125098625,
+          "empirical_sd": 0.008366985423790097,
+          "mean_se": 0.008677175629839695,
+          "mean_se_over_sd": 1.0370731141908798,
+          "bias": 0.0004278923060938994,
+          "normal_coverage": 0.959,
+          "coverage_mcse": 0.00443390347211123,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.959
+        }
+      }
+    },
+    {
+      "scenario": {
+        "kind": "binary",
+        "n": 200,
+        "a": 0.5,
+        "s": 1,
+        "geometry": "aligned",
+        "distribution": "normal",
+        "bootstrap": false,
+        "id": 54
+      },
+      "truth": {
+        "value": [
+          0.05107979553358079,
+          0.13640725466234035,
+          0.29439894691357826
+        ],
+        "integration_error_bound": 1.7447472216879777e-12,
+        "method": "adaptive quadrature of independent pair differences"
+      },
+      "replicates": 2000,
+      "metrics": {
+        "Delta": {
+          "estimate_mean": 0.0519856,
+          "empirical_sd": 0.01794437663911687,
+          "mean_se": 0.01861660679999215,
+          "mean_se_over_sd": 1.0374618842657308,
+          "bias": 0.0009058044664192119,
+          "normal_coverage": 0.9565,
+          "coverage_mcse": 0.004561126505590477,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9565
+        },
+        "A": {
+          "estimate_mean": 0.1360559,
+          "empirical_sd": 0.012778019959565078,
+          "mean_se": 0.013014680779585681,
+          "mean_se_over_sd": 1.0185209305330165,
+          "bias": -0.0003513546623403474,
+          "normal_coverage": 0.9465,
+          "coverage_mcse": 0.005031786462082825,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9465
+        },
+        "B": {
+          "estimate_mean": 0.2939103,
+          "empirical_sd": 0.022949896356659012,
+          "mean_se": 0.02300732178635826,
+          "mean_se_over_sd": 1.002502208672615,
+          "bias": -0.0004886469135782501,
+          "normal_coverage": 0.947,
+          "coverage_mcse": 0.005009540897128201,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.947
+        }
+      }
+    },
+    {
+      "scenario": {
+        "kind": "binary",
+        "n": 200,
+        "a": 0.5,
+        "s": 1,
+        "geometry": "aligned",
+        "distribution": "t3",
+        "bootstrap": false,
+        "id": 55
+      },
+      "truth": {
+        "value": [
+          0.03516395763913233,
+          0.14831336330348652,
+          0.34696428756083625
+        ],
+        "integration_error_bound": 3.0076910233294266e-12,
+        "method": "adaptive quadrature of independent pair differences"
+      },
+      "replicates": 2000,
+      "metrics": {
+        "Delta": {
+          "estimate_mean": 0.03466330000000001,
+          "empirical_sd": 0.021216227451260786,
+          "mean_se": 0.021540186172730798,
+          "mean_se_over_sd": 1.0152693838814761,
+          "bias": -0.000500657639132325,
+          "normal_coverage": 0.9505,
+          "coverage_mcse": 0.004850244839180801,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9505
+        },
+        "A": {
+          "estimate_mean": 0.1479177,
+          "empirical_sd": 0.01622112878993351,
+          "mean_se": 0.01587745013862897,
+          "mean_se_over_sd": 0.9788129016324796,
+          "bias": -0.00039566330348650425,
+          "normal_coverage": 0.939,
+          "coverage_mcse": 0.005351588549206677,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.939
+        },
+        "B": {
+          "estimate_mean": 0.34646024999999997,
+          "empirical_sd": 0.02875930899490515,
+          "mean_se": 0.02808195705513575,
+          "mean_se_over_sd": 0.9764475586013074,
+          "bias": -0.000504037560836279,
+          "normal_coverage": 0.939,
+          "coverage_mcse": 0.005351588549206677,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.939
+        }
+      }
+    },
+    {
+      "scenario": {
+        "kind": "binary",
+        "n": 200,
+        "a": 0.5,
+        "s": 1,
+        "geometry": "aligned",
+        "distribution": "rounded_normal",
+        "bootstrap": false,
+        "id": 56
+      },
+      "truth": {
+        "value": [
+          0.056914069030248905,
+          0.15804283581794895,
+          0.20649731733073573
+        ],
+        "integration_error_bound": 0.0,
+        "method": "finite sum of rounded-normal cell probabilities; omitted mass < 1e-28"
+      },
+      "replicates": 2000,
+      "metrics": {
+        "Delta": {
+          "estimate_mean": 0.057394324999999996,
+          "empirical_sd": 0.017385653914230196,
+          "mean_se": 0.01754917417140893,
+          "mean_se_over_sd": 1.0094054706245412,
+          "bias": 0.0004802559697510908,
+          "normal_coverage": 0.9475,
+          "coverage_mcse": 0.004987171041783106,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9475
+        },
+        "A": {
+          "estimate_mean": 0.158007825,
+          "empirical_sd": 0.011915898910396834,
+          "mean_se": 0.012279574035208327,
+          "mean_se_over_sd": 1.0305201586171715,
+          "bias": -3.501081794896055e-05,
+          "normal_coverage": 0.951,
+          "coverage_mcse": 0.004826955562256609,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.951
+        },
+        "B": {
+          "estimate_mean": 0.206501075,
+          "empirical_sd": 0.01597177546173484,
+          "mean_se": 0.01628229350620888,
+          "mean_se_over_sd": 1.019441673545811,
+          "bias": 3.757669264276009e-06,
+          "normal_coverage": 0.949,
+          "coverage_mcse": 0.004919298730510276,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.949
+        }
+      }
+    },
+    {
+      "scenario": {
+        "kind": "binary",
+        "n": 200,
+        "a": 0.5,
+        "s": 0,
+        "geometry": "independent",
+        "distribution": "normal",
+        "bootstrap": false,
+        "id": 57
+      },
+      "truth": {
+        "value": [
+          -0.01648158647378962,
+          0.13655992049625726,
+          0.2731198409925145
+        ],
+        "integration_error_bound": 5.397421074014267e-13,
+        "method": "adaptive quadrature of independent pair differences"
+      },
+      "replicates": 2000,
+      "metrics": {
+        "Delta": {
+          "estimate_mean": -0.017190350000000004,
+          "empirical_sd": 0.01888344391536015,
+          "mean_se": 0.018976925926225085,
+          "mean_se_over_sd": 1.0049504746742144,
+          "bias": -0.000708763526210382,
+          "normal_coverage": 0.949,
+          "coverage_mcse": 0.004919298730510276,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.949
+        },
+        "A": {
+          "estimate_mean": 0.13672244999999997,
+          "empirical_sd": 0.011971292199088535,
+          "mean_se": 0.012245217801110033,
+          "mean_se_over_sd": 1.022881874192525,
+          "bias": 0.0001625295037427088,
+          "normal_coverage": 0.9535,
+          "coverage_mcse": 0.004708383480558906,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9535
+        },
+        "B": {
+          "estimate_mean": 0.27336469999999996,
+          "empirical_sd": 0.02044880731901949,
+          "mean_se": 0.02083529119329628,
+          "mean_se_over_sd": 1.0189000692435162,
+          "bias": 0.00024485900748544287,
+          "normal_coverage": 0.9595,
+          "coverage_mcse": 0.004407933189148855,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9595
+        }
+      }
+    },
+    {
+      "scenario": {
+        "kind": "binary",
+        "n": 200,
+        "a": 0.5,
+        "s": 0,
+        "geometry": "independent",
+        "distribution": "t3",
+        "bootstrap": false,
+        "id": 58
+      },
+      "truth": {
+        "value": [
+          -0.04127615553452453,
+          0.1616689640174866,
+          0.3233379280349732
+        ],
+        "integration_error_bound": 1.5870120310451915e-12,
+        "method": "adaptive quadrature of independent pair differences"
+      },
+      "replicates": 2000,
+      "metrics": {
+        "Delta": {
+          "estimate_mean": -0.04097485,
+          "empirical_sd": 0.023568143354284064,
+          "mean_se": 0.023030701458736865,
+          "mean_se_over_sd": 0.9771962565116736,
+          "bias": 0.0003013055345245305,
+          "normal_coverage": 0.941,
+          "coverage_mcse": 0.005268728499363013,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.941
+        },
+        "A": {
+          "estimate_mean": 0.16166875,
+          "empirical_sd": 0.015793663867091554,
+          "mean_se": 0.016409855989386466,
+          "mean_se_over_sd": 1.0390151473071958,
+          "bias": -2.1401748659388709e-07,
+          "normal_coverage": 0.9555,
+          "coverage_mcse": 0.004610843198374891,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9555
+        },
+        "B": {
+          "estimate_mean": 0.32353560000000003,
+          "empirical_sd": 0.0251195616766976,
+          "mean_se": 0.025989658825062108,
+          "mean_se_over_sd": 1.0346382297415508,
+          "bias": 0.00019767196502684659,
+          "normal_coverage": 0.95,
+          "coverage_mcse": 0.004873397172404485,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.95
+        }
+      }
+    },
+    {
+      "scenario": {
+        "kind": "binary",
+        "n": 200,
+        "a": 0.5,
+        "s": 0,
+        "geometry": "independent",
+        "distribution": "rounded_normal",
+        "bootstrap": false,
+        "id": 59
+      },
+      "truth": {
+        "value": [
+          -0.008994237416154934,
+          0.15755628002175184,
+          0.1904418273557707
+        ],
+        "integration_error_bound": 0.0,
+        "method": "finite sum of rounded-normal cell probabilities; omitted mass < 1e-28"
+      },
+      "replicates": 2000,
+      "metrics": {
+        "Delta": {
+          "estimate_mean": -0.00913875,
+          "empirical_sd": 0.018063210767444268,
+          "mean_se": 0.017890648317702068,
+          "mean_se_over_sd": 0.9904467454892786,
+          "bias": -0.00014451258384506546,
+          "normal_coverage": 0.9505,
+          "coverage_mcse": 0.004850244839180801,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9505
+        },
+        "A": {
+          "estimate_mean": 0.15733740000000002,
+          "empirical_sd": 0.011477051345785506,
+          "mean_se": 0.011505570525057315,
+          "mean_se_over_sd": 1.0024848873123045,
+          "bias": -0.0002188800217518272,
+          "normal_coverage": 0.9505,
+          "coverage_mcse": 0.004850244839180801,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9505
+        },
+        "B": {
+          "estimate_mean": 0.19006995000000002,
+          "empirical_sd": 0.014176420297230251,
+          "mean_se": 0.014320177084357042,
+          "mean_se_over_sd": 1.0101405562273629,
+          "bias": -0.00037187735577068337,
+          "normal_coverage": 0.9455,
+          "coverage_mcse": 0.005075911248239078,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9455
+        }
+      }
+    },
+    {
+      "scenario": {
+        "kind": "binary",
+        "n": 200,
+        "a": 0.5,
+        "s": -1,
+        "geometry": "opposed",
+        "distribution": "normal",
+        "bootstrap": false,
+        "id": 60
+      },
+      "truth": {
+        "value": [
+          -0.08907112591208113,
+          0.1579916922512379,
+          0.29439894691357826
+        ],
+        "integration_error_bound": 1.4570828756689592e-12,
+        "method": "adaptive quadrature of independent pair differences"
+      },
+      "replicates": 2000,
+      "metrics": {
+        "Delta": {
+          "estimate_mean": -0.08928705,
+          "empirical_sd": 0.019598692601123593,
+          "mean_se": 0.019974663672151137,
+          "mean_se_over_sd": 1.0191834771165291,
+          "bias": -0.00021592408791887285,
+          "normal_coverage": 0.9505,
+          "coverage_mcse": 0.004850244839180801,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9505
+        },
+        "A": {
+          "estimate_mean": 0.15838145,
+          "empirical_sd": 0.01379091677845585,
+          "mean_se": 0.01417207923263913,
+          "mean_se_over_sd": 1.027638659583439,
+          "bias": 0.00038975774876209845,
+          "normal_coverage": 0.9445,
+          "coverage_mcse": 0.005119558086397692,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9445
+        },
+        "B": {
+          "estimate_mean": 0.29502955,
+          "empirical_sd": 0.02257901897440239,
+          "mean_se": 0.023068499248993214,
+          "mean_se_over_sd": 1.0216785448094863,
+          "bias": 0.0006306030864217105,
+          "normal_coverage": 0.952,
+          "coverage_mcse": 0.004779958158812692,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.952
+        }
+      }
+    },
+    {
+      "scenario": {
+        "kind": "binary",
+        "n": 200,
+        "a": 0.5,
+        "s": -1,
+        "geometry": "opposed",
+        "distribution": "t3",
+        "bootstrap": false,
+        "id": 61
+      },
+      "truth": {
+        "value": [
+          -0.12804224220098454,
+          0.19865092425734968,
+          0.34696428756083625
+        ],
+        "integration_error_bound": 3.0076910233294266e-12,
+        "method": "adaptive quadrature of independent pair differences"
+      },
+      "replicates": 2000,
+      "metrics": {
+        "Delta": {
+          "estimate_mean": -0.12737015,
+          "empirical_sd": 0.02547032140774448,
+          "mean_se": 0.025229926773320865,
+          "mean_se_over_sd": 0.9905617746013005,
+          "bias": 0.0006720922009845476,
+          "normal_coverage": 0.9565,
+          "coverage_mcse": 0.004561126505590477,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9565
+        },
+        "A": {
+          "estimate_mean": 0.19839905,
+          "empirical_sd": 0.019505919987398118,
+          "mean_se": 0.019577555391878176,
+          "mean_se_over_sd": 1.0036724955565457,
+          "bias": -0.0002518742573496824,
+          "normal_coverage": 0.9485,
+          "coverage_mcse": 0.004942051699446293,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9485
+        },
+        "B": {
+          "estimate_mean": 0.34752369999999994,
+          "empirical_sd": 0.02849730560111362,
+          "mean_se": 0.02802270913576523,
+          "mean_se_over_sd": 0.9833459179618074,
+          "bias": 0.0005594124391636868,
+          "normal_coverage": 0.9445,
+          "coverage_mcse": 0.005119558086397692,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9445
+        }
+      }
+    },
+    {
+      "scenario": {
+        "kind": "binary",
+        "n": 200,
+        "a": 0.5,
+        "s": -1,
+        "geometry": "opposed",
+        "distribution": "rounded_normal",
+        "bootstrap": false,
+        "id": 62
+      },
+      "truth": {
+        "value": [
+          -0.0794482368672317,
+          0.17312521420051954,
+          0.20649731733073573
+        ],
+        "integration_error_bound": 0.0,
+        "method": "finite sum of rounded-normal cell probabilities; omitted mass < 1e-28"
+      },
+      "replicates": 2000,
+      "metrics": {
+        "Delta": {
+          "estimate_mean": -0.07893125000000001,
+          "empirical_sd": 0.01896373031529492,
+          "mean_se": 0.018702844232949774,
+          "mean_se_over_sd": 0.9862428921943309,
+          "bias": 0.0005169868672316863,
+          "normal_coverage": 0.944,
+          "coverage_mcse": 0.005141206084179083,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.944
+        },
+        "A": {
+          "estimate_mean": 0.17229804999999998,
+          "empirical_sd": 0.012894721036641561,
+          "mean_se": 0.012731819738332404,
+          "mean_se_over_sd": 0.9873668226054478,
+          "bias": -0.0008271642005195645,
+          "normal_coverage": 0.942,
+          "coverage_mcse": 0.005226662414964259,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.942
+        },
+        "B": {
+          "estimate_mean": 0.20552715000000002,
+          "empirical_sd": 0.016350353892613665,
+          "mean_se": 0.016217280645014348,
+          "mean_se_over_sd": 0.9918611396136549,
+          "bias": -0.0009701673307357106,
+          "normal_coverage": 0.944,
+          "coverage_mcse": 0.005141206084179083,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.944
+        }
+      }
+    },
+    {
+      "scenario": {
+        "kind": "binary",
+        "n": 200,
+        "a": 1.0,
+        "s": 1,
+        "geometry": "aligned",
+        "distribution": "normal",
+        "bootstrap": false,
+        "id": 63
+      },
+      "truth": {
+        "value": [
+          0.06143350252036271,
+          0.22300111324184826,
+          0.5000000000000001
+        ],
+        "integration_error_bound": 6.555522449597178e-12,
+        "method": "adaptive quadrature of independent pair differences"
+      },
+      "replicates": 2000,
+      "metrics": {
+        "Delta": {
+          "estimate_mean": 0.0613526,
+          "empirical_sd": 0.02940651313480355,
+          "mean_se": 0.029728370302521703,
+          "mean_se_over_sd": 1.0109450979870587,
+          "bias": -8.0902520362712e-05,
+          "normal_coverage": 0.954,
+          "coverage_mcse": 0.0046842288586276416,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.954
+        },
+        "A": {
+          "estimate_mean": 0.22290539999999998,
+          "empirical_sd": 0.019274705133126797,
+          "mean_se": 0.01938590366017288,
+          "mean_se_over_sd": 1.0057691428365858,
+          "bias": -9.571324184828867e-05,
+          "normal_coverage": 0.9485,
+          "coverage_mcse": 0.004942051699446293,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9485
+        },
+        "B": {
+          "estimate_mean": 0.5002022,
+          "empirical_sd": 0.02810622609196344,
+          "mean_se": 0.027970364680048036,
+          "mean_se_over_sd": 0.9951661453419302,
+          "bias": 0.0002021999999999302,
+          "normal_coverage": 0.953,
+          "coverage_mcse": 0.004732388403332932,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.953
+        }
+      }
+    },
+    {
+      "scenario": {
+        "kind": "binary",
+        "n": 200,
+        "a": 1.0,
+        "s": 1,
+        "geometry": "aligned",
+        "distribution": "t3",
+        "bootstrap": false,
+        "id": 64
+      },
+      "truth": {
+        "value": [
+          0.023714996638277717,
+          0.2304106308920642,
+          0.5562740022365877
+        ],
+        "integration_error_bound": 9.531704856291717e-12,
+        "method": "adaptive quadrature of independent pair differences"
+      },
+      "replicates": 2000,
+      "metrics": {
+        "Delta": {
+          "estimate_mean": 0.022593949999999998,
+          "empirical_sd": 0.03206610228661145,
+          "mean_se": 0.032083944889058025,
+          "mean_se_over_sd": 1.0005564319070368,
+          "bias": -0.0011210466382777194,
+          "normal_coverage": 0.953,
+          "coverage_mcse": 0.004732388403332932,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.953
+        },
+        "A": {
+          "estimate_mean": 0.23021095000000003,
+          "empirical_sd": 0.021980527447969612,
+          "mean_se": 0.021709774587572755,
+          "mean_se_over_sd": 0.9876821490731849,
+          "bias": -0.00019968089206418016,
+          "normal_coverage": 0.9475,
+          "coverage_mcse": 0.004987171041783106,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9475
+        },
+        "B": {
+          "estimate_mean": 0.5549703500000001,
+          "empirical_sd": 0.029630573084369363,
+          "mean_se": 0.029921939891582688,
+          "mean_se_over_sd": 1.0098333166349396,
+          "bias": -0.0013036522365876824,
+          "normal_coverage": 0.9505,
+          "coverage_mcse": 0.004850244839180801,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9505
+        }
+      }
+    },
+    {
+      "scenario": {
+        "kind": "binary",
+        "n": 200,
+        "a": 1.0,
+        "s": 1,
+        "geometry": "aligned",
+        "distribution": "rounded_normal",
+        "bootstrap": false,
+        "id": 65
+      },
+      "truth": {
+        "value": [
+          0.06938834921562302,
+          0.23261337968901352,
+          0.38657211999279467
+        ],
+        "integration_error_bound": 0.0,
+        "method": "finite sum of rounded-normal cell probabilities; omitted mass < 1e-28"
+      },
+      "replicates": 2000,
+      "metrics": {
+        "Delta": {
+          "estimate_mean": 0.06944047499999999,
+          "empirical_sd": 0.02843302338714337,
+          "mean_se": 0.02835421269888608,
+          "mean_se_over_sd": 0.9972281988030536,
+          "bias": 5.2125784376966244e-05,
+          "normal_coverage": 0.956,
+          "coverage_mcse": 0.004586065852122058,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.956
+        },
+        "A": {
+          "estimate_mean": 0.232368075,
+          "empirical_sd": 0.018459188372245843,
+          "mean_se": 0.01831064820759174,
+          "mean_se_over_sd": 0.9919530500659802,
+          "bias": -0.00024530468901351465,
+          "normal_coverage": 0.9445,
+          "coverage_mcse": 0.005119558086397692,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9445
+        },
+        "B": {
+          "estimate_mean": 0.386147275,
+          "empirical_sd": 0.02259608174616818,
+          "mean_se": 0.02247077188199155,
+          "mean_se_over_sd": 0.9944543542732633,
+          "bias": -0.0004248449927946596,
+          "normal_coverage": 0.9465,
+          "coverage_mcse": 0.005031786462082825,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9465
+        }
+      }
+    },
+    {
+      "scenario": {
+        "kind": "binary",
+        "n": 200,
+        "a": 1.0,
+        "s": 0,
+        "geometry": "independent",
+        "distribution": "normal",
+        "bootstrap": false,
+        "id": 66
+      },
+      "truth": {
+        "value": [
+          -0.04640195754061108,
+          0.2360968965173786,
+          0.4721937930347572
+        ],
+        "integration_error_bound": 8.22666577263828e-12,
+        "method": "adaptive quadrature of independent pair differences"
+      },
+      "replicates": 2000,
+      "metrics": {
+        "Delta": {
+          "estimate_mean": -0.046959100000000004,
+          "empirical_sd": 0.03076202835289299,
+          "mean_se": 0.031092146652951427,
+          "mean_se_over_sd": 1.0107313567321186,
+          "bias": -0.0005571424593889263,
+          "normal_coverage": 0.9525,
+          "coverage_mcse": 0.00475624589355933,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9525
+        },
+        "A": {
+          "estimate_mean": 0.23665519999999998,
+          "empirical_sd": 0.0183313486173567,
+          "mean_se": 0.018809901321270046,
+          "mean_se_over_sd": 1.0261057008899082,
+          "bias": 0.0005583034826213695,
+          "normal_coverage": 0.953,
+          "coverage_mcse": 0.004732388403332932,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.953
+        },
+        "B": {
+          "estimate_mean": 0.47302785,
+          "empirical_sd": 0.026052662819709978,
+          "mean_se": 0.02615542480409622,
+          "mean_se_over_sd": 1.003944394670801,
+          "bias": 0.000834056965242802,
+          "normal_coverage": 0.9475,
+          "coverage_mcse": 0.004987171041783106,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9475
+        }
+      }
+    },
+    {
+      "scenario": {
+        "kind": "binary",
+        "n": 200,
+        "a": 1.0,
+        "s": 0,
+        "geometry": "independent",
+        "distribution": "t3",
+        "bootstrap": false,
+        "id": 67
+      },
+      "truth": {
+        "value": [
+          -0.09140667415228101,
+          0.2647696811813216,
+          0.5295393623626432
+        ],
+        "integration_error_bound": 1.8691644895371823e-11,
+        "method": "adaptive quadrature of independent pair differences"
+      },
+      "replicates": 2000,
+      "metrics": {
+        "Delta": {
+          "estimate_mean": -0.09146090000000001,
+          "empirical_sd": 0.03481109402652639,
+          "mean_se": 0.034725837266526456,
+          "mean_se_over_sd": 0.9975508738698368,
+          "bias": -5.422584771899719e-05,
+          "normal_coverage": 0.9455,
+          "coverage_mcse": 0.005075911248239078,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9455
+        },
+        "A": {
+          "estimate_mean": 0.264817,
+          "empirical_sd": 0.022635459858847816,
+          "mean_se": 0.022916627259883148,
+          "mean_se_over_sd": 1.0124215457865076,
+          "bias": 4.731881867842125e-05,
+          "normal_coverage": 0.948,
+          "coverage_mcse": 0.0049646752159632785,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.948
+        },
+        "B": {
+          "estimate_mean": 0.52921,
+          "empirical_sd": 0.028713053821038698,
+          "mean_se": 0.028635682073288343,
+          "mean_se_over_sd": 0.9973053459157429,
+          "bias": -0.0003293623626432485,
+          "normal_coverage": 0.95,
+          "coverage_mcse": 0.004873397172404485,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.95
+        }
+      }
+    },
+    {
+      "scenario": {
+        "kind": "binary",
+        "n": 200,
+        "a": 1.0,
+        "s": 0,
+        "geometry": "independent",
+        "distribution": "rounded_normal",
+        "bootstrap": false,
+        "id": 68
+      },
+      "truth": {
+        "value": [
+          -0.036698769026329965,
+          0.24282192704711442,
+          0.36097312140649596
+        ],
+        "integration_error_bound": 0.0,
+        "method": "finite sum of rounded-normal cell probabilities; omitted mass < 1e-28"
+      },
+      "replicates": 2000,
+      "metrics": {
+        "Delta": {
+          "estimate_mean": -0.037524575,
+          "empirical_sd": 0.029834433906857465,
+          "mean_se": 0.029694457587632193,
+          "mean_se_over_sd": 0.9953082294216717,
+          "bias": -0.0008258059736700324,
+          "normal_coverage": 0.9485,
+          "coverage_mcse": 0.004942051699446293,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9485
+        },
+        "A": {
+          "estimate_mean": 0.242982125,
+          "empirical_sd": 0.01714002682302808,
+          "mean_se": 0.017547266847073275,
+          "mean_se_over_sd": 1.0237595908250305,
+          "bias": 0.0001601979528855768,
+          "normal_coverage": 0.957,
+          "coverage_mcse": 0.004536022486716751,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.957
+        },
+        "B": {
+          "estimate_mean": 0.360806675,
+          "empirical_sd": 0.020048420730353442,
+          "mean_se": 0.020420041696026323,
+          "mean_se_over_sd": 1.0185361715354588,
+          "bias": -0.00016644640649593478,
+          "normal_coverage": 0.9485,
+          "coverage_mcse": 0.004942051699446293,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9485
+        }
+      }
+    },
+    {
+      "scenario": {
+        "kind": "binary",
+        "n": 200,
+        "a": 1.0,
+        "s": -1,
+        "geometry": "opposed",
+        "distribution": "normal",
+        "bootstrap": false,
+        "id": 69
+      },
+      "truth": {
+        "value": [
+          -0.16431337972956375,
+          0.2769988867581519,
+          0.5000000000000001
+        ],
+        "integration_error_bound": 7.874743440013858e-12,
+        "method": "adaptive quadrature of independent pair differences"
+      },
+      "replicates": 2000,
+      "metrics": {
+        "Delta": {
+          "estimate_mean": -0.16550035000000002,
+          "empirical_sd": 0.03142841353721554,
+          "mean_se": 0.03221532710952833,
+          "mean_se_over_sd": 1.0250382849067765,
+          "bias": -0.0011869702704362661,
+          "normal_coverage": 0.958,
+          "coverage_mcse": 0.00448530935387962,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.958
+        },
+        "A": {
+          "estimate_mean": 0.27765975,
+          "empirical_sd": 0.021255034066641414,
+          "mean_se": 0.021568447907858477,
+          "mean_se_over_sd": 1.0147453935022832,
+          "bias": 0.0006608632418481086,
+          "normal_coverage": 0.9485,
+          "coverage_mcse": 0.004942051699446293,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9485
+        },
+        "B": {
+          "estimate_mean": 0.49948519999999996,
+          "empirical_sd": 0.027955844390355818,
+          "mean_se": 0.028061573342681306,
+          "mean_se_over_sd": 1.003781998170013,
+          "bias": -0.0005148000000001485,
+          "normal_coverage": 0.9485,
+          "coverage_mcse": 0.004942051699446293,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9485
+        }
+      }
+    },
+    {
+      "scenario": {
+        "kind": "binary",
+        "n": 200,
+        "a": 1.0,
+        "s": -1,
+        "geometry": "opposed",
+        "distribution": "t3",
+        "bootstrap": false,
+        "id": 70
+      },
+      "truth": {
+        "value": [
+          -0.22056906406189197,
+          0.32586337134452364,
+          0.5562740022365877
+        ],
+        "integration_error_bound": 9.531704856291717e-12,
+        "method": "adaptive quadrature of independent pair differences"
+      },
+      "replicates": 2000,
+      "metrics": {
+        "Delta": {
+          "estimate_mean": -0.22080635,
+          "empirical_sd": 0.03515812184180522,
+          "mean_se": 0.03651731422396999,
+          "mean_se_over_sd": 1.0386594138412877,
+          "bias": -0.00023728593810803944,
+          "normal_coverage": 0.956,
+          "coverage_mcse": 0.004586065852122058,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.956
+        },
+        "A": {
+          "estimate_mean": 0.32524415,
+          "empirical_sd": 0.026570524875763873,
+          "mean_se": 0.0264146644541158,
+          "mean_se_over_sd": 0.9941340857067434,
+          "bias": -0.000619221344523635,
+          "normal_coverage": 0.9475,
+          "coverage_mcse": 0.004987171041783106,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9475
+        },
+        "B": {
+          "estimate_mean": 0.5558133000000001,
+          "empirical_sd": 0.02963000796145519,
+          "mean_se": 0.02994269030400032,
+          "mean_se_over_sd": 1.010552894314166,
+          "bias": -0.0004607022365876734,
+          "normal_coverage": 0.9505,
+          "coverage_mcse": 0.004850244839180801,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9505
+        }
+      }
+    },
+    {
+      "scenario": {
+        "kind": "binary",
+        "n": 200,
+        "a": 1.0,
+        "s": -1,
+        "geometry": "opposed",
+        "distribution": "rounded_normal",
+        "bootstrap": false,
+        "id": 71
+      },
+      "truth": {
+        "value": [
+          -0.1522830907089386,
+          0.2786294729915142,
+          0.38657211999279467
+        ],
+        "integration_error_bound": 0.0,
+        "method": "finite sum of rounded-normal cell probabilities; omitted mass < 1e-28"
+      },
+      "replicates": 2000,
+      "metrics": {
+        "Delta": {
+          "estimate_mean": -0.15124500000000002,
+          "empirical_sd": 0.03117692753311658,
+          "mean_se": 0.030741885078705556,
+          "mean_se_over_sd": 0.9860460125857843,
+          "bias": 0.0010380907089385938,
+          "normal_coverage": 0.947,
+          "coverage_mcse": 0.005009540897128201,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.947
+        },
+        "A": {
+          "estimate_mean": 0.27835855000000004,
+          "empirical_sd": 0.019947149452569448,
+          "mean_se": 0.01979375716746912,
+          "mean_se_over_sd": 0.9923100648809463,
+          "bias": -0.00027092299151415533,
+          "normal_coverage": 0.9505,
+          "coverage_mcse": 0.004850244839180801,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9505
+        },
+        "B": {
+          "estimate_mean": 0.38632639999999996,
+          "empirical_sd": 0.02251249573619362,
+          "mean_se": 0.022428666840323807,
+          "mean_se_over_sd": 0.9962763392894267,
+          "bias": -0.0002457199927947129,
+          "normal_coverage": 0.948,
+          "coverage_mcse": 0.0049646752159632785,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.948
+        }
+      }
+    },
+    {
+      "scenario": {
+        "kind": "survival",
+        "n": 50,
+        "a": 0.1,
+        "censor_fraction": 0.3,
+        "censor_rate": 0.3427558835312823,
+        "bootstrap": false,
+        "id": 72
+      },
+      "truth": {
+        "value": [
+          0.01342766567820487,
+          0.03093781623583725,
+          0.06222900137789311
+        ],
+        "reference_se": [
+          1.7025783015955938e-05,
+          1.923271893450852e-05,
+          1.9183488205376044e-05
+        ],
+        "block_values": [
+          [
+            0.01361553893261026,
+            0.03110554618275101,
+            0.06220326261780145
+          ],
+          [
+            0.013456495807188948,
+            0.030894172883731533,
+            0.062173321427721355
+          ],
+          [
+            0.01333082846582619,
+            0.030924434864303265,
+            0.06219779728355072
+          ],
+          [
+            0.01338719685931833,
+            0.03091107488618888,
+            0.062130364042921785
+          ],
+          [
+            0.013401523831924682,
+            0.030992838113529143,
+            0.062227067395550235
+          ],
+          [
+            0.013433773829949711,
+            0.030917920592823413,
+            0.062166563761112445
+          ],
+          [
+            0.013417886059423229,
+            0.03093931315040983,
+            0.062181804479172105
+          ],
+          [
+            0.013481848155566417,
+            0.030961962319816596,
+            0.062273962939639126
+          ],
+          [
+            0.013346546332082938,
+            0.030783159700352287,
+            0.062242858299210606
+          ],
+          [
+            0.013424533708572437,
+            0.031000595210633596,
+            0.06240390772797224
+          ],
+          [
+            0.013443786854400567,
+            0.03101532976232902,
+            0.06232805227591423
+          ],
+          [
+            0.01339039206818614,
+            0.03090955352201501,
+            0.06227028064924165
+          ],
+          [
+            0.013458596931616986,
+            0.030837815009435516,
+            0.062225689207072485
+          ],
+          [
+            0.013395193627116444,
+            0.030944789757442314,
+            0.062176437413092915
+          ],
+          [
+            0.013494139807971402,
+            0.031000647455109824,
+            0.06233286539831125
+          ],
+          [
+            0.01336436957952321,
+            0.030865906362524797,
+            0.06212978712800521
+          ]
+        ],
+        "blocks": 16,
+        "pairs_per_block": 1048576,
+        "method": "scrambled Sobol quadrature; event and independent censoring times analytically integrated"
+      },
+      "replicates": 2000,
+      "metrics": {
+        "Delta": {
+          "estimate_mean": 0.013448969833103109,
+          "empirical_sd": 0.008028151977797628,
+          "mean_se": 0.00948130950459244,
+          "mean_se_over_sd": 1.1810077251668394,
+          "bias": 2.13041548982381e-05,
+          "normal_coverage": 0.98,
+          "coverage_mcse": 0.003130495168499707,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.98
+        },
+        "A": {
+          "estimate_mean": 0.03088847308718581,
+          "empirical_sd": 0.007824043647101542,
+          "mean_se": 0.009230293839026125,
+          "mean_se_over_sd": 1.1797344513083763,
+          "bias": -4.9343148651438684e-05,
+          "normal_coverage": 0.9655,
+          "coverage_mcse": 0.00408103847078167,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9655
+        },
+        "B": {
+          "estimate_mean": 0.06215892838696538,
+          "empirical_sd": 0.013188578685202623,
+          "mean_se": 0.014789585700904285,
+          "mean_se_over_sd": 1.1213934460957469,
+          "bias": -7.007299092773311e-05,
+          "normal_coverage": 0.9585,
+          "coverage_mcse": 0.004459694496263168,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9585
+        }
+      },
+      "realized_censor_fraction": 0.29853999999999997
+    },
+    {
+      "scenario": {
+        "kind": "survival",
+        "n": 50,
+        "a": 0.1,
+        "censor_fraction": 0.6,
+        "censor_rate": 1.6742814795337992,
+        "bootstrap": true,
+        "id": 73
+      },
+      "truth": {
+        "value": [
+          0.01308486648306187,
+          0.029701425727401972,
+          0.06016957006339605
+        ],
+        "reference_se": [
+          1.6002340624413702e-05,
+          1.8093702064113853e-05,
+          2.1051388958438065e-05
+        ],
+        "block_values": [
+          [
+            0.013245306497165066,
+            0.02983734979793138,
+            0.0601231012823689
+          ],
+          [
+            0.01310170209146189,
+            0.02965470587431124,
+            0.060135386216906936
+          ],
+          [
+            0.012995736259849077,
+            0.029700862999209907,
+            0.06014661350051054
+          ],
+          [
+            0.013035179192429488,
+            0.02964920930711656,
+            0.06005712482781277
+          ],
+          [
+            0.013069274582708967,
+            0.029757519033510964,
+            0.06017660679311491
+          ],
+          [
+            0.01309335497129244,
+            0.029681494857097344,
+            0.06010033326554892
+          ],
+          [
+            0.013055548581797367,
+            0.029683026651683177,
+            0.060088356077669346
+          ],
+          [
+            0.01313047572980332,
+            0.029732956694378115,
+            0.060203004742039004
+          ],
+          [
+            0.013017585116980595,
+            0.029561555196896433,
+            0.060195085483434566
+          ],
+          [
+            0.01308315853524738,
+            0.02975739917983085,
+            0.06037197290872873
+          ],
+          [
+            0.013126150889451366,
+            0.02978641515532207,
+            0.060293467806576
+          ],
+          [
+            0.0130484950925892,
+            0.029654260393898475,
+            0.06019318529032351
+          ],
+          [
+            0.01313291237141581,
+            0.029621710738007605,
+            0.06015697221186619
+          ],
+          [
+            0.013052069020435113,
+            0.029757968896429197,
+            0.06014064978372838
+          ],
+          [
+            0.01315902320054654,
+            0.029758297639511915,
+            0.060262456465874165
+          ],
+          [
+            0.013011891595816283,
+            0.029628079223296282,
+            0.06006880435783399
+          ]
+        ],
+        "blocks": 16,
+        "pairs_per_block": 1048576,
+        "method": "scrambled Sobol quadrature; event and independent censoring times analytically integrated"
+      },
+      "replicates": 2000,
+      "metrics": {
+        "Delta": {
+          "estimate_mean": 0.013259122137187787,
+          "empirical_sd": 0.010039762229931994,
+          "mean_se": 0.012004739013897247,
+          "mean_se_over_sd": 1.1957194542025087,
+          "bias": 0.00017425565412591652,
+          "normal_coverage": 0.978,
+          "coverage_mcse": 0.0032799390238234627,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.978,
+          "bootstrap": {
+            "replicates": 1000,
+            "resamples_requested": 999,
+            "minimum_valid_resamples": 998,
+            "percentile_coverage": 0.985,
+            "coverage_mcse": 0.0038438262187565153,
+            "normal_coverage_same_replicates": 0.983,
+            "zero_width_count": 0,
+            "normal_unavailable_count": 0
+          }
+        },
+        "A": {
+          "estimate_mean": 0.029746127980526258,
+          "empirical_sd": 0.009398291270208208,
+          "mean_se": 0.011470212977552269,
+          "mean_se_over_sd": 1.2204572775810725,
+          "bias": 4.470225312428605e-05,
+          "normal_coverage": 0.954,
+          "coverage_mcse": 0.0046842288586276416,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.954,
+          "bootstrap": {
+            "replicates": 1000,
+            "resamples_requested": 999,
+            "minimum_valid_resamples": 998,
+            "percentile_coverage": 0.997,
+            "coverage_mcse": 0.0017294507798720387,
+            "normal_coverage_same_replicates": 0.956,
+            "zero_width_count": 0,
+            "normal_unavailable_count": 0
+          }
+        },
+        "B": {
+          "estimate_mean": 0.06024836403679781,
+          "empirical_sd": 0.01588430470488554,
+          "mean_se": 0.018183790803875482,
+          "mean_se_over_sd": 1.1447646681244215,
+          "bias": 7.879397340175565e-05,
+          "normal_coverage": 0.9545,
+          "coverage_mcse": 0.004659922209651143,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9545,
+          "bootstrap": {
+            "replicates": 1000,
+            "resamples_requested": 999,
+            "minimum_valid_resamples": 998,
+            "percentile_coverage": 0.984,
+            "coverage_mcse": 0.00396787096564392,
+            "normal_coverage_same_replicates": 0.959,
+            "zero_width_count": 0,
+            "normal_unavailable_count": 0
+          }
+        }
+      },
+      "realized_censor_fraction": 0.59873
+    },
+    {
+      "scenario": {
+        "kind": "survival",
+        "n": 50,
+        "a": 0.5,
+        "censor_fraction": 0.3,
+        "censor_rate": 0.3427558835312823,
+        "bootstrap": false,
+        "id": 74
+      },
+      "truth": {
+        "value": [
+          0.041155569422834055,
+          0.14160955125296215,
+          0.2896877976167335
+        ],
+        "reference_se": [
+          1.593572268861722e-05,
+          2.127958643408261e-05,
+          2.7135596135693425e-05
+        ],
+        "block_values": [
+          [
+            0.04111385605962945,
+            0.1416737883294005,
+            0.28971406408147665
+          ],
+          [
+            0.041063737464061965,
+            0.1416067233554687,
+            0.28956642719840114
+          ],
+          [
+            0.04114976509573206,
+            0.14174167166390955,
+            0.2898904939283428
+          ],
+          [
+            0.04121798123068921,
+            0.14174525864662524,
+            0.28985745254366224
+          ],
+          [
+            0.04108680643635763,
+            0.14164722834397508,
+            0.2895592530912149
+          ],
+          [
+            0.041070662432060256,
+            0.14159647249150376,
+            0.2897323916858642
+          ],
+          [
+            0.04113413184090495,
+            0.1415030091202972,
+            0.2896079312776476
+          ],
+          [
+            0.041057098070487366,
+            0.14156736785456275,
+            0.2895838380129273
+          ],
+          [
+            0.04115877603667339,
+            0.14146508682587847,
+            0.2896118535486573
+          ],
+          [
+            0.04119520078396503,
+            0.14159114605539844,
+            0.2896720973896119
+          ],
+          [
+            0.041280360557328435,
+            0.14154655873173963,
+            0.28974278270635534
+          ],
+          [
+            0.04120658108318704,
+            0.14152594132148932,
+            0.28953535873243635
+          ],
+          [
+            0.041207501580792394,
+            0.14157944833719402,
+            0.28978948019386974
+          ],
+          [
+            0.041191291192478434,
+            0.1417470771614523,
+            0.28964807451319874
+          ],
+          [
+            0.041172944991451216,
+            0.14163930480885925,
+            0.2897946876765721
+          ],
+          [
+            0.041182415909546084,
+            0.14157673699964013,
+            0.2896985752874977
+          ]
+        ],
+        "blocks": 16,
+        "pairs_per_block": 1048576,
+        "method": "scrambled Sobol quadrature; event and independent censoring times analytically integrated"
+      },
+      "replicates": 2000,
+      "metrics": {
+        "Delta": {
+          "estimate_mean": 0.041550232306380795,
+          "empirical_sd": 0.028142923677715367,
+          "mean_se": 0.02917615115374702,
+          "mean_se_over_sd": 1.03671357986341,
+          "bias": 0.00039466288354673973,
+          "normal_coverage": 0.9605,
+          "coverage_mcse": 0.004355441998236229,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9605
+        },
+        "A": {
+          "estimate_mean": 0.1422895037741722,
+          "empirical_sd": 0.02582844084945389,
+          "mean_se": 0.02739118188866209,
+          "mean_se_over_sd": 1.0605046602819326,
+          "bias": 0.0006799525212100588,
+          "normal_coverage": 0.941,
+          "coverage_mcse": 0.005268728499363013,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.941
+        },
+        "B": {
+          "estimate_mean": 0.29033718423689836,
+          "empirical_sd": 0.04407996429210808,
+          "mean_se": 0.044815932604449354,
+          "mean_se_over_sd": 1.0166962093586143,
+          "bias": 0.000649386620164838,
+          "normal_coverage": 0.939,
+          "coverage_mcse": 0.005351588549206677,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.939
+        }
+      },
+      "realized_censor_fraction": 0.29951
+    },
+    {
+      "scenario": {
+        "kind": "survival",
+        "n": 50,
+        "a": 0.5,
+        "censor_fraction": 0.6,
+        "censor_rate": 1.6742814795337992,
+        "bootstrap": true,
+        "id": 75
+      },
+      "truth": {
+        "value": [
+          0.03929142951575424,
+          0.13321157489086563,
+          0.2812974099208208
+        ],
+        "reference_se": [
+          1.6004945171779935e-05,
+          2.165045476962417e-05,
+          2.3887400311661254e-05
+        ],
+        "block_values": [
+          [
+            0.039208985533502536,
+            0.13327592276009861,
+            0.2813175947785118
+          ],
+          [
+            0.039226608002544426,
+            0.13319139771402919,
+            0.2811631570550338
+          ],
+          [
+            0.03930780521976434,
+            0.13332396794039225,
+            0.28146410453851045
+          ],
+          [
+            0.039340798690718486,
+            0.1333191893451608,
+            0.2814281180958777
+          ],
+          [
+            0.039214950562930326,
+            0.13327102100928173,
+            0.2811963264526364
+          ],
+          [
+            0.039190484084313894,
+            0.13319336801809795,
+            0.2813263334483217
+          ],
+          [
+            0.039265631215193976,
+            0.13309699099842606,
+            0.28121824274340707
+          ],
+          [
+            0.039212353213681425,
+            0.13321265723127154,
+            0.281247061852657
+          ],
+          [
+            0.03931360698140858,
+            0.13308464552091048,
+            0.28122121930404953
+          ],
+          [
+            0.03930756138343378,
+            0.13317302090655583,
+            0.28127510140055373
+          ],
+          [
+            0.03940370435246846,
+            0.13311123575469713,
+            0.28135716163347324
+          ],
+          [
+            0.03937149273602278,
+            0.1331367181882646,
+            0.2811569669210662
+          ],
+          [
+            0.03934003585464698,
+            0.13318729925033204,
+            0.2814100093614837
+          ],
+          [
+            0.0393288426179653,
+            0.13338657463149894,
+            0.2812584807804108
+          ],
+          [
+            0.039324338612606,
+            0.13324418198041746,
+            0.2813934289874156
+          ],
+          [
+            0.039305673190866565,
+            0.13317700700441523,
+            0.2813252513797237
+          ]
+        ],
+        "blocks": 16,
+        "pairs_per_block": 1048576,
+        "method": "scrambled Sobol quadrature; event and independent censoring times analytically integrated"
+      },
+      "replicates": 2000,
+      "metrics": {
+        "Delta": {
+          "estimate_mean": 0.03964458584039309,
+          "empirical_sd": 0.036238947088290466,
+          "mean_se": 0.0361750943464033,
+          "mean_se_over_sd": 0.9982380078060326,
+          "bias": 0.0003531563246388508,
+          "normal_coverage": 0.9525,
+          "coverage_mcse": 0.00475624589355933,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9525,
+          "bootstrap": {
+            "replicates": 1000,
+            "resamples_requested": 999,
+            "minimum_valid_resamples": 999,
+            "percentile_coverage": 0.966,
+            "coverage_mcse": 0.005730968504537434,
+            "normal_coverage_same_replicates": 0.955,
+            "zero_width_count": 0,
+            "normal_unavailable_count": 0
+          }
+        },
+        "A": {
+          "estimate_mean": 0.1321279194548939,
+          "empirical_sd": 0.03146009942467549,
+          "mean_se": 0.032286217853973766,
+          "mean_se_over_sd": 1.026259244071248,
+          "bias": -0.0010836554359717199,
+          "normal_coverage": 0.934,
+          "coverage_mcse": 0.005551756478809205,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.934,
+          "bootstrap": {
+            "replicates": 1000,
+            "resamples_requested": 999,
+            "minimum_valid_resamples": 999,
+            "percentile_coverage": 0.962,
+            "coverage_mcse": 0.006046155803483734,
+            "normal_coverage_same_replicates": 0.934,
+            "zero_width_count": 0,
+            "normal_unavailable_count": 0
+          }
+        },
+        "B": {
+          "estimate_mean": 0.27920732891130934,
+          "empirical_sd": 0.05428299052498496,
+          "mean_se": 0.053856465571198456,
+          "mean_se_over_sd": 0.9921425671345393,
+          "bias": -0.0020900810095114686,
+          "normal_coverage": 0.9245,
+          "coverage_mcse": 0.005907611615534657,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9245,
+          "bootstrap": {
+            "replicates": 1000,
+            "resamples_requested": 999,
+            "minimum_valid_resamples": 999,
+            "percentile_coverage": 0.944,
+            "coverage_mcse": 0.007270763371201131,
+            "normal_coverage_same_replicates": 0.921,
+            "zero_width_count": 0,
+            "normal_unavailable_count": 0
+          }
+        }
+      },
+      "realized_censor_fraction": 0.6020399999999999
+    },
+    {
+      "scenario": {
+        "kind": "survival",
+        "n": 200,
+        "a": 0.1,
+        "censor_fraction": 0.3,
+        "censor_rate": 0.3427558835312823,
+        "bootstrap": false,
+        "id": 76
+      },
+      "truth": {
+        "value": [
+          0.01342766567820487,
+          0.03093781623583725,
+          0.06222900137789311
+        ],
+        "reference_se": [
+          1.7025783015955938e-05,
+          1.923271893450852e-05,
+          1.9183488205376044e-05
+        ],
+        "block_values": [
+          [
+            0.01361553893261026,
+            0.03110554618275101,
+            0.06220326261780145
+          ],
+          [
+            0.013456495807188948,
+            0.030894172883731533,
+            0.062173321427721355
+          ],
+          [
+            0.01333082846582619,
+            0.030924434864303265,
+            0.06219779728355072
+          ],
+          [
+            0.01338719685931833,
+            0.03091107488618888,
+            0.062130364042921785
+          ],
+          [
+            0.013401523831924682,
+            0.030992838113529143,
+            0.062227067395550235
+          ],
+          [
+            0.013433773829949711,
+            0.030917920592823413,
+            0.062166563761112445
+          ],
+          [
+            0.013417886059423229,
+            0.03093931315040983,
+            0.062181804479172105
+          ],
+          [
+            0.013481848155566417,
+            0.030961962319816596,
+            0.062273962939639126
+          ],
+          [
+            0.013346546332082938,
+            0.030783159700352287,
+            0.062242858299210606
+          ],
+          [
+            0.013424533708572437,
+            0.031000595210633596,
+            0.06240390772797224
+          ],
+          [
+            0.013443786854400567,
+            0.03101532976232902,
+            0.06232805227591423
+          ],
+          [
+            0.01339039206818614,
+            0.03090955352201501,
+            0.06227028064924165
+          ],
+          [
+            0.013458596931616986,
+            0.030837815009435516,
+            0.062225689207072485
+          ],
+          [
+            0.013395193627116444,
+            0.030944789757442314,
+            0.062176437413092915
+          ],
+          [
+            0.013494139807971402,
+            0.031000647455109824,
+            0.06233286539831125
+          ],
+          [
+            0.01336436957952321,
+            0.030865906362524797,
+            0.06212978712800521
+          ]
+        ],
+        "blocks": 16,
+        "pairs_per_block": 1048576,
+        "method": "scrambled Sobol quadrature; event and independent censoring times analytically integrated"
+      },
+      "replicates": 2000,
+      "metrics": {
+        "Delta": {
+          "estimate_mean": 0.013578503911530076,
+          "empirical_sd": 0.0032190340595357023,
+          "mean_se": 0.0034403480582018363,
+          "mean_se_over_sd": 1.068751679719119,
+          "bias": 0.000150838233325205,
+          "normal_coverage": 0.9665,
+          "coverage_mcse": 0.004023540107914917,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9665
+        },
+        "A": {
+          "estimate_mean": 0.03104458505192607,
+          "empirical_sd": 0.003139224447910295,
+          "mean_se": 0.0033213113547332566,
+          "mean_se_over_sd": 1.058003787191506,
+          "bias": 0.00010676881608882166,
+          "normal_coverage": 0.9635,
+          "coverage_mcse": 0.004193313129257102,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9635
+        },
+        "B": {
+          "estimate_mean": 0.062355622728137314,
+          "empirical_sd": 0.005874346670572172,
+          "mean_se": 0.005985000683661253,
+          "mean_se_over_sd": 1.018836820380964,
+          "bias": 0.00012662135024420207,
+          "normal_coverage": 0.953,
+          "coverage_mcse": 0.004732388403332932,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.953
+        }
+      },
+      "realized_censor_fraction": 0.29967
+    },
+    {
+      "scenario": {
+        "kind": "survival",
+        "n": 200,
+        "a": 0.1,
+        "censor_fraction": 0.6,
+        "censor_rate": 1.6742814795337992,
+        "bootstrap": true,
+        "id": 77
+      },
+      "truth": {
+        "value": [
+          0.01308486648306187,
+          0.029701425727401972,
+          0.06016957006339605
+        ],
+        "reference_se": [
+          1.6002340624413702e-05,
+          1.8093702064113853e-05,
+          2.1051388958438065e-05
+        ],
+        "block_values": [
+          [
+            0.013245306497165066,
+            0.02983734979793138,
+            0.0601231012823689
+          ],
+          [
+            0.01310170209146189,
+            0.02965470587431124,
+            0.060135386216906936
+          ],
+          [
+            0.012995736259849077,
+            0.029700862999209907,
+            0.06014661350051054
+          ],
+          [
+            0.013035179192429488,
+            0.02964920930711656,
+            0.06005712482781277
+          ],
+          [
+            0.013069274582708967,
+            0.029757519033510964,
+            0.06017660679311491
+          ],
+          [
+            0.01309335497129244,
+            0.029681494857097344,
+            0.06010033326554892
+          ],
+          [
+            0.013055548581797367,
+            0.029683026651683177,
+            0.060088356077669346
+          ],
+          [
+            0.01313047572980332,
+            0.029732956694378115,
+            0.060203004742039004
+          ],
+          [
+            0.013017585116980595,
+            0.029561555196896433,
+            0.060195085483434566
+          ],
+          [
+            0.01308315853524738,
+            0.02975739917983085,
+            0.06037197290872873
+          ],
+          [
+            0.013126150889451366,
+            0.02978641515532207,
+            0.060293467806576
+          ],
+          [
+            0.0130484950925892,
+            0.029654260393898475,
+            0.06019318529032351
+          ],
+          [
+            0.01313291237141581,
+            0.029621710738007605,
+            0.06015697221186619
+          ],
+          [
+            0.013052069020435113,
+            0.029757968896429197,
+            0.06014064978372838
+          ],
+          [
+            0.01315902320054654,
+            0.029758297639511915,
+            0.060262456465874165
+          ],
+          [
+            0.013011891595816283,
+            0.029628079223296282,
+            0.06006880435783399
+          ]
+        ],
+        "blocks": 16,
+        "pairs_per_block": 1048576,
+        "method": "scrambled Sobol quadrature; event and independent censoring times analytically integrated"
+      },
+      "replicates": 2000,
+      "metrics": {
+        "Delta": {
+          "estimate_mean": 0.013026383447476668,
+          "empirical_sd": 0.0041007268511073225,
+          "mean_se": 0.0043368889777005105,
+          "mean_se_over_sd": 1.0575903090276342,
+          "bias": -5.8483035585202986e-05,
+          "normal_coverage": 0.9645,
+          "coverage_mcse": 0.0041376170678302255,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9645,
+          "bootstrap": {
+            "replicates": 1000,
+            "resamples_requested": 999,
+            "minimum_valid_resamples": 999,
+            "percentile_coverage": 0.977,
+            "coverage_mcse": 0.004740358636221528,
+            "normal_coverage_same_replicates": 0.971,
+            "zero_width_count": 0,
+            "normal_unavailable_count": 0
+          }
+        },
+        "A": {
+          "estimate_mean": 0.029670037588601917,
+          "empirical_sd": 0.0037080115748154858,
+          "mean_se": 0.0040052172169621125,
+          "mean_se_over_sd": 1.0801522962239987,
+          "bias": -3.138813880005503e-05,
+          "normal_coverage": 0.959,
+          "coverage_mcse": 0.00443390347211123,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.959,
+          "bootstrap": {
+            "replicates": 1000,
+            "resamples_requested": 999,
+            "minimum_valid_resamples": 999,
+            "percentile_coverage": 0.983,
+            "coverage_mcse": 0.004087909000944127,
+            "normal_coverage_same_replicates": 0.97,
+            "zero_width_count": 0,
+            "normal_unavailable_count": 0
+          }
+        },
+        "B": {
+          "estimate_mean": 0.06003577153524754,
+          "empirical_sd": 0.006878807402923609,
+          "mean_se": 0.007166487694279535,
+          "mean_se_over_sd": 1.0418212452399316,
+          "bias": -0.0001337985281485085,
+          "normal_coverage": 0.9545,
+          "coverage_mcse": 0.004659922209651143,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9545,
+          "bootstrap": {
+            "replicates": 1000,
+            "resamples_requested": 999,
+            "minimum_valid_resamples": 999,
+            "percentile_coverage": 0.973,
+            "coverage_mcse": 0.005125524363418832,
+            "normal_coverage_same_replicates": 0.959,
+            "zero_width_count": 0,
+            "normal_unavailable_count": 0
+          }
+        }
+      },
+      "realized_censor_fraction": 0.59933
+    },
+    {
+      "scenario": {
+        "kind": "survival",
+        "n": 200,
+        "a": 0.5,
+        "censor_fraction": 0.3,
+        "censor_rate": 0.3427558835312823,
+        "bootstrap": false,
+        "id": 78
+      },
+      "truth": {
+        "value": [
+          0.041155569422834055,
+          0.14160955125296215,
+          0.2896877976167335
+        ],
+        "reference_se": [
+          1.593572268861722e-05,
+          2.127958643408261e-05,
+          2.7135596135693425e-05
+        ],
+        "block_values": [
+          [
+            0.04111385605962945,
+            0.1416737883294005,
+            0.28971406408147665
+          ],
+          [
+            0.041063737464061965,
+            0.1416067233554687,
+            0.28956642719840114
+          ],
+          [
+            0.04114976509573206,
+            0.14174167166390955,
+            0.2898904939283428
+          ],
+          [
+            0.04121798123068921,
+            0.14174525864662524,
+            0.28985745254366224
+          ],
+          [
+            0.04108680643635763,
+            0.14164722834397508,
+            0.2895592530912149
+          ],
+          [
+            0.041070662432060256,
+            0.14159647249150376,
+            0.2897323916858642
+          ],
+          [
+            0.04113413184090495,
+            0.1415030091202972,
+            0.2896079312776476
+          ],
+          [
+            0.041057098070487366,
+            0.14156736785456275,
+            0.2895838380129273
+          ],
+          [
+            0.04115877603667339,
+            0.14146508682587847,
+            0.2896118535486573
+          ],
+          [
+            0.04119520078396503,
+            0.14159114605539844,
+            0.2896720973896119
+          ],
+          [
+            0.041280360557328435,
+            0.14154655873173963,
+            0.28974278270635534
+          ],
+          [
+            0.04120658108318704,
+            0.14152594132148932,
+            0.28953535873243635
+          ],
+          [
+            0.041207501580792394,
+            0.14157944833719402,
+            0.28978948019386974
+          ],
+          [
+            0.041191291192478434,
+            0.1417470771614523,
+            0.28964807451319874
+          ],
+          [
+            0.041172944991451216,
+            0.14163930480885925,
+            0.2897946876765721
+          ],
+          [
+            0.041182415909546084,
+            0.14157673699964013,
+            0.2896985752874977
+          ]
+        ],
+        "blocks": 16,
+        "pairs_per_block": 1048576,
+        "method": "scrambled Sobol quadrature; event and independent censoring times analytically integrated"
+      },
+      "replicates": 2000,
+      "metrics": {
+        "Delta": {
+          "estimate_mean": 0.04130138211999906,
+          "empirical_sd": 0.01237851810469476,
+          "mean_se": 0.013083141930763216,
+          "mean_se_over_sd": 1.056923116330154,
+          "bias": 0.00014581269716500145,
+          "normal_coverage": 0.965,
+          "coverage_mcse": 0.00410944035119139,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.965
+        },
+        "A": {
+          "estimate_mean": 0.1414193490823993,
+          "empirical_sd": 0.011931603761742985,
+          "mean_se": 0.01235070112074933,
+          "mean_se_over_sd": 1.0351249812996741,
+          "bias": -0.00019020217056284205,
+          "normal_coverage": 0.951,
+          "coverage_mcse": 0.004826955562256609,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.951
+        },
+        "B": {
+          "estimate_mean": 0.2892324962748445,
+          "empirical_sd": 0.021105896264594977,
+          "mean_se": 0.02136535120178707,
+          "mean_se_over_sd": 1.0122930073160328,
+          "bias": -0.00045530134188903615,
+          "normal_coverage": 0.9485,
+          "coverage_mcse": 0.004942051699446293,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9485
+        }
+      },
+      "realized_censor_fraction": 0.29934000000000005
+    },
+    {
+      "scenario": {
+        "kind": "survival",
+        "n": 200,
+        "a": 0.5,
+        "censor_fraction": 0.6,
+        "censor_rate": 1.6742814795337992,
+        "bootstrap": true,
+        "id": 79
+      },
+      "truth": {
+        "value": [
+          0.03929142951575424,
+          0.13321157489086563,
+          0.2812974099208208
+        ],
+        "reference_se": [
+          1.6004945171779935e-05,
+          2.165045476962417e-05,
+          2.3887400311661254e-05
+        ],
+        "block_values": [
+          [
+            0.039208985533502536,
+            0.13327592276009861,
+            0.2813175947785118
+          ],
+          [
+            0.039226608002544426,
+            0.13319139771402919,
+            0.2811631570550338
+          ],
+          [
+            0.03930780521976434,
+            0.13332396794039225,
+            0.28146410453851045
+          ],
+          [
+            0.039340798690718486,
+            0.1333191893451608,
+            0.2814281180958777
+          ],
+          [
+            0.039214950562930326,
+            0.13327102100928173,
+            0.2811963264526364
+          ],
+          [
+            0.039190484084313894,
+            0.13319336801809795,
+            0.2813263334483217
+          ],
+          [
+            0.039265631215193976,
+            0.13309699099842606,
+            0.28121824274340707
+          ],
+          [
+            0.039212353213681425,
+            0.13321265723127154,
+            0.281247061852657
+          ],
+          [
+            0.03931360698140858,
+            0.13308464552091048,
+            0.28122121930404953
+          ],
+          [
+            0.03930756138343378,
+            0.13317302090655583,
+            0.28127510140055373
+          ],
+          [
+            0.03940370435246846,
+            0.13311123575469713,
+            0.28135716163347324
+          ],
+          [
+            0.03937149273602278,
+            0.1331367181882646,
+            0.2811569669210662
+          ],
+          [
+            0.03934003585464698,
+            0.13318729925033204,
+            0.2814100093614837
+          ],
+          [
+            0.0393288426179653,
+            0.13338657463149894,
+            0.2812584807804108
+          ],
+          [
+            0.039324338612606,
+            0.13324418198041746,
+            0.2813934289874156
+          ],
+          [
+            0.039305673190866565,
+            0.13317700700441523,
+            0.2813252513797237
+          ]
+        ],
+        "blocks": 16,
+        "pairs_per_block": 1048576,
+        "method": "scrambled Sobol quadrature; event and independent censoring times analytically integrated"
+      },
+      "replicates": 2000,
+      "metrics": {
+        "Delta": {
+          "estimate_mean": 0.03886363659046533,
+          "empirical_sd": 0.016472130937839335,
+          "mean_se": 0.016398451792475427,
+          "mean_se_over_sd": 0.9955270422726755,
+          "bias": -0.0004277929252889112,
+          "normal_coverage": 0.95,
+          "coverage_mcse": 0.004873397172404485,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.95,
+          "bootstrap": {
+            "replicates": 1000,
+            "resamples_requested": 999,
+            "minimum_valid_resamples": 999,
+            "percentile_coverage": 0.957,
+            "coverage_mcse": 0.006414904519944161,
+            "normal_coverage_same_replicates": 0.956,
+            "zero_width_count": 0,
+            "normal_unavailable_count": 0
+          }
+        },
+        "A": {
+          "estimate_mean": 0.13273373425212337,
+          "empirical_sd": 0.014619705653473319,
+          "mean_se": 0.01445127855319374,
+          "mean_se_over_sd": 0.9884794465585178,
+          "bias": -0.0004778406387422607,
+          "normal_coverage": 0.9415,
+          "coverage_mcse": 0.0052477495176503994,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9415,
+          "bootstrap": {
+            "replicates": 1000,
+            "resamples_requested": 999,
+            "minimum_valid_resamples": 999,
+            "percentile_coverage": 0.946,
+            "coverage_mcse": 0.0071473071852271785,
+            "normal_coverage_same_replicates": 0.936,
+            "zero_width_count": 0,
+            "normal_unavailable_count": 0
+          }
+        },
+        "B": {
+          "estimate_mean": 0.28038613795998163,
+          "empirical_sd": 0.025402955296605696,
+          "mean_se": 0.025597362332999935,
+          "mean_se_over_sd": 1.0076529299100965,
+          "bias": -0.0009112719608391773,
+          "normal_coverage": 0.9485,
+          "coverage_mcse": 0.004942051699446293,
+          "zero_se_count": 0,
+          "unavailable_count": 0,
+          "coverage_given_positive_se": 0.9485,
+          "bootstrap": {
+            "replicates": 1000,
+            "resamples_requested": 999,
+            "minimum_valid_resamples": 999,
+            "percentile_coverage": 0.954,
+            "coverage_mcse": 0.006624499981130654,
+            "normal_coverage_same_replicates": 0.946,
+            "zero_width_count": 0,
+            "normal_unavailable_count": 0
+          }
+        }
+      },
+      "realized_censor_fraction": 0.5997075
+    }
+  ]
+}

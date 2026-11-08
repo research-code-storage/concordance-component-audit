@@ -1,0 +1,36 @@
+{
+  "status": "PASS",
+  "n_training_compounds": 4,
+  "seed": 0,
+  "training_profiles": 182,
+  "device": "cuda",
+  "comparisons": [
+    {
+      "arm": "historical_centred__softplus_original",
+      "errors": {
+        "a": 4.298644773470528e-15,
+        "b": 4.0939474033052647e-16,
+        "w": 5.551115123125783e-16,
+        "objective": 8.881784197001252e-15
+      }
+    },
+    {
+      "arm": "matched_centred__softplus_original",
+      "errors": {
+        "a": 3.0427049768633196e-15,
+        "b": 1.3877787807814457e-17,
+        "w": 3.3306690738754696e-16,
+        "objective": 7.105427357601002e-15
+      }
+    },
+    {
+      "arm": "revised_origin__softplus_original",
+      "errors": {
+        "a": 4.614364446098307e-15,
+        "b": 4.996003610813204e-16,
+        "w": 1.1102230246251565e-15,
+        "objective": 7.105427357601002e-15
+      }
+    }
+  ]
+}

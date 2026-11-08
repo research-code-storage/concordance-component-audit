@@ -1,0 +1,38 @@
+{
+  "n": 20,
+  "seed": 3,
+  "steps": 1000,
+  "train_compounds": [
+    "pyraclostrobin",
+    "cyclosporin a",
+    "verapamil",
+    "chlorpromazine",
+    "lovastatin",
+    "dexamethasone",
+    "atorvastatin",
+    "fenpyroximate",
+    "cetirizine",
+    "imazalil",
+    "doxycycline",
+    "ibuprofen",
+    "lazabemide",
+    "folic acid",
+    "acrylamide",
+    "bisphenols",
+    "cyclopamine",
+    "azacitidine",
+    "misoprostol",
+    "cyanazine"
+  ],
+  "train_profiles": 1141,
+  "objective": [
+    18.94709953116732
+  ],
+  "updates": [
+    1000
+  ],
+  "best_update": [
+    999
+  ],
+  "device": "cuda"
+}

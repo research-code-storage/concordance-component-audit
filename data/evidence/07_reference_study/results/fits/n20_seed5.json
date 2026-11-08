@@ -1,0 +1,38 @@
+{
+  "n": 20,
+  "seed": 5,
+  "steps": 1000,
+  "train_compounds": [
+    "progesterone",
+    "pfos",
+    "doxycycline",
+    "phenytoin",
+    "doxorubicin",
+    "methotrexate",
+    "busulfan",
+    "thalidomide",
+    "cycloheximide",
+    "lovastatin",
+    "nilutamide",
+    "imatinib",
+    "vinclozolin",
+    "thiram",
+    "4-cumylphenol",
+    "tetrac",
+    "artesunate",
+    "dorsomorphin",
+    "butafenacil",
+    "dapt"
+  ],
+  "train_profiles": 1285,
+  "objective": [
+    22.4572584548644
+  ],
+  "updates": [
+    1000
+  ],
+  "best_update": [
+    1000
+  ],
+  "device": "cuda"
+}

@@ -1,0 +1,22 @@
+{
+  "n": 4,
+  "seed": 5,
+  "steps": 1000,
+  "train_compounds": [
+    "progesterone",
+    "pfos",
+    "vinclozolin",
+    "thiram"
+  ],
+  "train_profiles": 381,
+  "objective": [
+    22.322519157780818
+  ],
+  "updates": [
+    1000
+  ],
+  "best_update": [
+    999
+  ],
+  "device": "cuda"
+}

@@ -1,0 +1,22 @@
+{
+  "n": 4,
+  "seed": 7,
+  "steps": 1000,
+  "train_compounds": [
+    "progesterone",
+    "acitretin",
+    "azacitidine",
+    "axitinib"
+  ],
+  "train_profiles": 64,
+  "objective": [
+    8.374897554742729
+  ],
+  "updates": [
+    1000
+  ],
+  "best_update": [
+    988
+  ],
+  "device": "cuda"
+}

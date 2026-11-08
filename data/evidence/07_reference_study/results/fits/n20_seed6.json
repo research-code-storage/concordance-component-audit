@@ -1,0 +1,38 @@
+{
+  "n": 20,
+  "seed": 6,
+  "steps": 1000,
+  "train_compounds": [
+    "imatinib",
+    "atrazine",
+    "4-hydroxytamoxifen",
+    "warfarin",
+    "isotretinoin",
+    "dexamethasone",
+    "methapyrilene",
+    "cyproterone acetate",
+    "simvastatin",
+    "pfos",
+    "amiodarone",
+    "methotrexate",
+    "cyanazine",
+    "dorsomorphin",
+    "fulvestrant",
+    "misoprostol",
+    "2,5-hexanedione",
+    "triiodothyronine",
+    "thiram",
+    "digoxin"
+  ],
+  "train_profiles": 1399,
+  "objective": [
+    19.38096478284284
+  ],
+  "updates": [
+    1000
+  ],
+  "best_update": [
+    1000
+  ],
+  "device": "cuda"
+}

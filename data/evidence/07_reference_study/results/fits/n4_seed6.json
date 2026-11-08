@@ -1,0 +1,22 @@
+{
+  "n": 4,
+  "seed": 6,
+  "steps": 1000,
+  "train_compounds": [
+    "imatinib",
+    "atrazine",
+    "cyanazine",
+    "dorsomorphin"
+  ],
+  "train_profiles": 264,
+  "objective": [
+    18.69082715276815
+  ],
+  "updates": [
+    1000
+  ],
+  "best_update": [
+    1000
+  ],
+  "device": "cuda"
+}

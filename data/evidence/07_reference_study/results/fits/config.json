@@ -1,0 +1,31 @@
+{
+  "specs": [
+    {
+      "name": "balanced_origin_all__softplus_original",
+      "kind": "softplus",
+      "lambda": 0.001,
+      "wd": 0.0001,
+      "init": "positive",
+      "recipe": "balanced_origin_all"
+    }
+  ],
+  "steps": 1000,
+  "requested_counts": [
+    4,
+    20,
+    60,
+    102
+  ],
+  "requested_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ]
+}

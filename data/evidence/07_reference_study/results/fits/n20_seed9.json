@@ -1,0 +1,38 @@
+{
+  "n": 20,
+  "seed": 9,
+  "steps": 1000,
+  "train_compounds": [
+    "isotretinoin",
+    "cisplatin",
+    "atorvastatin",
+    "atrazine",
+    "lithocholic acid",
+    "acitretin",
+    "pfos",
+    "lovastatin",
+    "dexamethasone",
+    "pyraclostrobin",
+    "ibuprofen",
+    "cyproheptadine",
+    "lazabemide",
+    "iwp-2",
+    "lactofen",
+    "dorsomorphin",
+    "acrylamide",
+    "bisphenols",
+    "cladribine",
+    "bifenthrin"
+  ],
+  "train_profiles": 1339,
+  "objective": [
+    20.111404530765515
+  ],
+  "updates": [
+    1000
+  ],
+  "best_update": [
+    998
+  ],
+  "device": "cuda"
+}

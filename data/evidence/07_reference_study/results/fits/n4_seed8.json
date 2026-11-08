@@ -1,0 +1,22 @@
+{
+  "n": 4,
+  "seed": 8,
+  "steps": 1000,
+  "train_compounds": [
+    "5-fluorouracil",
+    "pyraclostrobin",
+    "dabrafenib",
+    "fulvestrant"
+  ],
+  "train_profiles": 264,
+  "objective": [
+    18.43531181391827
+  ],
+  "updates": [
+    1000
+  ],
+  "best_update": [
+    995
+  ],
+  "device": "cuda"
+}

@@ -1,0 +1,808 @@
+{
+  "replicates": 2000,
+  "bootstrap_evaluation_replicates": 1000,
+  "bootstrap_resamples": 999,
+  "master_seed": 20261009,
+  "bootstrap_master_seed": 20261010,
+  "bootstrap_selection": "first 1000 replicates of each of eight design-defined scenarios, selected before outcomes",
+  "zero_se_policy": "normal interval unavailable; counts as noncoverage in unconditional coverage; also report conditional coverage",
+  "binary_sampling": "equal fixed case/control counts; bootstrap separately within classes",
+  "survival_sampling": "iid subjects; ell=X, g=a Z; X,Z iid standard normal; event rate exp(X+0.6 Z); independent exponential censoring; observed-pair estimand",
+  "survival_bootstrap": "resample subjects; reconstruct observed comparable pairs; no refitting or IPCW estimation",
+  "truth_sobol_blocks": 16,
+  "truth_sobol_power": 20,
+  "scenarios": [
+    {
+      "kind": "binary",
+      "n": 50,
+      "a": 0.01,
+      "s": 1,
+      "geometry": "aligned",
+      "distribution": "normal",
+      "bootstrap": false,
+      "id": 0
+    },
+    {
+      "kind": "binary",
+      "n": 50,
+      "a": 0.01,
+      "s": 1,
+      "geometry": "aligned",
+      "distribution": "t3",
+      "bootstrap": false,
+      "id": 1
+    },
+    {
+      "kind": "binary",
+      "n": 50,
+      "a": 0.01,
+      "s": 1,
+      "geometry": "aligned",
+      "distribution": "rounded_normal",
+      "bootstrap": false,
+      "id": 2
+    },
+    {
+      "kind": "binary",
+      "n": 50,
+      "a": 0.01,
+      "s": 0,
+      "geometry": "independent",
+      "distribution": "normal",
+      "bootstrap": true,
+      "id": 3
+    },
+    {
+      "kind": "binary",
+      "n": 50,
+      "a": 0.01,
+      "s": 0,
+      "geometry": "independent",
+      "distribution": "t3",
+      "bootstrap": false,
+      "id": 4
+    },
+    {
+      "kind": "binary",
+      "n": 50,
+      "a": 0.01,
+      "s": 0,
+      "geometry": "independent",
+      "distribution": "rounded_normal",
+      "bootstrap": true,
+      "id": 5
+    },
+    {
+      "kind": "binary",
+      "n": 50,
+      "a": 0.01,
+      "s": -1,
+      "geometry": "opposed",
+      "distribution": "normal",
+      "bootstrap": false,
+      "id": 6
+    },
+    {
+      "kind": "binary",
+      "n": 50,
+      "a": 0.01,
+      "s": -1,
+      "geometry": "opposed",
+      "distribution": "t3",
+      "bootstrap": false,
+      "id": 7
+    },
+    {
+      "kind": "binary",
+      "n": 50,
+      "a": 0.01,
+      "s": -1,
+      "geometry": "opposed",
+      "distribution": "rounded_normal",
+      "bootstrap": false,
+      "id": 8
+    },
+    {
+      "kind": "binary",
+      "n": 50,
+      "a": 0.1,
+      "s": 1,
+      "geometry": "aligned",
+      "distribution": "normal",
+      "bootstrap": false,
+      "id": 9
+    },
+    {
+      "kind": "binary",
+      "n": 50,
+      "a": 0.1,
+      "s": 1,
+      "geometry": "aligned",
+      "distribution": "t3",
+      "bootstrap": false,
+      "id": 10
+    },
+    {
+      "kind": "binary",
+      "n": 50,
+      "a": 0.1,
+      "s": 1,
+      "geometry": "aligned",
+      "distribution": "rounded_normal",
+      "bootstrap": false,
+      "id": 11
+    },
+    {
+      "kind": "binary",
+      "n": 50,
+      "a": 0.1,
+      "s": 0,
+      "geometry": "independent",
+      "distribution": "normal",
+      "bootstrap": false,
+      "id": 12
+    },
+    {
+      "kind": "binary",
+      "n": 50,
+      "a": 0.1,
+      "s": 0,
+      "geometry": "independent",
+      "distribution": "t3",
+      "bootstrap": false,
+      "id": 13
+    },
+    {
+      "kind": "binary",
+      "n": 50,
+      "a": 0.1,
+      "s": 0,
+      "geometry": "independent",
+      "distribution": "rounded_normal",
+      "bootstrap": false,
+      "id": 14
+    },
+    {
+      "kind": "binary",
+      "n": 50,
+      "a": 0.1,
+      "s": -1,
+      "geometry": "opposed",
+      "distribution": "normal",
+      "bootstrap": false,
+      "id": 15
+    },
+    {
+      "kind": "binary",
+      "n": 50,
+      "a": 0.1,
+      "s": -1,
+      "geometry": "opposed",
+      "distribution": "t3",
+      "bootstrap": false,
+      "id": 16
+    },
+    {
+      "kind": "binary",
+      "n": 50,
+      "a": 0.1,
+      "s": -1,
+      "geometry": "opposed",
+      "distribution": "rounded_normal",
+      "bootstrap": false,
+      "id": 17
+    },
+    {
+      "kind": "binary",
+      "n": 50,
+      "a": 0.5,
+      "s": 1,
+      "geometry": "aligned",
+      "distribution": "normal",
+      "bootstrap": false,
+      "id": 18
+    },
+    {
+      "kind": "binary",
+      "n": 50,
+      "a": 0.5,
+      "s": 1,
+      "geometry": "aligned",
+      "distribution": "t3",
+      "bootstrap": false,
+      "id": 19
+    },
+    {
+      "kind": "binary",
+      "n": 50,
+      "a": 0.5,
+      "s": 1,
+      "geometry": "aligned",
+      "distribution": "rounded_normal",
+      "bootstrap": false,
+      "id": 20
+    },
+    {
+      "kind": "binary",
+      "n": 50,
+      "a": 0.5,
+      "s": 0,
+      "geometry": "independent",
+      "distribution": "normal",
+      "bootstrap": false,
+      "id": 21
+    },
+    {
+      "kind": "binary",
+      "n": 50,
+      "a": 0.5,
+      "s": 0,
+      "geometry": "independent",
+      "distribution": "t3",
+      "bootstrap": false,
+      "id": 22
+    },
+    {
+      "kind": "binary",
+      "n": 50,
+      "a": 0.5,
+      "s": 0,
+      "geometry": "independent",
+      "distribution": "rounded_normal",
+      "bootstrap": false,
+      "id": 23
+    },
+    {
+      "kind": "binary",
+      "n": 50,
+      "a": 0.5,
+      "s": -1,
+      "geometry": "opposed",
+      "distribution": "normal",
+      "bootstrap": false,
+      "id": 24
+    },
+    {
+      "kind": "binary",
+      "n": 50,
+      "a": 0.5,
+      "s": -1,
+      "geometry": "opposed",
+      "distribution": "t3",
+      "bootstrap": false,
+      "id": 25
+    },
+    {
+      "kind": "binary",
+      "n": 50,
+      "a": 0.5,
+      "s": -1,
+      "geometry": "opposed",
+      "distribution": "rounded_normal",
+      "bootstrap": false,
+      "id": 26
+    },
+    {
+      "kind": "binary",
+      "n": 50,
+      "a": 1.0,
+      "s": 1,
+      "geometry": "aligned",
+      "distribution": "normal",
+      "bootstrap": false,
+      "id": 27
+    },
+    {
+      "kind": "binary",
+      "n": 50,
+      "a": 1.0,
+      "s": 1,
+      "geometry": "aligned",
+      "distribution": "t3",
+      "bootstrap": false,
+      "id": 28
+    },
+    {
+      "kind": "binary",
+      "n": 50,
+      "a": 1.0,
+      "s": 1,
+      "geometry": "aligned",
+      "distribution": "rounded_normal",
+      "bootstrap": false,
+      "id": 29
+    },
+    {
+      "kind": "binary",
+      "n": 50,
+      "a": 1.0,
+      "s": 0,
+      "geometry": "independent",
+      "distribution": "normal",
+      "bootstrap": false,
+      "id": 30
+    },
+    {
+      "kind": "binary",
+      "n": 50,
+      "a": 1.0,
+      "s": 0,
+      "geometry": "independent",
+      "distribution": "t3",
+      "bootstrap": false,
+      "id": 31
+    },
+    {
+      "kind": "binary",
+      "n": 50,
+      "a": 1.0,
+      "s": 0,
+      "geometry": "independent",
+      "distribution": "rounded_normal",
+      "bootstrap": false,
+      "id": 32
+    },
+    {
+      "kind": "binary",
+      "n": 50,
+      "a": 1.0,
+      "s": -1,
+      "geometry": "opposed",
+      "distribution": "normal",
+      "bootstrap": false,
+      "id": 33
+    },
+    {
+      "kind": "binary",
+      "n": 50,
+      "a": 1.0,
+      "s": -1,
+      "geometry": "opposed",
+      "distribution": "t3",
+      "bootstrap": false,
+      "id": 34
+    },
+    {
+      "kind": "binary",
+      "n": 50,
+      "a": 1.0,
+      "s": -1,
+      "geometry": "opposed",
+      "distribution": "rounded_normal",
+      "bootstrap": false,
+      "id": 35
+    },
+    {
+      "kind": "binary",
+      "n": 200,
+      "a": 0.01,
+      "s": 1,
+      "geometry": "aligned",
+      "distribution": "normal",
+      "bootstrap": false,
+      "id": 36
+    },
+    {
+      "kind": "binary",
+      "n": 200,
+      "a": 0.01,
+      "s": 1,
+      "geometry": "aligned",
+      "distribution": "t3",
+      "bootstrap": false,
+      "id": 37
+    },
+    {
+      "kind": "binary",
+      "n": 200,
+      "a": 0.01,
+      "s": 1,
+      "geometry": "aligned",
+      "distribution": "rounded_normal",
+      "bootstrap": false,
+      "id": 38
+    },
+    {
+      "kind": "binary",
+      "n": 200,
+      "a": 0.01,
+      "s": 0,
+      "geometry": "independent",
+      "distribution": "normal",
+      "bootstrap": true,
+      "id": 39
+    },
+    {
+      "kind": "binary",
+      "n": 200,
+      "a": 0.01,
+      "s": 0,
+      "geometry": "independent",
+      "distribution": "t3",
+      "bootstrap": false,
+      "id": 40
+    },
+    {
+      "kind": "binary",
+      "n": 200,
+      "a": 0.01,
+      "s": 0,
+      "geometry": "independent",
+      "distribution": "rounded_normal",
+      "bootstrap": true,
+      "id": 41
+    },
+    {
+      "kind": "binary",
+      "n": 200,
+      "a": 0.01,
+      "s": -1,
+      "geometry": "opposed",
+      "distribution": "normal",
+      "bootstrap": false,
+      "id": 42
+    },
+    {
+      "kind": "binary",
+      "n": 200,
+      "a": 0.01,
+      "s": -1,
+      "geometry": "opposed",
+      "distribution": "t3",
+      "bootstrap": false,
+      "id": 43
+    },
+    {
+      "kind": "binary",
+      "n": 200,
+      "a": 0.01,
+      "s": -1,
+      "geometry": "opposed",
+      "distribution": "rounded_normal",
+      "bootstrap": false,
+      "id": 44
+    },
+    {
+      "kind": "binary",
+      "n": 200,
+      "a": 0.1,
+      "s": 1,
+      "geometry": "aligned",
+      "distribution": "normal",
+      "bootstrap": false,
+      "id": 45
+    },
+    {
+      "kind": "binary",
+      "n": 200,
+      "a": 0.1,
+      "s": 1,
+      "geometry": "aligned",
+      "distribution": "t3",
+      "bootstrap": false,
+      "id": 46
+    },
+    {
+      "kind": "binary",
+      "n": 200,
+      "a": 0.1,
+      "s": 1,
+      "geometry": "aligned",
+      "distribution": "rounded_normal",
+      "bootstrap": false,
+      "id": 47
+    },
+    {
+      "kind": "binary",
+      "n": 200,
+      "a": 0.1,
+      "s": 0,
+      "geometry": "independent",
+      "distribution": "normal",
+      "bootstrap": false,
+      "id": 48
+    },
+    {
+      "kind": "binary",
+      "n": 200,
+      "a": 0.1,
+      "s": 0,
+      "geometry": "independent",
+      "distribution": "t3",
+      "bootstrap": false,
+      "id": 49
+    },
+    {
+      "kind": "binary",
+      "n": 200,
+      "a": 0.1,
+      "s": 0,
+      "geometry": "independent",
+      "distribution": "rounded_normal",
+      "bootstrap": false,
+      "id": 50
+    },
+    {
+      "kind": "binary",
+      "n": 200,
+      "a": 0.1,
+      "s": -1,
+      "geometry": "opposed",
+      "distribution": "normal",
+      "bootstrap": false,
+      "id": 51
+    },
+    {
+      "kind": "binary",
+      "n": 200,
+      "a": 0.1,
+      "s": -1,
+      "geometry": "opposed",
+      "distribution": "t3",
+      "bootstrap": false,
+      "id": 52
+    },
+    {
+      "kind": "binary",
+      "n": 200,
+      "a": 0.1,
+      "s": -1,
+      "geometry": "opposed",
+      "distribution": "rounded_normal",
+      "bootstrap": false,
+      "id": 53
+    },
+    {
+      "kind": "binary",
+      "n": 200,
+      "a": 0.5,
+      "s": 1,
+      "geometry": "aligned",
+      "distribution": "normal",
+      "bootstrap": false,
+      "id": 54
+    },
+    {
+      "kind": "binary",
+      "n": 200,
+      "a": 0.5,
+      "s": 1,
+      "geometry": "aligned",
+      "distribution": "t3",
+      "bootstrap": false,
+      "id": 55
+    },
+    {
+      "kind": "binary",
+      "n": 200,
+      "a": 0.5,
+      "s": 1,
+      "geometry": "aligned",
+      "distribution": "rounded_normal",
+      "bootstrap": false,
+      "id": 56
+    },
+    {
+      "kind": "binary",
+      "n": 200,
+      "a": 0.5,
+      "s": 0,
+      "geometry": "independent",
+      "distribution": "normal",
+      "bootstrap": false,
+      "id": 57
+    },
+    {
+      "kind": "binary",
+      "n": 200,
+      "a": 0.5,
+      "s": 0,
+      "geometry": "independent",
+      "distribution": "t3",
+      "bootstrap": false,
+      "id": 58
+    },
+    {
+      "kind": "binary",
+      "n": 200,
+      "a": 0.5,
+      "s": 0,
+      "geometry": "independent",
+      "distribution": "rounded_normal",
+      "bootstrap": false,
+      "id": 59
+    },
+    {
+      "kind": "binary",
+      "n": 200,
+      "a": 0.5,
+      "s": -1,
+      "geometry": "opposed",
+      "distribution": "normal",
+      "bootstrap": false,
+      "id": 60
+    },
+    {
+      "kind": "binary",
+      "n": 200,
+      "a": 0.5,
+      "s": -1,
+      "geometry": "opposed",
+      "distribution": "t3",
+      "bootstrap": false,
+      "id": 61
+    },
+    {
+      "kind": "binary",
+      "n": 200,
+      "a": 0.5,
+      "s": -1,
+      "geometry": "opposed",
+      "distribution": "rounded_normal",
+      "bootstrap": false,
+      "id": 62
+    },
+    {
+      "kind": "binary",
+      "n": 200,
+      "a": 1.0,
+      "s": 1,
+      "geometry": "aligned",
+      "distribution": "normal",
+      "bootstrap": false,
+      "id": 63
+    },
+    {
+      "kind": "binary",
+      "n": 200,
+      "a": 1.0,
+      "s": 1,
+      "geometry": "aligned",
+      "distribution": "t3",
+      "bootstrap": false,
+      "id": 64
+    },
+    {
+      "kind": "binary",
+      "n": 200,
+      "a": 1.0,
+      "s": 1,
+      "geometry": "aligned",
+      "distribution": "rounded_normal",
+      "bootstrap": false,
+      "id": 65
+    },
+    {
+      "kind": "binary",
+      "n": 200,
+      "a": 1.0,
+      "s": 0,
+      "geometry": "independent",
+      "distribution": "normal",
+      "bootstrap": false,
+      "id": 66
+    },
+    {
+      "kind": "binary",
+      "n": 200,
+      "a": 1.0,
+      "s": 0,
+      "geometry": "independent",
+      "distribution": "t3",
+      "bootstrap": false,
+      "id": 67
+    },
+    {
+      "kind": "binary",
+      "n": 200,
+      "a": 1.0,
+      "s": 0,
+      "geometry": "independent",
+      "distribution": "rounded_normal",
+      "bootstrap": false,
+      "id": 68
+    },
+    {
+      "kind": "binary",
+      "n": 200,
+      "a": 1.0,
+      "s": -1,
+      "geometry": "opposed",
+      "distribution": "normal",
+      "bootstrap": false,
+      "id": 69
+    },
+    {
+      "kind": "binary",
+      "n": 200,
+      "a": 1.0,
+      "s": -1,
+      "geometry": "opposed",
+      "distribution": "t3",
+      "bootstrap": false,
+      "id": 70
+    },
+    {
+      "kind": "binary",
+      "n": 200,
+      "a": 1.0,
+      "s": -1,
+      "geometry": "opposed",
+      "distribution": "rounded_normal",
+      "bootstrap": false,
+      "id": 71
+    },
+    {
+      "kind": "survival",
+      "n": 50,
+      "a": 0.1,
+      "censor_fraction": 0.3,
+      "censor_rate": 0.3427558835312823,
+      "bootstrap": false,
+      "id": 72
+    },
+    {
+      "kind": "survival",
+      "n": 50,
+      "a": 0.1,
+      "censor_fraction": 0.6,
+      "censor_rate": 1.6742814795337992,
+      "bootstrap": true,
+      "id": 73
+    },
+    {
+      "kind": "survival",
+      "n": 50,
+      "a": 0.5,
+      "censor_fraction": 0.3,
+      "censor_rate": 0.3427558835312823,
+      "bootstrap": false,
+      "id": 74
+    },
+    {
+      "kind": "survival",
+      "n": 50,
+      "a": 0.5,
+      "censor_fraction": 0.6,
+      "censor_rate": 1.6742814795337992,
+      "bootstrap": true,
+      "id": 75
+    },
+    {
+      "kind": "survival",
+      "n": 200,
+      "a": 0.1,
+      "censor_fraction": 0.3,
+      "censor_rate": 0.3427558835312823,
+      "bootstrap": false,
+      "id": 76
+    },
+    {
+      "kind": "survival",
+      "n": 200,
+      "a": 0.1,
+      "censor_fraction": 0.6,
+      "censor_rate": 1.6742814795337992,
+      "bootstrap": true,
+      "id": 77
+    },
+    {
+      "kind": "survival",
+      "n": 200,
+      "a": 0.5,
+      "censor_fraction": 0.3,
+      "censor_rate": 0.3427558835312823,
+      "bootstrap": false,
+      "id": 78
+    },
+    {
+      "kind": "survival",
+      "n": 200,
+      "a": 0.5,
+      "censor_fraction": 0.6,
+      "censor_rate": 1.6742814795337992,
+      "bootstrap": true,
+      "id": 79
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "n": 20,
+  "seed": 2,
+  "steps": 1000,
+  "train_compounds": [
+    "lithocholic acid",
+    "4-hydroxytamoxifen",
+    "pyraclostrobin",
+    "troglitazone",
+    "dexamethasone",
+    "propiconazole",
+    "itraconazole",
+    "fenpyroximate",
+    "simvastatin",
+    "imatinib",
+    "5-fluorouracil",
+    "hydroxyurea",
+    "cyclopamine",
+    "4-nonylphenol (branched)",
+    "retinoic acid",
+    "dorsomorphin",
+    "tetrac",
+    "azacitidine",
+    "cyproconazole",
+    "cyanazine"
+  ],
+  "train_profiles": 1389,
+  "objective": [
+    22.938337529788328
+  ],
+  "updates": [
+    1000
+  ],
+  "best_update": [
+    999
+  ],
+  "device": "cuda"
+}
