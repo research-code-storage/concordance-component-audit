@@ -1,19 +1,12 @@
 #!/usr/bin/env python3
-"""Compare the deterministic certificate with a permutation-importance analogue.
+"""Compute component-score permutation and deletion comparisons.
 
-The manuscript argues that permutation importance and the contribution bound answer
-different questions.  This script shows what each one reports on the same fitted states,
-so the argument is demonstrated rather than asserted.
+For each fitted model, hold the retained score fixed, permute the component score
+across compounds, and calculate the mean concordance drop. Calculate the deletion
+bound and changed-pair counts from the same fitted decomposition.
 
-For a fitted score f = linear + kernel + b evaluated on compounds, component-score
-permutation importance is estimated as follows: permute the kernel column across
-compounds, recompute concordance, and average the drop over many permutations.  This
-breaks the observed pairing between components and evaluates recombined scores.
-It is not a permutation of raw covariates. The certificate instead bounds
-what can happen to the pairs that actually exist.
-
-Usage:  python code/permutation_contrast.py --release data/evidence [--permutations 1000]
-Writes: generated/permutation_contrast.json and table7.tex
+Usage: python code/permutation_contrast.py --release data/evidence
+Outputs: generated/permutation_contrast.json and generated/table7.tex.
 """
 from __future__ import annotations
 
@@ -125,16 +118,16 @@ def main():
         print('All 60000 permutation drops and the configuration agree with the released reference.')
 
     L = [r"\begin{table}[htbp]", r"\centering", r"\small",
-         r"\caption{Component-score permutation and the deletion certificate on the same "
-         r"fitted states, for the original Softplus readout with 60 training compounds. "
-         r"\emph{Bound} and \emph{changed pairs} are the tie-aware budget of "
+         r"\caption{Component-score permutation and the deletion bound on the same "
+         r"fitted states, for the full predictor with 60 training compounds. "
+         r"\emph{Bound} and \emph{changed pairs} are the tie-aware bound of "
          r"Proposition~\ref{prop:bound} and the pairs whose contribution actually changes "
          r"on deletion, both maxima over the ten source draws. \emph{Deletion} is the mean "
          r"signed concordance change. \emph{Permutation} is the mean drop in concordance "
          rf"when the kernel component is permuted across compounds, over {a.permutations} permutations "
          rf"per draw, and the last column is the fraction of permutations that change "
          r"concordance at all. Permutation evaluates recombined component scores; "
-         r"the certificate bounds deletion at the observed component alignment.}",
+         r"the bound controls deletion at the observed component alignment.}",
          r"\label{tab:permutation}",
          r"\begin{tabular}{llccccc}", r"\toprule",
          r"Panel & Coordinate design & Bound & Changed & Deletion & Permutation & "

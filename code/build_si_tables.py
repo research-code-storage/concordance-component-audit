@@ -6,7 +6,7 @@ from decimal_reporting import rounded
 ROOT=Path(__file__).resolve().parents[1];EV=ROOT/'data/evidence'
 PANELS={'source':'Within-source holdout','external':'DILImap','PHH':'PHH'}
 DES={'historical_centred':'Pooled, centred','matched_centred':'Matched, centred','revised_origin':'Matched, origin preserving'}
-ARM={'softplus_original':'Softplus','fixed_sum':'Fixed PPC sum','kernel_original':'Kernel only'}
+ARM={'softplus_original':'Full predictor','fixed_sum':'Fixed sum','kernel_original':'Kernel only'}
 
 def longtable(number,caption,columns,header,rows):
  head=header+r' \\'
@@ -20,7 +20,7 @@ def application_table():
     hits=[r for r in records if r['training_compounds']==60 and r['domain']==dom and r['arm']==d+'__'+arm];assert len(hits)==1;r=hits[0]
     lo,hi=r['compound_bootstrap_ci'];rows.append(f"{name} & {dname} & {aname} & {r['auc_mean']:.4f} & [{lo:.4f}, {hi:.4f}]"+r' \\')
  assert len(rows)==27
- return longtable(4,r'Discrimination for the readouts used in the component audit, with 60 training compounds. All evaluation panels and reference designs are shown; intervals are conditional compound-bootstrap 95\% intervals.',r'L{.15\linewidth}L{.27\linewidth}L{.17\linewidth}C{.11\linewidth}C{.21\linewidth}',r'Panel & Coordinates & Readout & Mean AUC & 95\% CI',rows)
+ return longtable(4,'Discrimination of the prediction scores used in the component analysis, with 60 training compounds. All evaluation panels and reference designs are shown; intervals are conditional compound-bootstrap 95\\% intervals.',r'L{.15\linewidth}L{.27\linewidth}L{.17\linewidth}C{.11\linewidth}C{.21\linewidth}',r'Panel & Coordinates & Score & Mean AUC & 95\% CI',rows)
 
 def rank_table():
  records=list(csv.DictReader((ROOT/'generated/theory_replay/complete_rank_diagnostics.csv').open()));rows=[]
@@ -31,7 +31,7 @@ def rank_table():
    ids,inv,n=np.unique(z['compound'],return_inverse=True,return_counts=True);full=np.bincount(inv,z['full'][:,j])/n;lin=np.bincount(inv,z['linear'][:,j])/n
    a,b=np.triu_indices(len(ids),1);counts.append(int(np.sum(np.sign(full[a]-full[b])!=np.sign(lin[a]-lin[b]))))
   rows.append(f'{name} & {len(a)} & {min(fixed)}--{max(fixed)} & {min(counts)}--{max(counts)}'+r' \\')
- return longtable(7,'Complete-rank differences from the matched-centred Softplus score, over all unordered compound pairs and ten source draws. Fixed sum uses the unfitted coordinate sum; kernel deletion retains the fitted linear coefficients.','lccc','Panel & All pairs & Fixed sum & Kernel deletion',rows)
+ return longtable(7,'Complete-rank differences from the matched-centred full predictor, over all unordered compound pairs and ten source draws. Fixed sum uses the unfitted coordinate sum; kernel deletion retains the fitted linear coefficients.','lccc','Panel & All pairs & Fixed sum & Kernel deletion',rows)
 
 def generated_rows(name):
  """Data rows of a generated publication table (generated/<name>)."""
@@ -42,8 +42,8 @@ def generated_rows(name):
  return rows
 
 def certificate_tables():
- text=longtable(5,r'Kernel-deletion contribution bounds for the original Softplus fits with 60 training compounds, for every evaluation panel and coordinate design. Ranges span ten source draws. Vulnerable pairs use the inclusive count $V_\omega$; the maximum bound uses the tie-aware form $B_\omega$ of main-text Proposition~1. The budget is deterministic for the observed pairs and is not a population confidence limit.','llcccc','Panel & Coordinate design & Pairs & Actual changes & Vulnerable pairs & Maximum bound',generated_rows('table2.tex'))
- text+='\n\n'+longtable(6,r'Component-score permutation and the deletion certificate on the same fitted states, for the original Softplus readout with 60 training compounds. \emph{Bound} and \emph{changed} are the tie-aware budget of main-text Proposition~1 and the pairs whose contribution actually changes on deletion, both maxima over the ten source draws. \emph{Deletion} is the mean signed concordance change. \emph{Permutation} is the mean drop in concordance when the kernel component is permuted across compounds, over 1000 permutations per draw, and the last column is the fraction of permutations that change concordance at all. Permutation evaluates recombined component scores; the certificate bounds deletion at the observed component alignment.','llccccc','Panel & Coordinate design & Bound & Changed & Deletion & Permutation & Nonzero',generated_rows('table7.tex'))
+ text=longtable(5,'Kernel-deletion bounds for the original full-predictor fits with 60 training compounds, for every evaluation panel and coordinate design. Ranges span ten source draws. Flagged-pair counts use the inclusive screen defining $V_\\omega$; the maximum bound uses the tie-aware form $B_\\omega$ of main-text Proposition~1 on the observed pairs.','llcccc','Panel & Coordinate design & Pairs & Actual changes & Flagged pairs & Maximum $B_\omega$',generated_rows('table2.tex'))
+ text+='\n\n'+longtable(6,'Component-score permutation and the deletion bound on the same fitted states, for the original full predictor with 60 training compounds. $B_\\omega$ and \\emph{changed} are the tie-aware bound of main-text Proposition~1 and the pairs whose contribution actually changes on deletion, both maxima over the ten source draws. \\emph{Deletion} is the mean net concordance change $\\Delta$, calculated as full minus retained concordance. \\emph{Permutation} is the mean drop in concordance when the kernel component is permuted across compounds, over 1000 permutations per draw, and the last column is the fraction of permutations that change concordance at all.','llccccc','Panel & Coordinate design & $B_\omega$ & Changed & Deletion & Permutation & Nonzero',generated_rows('table7.tex'))
  return text
 
 def refit_tables():
@@ -60,7 +60,7 @@ def refit_tables():
   if rows:rows.append(r'\addlinespace')
   rows.append(f"{label} & Same fit & {coef(d['same_fit_coefficients'])} & {d['concordance_same_fit']:.4f} & {d['net_change_same_fit']:.4f} & {d['movement_same_fit']:.4f} & {s['strict_reversals']} & {s['tie_transitions']} & -- "+r'\\')
   rows.append(f" & Refit & {coef(d['refit_coefficients'])} & {d['concordance_refit']:.4f} & {d['net_change_refit']:.4f} & {d['movement_refit']:.4f} & {d['strict_reversals_refit']} & {d['tie_transitions_refit']} & {d['same_fit_versus_refit_changed_pairs']} "+r'\\')
- text=longtable(12,r'Same-fit deletion and refitted reduced Cox models in the lung-cancer illustration, on the 1653 comparable pairs of the 69 held-out patients. Coefficients refer to training-standardized covariates. Same-fit rows keep the coefficients of the full fit; refit rows refit the reduced model on the same 158 training patients. $C$ is the concordance of the reduced score, $\Delta$ and $A_\omega$ its net change and movement from the full score. Reversals and ties count strict sign changes and tie transitions from the full score; \emph{Changed} counts comparable pairs that the same-fit and refitted reduced scores order differently. The certificate $B_\omega$ applies to the same-fit decomposition only.',r'llL{.22\linewidth}rrrrrr',r'Deleted & Reduced model & Coefficients & $C$ & $\Delta$ & $A_\omega$ & Reversals & Ties & Changed',rows)
+ text=longtable(12,'Same-fit and refitted reduced Cox models: 1653 comparable pairs from 69 held-out patients. Coefficients use training-standardized covariates. $C$ is reduced-score concordance; $\\Delta$ and $A_\\omega$ compare it with the full score. Reversals and ties count strict sign changes and tie transitions. \\emph{Changed} compares the two reduced-score orderings. $B_\\omega$ is reported for the same-fit decomposition.',r'llL{.22\linewidth}rrrrrr',r'Deleted & Reduced model & Coefficients & $C$ & $\Delta$ & $A_\omega$ & Reversals & Ties & Changed',rows)
  b=r['bootstrap'];iv=lambda o:'['+sgn(o['lower'])+', '+sgn(o['upper'])+']'
  rows=[]
  for key,label in (('delete_age_sex','Age and sex'),('delete_ecog','ECOG')):

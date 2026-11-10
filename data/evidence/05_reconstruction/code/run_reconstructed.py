@@ -5,14 +5,14 @@ import argparse,json,time,hashlib,sys
 import numpy as np,pandas as pd,torch
 from sklearn.preprocessing import StandardScaler
 from reconstructed_features import *
-sys.path.insert(0,str(ROOT/'01_code/11_legacy_review'))
-from original_fit import fit_original,arms
+sys.path.insert(0,str(ROOT/'01_code/model_fitting'))
+from additive_fit import fit_additive,arms
 from data import aggregate
 from core import rbf,objective,rank_audit
 
 def input_identity():
     files=[BASE/'protocol.json',BASE/'assets/pathways_54.gmt',Path(__file__),
-           BASE/'code/reconstructed_features.py',ROOT/'01_code/11_legacy_review/original_fit.py',
+           BASE/'code/reconstructed_features.py',ROOT/'01_code/model_fitting/additive_fit.py',
            ROOT/'01_code/10_extension/core.py',ROOT/'01_code/10_extension/data.py']
     files += [BASE/f'data/{name}_{part}.csv'for name in ['mhedili','dilimap']for part in ['metadata','pathways','embeddings']]
     hashes={str(f.relative_to(ROOT)).replace('\\','/'):hashlib.sha256(f.read_bytes()).hexdigest()for f in files}
@@ -50,7 +50,7 @@ def run(output,training_counts=(60,),seeds=tuple(range(10))):
             y=s.labels.values[mask];sg=StandardScaler().fit(s.loc[mask,GF]);G=sg.transform(s.loc[mask,GF]);K=rbf(G,G,1/1536)
             assets={d:fit_coordinates(s,origin[d]['source'],selected,d)for d in designs};B={d:{name:transform(f,origin[d][name],assets[d])for name,f in domains.items()}for d in designs}
             scalers={d:StandardScaler().fit(B[d]['source'][mask])for d in designs};P=np.array([scalers[a['design']].transform(B[a['design']]['source'][mask])for a in specs])
-            fit=fit_original(K,P,y,specs);np.savez_compressed(output/f'n{n}_seed{seed}_state.npz',a=fit['a'],b=fit['b'],w=fit['w'],raw_parameters=fit['raw_parameters'],embedding_mean=sg.mean_,embedding_scale=sg.scale_,train_ids=s.sample_id[mask].to_numpy(str),arm_names=np.array(names))
+            fit=fit_additive(K,P,y,specs);np.savez_compressed(output/f'n{n}_seed{seed}_state.npz',a=fit['a'],b=fit['b'],w=fit['w'],raw_parameters=fit['raw_parameters'],embedding_mean=sg.mean_,embedding_scale=sg.scale_,train_ids=s.sample_id[mask].to_numpy(str),arm_names=np.array(names))
             rec={'n_training_compounds':n,'seed':seed,'protocol_sha256':ph,'run_identity':identity,'fitting_device':fit['device'],'train_compounds':selected.tolist(),'n_training_profiles':int(mask.sum()),'coordinate_assets':assets,'coordinate_scalers':{d:{'mean':scalers[d].mean_.tolist(),'scale':scalers[d].scale_.tolist()}for d in designs},'objective':fit['objective'].tolist(),'updates':fit['updates'].tolist(),'best_updates':fit['best_update'].tolist(),'domains':{}}
             for name,f in domains.items():
                 ff=f.loc[masks[name]];ke=rbf(sg.transform(ff[GF]),G,1/1536);ker=ke@fit['a'];lin=[]

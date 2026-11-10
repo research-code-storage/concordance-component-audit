@@ -1,7 +1,7 @@
 [
   {
     "id": "clinical.n_patients",
-    "location": "Section 3.2; Table 4",
+    "location": "Section 4.1; Table 3",
     "output": "generated/survival_example.json",
     "field": [
       "n_patients"
@@ -11,7 +11,7 @@
   },
   {
     "id": "clinical.n_comparable_pairs",
-    "location": "Section 3.2; Table 4",
+    "location": "Section 4.1; Table 3",
     "output": "generated/survival_example.json",
     "field": [
       "n_comparable_pairs"
@@ -21,7 +21,7 @@
   },
   {
     "id": "clinical.concordance_full",
-    "location": "Section 3.2; Table 4",
+    "location": "Section 4.1; Table 3",
     "output": "generated/survival_example.json",
     "field": [
       "concordance_full"
@@ -31,7 +31,7 @@
   },
   {
     "id": "clinical.delete_age_sex.concordance_retained",
-    "location": "Section 3.2; Table 4; SI J",
+    "location": "Section 4.1; Table 3; SI J",
     "output": "generated/survival_example.json",
     "field": [
       "delete_age_sex",
@@ -42,7 +42,7 @@
   },
   {
     "id": "clinical.delete_age_sex.net_change",
-    "location": "Section 3.2; Table 4; SI J",
+    "location": "Section 4.1; Table 3; SI J",
     "output": "generated/survival_example.json",
     "field": [
       "delete_age_sex",
@@ -53,7 +53,7 @@
   },
   {
     "id": "clinical.delete_age_sex.mean_absolute_pair_change",
-    "location": "Section 3.2; Table 4; SI J",
+    "location": "Section 4.1; Table 3; SI J",
     "output": "generated/survival_example.json",
     "field": [
       "delete_age_sex",
@@ -64,7 +64,7 @@
   },
   {
     "id": "clinical.delete_age_sex.tie_aware_bound",
-    "location": "Section 3.2; Table 4; SI J",
+    "location": "Section 4.1; Table 3; SI J",
     "output": "generated/survival_example.json",
     "field": [
       "delete_age_sex",
@@ -75,7 +75,7 @@
   },
   {
     "id": "clinical.delete_age_sex.strict_reversals",
-    "location": "Section 3.2; Table 4; SI J",
+    "location": "Section 4.1; Table 3; SI J",
     "output": "generated/survival_example.json",
     "field": [
       "delete_age_sex",
@@ -86,7 +86,7 @@
   },
   {
     "id": "clinical.delete_age_sex.tie_transitions",
-    "location": "Section 3.2; Table 4; SI J",
+    "location": "Section 4.1; Table 3; SI J",
     "output": "generated/survival_example.json",
     "field": [
       "delete_age_sex",
@@ -97,7 +97,7 @@
   },
   {
     "id": "clinical.delete_age_sex.changed_pairs",
-    "location": "Section 3.2; Table 4; SI J",
+    "location": "Section 4.1; Table 3; SI J",
     "output": "generated/survival_example.json",
     "field": [
       "delete_age_sex",
@@ -108,7 +108,7 @@
   },
   {
     "id": "clinical.delete_age_sex.reinforced_untied_pairs",
-    "location": "Section 3.2; Table 4; SI J",
+    "location": "Section 4.1; Table 3; SI J",
     "output": "generated/survival_example.json",
     "field": [
       "delete_age_sex",
@@ -119,7 +119,7 @@
   },
   {
     "id": "clinical.delete_age_sex.opposed_untied_pairs",
-    "location": "Section 3.2; Table 4; SI J",
+    "location": "Section 4.1; Table 3; SI J",
     "output": "generated/survival_example.json",
     "field": [
       "delete_age_sex",
@@ -130,7 +130,7 @@
   },
   {
     "id": "clinical.bootstrap.delete_age_sex.net_change_same_fit.lower",
-    "location": "Section 3.2; Table S13",
+    "location": "Section 4.1; Table S13",
     "output": "generated/survival_refit.json",
     "field": [
       "delete_age_sex",
@@ -143,7 +143,7 @@
   },
   {
     "id": "clinical.bootstrap.delete_age_sex.net_change_same_fit.upper",
-    "location": "Section 3.2; Table S13",
+    "location": "Section 4.1; Table S13",
     "output": "generated/survival_refit.json",
     "field": [
       "delete_age_sex",
@@ -156,7 +156,7 @@
   },
   {
     "id": "clinical.bootstrap.delete_age_sex.movement_same_fit.lower",
-    "location": "Section 3.2; Table S13",
+    "location": "Section 4.1; Table S13",
     "output": "generated/survival_refit.json",
     "field": [
       "delete_age_sex",
@@ -169,7 +169,7 @@
   },
   {
     "id": "clinical.bootstrap.delete_age_sex.movement_same_fit.upper",
-    "location": "Section 3.2; Table S13",
+    "location": "Section 4.1; Table S13",
     "output": "generated/survival_refit.json",
     "field": [
       "delete_age_sex",
@@ -182,7 +182,7 @@
   },
   {
     "id": "clinical.bootstrap.delete_age_sex.movement_refit.lower",
-    "location": "Section 3.2; Table S13",
+    "location": "Section 4.1; Table S13",
     "output": "generated/survival_refit.json",
     "field": [
       "delete_age_sex",
@@ -195,7 +195,7 @@
   },
   {
     "id": "clinical.bootstrap.delete_age_sex.movement_refit.upper",
-    "location": "Section 3.2; Table S13",
+    "location": "Section 4.1; Table S13",
     "output": "generated/survival_refit.json",
     "field": [
       "delete_age_sex",
@@ -208,7 +208,7 @@
   },
   {
     "id": "clinical.delete_ecog.concordance_retained",
-    "location": "Section 3.2; Table 4; SI J",
+    "location": "Section 4.1; Table 3; SI J",
     "output": "generated/survival_example.json",
     "field": [
       "delete_ecog",
@@ -219,7 +219,7 @@
   },
   {
     "id": "clinical.delete_ecog.net_change",
-    "location": "Section 3.2; Table 4; SI J",
+    "location": "Section 4.1; Table 3; SI J",
     "output": "generated/survival_example.json",
     "field": [
       "delete_ecog",
@@ -230,7 +230,7 @@
   },
   {
     "id": "clinical.delete_ecog.mean_absolute_pair_change",
-    "location": "Section 3.2; Table 4; SI J",
+    "location": "Section 4.1; Table 3; SI J",
     "output": "generated/survival_example.json",
     "field": [
       "delete_ecog",
@@ -241,7 +241,7 @@
   },
   {
     "id": "clinical.delete_ecog.tie_aware_bound",
-    "location": "Section 3.2; Table 4; SI J",
+    "location": "Section 4.1; Table 3; SI J",
     "output": "generated/survival_example.json",
     "field": [
       "delete_ecog",
@@ -252,7 +252,7 @@
   },
   {
     "id": "clinical.delete_ecog.strict_reversals",
-    "location": "Section 3.2; Table 4; SI J",
+    "location": "Section 4.1; Table 3; SI J",
     "output": "generated/survival_example.json",
     "field": [
       "delete_ecog",
@@ -263,7 +263,7 @@
   },
   {
     "id": "clinical.delete_ecog.tie_transitions",
-    "location": "Section 3.2; Table 4; SI J",
+    "location": "Section 4.1; Table 3; SI J",
     "output": "generated/survival_example.json",
     "field": [
       "delete_ecog",
@@ -274,7 +274,7 @@
   },
   {
     "id": "clinical.delete_ecog.changed_pairs",
-    "location": "Section 3.2; Table 4; SI J",
+    "location": "Section 4.1; Table 3; SI J",
     "output": "generated/survival_example.json",
     "field": [
       "delete_ecog",
@@ -285,7 +285,7 @@
   },
   {
     "id": "clinical.delete_ecog.reinforced_untied_pairs",
-    "location": "Section 3.2; Table 4; SI J",
+    "location": "Section 4.1; Table 3; SI J",
     "output": "generated/survival_example.json",
     "field": [
       "delete_ecog",
@@ -296,7 +296,7 @@
   },
   {
     "id": "clinical.delete_ecog.opposed_untied_pairs",
-    "location": "Section 3.2; Table 4; SI J",
+    "location": "Section 4.1; Table 3; SI J",
     "output": "generated/survival_example.json",
     "field": [
       "delete_ecog",
@@ -307,7 +307,7 @@
   },
   {
     "id": "clinical.bootstrap.delete_ecog.net_change_same_fit.lower",
-    "location": "Section 3.2; Table S13",
+    "location": "Section 4.1; Table S13",
     "output": "generated/survival_refit.json",
     "field": [
       "delete_ecog",
@@ -320,7 +320,7 @@
   },
   {
     "id": "clinical.bootstrap.delete_ecog.net_change_same_fit.upper",
-    "location": "Section 3.2; Table S13",
+    "location": "Section 4.1; Table S13",
     "output": "generated/survival_refit.json",
     "field": [
       "delete_ecog",
@@ -333,7 +333,7 @@
   },
   {
     "id": "clinical.bootstrap.delete_ecog.movement_same_fit.lower",
-    "location": "Section 3.2; Table S13",
+    "location": "Section 4.1; Table S13",
     "output": "generated/survival_refit.json",
     "field": [
       "delete_ecog",
@@ -346,7 +346,7 @@
   },
   {
     "id": "clinical.bootstrap.delete_ecog.movement_same_fit.upper",
-    "location": "Section 3.2; Table S13",
+    "location": "Section 4.1; Table S13",
     "output": "generated/survival_refit.json",
     "field": [
       "delete_ecog",
@@ -359,7 +359,7 @@
   },
   {
     "id": "clinical.bootstrap.delete_ecog.movement_refit.lower",
-    "location": "Section 3.2; Table S13",
+    "location": "Section 4.1; Table S13",
     "output": "generated/survival_refit.json",
     "field": [
       "delete_ecog",
@@ -372,7 +372,7 @@
   },
   {
     "id": "clinical.bootstrap.delete_ecog.movement_refit.upper",
-    "location": "Section 3.2; Table S13",
+    "location": "Section 4.1; Table S13",
     "output": "generated/survival_refit.json",
     "field": [
       "delete_ecog",
@@ -385,7 +385,7 @@
   },
   {
     "id": "simulation.aligned.net",
-    "location": "Section 3.1; Table 3",
+    "location": "Section 3; Table 2",
     "output": "generated/simulation_usefulness.json",
     "field": [
       "by",
@@ -398,7 +398,7 @@
   },
   {
     "id": "simulation.aligned.moved",
-    "location": "Section 3.1; Table 3",
+    "location": "Section 3; Table 2",
     "output": "generated/simulation_usefulness.json",
     "field": [
       "by",
@@ -411,7 +411,7 @@
   },
   {
     "id": "simulation.aligned.bound",
-    "location": "Section 3.1; Table 3",
+    "location": "Section 3; Table 2",
     "output": "generated/simulation_usefulness.json",
     "field": [
       "by",
@@ -424,7 +424,7 @@
   },
   {
     "id": "simulation.aligned.hidden",
-    "location": "Section 3.1; Table 3",
+    "location": "Section 3; Table 2",
     "output": "generated/simulation_usefulness.json",
     "field": [
       "by",
@@ -437,7 +437,7 @@
   },
   {
     "id": "simulation.aligned.slack",
-    "location": "Section 3.1; Table 3",
+    "location": "Section 3; Table 2",
     "output": "generated/simulation_usefulness.json",
     "field": [
       "by",
@@ -450,7 +450,7 @@
   },
   {
     "id": "simulation.aligned.ratio_of_means",
-    "location": "Section 3.1; Table 3",
+    "location": "Section 3; Table 2",
     "output": "generated/simulation_usefulness.json",
     "field": [
       "by",
@@ -463,7 +463,7 @@
   },
   {
     "id": "simulation.independent.net",
-    "location": "Section 3.1; Table 3",
+    "location": "Section 3; Table 2",
     "output": "generated/simulation_usefulness.json",
     "field": [
       "by",
@@ -476,7 +476,7 @@
   },
   {
     "id": "simulation.independent.moved",
-    "location": "Section 3.1; Table 3",
+    "location": "Section 3; Table 2",
     "output": "generated/simulation_usefulness.json",
     "field": [
       "by",
@@ -489,7 +489,7 @@
   },
   {
     "id": "simulation.independent.bound",
-    "location": "Section 3.1; Table 3",
+    "location": "Section 3; Table 2",
     "output": "generated/simulation_usefulness.json",
     "field": [
       "by",
@@ -502,7 +502,7 @@
   },
   {
     "id": "simulation.independent.hidden",
-    "location": "Section 3.1; Table 3",
+    "location": "Section 3; Table 2",
     "output": "generated/simulation_usefulness.json",
     "field": [
       "by",
@@ -515,7 +515,7 @@
   },
   {
     "id": "simulation.independent.slack",
-    "location": "Section 3.1; Table 3",
+    "location": "Section 3; Table 2",
     "output": "generated/simulation_usefulness.json",
     "field": [
       "by",
@@ -528,7 +528,7 @@
   },
   {
     "id": "simulation.independent.ratio_of_means",
-    "location": "Section 3.1; Table 3",
+    "location": "Section 3; Table 2",
     "output": "generated/simulation_usefulness.json",
     "field": [
       "by",
@@ -541,7 +541,7 @@
   },
   {
     "id": "simulation.opposed.net",
-    "location": "Section 3.1; Table 3",
+    "location": "Section 3; Table 2",
     "output": "generated/simulation_usefulness.json",
     "field": [
       "by",
@@ -554,7 +554,7 @@
   },
   {
     "id": "simulation.opposed.moved",
-    "location": "Section 3.1; Table 3",
+    "location": "Section 3; Table 2",
     "output": "generated/simulation_usefulness.json",
     "field": [
       "by",
@@ -567,7 +567,7 @@
   },
   {
     "id": "simulation.opposed.bound",
-    "location": "Section 3.1; Table 3",
+    "location": "Section 3; Table 2",
     "output": "generated/simulation_usefulness.json",
     "field": [
       "by",
@@ -580,7 +580,7 @@
   },
   {
     "id": "simulation.opposed.hidden",
-    "location": "Section 3.1; Table 3",
+    "location": "Section 3; Table 2",
     "output": "generated/simulation_usefulness.json",
     "field": [
       "by",
@@ -593,7 +593,7 @@
   },
   {
     "id": "simulation.opposed.slack",
-    "location": "Section 3.1; Table 3",
+    "location": "Section 3; Table 2",
     "output": "generated/simulation_usefulness.json",
     "field": [
       "by",
@@ -606,7 +606,7 @@
   },
   {
     "id": "simulation.opposed.ratio_of_means",
-    "location": "Section 3.1; Table 3",
+    "location": "Section 3; Table 2",
     "output": "generated/simulation_usefulness.json",
     "field": [
       "by",
@@ -619,7 +619,7 @@
   },
   {
     "id": "toxicogenomic.PHH.auc_mean",
-    "location": "Section 3.3; Figure 2; Tables S4-S5",
+    "location": "Section 4.2; Figure 2; Tables S4-S5",
     "output": "generated/results.json",
     "field": [
       "60|PHH|matched_centred__softplus_original",
@@ -630,7 +630,7 @@
   },
   {
     "id": "toxicogenomic.PHH.budget_max",
-    "location": "Section 3.3; Figure 2; Tables S4-S5",
+    "location": "Section 4.2; Figure 2; Tables S4-S5",
     "output": "generated/results.json",
     "field": [
       "60|PHH|matched_centred__softplus_original",
@@ -641,7 +641,7 @@
   },
   {
     "id": "toxicogenomic.PHH.changed_pairs_max",
-    "location": "Section 3.3; Figure 2; Tables S4-S5",
+    "location": "Section 4.2; Figure 2; Tables S4-S5",
     "output": "generated/results.json",
     "field": [
       "60|PHH|matched_centred__softplus_original",
@@ -652,7 +652,7 @@
   },
   {
     "id": "toxicogenomic.PHH.vulnerable_max",
-    "location": "Section 3.3; Figure 2; Tables S4-S5",
+    "location": "Section 4.2; Figure 2; Tables S4-S5",
     "output": "generated/results.json",
     "field": [
       "60|PHH|matched_centred__softplus_original",
@@ -663,7 +663,7 @@
   },
   {
     "id": "certificate.PHH.t1",
-    "location": "Section 3.3; Figure 2",
+    "location": "Section 4.2; Figure 2",
     "output": "generated/results.json",
     "field": [
       "60|PHH|matched_centred__softplus_original",
@@ -675,7 +675,7 @@
   },
   {
     "id": "certificate.PHH.t2",
-    "location": "Section 3.3; Figure 2",
+    "location": "Section 4.2; Figure 2",
     "output": "generated/results.json",
     "field": [
       "60|PHH|matched_centred__softplus_original",
@@ -687,7 +687,7 @@
   },
   {
     "id": "certificate.PHH.t4",
-    "location": "Section 3.3; Figure 2",
+    "location": "Section 4.2; Figure 2",
     "output": "generated/results.json",
     "field": [
       "60|PHH|matched_centred__softplus_original",
@@ -699,7 +699,7 @@
   },
   {
     "id": "certificate.PHH.t8",
-    "location": "Section 3.3; Figure 2",
+    "location": "Section 4.2; Figure 2",
     "output": "generated/results.json",
     "field": [
       "60|PHH|matched_centred__softplus_original",
@@ -711,7 +711,7 @@
   },
   {
     "id": "toxicogenomic.external.auc_mean",
-    "location": "Section 3.3; Figure 2; Tables S4-S5",
+    "location": "Section 4.2; Figure 2; Tables S4-S5",
     "output": "generated/results.json",
     "field": [
       "60|external|matched_centred__softplus_original",
@@ -722,7 +722,7 @@
   },
   {
     "id": "toxicogenomic.external.budget_max",
-    "location": "Section 3.3; Figure 2; Tables S4-S5",
+    "location": "Section 4.2; Figure 2; Tables S4-S5",
     "output": "generated/results.json",
     "field": [
       "60|external|matched_centred__softplus_original",
@@ -733,7 +733,7 @@
   },
   {
     "id": "toxicogenomic.external.changed_pairs_max",
-    "location": "Section 3.3; Figure 2; Tables S4-S5",
+    "location": "Section 4.2; Figure 2; Tables S4-S5",
     "output": "generated/results.json",
     "field": [
       "60|external|matched_centred__softplus_original",
@@ -744,7 +744,7 @@
   },
   {
     "id": "toxicogenomic.external.vulnerable_max",
-    "location": "Section 3.3; Figure 2; Tables S4-S5",
+    "location": "Section 4.2; Figure 2; Tables S4-S5",
     "output": "generated/results.json",
     "field": [
       "60|external|matched_centred__softplus_original",
@@ -755,7 +755,7 @@
   },
   {
     "id": "certificate.external.t1",
-    "location": "Section 3.3; Figure 2",
+    "location": "Section 4.2; Figure 2",
     "output": "generated/results.json",
     "field": [
       "60|external|matched_centred__softplus_original",
@@ -767,7 +767,7 @@
   },
   {
     "id": "certificate.external.t2",
-    "location": "Section 3.3; Figure 2",
+    "location": "Section 4.2; Figure 2",
     "output": "generated/results.json",
     "field": [
       "60|external|matched_centred__softplus_original",
@@ -779,7 +779,7 @@
   },
   {
     "id": "certificate.external.t4",
-    "location": "Section 3.3; Figure 2",
+    "location": "Section 4.2; Figure 2",
     "output": "generated/results.json",
     "field": [
       "60|external|matched_centred__softplus_original",
@@ -791,7 +791,7 @@
   },
   {
     "id": "certificate.external.t8",
-    "location": "Section 3.3; Figure 2",
+    "location": "Section 4.2; Figure 2",
     "output": "generated/results.json",
     "field": [
       "60|external|matched_centred__softplus_original",
@@ -803,7 +803,7 @@
   },
   {
     "id": "toxicogenomic.source.auc_mean",
-    "location": "Section 3.3; Figure 2; Tables S4-S5",
+    "location": "Section 4.2; Figure 2; Tables S4-S5",
     "output": "generated/results.json",
     "field": [
       "60|source|matched_centred__softplus_original",
@@ -814,7 +814,7 @@
   },
   {
     "id": "toxicogenomic.source.budget_max",
-    "location": "Section 3.3; Figure 2; Tables S4-S5",
+    "location": "Section 4.2; Figure 2; Tables S4-S5",
     "output": "generated/results.json",
     "field": [
       "60|source|matched_centred__softplus_original",
@@ -825,7 +825,7 @@
   },
   {
     "id": "toxicogenomic.source.changed_pairs_max",
-    "location": "Section 3.3; Figure 2; Tables S4-S5",
+    "location": "Section 4.2; Figure 2; Tables S4-S5",
     "output": "generated/results.json",
     "field": [
       "60|source|matched_centred__softplus_original",
@@ -836,7 +836,7 @@
   },
   {
     "id": "toxicogenomic.source.vulnerable_max",
-    "location": "Section 3.3; Figure 2; Tables S4-S5",
+    "location": "Section 4.2; Figure 2; Tables S4-S5",
     "output": "generated/results.json",
     "field": [
       "60|source|matched_centred__softplus_original",
@@ -847,7 +847,7 @@
   },
   {
     "id": "certificate.source.t1",
-    "location": "Section 3.3; Figure 2",
+    "location": "Section 4.2; Figure 2",
     "output": "generated/results.json",
     "field": [
       "60|source|matched_centred__softplus_original",
@@ -859,7 +859,7 @@
   },
   {
     "id": "certificate.source.t2",
-    "location": "Section 3.3; Figure 2",
+    "location": "Section 4.2; Figure 2",
     "output": "generated/results.json",
     "field": [
       "60|source|matched_centred__softplus_original",
@@ -871,7 +871,7 @@
   },
   {
     "id": "certificate.source.t4",
-    "location": "Section 3.3; Figure 2",
+    "location": "Section 4.2; Figure 2",
     "output": "generated/results.json",
     "field": [
       "60|source|matched_centred__softplus_original",
@@ -883,7 +883,7 @@
   },
   {
     "id": "certificate.source.t8",
-    "location": "Section 3.3; Figure 2",
+    "location": "Section 4.2; Figure 2",
     "output": "generated/results.json",
     "field": [
       "60|source|matched_centred__softplus_original",
@@ -895,7 +895,7 @@
   },
   {
     "id": "permutation.PHH.deletion_difference_mean",
-    "location": "Section 3.3; Table S6",
+    "location": "Section 4.2; Table S6",
     "output": "generated/permutation_contrast.json",
     "field": [
       "PHH|matched_centred",
@@ -906,7 +906,7 @@
   },
   {
     "id": "permutation.PHH.permutation_importance_mean",
-    "location": "Section 3.3; Table S6",
+    "location": "Section 4.2; Table S6",
     "output": "generated/permutation_contrast.json",
     "field": [
       "PHH|matched_centred",
@@ -961,7 +961,7 @@
   },
   {
     "id": "permutation.external.deletion_difference_mean",
-    "location": "Section 3.3; Table S6",
+    "location": "Section 4.2; Table S6",
     "output": "generated/permutation_contrast.json",
     "field": [
       "external|matched_centred",
@@ -972,7 +972,7 @@
   },
   {
     "id": "permutation.external.permutation_importance_mean",
-    "location": "Section 3.3; Table S6",
+    "location": "Section 4.2; Table S6",
     "output": "generated/permutation_contrast.json",
     "field": [
       "external|matched_centred",

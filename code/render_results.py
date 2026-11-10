@@ -17,7 +17,7 @@ def numeric_rows(text):
 def j(name):return json.loads((G/name).read_text())
 def main():
  out=G/'tables';out.mkdir(exist_ok=True)
- res=j('results.json');lines=[r'\begin{tabular}{llcccc}',r'\toprule','Panel & Design & Pairs & Changed & Vulnerable & B '+r'\\',r'\midrule']
+ res=j('results.json');lines=[r'\begin{tabular}{llcccc}',r'\toprule','Panel & Design & Pairs & Changed & Flagged & B '+r'\\',r'\midrule']
  for p in ['PHH','external','source']:
   label=tables.PANELS[p]
   for d,dlabel in tables.DES.items():
@@ -35,17 +35,17 @@ def main():
   for n,b in zip(nums,bs):
    allrows[f'S{n}']=numeric_rows(b.split(r'\endfoot')[-1]);(out/f'Table_S{n}.tex').write_text(b)
  allrows['S8']=numeric_rows((G/'nonlinear/table_S8.tex').read_text())
- allrows['Main3']=numeric_rows((G/'table6.tex').read_text())
- allrows['Main4']=numeric_rows((G/'clinical_summary.tex').read_text())
+ allrows['Main2']=numeric_rows((G/'table6.tex').read_text())
+ allrows['Main3']=numeric_rows((G/'clinical_summary.tex').read_text())
  cfg=json.loads((EV/'05_reconstruction/results/experiments/config.json').read_text())
- allrows['Main2']=[]
+ allrows['Main4']=[]
  for domain in ['source','external','PHH']:
   q=cfg['evaluation'][domain];r=res[f'60|{domain}|matched_centred__softplus_original']
-  allrows['Main2'].append(list(map(str,[q['profiles'],r['n_compounds'],r['n_positive'],r['n_negative'],r['n_pairs']])))
+  allrows['Main4'].append(list(map(str,[q['profiles'],r['n_compounds'],r['n_positive'],r['n_negative'],r['n_pairs']])))
  for name,rows in allrows.items():
   with (out/f'Table_{name}.csv').open('w',newline='') as f:csv.writer(f).writerows(rows)
  (G/'table_numeric_rows.json').write_text(json.dumps(allrows,indent=2))
- shutil.copy2(G/'clinical_summary.tex',out/'Table_4.tex');shutil.copy2(G/'table6.tex',out/'Table_3.tex')
+ shutil.copy2(G/'clinical_summary.tex',out/'Table_3.tex');shutil.copy2(G/'table6.tex',out/'Table_2.tex')
  shutil.copy2(G/'si_simulation_tables.tex',out/'Tables_S1_S2.tex');shutil.copy2(G/'nonlinear/table_S8.tex',out/'Table_S8.tex')
 
  plot=G/'plot_data';plot.mkdir(exist_ok=True)

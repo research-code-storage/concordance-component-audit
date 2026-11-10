@@ -6,8 +6,8 @@ from pathlib import Path
 import numpy as np,torch
 from scipy.spatial.distance import cdist
 from reconstructed_features import ROOT,BASE,GF,load,origins,transform
-sys.path.insert(0,str(ROOT/'01_code/11_legacy_review'))
-from original_fit import independent_reference
+sys.path.insert(0,str(ROOT/'01_code/model_fitting'))
+from additive_fit import independent_reference
 
 
 def main(folder,n,seed,device,output):

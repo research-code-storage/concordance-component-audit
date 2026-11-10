@@ -1,22 +1,12 @@
 #!/usr/bin/env python3
-"""Reorganise the 72-scenario simulation around when the bound is informative.
+"""Summarize movement, cancellation and bound slack in the 72-scenario simulation.
 
-Verifying that a proved inequality is never violated needs no experiment.  What an
-analyst needs to know is when the budget is tight enough to be worth computing, and what
-it detects that the net concordance change does not.  This script therefore reports, per
-scenario factor:
+The summaries include absolute net concordance change, mean absolute pairwise
+movement, the tie-aware bound, replicate-level ratios and ratios of means.
+Scenario means and Monte Carlo standard errors produce Tables S1 and S2.
 
-  net        |signed change in concordance after deleting the component|
-  moved      mean absolute per-pair contribution change
-  bound      tie-aware budget of Proposition 1
-  hidden     moved / net, how much pairwise movement the net change conceals
-  slack      bound / moved, how conservative the budget is
-
-It also summarizes every one of the 72 scenarios (means and Monte Carlo standard errors
-of |Delta|, A and B) for Supporting Information Tables S1 and S2.
-
-Usage:  python code/simulation_usefulness.py --study data/evidence
-Writes: generated/simulation_usefulness.json, table6.tex and si_simulation_tables.tex
+Usage: python code/simulation_usefulness.py --study data/evidence
+Outputs: generated/simulation_usefulness.json, table6.tex and si_simulation_tables.tex.
 """
 from __future__ import annotations
 
@@ -101,7 +91,7 @@ def main():
              for d in ("normal", "t3", "rounded_normal")]
     out["scenario_cells"] = [{"n": n, "strength": a, "component": c, "distribution": d,
                          **agg(cells[(n, a, c, d)])} for n, a, c, d in order]
-    # limits of Proposition 3 at small strengths (ratio of mean budget to mean movement)
+    # limits of Proposition 3 at small strengths (ratio of mean bound to mean movement)
     out["small_strength_ratio"] = {}
     for dist in ("normal", "t3", "rounded_normal"):
         sel = [r for r in rows if float(r["strength"]) <= 0.1 and r["distribution"] == dist]
@@ -130,12 +120,12 @@ def main():
 
     # main-text table: the component factor, which is the one that separates the regimes
     L = [r"\begin{table}[htbp]", r"\centering", r"\small",
-         r"\caption{When the contribution budget is informative. Each row averages 4800 "
+         r"\caption{Net concordance change, movement and bound across component geometries. Each row averages 4800 "
          r"replicates over the 24 scenarios sharing that component geometry, from a "
          r"$2\times4\times3\times3$ design over sample size, signal strength, component "
          r"geometry and score distribution. \emph{Net} is the absolute change in "
          r"concordance after deleting the component, \emph{moved} the mean absolute "
-         r"per-pair contribution change, \emph{bound} the tie-aware budget of "
+         r"pairwise movement, \emph{bound} the tie-aware bound of "
          r"Proposition~1. \emph{Hidden} is the mean replicate-level moved/net ratio "
          r"conditional on net$>0$ (4694, 4612 and 4689 replicates, respectively); "
          r"\emph{slack} is the mean bound/moved ratio conditional on moved$>0$ "

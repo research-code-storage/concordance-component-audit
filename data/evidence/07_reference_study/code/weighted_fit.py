@@ -6,7 +6,7 @@ def arms():
     return [{'name': 'softplus_original', 'kind': 'softplus', 'lambda': 0.001, 'wd': 0.0001, 'init': 'positive'}]
 
 
-def fit_original(K,P,y,specs=None,*,steps=1000,device=None,seed=0,caps=None):
+def fit_additive(K,P,y,specs=None,*,steps=1000,device=None,seed=0,caps=None):
     specs=specs or arms();dev=device or ('cuda'if torch.cuda.is_available()else'cpu');dtype=torch.float64
     torch.backends.cuda.matmul.allow_tf32=False;torch.manual_seed(seed)
     n=len(y);m=len(specs);Kt=torch.as_tensor(K,dtype=dtype,device=dev)
@@ -84,7 +84,7 @@ def independent_reference(K,P,y,spec,*,steps=100,seed=0,device='cpu',caps=None):
 if __name__=='__main__':
     from scipy.spatial.distance import cdist
     torch.set_num_threads(4);rng=np.random.RandomState(442);G=rng.normal(size=(36,4));K=np.exp(-.2*cdist(G,G,'sqeuclidean'));P=rng.normal(size=(36,2));y=np.tile([0,1],18)
-    definitions=arms();result=fit_original(K,P,y,definitions,steps=150,device='cpu')
+    definitions=arms();result=fit_additive(K,P,y,definitions,steps=150,device='cpu')
     for j,s in enumerate(definitions):
         other=independent_reference(K,P,y,s,steps=150)
         for key in ['a','b','w','objective']:

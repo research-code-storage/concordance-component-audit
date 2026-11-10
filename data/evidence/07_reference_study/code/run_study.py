@@ -1,4 +1,4 @@
-"""Fit the frozen-reference Softplus readout for SI H.3."""
+"""Fit the frozen-reference Softplus prediction score for SI H.3."""
 import os
 for k in ['OMP_NUM_THREADS','MKL_NUM_THREADS','OPENBLAS_NUM_THREADS']:os.environ.setdefault(k,'4')
 from pathlib import Path
@@ -6,7 +6,7 @@ import argparse,json,time,hashlib,sys
 import numpy as np,pandas as pd,torch
 from scipy.spatial.distance import cdist
 from reference import *
-from weighted_fit import fit_original,arms,independent_reference
+from weighted_fit import fit_additive,arms,independent_reference
 from data import draw_compounds
 
 def caps_for(frame):
@@ -48,7 +48,7 @@ def run(output,counts,seeds,steps=1000):
                 if a.get('component')=='magnitude':p[:,1]=0
                 if a.get('component')=='direction':p[:,0]=0
                 Ps.append(p)
-            P=np.array(Ps);fit=fit_original(K,P,y,spec,steps=steps,caps=cap)
+            P=np.array(Ps);fit=fit_additive(K,P,y,spec,steps=steps,caps=cap)
             errors=[]
             for j,a in enumerate(spec):
                 p=np.zeros_like(P[j])if a['kind']=='kernel'else P[j];v=K@fit['a'][:,j]+p@fit['w'][j]+fit['b'][j]

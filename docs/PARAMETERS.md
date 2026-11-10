@@ -4,9 +4,9 @@ Paths beginning with a numbered directory below are relative to `data/evidence/`
 
 ## Pairwise quantities
 
-Every score is oriented so a larger value predicts the positive class or an earlier event. Binary applications use all positive-negative compound pairs with unit weights. The clinical audit uses observed comparable pairs with unit weights. A score tie receives one half, with exact equality of float64 differences. Tolerance is used only to compare independently calculated values, never to change a score tie into a strict ordering.
+Every score is oriented so a larger value predicts the positive class or an earlier event. Binary applications use all positive-negative compound pairs with unit weights. The clinical analysis uses observed comparable pairs with unit weights. A score tie receives one half, with exact equality of float64 differences. Tolerance is used only to compare independently calculated values, never to change a score tie into a strict ordering.
 
-`Delta` is full minus retained concordance. `A` is the mean absolute change of the pair contributions. `B` is the weighted mean of their magnitude-based worst-sign bounds, including half credit at ties. The inclusive screen `V` counts pairs with `abs(D) <= abs(E)`. The budget grid is `[0, 0.25, 0.5, 1, 2, 4, 8]`. For a tolerance epsilon, the grid budget is the largest grid point with `B(t) <= epsilon`. Per-draw budgets and the minimum over draws are distinct summaries.
+`Delta` is full minus retained concordance. `A` is the mean absolute change of the pair contributions. `B` is the weighted mean of their magnitude-based worst-sign bounds, including half credit at ties. `V` is the normalized total weight of pairs with `abs(D) <= abs(E)`; flagged-pair counts are also reported. The multiplier grid is `[0, 0.25, 0.5, 1, 2, 4, 8]`. For tolerance epsilon, `t_epsilon` is the largest grid point with `B(t) <= epsilon`. Per-draw multiplier ranges and the minimum across draws are distinct summaries.
 
 ## Toxicogenomic application
 
@@ -20,7 +20,7 @@ The authoritative settings and evaluation identifiers are `05_reconstruction/pro
 | Main reference design | `matched_centred` |
 | Other reported designs | `historical_centred` = pooled-centred; `revised_origin` = origin-preserving |
 | Full predictor | `softplus_original`: Gaussian-kernel term plus two nonnegative fitted coordinate weights |
-| Reference readouts | `kernel_original`: separately fitted kernel-only model; `fixed_sum`: equal-weight sum of the two coordinates |
+| Reference scores | `kernel_original`: separately fitted kernel-only model; `fixed_sum`: equal-weight sum of the two coordinates |
 | Gaussian kernel | exp(-squared distance / 1536) |
 | Loss parameter C / coordinate penalty lambda | 20 / 0.001 |
 | Optimizer | AdamW, learning rate 0.001, weight decay 0.0001 |
@@ -36,7 +36,7 @@ The authoritative settings and evaluation identifiers are `05_reconstruction/pro
 
 The saved state records the actual training identifiers, scales, prototypes and fitted parameters for every draw. The complete permutation seeds are in `08_permutation/permutation_config.json`. They use the explicit design offsets in `config.json`; they do not depend on the order of columns in a score file.
 
-Profiles are averaged within compound before calculating AUCs or pairwise quantities. Evaluation intervals resample compounds within class using shared resamples across draws and readouts. The mean AUC is an average of ten draw-specific AUCs, not an AUC obtained by averaging scores across draws.
+Profiles are averaged within compound before calculating AUCs or pairwise quantities. Evaluation intervals resample compounds within class using shared resamples across draws and prediction scores. The mean AUC is an average of ten draw-specific AUCs, not an AUC obtained by averaging scores across draws.
 
 The main application standardizes features using each training draw and uses profile-level class-balanced hinge weights C / (2 n_y), where n_y counts training profiles in that class. The frozen-reference sensitivity fixes reference coordinates and scales from 102 source compounds, then varies labelled training size over 4, 20, 60 and 102. There are ten draws at each smaller size and one at 102. Its profile hinge weight is C / (2 N_y m_g), where N_y is the number of training compounds in that class and m_g is the number of profiles for that compound. Full settings are in `07_reference_study/protocol.json`.
 
@@ -52,7 +52,7 @@ Evaluation-sample bootstrap: 5,000 patient resamples, seed 20261005, fixed fitte
 
 The 72 cells cross n in {50, 200}, strength a in {0.01, 0.1, 0.5, 1}, geometry s in {1, 0, -1}, and normal, scaled t(3) or rounded-normal retained errors. Equal numbers of cases and controls are fixed. The retained score is 0.6 Y + error, rounded for the retained-tie design. The component is a (Z + 0.6 s Y), with independent standard normal Z. Each cell has 200 datasets. Master seed 20260927 generates the 14,400 explicit replicate seeds in `07_reference_study/results/simulation/all_14400_replicates.csv`.
 
-The concealment ratio averages A / abs(Delta) over replicates with nonzero Delta. The certificate ratio averages B / A over replicates with positive A. The ratio of means is exported separately. Additional implementation checks of the multiplier envelope and bounded retained-score perturbations are recorded with the same datasets, as described in SI A and E.
+The movement-to-net-change ratio averages A / abs(Delta) over replicates with nonzero Delta. The bound-to-movement ratio averages B / A over replicates with positive A. The ratio of means is exported separately. Additional implementation checks of the multiplier envelope and bounded retained-score perturbations are recorded with the same datasets, as described in SI A and E.
 
 ### Population inference
 

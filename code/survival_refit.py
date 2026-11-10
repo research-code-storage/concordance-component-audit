@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Same-fit deletion versus refitting for the lung-cancer illustration.
 
-The audit of Section 3.2 deletes a block from one fitted Cox model and keeps the retained
-coefficients.  This script answers the comparison defined in Section 2.6, whether the
-conclusions change when the reduced model is refitted on the same 158 training patients.
+The clinical analysis (Section 4.1 and Supporting Information J) compares component
+deletion from a fitted Cox model with reduced-model refitting on the same 158 training
+patients.
 
 1. The full three-covariate fit is replayed from the complete-case snapshot and must
    reproduce the saved coefficients and the saved held-out scores.
@@ -15,11 +15,11 @@ conclusions change when the reduced model is refitted on the same 158 training p
    Proposition 4 hold the fitted coefficients fixed, as in code/lung_ustat.py.
 4. A training-sample bootstrap (1000 resamples of the 158 training patients, seed
    20261019) refits the full and both reduced models in every replicate and recomputes the
-   same-fit audit and the refitted contrasts on the fixed held-out sample.  These intervals
+   same-fit analysis and the refitted contrasts on the fixed held-out sample.  These intervals
    describe model-fitting variability conditional on the held-out patients, which the
-   evaluation-sample intervals of Section 3.2 exclude.
+   evaluation-sample intervals of Section 4.1 exclude.
 
-The certificate B is reported only for the same-fit decomposition: a refitted reduced model
+The bound B is reported only for the same-fit decomposition: a refitted reduced model
 is not obtained by deleting a component of the full score, so Proposition 1 does not apply
 to it with the deleted block as the component.
 

@@ -1,14 +1,37 @@
 {
-  "study": "Bounded nonlinear component stress test",
+  "study": "Bounded nonlinear component perturbations",
   "analysis_date": "2026-10-18",
-  "status": "Exploratory additional analysis of archived fitted scores; no refitting",
+  "status": "Analysis of supplied fitted component scores",
   "training_compounds": 60,
   "arm": "matched_centred__softplus_original",
-  "panels": ["PHH", "external", "source"],
-  "source_draw_seeds": [0,1,2,3,4,5,6,7,8,9],
+  "panels": [
+    "PHH",
+    "external",
+    "source"
+  ],
+  "source_draw_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
   "primary_multiplier": 1,
-  "multipliers": [1,2,4,8],
-  "fold_signs": [-1,1],
+  "multipliers": [
+    1,
+    2,
+    4,
+    8
+  ],
+  "fold_signs": [
+    -1,
+    1
+  ],
   "fold_grid_points": 101,
   "fold_grid": "linspace(min(g), max(g), 101) separately for each draw and panel",
   "fold_function": "h_i = sign * t * abs(g_i - c)",
@@ -22,13 +45,57 @@
   "bootstrap": false,
   "refit": false,
   "toy": {
-    "positive_ell": [1,1,10,10,10,10,10,10,10,10],
-    "negative_ell": [0,0,-10,-10,-10,-10,-10,-10,-10,-10],
-    "positive_g": [-3,3,0,0,0,0,0,0,0,0],
-    "negative_g": [-1,1,0,0,0,0,0,0,0,0],
+    "positive_ell": [
+      1,
+      1,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10
+    ],
+    "negative_ell": [
+      0,
+      0,
+      -10,
+      -10,
+      -10,
+      -10,
+      -10,
+      -10,
+      -10,
+      -10
+    ],
+    "positive_g": [
+      -3,
+      3,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "negative_g": [
+      -1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
     "explicit_fold_c": 0,
     "explicit_fold_sign": -1
   },
-  "scope": "Finite observed pair sets and fixed saved decompositions. Folded maps are direction-varying stress tests, not ordinary monotone calibration or a model of retraining or distribution shift.",
-  "grid_interpretation": "Observed grid maxima are lower bounds on the supremum over the full admissible class. The deterministic upper guarantee is supplied by the theorem, not by the finite grid."
+  "scope": "Fixed fitted decompositions, observed comparable pairs and magnitude-constrained folded transformations.",
+  "grid_interpretation": "The grid maximum is a lower bound on the maximum movement over the admissible class; B is its deterministic upper bound."
 }

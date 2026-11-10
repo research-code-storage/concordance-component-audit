@@ -2,7 +2,7 @@
 """Recompute the lung-cancer survival illustration from the per-patient scores.
 
 Independent of the study package's own summary: comparable pairs are re-enumerated from
-`time` and `status`, and concordance and the Proposition 1 budgets are computed with the
+`time` and `status`, and concordance and the Proposition 1 bounds are computed with the
 same functions used for the toxicogenomic panels (compute_all.py).  The saved
 `survival_illustration.json` is read only at the end, to compare.
 
@@ -25,7 +25,7 @@ import numpy as np
 
 # NOTE: compute_all.pair_budget takes positive/negative score vectors and forms their
 # cross product, which is right for a binary panel but wrong here: survival comparable
-# pairs are enumerated explicitly, so the budget must be evaluated pair by pair.
+# pairs are enumerated explicitly, so the bound must be evaluated pair by pair.
 
 
 def pair_rho(D, E):
@@ -142,7 +142,7 @@ def main():
         print(f"    tie-aware bound    {r['tie_aware_bound']:.6f}  "
               f"({r['slack_bound_over_movement']:.2f}x the movement)")
         print(f"    changed pairs      {r['changed_pairs']} of {npairs}")
-        print(f"    vulnerable pairs   {r['vulnerable_pairs']} of {npairs}")
+        print(f"    flagged pairs      {r['vulnerable_pairs']} of {npairs}")
 
     # compare against the study package's own saved summary
     arch = json.loads((sur / "survival_illustration.json").read_text())

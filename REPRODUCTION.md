@@ -35,7 +35,7 @@ B     = mean[max(abs(H(D_ij + abs(E_ij)) - H(D_ij)),
                  abs(H(D_ij - abs(E_ij)) - H(D_ij)))]
 ```
 
-The point AUC is calculated separately in each draw and then averaged over ten draws. For intervals, `analyse_reconstructed.py` generates 20,000 compound resamples within outcome class with seed 20260922. The same resample is applied across draws and readouts. It averages draw-specific pair contributions and uses the 2.5th and 97.5th percentiles of the resulting AUCs. The intervals therefore describe compound sampling conditional on the supplied fits.
+The point AUC is calculated separately in each draw and then averaged over ten draws. For intervals, `analyse_reconstructed.py` generates 20,000 compound resamples within outcome class with seed 20260922. The same resample is applied across draws and prediction scores. It averages draw-specific pair contributions and uses the 2.5th and 97.5th percentiles of the resulting AUCs. The intervals therefore describe compound sampling conditional on the supplied fits.
 
 Expected full-predictor results under `matched_centred__softplus_original` are:
 
@@ -45,7 +45,7 @@ Expected full-predictor results under `matched_centred__softplus_original` are:
 | DILImap | 0.6064 | [0.4375, 0.7687] | 0.0076 |
 | Within-source holdout | 0.4292 | [0.1771, 0.6969] | 0.0833 |
 
-`generated/results.json` contains per-draw values as well as maxima and ranges. `generated/main_inference/summary.json` contains all 27 panel/design/readout cells and their intervals. For SI H.3, the matched-minus-pooled AUC difference on DILImap is taken from the paired bootstrap contrast in this summary, not by subtracting endpoints of marginal intervals.
+`generated/results.json` contains per-draw values as well as maxima and ranges. `generated/main_inference/summary.json` contains all 27 panel/design/score cells and their intervals. For SI H.3, the matched-minus-pooled AUC difference on DILImap is taken from the paired bootstrap contrast in this summary, not by subtracting endpoints of marginal intervals.
 
 ## 3. Component-score permutation
 
@@ -57,7 +57,7 @@ python reproduce.py --stage permutation
 
 The matched-centred mean deletion and permutation drops are 0 and 0.0082 on PHH, and 0.0017 and 0.0015 on DILImap. The script compares every regenerated permutation drop with the supplied reference array.
 
-## 4. Clinical audit and two sources of variation
+## 4. Clinical analysis and two sources of variation
 
 ```sh
 python reproduce.py --stage clinical
@@ -71,17 +71,17 @@ The stage refits the full Cox model, checks the saved patient scores, and indepe
 
 `lung_bootstrap.py` uses 5,000 evaluation-patient resamples with seed 20261005, holding the fitted coefficients fixed and rebuilding comparable pairs. `lung_ustat.py` calculates the closed-form variance of Proposition 4 and uses 1.959963984540054 standard errors for the normal interval. Paired deletion contrasts are formed from differences of their kernels on the same pairs.
 
-`survival_refit.py` separately draws 1,000 training-patient bootstrap samples with seed 20261019. It refits the full and both reduced models in each sample and evaluates all comparisons on the original evaluation patients. The same-fit audit removes a block from that replicate's full fit. The refit comparison uses the full and newly fitted reduced scores. The output provides the intervals in Table S13, including [0.173, 0.450] for same-fit age-and-sex movement.
+`survival_refit.py` separately draws 1,000 training-patient bootstrap samples with seed 20261019. It refits the full and both reduced models in each sample and evaluates all comparisons on the original evaluation patients. The same-fit analysis removes a block from that replicate's full fit. The refit comparison uses the full and newly fitted reduced scores. The output provides the intervals in Table S13, including [0.173, 0.450] for same-fit age-and-sex movement.
 
-## 5. Movement and certificate slack simulation
+## 5. Movement and bound slack simulation
 
 ```sh
 python reproduce.py --stage simulation
 ```
 
-This reruns `simulate_bounds.py` and compares all 14,400 replicate rows against the saved CSV. The 72 scenarios cross n = 50 or 200, four component strengths, three component geometries and three retained-score distributions. There are 200 replicates per scenario, with replicate seeds generated from master seed 20260927.
+This runs `simulate_bounds.py` and compares all 14,400 replicate rows against the saved CSV. The 72 scenarios cross n = 50 or 200, four component strengths, three component geometries and three retained-score distributions. There are 200 replicates per scenario, with replicate seeds generated from master seed 20260927.
 
-The aggregation in `simulation_usefulness.py` distinguishes the mean of replicate-level ratios from the ratio of means. Table 3 uses mean(A / abs(Delta)) among replicates with nonzero Delta and mean(B / A) among replicates with positive A. The valid denominators are recorded in the output. The geometry-specific ratios of mean A to mean absolute Delta are approximately 3.19, 4.48 and 1.82 for aligned, independent and opposed components.
+The aggregation in `simulation_usefulness.py` distinguishes the mean of replicate-level ratios from the ratio of means. Table 2 uses mean(A / abs(Delta)) among replicates with nonzero Delta and mean(B / A) among replicates with positive A. The valid denominators are recorded in the output. The geometry-specific ratios of mean A to mean absolute Delta are approximately 3.19, 4.48 and 1.82 for aligned, independent and opposed components.
 
 ## 6. Frozen-reference labelled-sample sensitivity
 
@@ -91,7 +91,7 @@ python reproduce.py --stage frozen_reference
 
 The fixed source reference is in `07_reference_study/assets/frozen_reference.json`. There are 31 saved full-predictor fits: ten draws each at 4, 20 and 60 labelled compounds, and one fit using all 102 compounds. The reference, its scales and the embedding scale remain fixed across these training sizes. The supervised hinge weights are compound-balanced, C / (2 N_y m_g).
 
-`frozen_reference.py` recomputes mean compound AUCs from the per-profile scores and the component audit at 60 labelled compounds. DILImap AUCs are 0.6348, 0.6333, 0.6331 and 0.6326. PHH AUCs are 0.7458, 0.7250, 0.7125 and 0.7083. These are the sensitivity results in SI H.3.
+`frozen_reference.py` recomputes mean compound AUCs from the per-profile scores and the component analysis at 60 labelled compounds. DILImap AUCs are 0.6348, 0.6333, 0.6331 and 0.6326. PHH AUCs are 0.7458, 0.7250, 0.7125 and 0.7083. These are the sensitivity results in SI H.3.
 
 ## 7. Fitted-model simulation
 
@@ -109,9 +109,9 @@ For noise coordinates and zero initialization at displacement 16, the means are 
 python reproduce.py --stage theory
 ```
 
-This regenerates the scalar tie enumeration, weighted-survival implementation checks, stable-noise calculations, exchangeability enumeration, label-blind coordinate check, certificate curves and complete-rank comparison. It exports 25 scalar cases, 200 weighted-survival cases, 60 stable-noise simulation cells, the exact rank permutations, 420 certificate-grid points and the source data for Figure S1.
+This regenerates the scalar tie enumeration, weighted-survival implementation checks, stable-noise calculations, exchangeability enumeration, label-blind coordinate check, bound curves and complete-rank comparison. It exports 25 scalar cases, 200 weighted-survival cases, 60 stable-noise simulation cells, the exact rank permutations, 420 bound-grid points and the source data for Figure S1.
 
-The complete-rank calculation in SI H.4 includes same-class pairs. Its denominators differ from the cross-class concordance audit and are kept in a separate output table.
+The complete-rank calculation in SI H.4 includes same-class pairs. Its denominators differ from the cross-class concordance analysis and are kept in a separate output table.
 
 ## 9. Population inference simulation
 

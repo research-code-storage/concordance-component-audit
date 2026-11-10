@@ -54,7 +54,7 @@ def main():
   print(f'[{i}/{len(selected)}] {name}',flush=True)
   for job in STAGES[name]:run(job)
  if a.deep:
-  os.environ['SIM_VERIFY_OUTPUT']=str(ROOT/'generated/small_fit_checks')
+  os.environ['CONCORDANCE_VERIFY_OUTPUT']=str(ROOT/'generated/small_fit_checks')
   for job in [('code/verify_states.py',),
               (EV+'/05_reconstruction/code/check_small_fits.py',),
               (EV+'/07_reference_study/code/build_reference_assets.py','--output','generated/reference_assets')]:run(job)

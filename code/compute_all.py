@@ -1,19 +1,12 @@
 #!/usr/bin/env python3
-"""Recompute every main-text number from the primary saved component scores.
+"""Recompute application point estimates from saved component scores.
 
-Its output is the source of the application point estimates in Figure 2 and SI Tables S4-S5.
-It does NOT read the saved summary table to produce its numbers: it starts from
-the per-profile component scores stored by the fitting run
-(``n{N}_seed{S}_{domain}_scores.npz``), aggregates them to compounds, and recomputes
-concordance, the tie-aware contribution budget of Proposition 1, and the inclusive
-vulnerable-pair count.  It then cross-checks its own results against the saved
-summary ``all_results.csv`` and fails loudly on disagreement.
+Profile scores are averaged within compound, then used to calculate concordance,
+the tie-aware bound of Proposition 1 and inclusive-screen pair counts. Results
+are compared with the supplied numerical records.
 
-Outputs (written to ../generated/):
-  results.json            every recomputed quantity, keyed by (n, panel, arm)
-  crosscheck.txt          saved-vs-recomputed comparison
-
-Usage:  python code/compute_all.py --release data/evidence
+Usage: python code/compute_all.py --release data/evidence
+Outputs: generated/results.json, generated/crosscheck.txt and table inputs.
 """
 from __future__ import annotations
 
@@ -52,7 +45,7 @@ SIZES = (60,)
 
 
 # --------------------------------------------------------------------------- #
-# concordance and the Proposition 1 budget                                     #
+# concordance and the Proposition 1 bound                                     #
 # --------------------------------------------------------------------------- #
 
 def concordance(pos: np.ndarray, neg: np.ndarray) -> float:
@@ -62,10 +55,10 @@ def concordance(pos: np.ndarray, neg: np.ndarray) -> float:
 
 
 def pair_budget(d_pos, d_neg, e_pos, e_neg, t: float = 1.0):
-    """Proposition 1 budgets for deleting component ``e`` from ``d + t*e``.
+    """Proposition 1 bounds for deleting component ``e`` from ``d + t*e``.
 
     D is the retained (linear) difference, E the deleted (kernel) difference.
-    Returns (tie-aware budget B, inclusive vulnerable count V, n_pairs).
+    Returns (tie-aware bound B, inclusive flagged count V, n_pairs).
 
     Per-pair maximum absolute contribution change rho(D, E):
         D != 0, |E| <  |D|  -> 0     (sign of D+E cannot differ from sign of D)
@@ -154,7 +147,7 @@ def compute(release: Path):
             pos, neg = y == 1, y == 0
 
             for design, _ in DESIGNS:
-                # ---- fitted readouts -------------------------------------- #
+                # ---- fitted prediction scores -------------------------------------- #
                 for readout, _ in READOUTS:
                     if readout == "fixed_sum":
                         continue
@@ -208,7 +201,7 @@ def compute(release: Path):
                     "n_compounds": len(y),
                     "n_positive": int(pos.sum()),
                     "n_negative": int(neg.sum()),
-                    "note": "no fitted kernel; deletion budget not defined",
+                    "note": "no fitted kernel; deletion bound not defined",
                 }
     return out
 

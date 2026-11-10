@@ -8,8 +8,8 @@ from scipy.spatial.distance import cdist
 from sklearn.metrics import roc_auc_score
 from reconstructed_features import ROOT,test as test_geometry
 from analyse_reconstructed import analyse
-sys.path.insert(0,str(ROOT/'01_code/11_legacy_review'))
-from original_fit import arms,fit_original,independent_reference
+sys.path.insert(0,str(ROOT/'01_code/model_fitting'))
+from additive_fit import arms,fit_additive,independent_reference
 
 
 def main():
@@ -17,7 +17,7 @@ def main():
     by_name={a['name']:a for a in arms()}
     specs=[by_name[n] for n in ['projected_wd0','softplus_original','free_matched_positive_start','kernel_original','softplus_reverse']]*3
     g=rng.normal(size=(36,5));K=np.exp(-.2*cdist(g,g,'sqeuclidean'));P=rng.normal(size=(15,36,2));y=np.tile([0,1],18)
-    fit=fit_original(K,P,y,specs,steps=150,device='cpu')
+    fit=fit_additive(K,P,y,specs,steps=150,device='cpu')
     errors=[]
     for j,spec in enumerate(specs):
         ref=independent_reference(K,P[j],y,spec,steps=150)
@@ -25,7 +25,7 @@ def main():
             value=fit[key][:,j]if key=='a'else fit[key][j];np.testing.assert_allclose(value,ref[key],atol=1e-9,rtol=1e-9);errors.append(float(np.max(np.abs(value-ref[key]))))
     designs=['historical_centred','matched_centred','revised_origin'];names=[d+'__'+s['name']for d in designs for s in arms() if s['name'] in ['softplus_original','kernel_original']]
     expected={};runs=[]
-    target=Path(os.environ.get('SIM_VERIFY_OUTPUT',str(Path(__file__).resolve().parents[4]/'generated/small_fit_checks')));target.mkdir(parents=True,exist_ok=True)
+    target=Path(os.environ.get('CONCORDANCE_VERIFY_OUTPUT',str(Path(__file__).resolve().parents[4]/'generated/small_fit_checks')));target.mkdir(parents=True,exist_ok=True)
     folder=target/'auc_fixture';folder.mkdir(exist_ok=True)
     for n in [60]:
         for seed in range(10):

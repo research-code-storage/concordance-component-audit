@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Closed-form variance of Proposition 4 for the lung-cancer component audit.
+"""Closed-form variance of Proposition 4 for the lung-cancer component analysis.
 
 The fitted Cox coefficients are held fixed and the 69 held-out patients are treated as an
 independent sample.  For a bounded pair kernel kappa on the comparable pairs (i, j), with
@@ -10,7 +10,7 @@ ratio of two U-statistics, and Proposition 4 gives the variance estimator
 
 where S_i(kappa) is the sum of kappa over the comparable pairs that contain patient i and
 S_i(1) is their number.  Kernels: Delta (change in pair contribution), A (its absolute
-value), B (tie-aware budget rho) and V (inclusive screen), for both same-fit deletions and
+value), B (tie-aware bound rho) and V (inclusive screen), for both same-fit deletions and
 for the paired differences between them.  Normal 95% intervals use z = Phi^{-1}(0.975).
 
 The estimator is computed twice, from the pair sums above and from an explicit Hoeffding

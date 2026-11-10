@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Patient-level bootstrap intervals for the lung-cancer component audit.
+"""Patient-level bootstrap intervals for the lung-cancer component analysis.
 
 The fitted Cox coefficients are held fixed. Each replicate resamples the 69 held-out
 patients with replacement, re-forms the comparable pairs among the resampled patients
@@ -8,7 +8,7 @@ and recomputes, for both same-fit deletions,
 
   Delta  net concordance change  C(full) - C(retained)
   A      mean absolute per-pair contribution change
-  B      tie-aware budget of Proposition 1
+  B      tie-aware bound of Proposition 1
   V      inclusive screen (share of pairs with |D| <= |E|)
 
 The intervals describe evaluation-sample variability only; they do not include

@@ -183,7 +183,7 @@ ax[2].set_yticks([0, .01, .02, .03, .04])
 cert_handles = [Line2D([], [], marker='o', linestyle='none', color='#91b1d3', markersize=4),
                 Line2D([], [], marker='o', linestyle='none', color='#1f4e79', markersize=4),
                 Line2D([], [], marker='s', linestyle='none', color='#d67732', markersize=5)]
-fig.legend(cert_handles, ['Per-draw certificate', 'Maximum across draws', r'Maximum $|\Delta|$, $t=1$'],
+fig.legend(cert_handles, ['Per-draw bound', 'Maximum across draws', r'Maximum $|\Delta|$, $t=1$'],
            loc='upper right', bbox_to_anchor=(.985, .995), frameon=False, borderaxespad=0,
            labelspacing=.3, handlelength=1.6, handletextpad=.55)
 for a in ax:

@@ -1,10 +1,8 @@
-"""Coverage of fixed-score, subject-level concordance inference.
+"""Evaluate coverage and standard-error calibration for fixed-predictor inference.
 
-This is a separate inferential experiment, not additional replicates of the
-14,400-replicate certificate study. The design is in inference_design.json.
-Binary truths use numerical integration; survival reference values use replicated
-scrambled Sobol integration with event/censoring times integrated analytically.
-No fitted-model uncertainty or estimated IPCW weights are included.
+The design is specified in inference_design.json. Binary reference values use
+numerical integration. Survival reference values use replicated scrambled Sobol
+integration with event and censoring times integrated analytically.
 """
 import os
 for _v in ('OMP_NUM_THREADS','MKL_NUM_THREADS','OPENBLAS_NUM_THREADS'):
