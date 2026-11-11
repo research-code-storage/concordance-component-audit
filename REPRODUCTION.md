@@ -11,9 +11,9 @@ python reproduce.py --manifest-only
 python reproduce.py --stage inputs
 ```
 
-The input stage checks four feature matrices, metadata alignment, unique sample identifiers, finite values, compound labels and the train/evaluation separation. The matrices have 7,818 MHEDILI and 763 DILImap profiles, each with 768 embedding features and 54 pathway features. The analysis selects the source and PHH panels described in SI G. Other collection rows remain in the matrices so the collection counts and sample identifiers can be checked directly.
+The input stage checks four feature matrices, metadata alignment, unique sample identifiers, finite values, compound labels and the train/evaluation separation. The matrices have 7,818 MHEDILI and 763 DILImap profiles, each with 768 embedding features and 54 pathway features. The analysis selects the source and PHH panels described in SI E. Other collection rows remain in the matrices so the collection counts and sample identifiers can be checked directly.
 
-The three evaluation panels contain 1,458 profiles from 20 within-source compounds, 583 profiles from 49 DILImap compounds, and 227 profiles from 11 PHH compounds. They give 96, 528 and 24 cross-class compound pairs, respectively.
+The three evaluation panels contain 1,458 profiles from 20 within-source compounds, 583 profiles from 49 DILImap compounds, and 227 profiles from 11 PHH compounds. They give 96, 528 and 24 positive-negative (cross-class) compound pairs, respectively.
 
 ## 2. Toxicogenomic scores, AUCs and intervals
 
@@ -45,7 +45,7 @@ Expected full-predictor results under `matched_centred__softplus_original` are:
 | DILImap | 0.6064 | [0.4375, 0.7687] | 0.0076 |
 | Within-source holdout | 0.4292 | [0.1771, 0.6969] | 0.0833 |
 
-`generated/results.json` contains per-draw values as well as maxima and ranges. `generated/main_inference/summary.json` contains all 27 panel/design/score cells and their intervals. For SI H.3, the matched-minus-pooled AUC difference on DILImap is taken from the paired bootstrap contrast in this summary, not by subtracting endpoints of marginal intervals.
+`generated/results.json` contains per-draw values as well as maxima and ranges. `generated/main_inference/summary.json` contains all 27 panel/design/score cells and their intervals. For SI F.3, the matched-minus-pooled AUC difference on DILImap is taken from the paired bootstrap contrast in this summary, not by subtracting endpoints of marginal intervals.
 
 ## 3. Component-score permutation
 
@@ -53,7 +53,7 @@ Expected full-predictor results under `matched_centred__softplus_original` are:
 python reproduce.py --stage permutation
 ```
 
-`code/permutation_contrast.py` holds the compound-level linear score fixed, permutes the kernel score across compounds, and recomputes concordance. There are 1,000 permutations for each of ten draws, three reference designs and two panels, giving 60,000 drops. The explicit per-draw random seeds are in `data/evidence/08_permutation/permutation_config.json`. The `permutation_seed_offsets` in the fitting configuration preserve these streams independently of the model-column positions.
+`code/permutation_contrast.py` holds the compound-level retained score fixed, permutes the kernel score across compounds, and recomputes concordance. There are 1,000 permutations for each of ten draws, three reference designs and two panels, giving 60,000 drops. The explicit per-draw random seeds are in `data/evidence/08_permutation/permutation_config.json`. The `permutation_seed_offsets` in the fitting configuration preserve these streams independently of the model-column positions.
 
 The matched-centred mean deletion and permutation drops are 0 and 0.0082 on PHH, and 0.0017 and 0.0015 on DILImap. The script compares every regenerated permutation drop with the supplied reference array.
 
@@ -91,7 +91,7 @@ python reproduce.py --stage frozen_reference
 
 The fixed source reference is in `07_reference_study/assets/frozen_reference.json`. There are 31 saved full-predictor fits: ten draws each at 4, 20 and 60 labelled compounds, and one fit using all 102 compounds. The reference, its scales and the embedding scale remain fixed across these training sizes. The supervised hinge weights are compound-balanced, C / (2 N_y m_g).
 
-`frozen_reference.py` recomputes mean compound AUCs from the per-profile scores and the component analysis at 60 labelled compounds. DILImap AUCs are 0.6348, 0.6333, 0.6331 and 0.6326. PHH AUCs are 0.7458, 0.7250, 0.7125 and 0.7083. These are the sensitivity results in SI H.3.
+`frozen_reference.py` recomputes mean compound AUCs from the per-profile scores and the component analysis at 60 labelled compounds. DILImap AUCs are 0.6348, 0.6333, 0.6331 and 0.6326. PHH AUCs are 0.7458, 0.7250, 0.7125 and 0.7083. These are the sensitivity results in SI F.3.
 
 ## 7. Fitted-model simulation
 
@@ -109,9 +109,11 @@ For noise coordinates and zero initialization at displacement 16, the means are 
 python reproduce.py --stage theory
 ```
 
-This regenerates the scalar tie enumeration, weighted-survival implementation checks, stable-noise calculations, exchangeability enumeration, label-blind coordinate check, bound curves and complete-rank comparison. It exports 25 scalar cases, 200 weighted-survival cases, 60 stable-noise simulation cells, the exact rank permutations, 420 bound-grid points and the source data for Figure S1.
+This regenerates the scalar tie enumeration, weighted-survival implementation checks, five-pair example, label-blind coordinate check, bound curves and complete-rank comparison. It exports 25 scalar cases, 200 weighted-survival cases and 420 bound-grid points, including the 140 points used in Figure 2b-c.
 
-The complete-rank calculation in SI H.4 includes same-class pairs. Its denominators differ from the cross-class concordance analysis and are kept in a separate output table.
+The five-pair illustration in Section 2.1 uses D = [1, -1, 1, 3, 0] and E = [-2, 2, 2, 1, 1], with unit weights. Applying the pairwise definitions gives Delta = 0.1, A = 0.5, B = 0.7 and V = 0.8. Its positive and negative contributions are P = 0.3 and N = 0.2, so cancellation is 0.4 and bound slack is 0.2.
+
+The complete-rank calculation in SI F.4 includes same-class pairs. Its denominators differ from the cross-class concordance analysis and are kept in a separate output table.
 
 ## 9. Population inference simulation
 
@@ -130,7 +132,7 @@ python code/inference_coverage.py --out generated/inference_full --replicates 20
 python code/verify_inference.py --full-replay generated/inference_full
 ```
 
-## 10. Nonlinear component perturbations
+## 10. Magnitude-constrained nonlinear component perturbations
 
 ```sh
 python reproduce.py --stage nonlinear
@@ -138,7 +140,7 @@ python reproduce.py --stage nonlinear
 
 `b_robustness/parameters.json` specifies the fold grid, signs, multipliers and numerical tolerance. For every draw and panel, the stage evaluates h_i = s t abs(g_i - c), with 202 folds per multiplier and multipliers 1, 2, 4 and 8. There are 24,240 folds overall. `verify.py` independently recalculates the endpoints and maximizing witnesses using scalar pair loops.
 
-At t = 1, the fold maximum exceeds the scalar maximum on 2 of 10 DILImap draws and 4 of 10 within-source draws. On within-source draw 9, both scalar endpoints move 4/96, a fold moves 6/96, and B is 8/96. Table S8 is regenerated from the same records.
+At t = 1, the fold maximum exceeds the scalar maximum on 2 of 10 DILImap draws and 4 of 10 within-source holdout draws. On within-source holdout draw 9, both scalar endpoints move 4/96, a fold moves 6/96, and B is 8/96. Table S8 is regenerated from the same records.
 
 ## 11. Published tables, figures and numerical targets
 
@@ -146,11 +148,11 @@ At t = 1, the fold maximum exceeds the scalar maximum on 2 of 10 DILImap draws a
 python reproduce.py --stage report
 ```
 
-Run this after the preceding stages. `render_results.py` generates 16 numerical tables and their CSV rows. `verify_reported.py` checks all 285 rows and 87 key results against the manuscript's numerical targets in `reported/`. `render_figures.py` uses these regenerated outputs to draw Figures 1, 2 and S1. Times New Roman is used when installed; otherwise the script selects an available serif font. The selected font and all plotted values are recorded in `generated/plot_verification.json`.
+Run this after the preceding stages. `render_results.py` generates 16 numerical tables and their CSV rows. `verify_reported.py` checks all 285 rows and 87 key results against the manuscript's numerical targets in `reported/`. `render_figures.py` uses these regenerated outputs to draw Figures 1 and 2 with lowercase panel labels. Times New Roman is used for plot text when installed, with Arial for panel labels; available serif and sans-serif fonts provide fallbacks. The selected font and all plotted values are recorded in `generated/plot_verification.json`.
 
 ## Parameter replay and optional refitting
 
-`--deep` recalculates component scores and objectives for 60 application models, three real-data gradient-validation fits and 31 frozen-reference models from their parameters and feature inputs. It also reconstructs frozen reference assets and repeats the 15 small-problem autograd checks stated in SI G.4.
+`--deep` recalculates component scores and objectives for 60 application models, three real-data gradient-validation fits and 31 frozen-reference models from their parameters and feature inputs. It also reconstructs frozen reference assets and repeats the 15 small-problem autograd checks stated in SI E.4.
 
 The following commands perform fresh fitting into separate directories:
 
@@ -161,9 +163,9 @@ python data/evidence/07_reference_study/code/run_study.py --output generated/ret
 python code/rerun_fitted_simulation.py --output generated/retrained_simulation
 ```
 
-The application fits were made with PyTorch 2.5.1 and float64 calculations on CUDA. The fitted-model simulation uses CPU fitting. The supplied states reproduce the published scores independently of rerunning the optimizer. Fresh fitting should record its device and software versions alongside the generated parameters.
+The application fits were made with PyTorch 2.5.1 and float64 calculations on CUDA. The fitted-model simulation uses CPU fitting. The supplied fitted states reproduce the reported results. Optional refitting may yield small numerical differences owing to numerical optimization and early stopping. Save newly fitted models in a separate output directory and record the device and software versions.
 
-The real-data gradient check in SI G.4 can be repeated on CUDA with:
+The real-data gradient check in SI E.4 can be repeated on CUDA with:
 
 ```sh
 python data/evidence/05_reconstruction/code/check_application_fits.py --output generated/application_fit_checks

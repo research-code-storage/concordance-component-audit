@@ -7,30 +7,30 @@ Run `python reproduce.py` first. Each row below gives the published display valu
 | `clinical.n_patients` | Section 4.1; Table 3 | 69 | [`generated/survival_example.json`](../generated/survival_example.json) | `n_patients` |
 | `clinical.n_comparable_pairs` | Section 4.1; Table 3 | 1653 | [`generated/survival_example.json`](../generated/survival_example.json) | `n_comparable_pairs` |
 | `clinical.concordance_full` | Section 4.1; Table 3 | 0.6476 | [`generated/survival_example.json`](../generated/survival_example.json) | `concordance_full` |
-| `clinical.delete_age_sex.concordance_retained` | Section 4.1; Table 3; SI J | 0.6385 | [`generated/survival_example.json`](../generated/survival_example.json) | `delete_age_sex / concordance_retained` |
-| `clinical.delete_age_sex.net_change` | Section 4.1; Table 3; SI J | 0.0091 | [`generated/survival_example.json`](../generated/survival_example.json) | `delete_age_sex / net_change` |
-| `clinical.delete_age_sex.mean_absolute_pair_change` | Section 4.1; Table 3; SI J | 0.3182 | [`generated/survival_example.json`](../generated/survival_example.json) | `delete_age_sex / mean_absolute_pair_change` |
-| `clinical.delete_age_sex.tie_aware_bound` | Section 4.1; Table 3; SI J | 0.4162 | [`generated/survival_example.json`](../generated/survival_example.json) | `delete_age_sex / tie_aware_bound` |
-| `clinical.delete_age_sex.strict_reversals` | Section 4.1; Table 3; SI J | 240 | [`generated/survival_example.json`](../generated/survival_example.json) | `delete_age_sex / strict_reversals` |
-| `clinical.delete_age_sex.tie_transitions` | Section 4.1; Table 3; SI J | 572 | [`generated/survival_example.json`](../generated/survival_example.json) | `delete_age_sex / tie_transitions` |
-| `clinical.delete_age_sex.changed_pairs` | Section 4.1; Table 3; SI J | 812 | [`generated/survival_example.json`](../generated/survival_example.json) | `delete_age_sex / changed_pairs` |
-| `clinical.delete_age_sex.reinforced_untied_pairs` | Section 4.1; Table 3; SI J | 162 | [`generated/survival_example.json`](../generated/survival_example.json) | `delete_age_sex / reinforced_untied_pairs` |
-| `clinical.delete_age_sex.opposed_untied_pairs` | Section 4.1; Table 3; SI J | 240 | [`generated/survival_example.json`](../generated/survival_example.json) | `delete_age_sex / opposed_untied_pairs` |
+| `clinical.delete_age_sex.concordance_retained` | Section 4.1; Table 3; SI H | 0.6385 | [`generated/survival_example.json`](../generated/survival_example.json) | `delete_age_sex / concordance_retained` |
+| `clinical.delete_age_sex.net_change` | Section 4.1; Table 3; SI H | 0.0091 | [`generated/survival_example.json`](../generated/survival_example.json) | `delete_age_sex / net_change` |
+| `clinical.delete_age_sex.mean_absolute_pair_change` | Section 4.1; Table 3; SI H | 0.3182 | [`generated/survival_example.json`](../generated/survival_example.json) | `delete_age_sex / mean_absolute_pair_change` |
+| `clinical.delete_age_sex.tie_aware_bound` | Section 4.1; Table 3; SI H | 0.4162 | [`generated/survival_example.json`](../generated/survival_example.json) | `delete_age_sex / tie_aware_bound` |
+| `clinical.delete_age_sex.strict_reversals` | Section 4.1; Table 3; SI H | 240 | [`generated/survival_example.json`](../generated/survival_example.json) | `delete_age_sex / strict_reversals` |
+| `clinical.delete_age_sex.tie_transitions` | Section 4.1; Table 3; SI H | 572 | [`generated/survival_example.json`](../generated/survival_example.json) | `delete_age_sex / tie_transitions` |
+| `clinical.delete_age_sex.changed_pairs` | Section 4.1; Table 3; SI H | 812 | [`generated/survival_example.json`](../generated/survival_example.json) | `delete_age_sex / changed_pairs` |
+| `clinical.delete_age_sex.reinforced_untied_pairs` | Section 4.1; Table 3; SI H | 162 | [`generated/survival_example.json`](../generated/survival_example.json) | `delete_age_sex / reinforced_untied_pairs` |
+| `clinical.delete_age_sex.opposed_untied_pairs` | Section 4.1; Table 3; SI H | 240 | [`generated/survival_example.json`](../generated/survival_example.json) | `delete_age_sex / opposed_untied_pairs` |
 | `clinical.bootstrap.delete_age_sex.net_change_same_fit.lower` | Section 4.1; Table S13 | -0.038 | [`generated/survival_refit.json`](../generated/survival_refit.json) | `delete_age_sex / training_bootstrap / net_change_same_fit / lower` |
 | `clinical.bootstrap.delete_age_sex.net_change_same_fit.upper` | Section 4.1; Table S13 | 0.025 | [`generated/survival_refit.json`](../generated/survival_refit.json) | `delete_age_sex / training_bootstrap / net_change_same_fit / upper` |
 | `clinical.bootstrap.delete_age_sex.movement_same_fit.lower` | Section 4.1; Table S13 | 0.173 | [`generated/survival_refit.json`](../generated/survival_refit.json) | `delete_age_sex / training_bootstrap / movement_same_fit / lower` |
 | `clinical.bootstrap.delete_age_sex.movement_same_fit.upper` | Section 4.1; Table S13 | 0.450 | [`generated/survival_refit.json`](../generated/survival_refit.json) | `delete_age_sex / training_bootstrap / movement_same_fit / upper` |
 | `clinical.bootstrap.delete_age_sex.movement_refit.lower` | Section 4.1; Table S13 | 0.173 | [`generated/survival_refit.json`](../generated/survival_refit.json) | `delete_age_sex / training_bootstrap / movement_refit / lower` |
 | `clinical.bootstrap.delete_age_sex.movement_refit.upper` | Section 4.1; Table S13 | 0.451 | [`generated/survival_refit.json`](../generated/survival_refit.json) | `delete_age_sex / training_bootstrap / movement_refit / upper` |
-| `clinical.delete_ecog.concordance_retained` | Section 4.1; Table 3; SI J | 0.5780 | [`generated/survival_example.json`](../generated/survival_example.json) | `delete_ecog / concordance_retained` |
-| `clinical.delete_ecog.net_change` | Section 4.1; Table 3; SI J | 0.0696 | [`generated/survival_example.json`](../generated/survival_example.json) | `delete_ecog / net_change` |
-| `clinical.delete_ecog.mean_absolute_pair_change` | Section 4.1; Table 3; SI J | 0.1954 | [`generated/survival_example.json`](../generated/survival_example.json) | `delete_ecog / mean_absolute_pair_change` |
-| `clinical.delete_ecog.tie_aware_bound` | Section 4.1; Table 3; SI J | 0.3987 | [`generated/survival_example.json`](../generated/survival_example.json) | `delete_ecog / tie_aware_bound` |
-| `clinical.delete_ecog.strict_reversals` | Section 4.1; Table 3; SI J | 316 | [`generated/survival_example.json`](../generated/survival_example.json) | `delete_ecog / strict_reversals` |
-| `clinical.delete_ecog.tie_transitions` | Section 4.1; Table 3; SI J | 14 | [`generated/survival_example.json`](../generated/survival_example.json) | `delete_ecog / tie_transitions` |
-| `clinical.delete_ecog.changed_pairs` | Section 4.1; Table 3; SI J | 330 | [`generated/survival_example.json`](../generated/survival_example.json) | `delete_ecog / changed_pairs` |
-| `clinical.delete_ecog.reinforced_untied_pairs` | Section 4.1; Table 3; SI J | 336 | [`generated/survival_example.json`](../generated/survival_example.json) | `delete_ecog / reinforced_untied_pairs` |
-| `clinical.delete_ecog.opposed_untied_pairs` | Section 4.1; Table 3; SI J | 316 | [`generated/survival_example.json`](../generated/survival_example.json) | `delete_ecog / opposed_untied_pairs` |
+| `clinical.delete_ecog.concordance_retained` | Section 4.1; Table 3; SI H | 0.5780 | [`generated/survival_example.json`](../generated/survival_example.json) | `delete_ecog / concordance_retained` |
+| `clinical.delete_ecog.net_change` | Section 4.1; Table 3; SI H | 0.0696 | [`generated/survival_example.json`](../generated/survival_example.json) | `delete_ecog / net_change` |
+| `clinical.delete_ecog.mean_absolute_pair_change` | Section 4.1; Table 3; SI H | 0.1954 | [`generated/survival_example.json`](../generated/survival_example.json) | `delete_ecog / mean_absolute_pair_change` |
+| `clinical.delete_ecog.tie_aware_bound` | Section 4.1; Table 3; SI H | 0.3987 | [`generated/survival_example.json`](../generated/survival_example.json) | `delete_ecog / tie_aware_bound` |
+| `clinical.delete_ecog.strict_reversals` | Section 4.1; Table 3; SI H | 316 | [`generated/survival_example.json`](../generated/survival_example.json) | `delete_ecog / strict_reversals` |
+| `clinical.delete_ecog.tie_transitions` | Section 4.1; Table 3; SI H | 14 | [`generated/survival_example.json`](../generated/survival_example.json) | `delete_ecog / tie_transitions` |
+| `clinical.delete_ecog.changed_pairs` | Section 4.1; Table 3; SI H | 330 | [`generated/survival_example.json`](../generated/survival_example.json) | `delete_ecog / changed_pairs` |
+| `clinical.delete_ecog.reinforced_untied_pairs` | Section 4.1; Table 3; SI H | 336 | [`generated/survival_example.json`](../generated/survival_example.json) | `delete_ecog / reinforced_untied_pairs` |
+| `clinical.delete_ecog.opposed_untied_pairs` | Section 4.1; Table 3; SI H | 316 | [`generated/survival_example.json`](../generated/survival_example.json) | `delete_ecog / opposed_untied_pairs` |
 | `clinical.bootstrap.delete_ecog.net_change_same_fit.lower` | Section 4.1; Table S13 | 0.025 | [`generated/survival_refit.json`](../generated/survival_refit.json) | `delete_ecog / training_bootstrap / net_change_same_fit / lower` |
 | `clinical.bootstrap.delete_ecog.net_change_same_fit.upper` | Section 4.1; Table S13 | 0.150 | [`generated/survival_refit.json`](../generated/survival_refit.json) | `delete_ecog / training_bootstrap / net_change_same_fit / upper` |
 | `clinical.bootstrap.delete_ecog.movement_same_fit.lower` | Section 4.1; Table S13 | 0.054 | [`generated/survival_refit.json`](../generated/survival_refit.json) | `delete_ecog / training_bootstrap / movement_same_fit / lower` |
@@ -81,16 +81,16 @@ Run `python reproduce.py` first. Each row below gives the published display valu
 | `certificate.source.t8` | Section 4.2; Figure 2 | 0.7708 | [`generated/results.json`](../generated/results.json) | `60|source|matched_centred__softplus_original / budget_curve / 8` |
 | `permutation.PHH.deletion_difference_mean` | Section 4.2; Table S6 | 0.0000 | [`generated/permutation_contrast.json`](../generated/permutation_contrast.json) | `PHH|matched_centred / deletion_difference_mean` |
 | `permutation.PHH.permutation_importance_mean` | Section 4.2; Table S6 | 0.0082 | [`generated/permutation_contrast.json`](../generated/permutation_contrast.json) | `PHH|matched_centred / permutation_importance_mean` |
-| `frozen_reference.PHH.n4` | SI H.3 | 0.7458 | [`generated/frozen_reference.json`](../generated/frozen_reference.json) | `PHH / 4` |
-| `frozen_reference.PHH.n20` | SI H.3 | 0.7250 | [`generated/frozen_reference.json`](../generated/frozen_reference.json) | `PHH / 20` |
-| `frozen_reference.PHH.n60` | SI H.3 | 0.7125 | [`generated/frozen_reference.json`](../generated/frozen_reference.json) | `PHH / 60` |
-| `frozen_reference.PHH.n102` | SI H.3 | 0.7083 | [`generated/frozen_reference.json`](../generated/frozen_reference.json) | `PHH / 102` |
+| `frozen_reference.PHH.n4` | SI F.3 | 0.7458 | [`generated/frozen_reference.json`](../generated/frozen_reference.json) | `PHH / 4` |
+| `frozen_reference.PHH.n20` | SI F.3 | 0.7250 | [`generated/frozen_reference.json`](../generated/frozen_reference.json) | `PHH / 20` |
+| `frozen_reference.PHH.n60` | SI F.3 | 0.7125 | [`generated/frozen_reference.json`](../generated/frozen_reference.json) | `PHH / 60` |
+| `frozen_reference.PHH.n102` | SI F.3 | 0.7083 | [`generated/frozen_reference.json`](../generated/frozen_reference.json) | `PHH / 102` |
 | `permutation.external.deletion_difference_mean` | Section 4.2; Table S6 | 0.0017 | [`generated/permutation_contrast.json`](../generated/permutation_contrast.json) | `external|matched_centred / deletion_difference_mean` |
 | `permutation.external.permutation_importance_mean` | Section 4.2; Table S6 | 0.0015 | [`generated/permutation_contrast.json`](../generated/permutation_contrast.json) | `external|matched_centred / permutation_importance_mean` |
-| `frozen_reference.external.n4` | SI H.3 | 0.6348 | [`generated/frozen_reference.json`](../generated/frozen_reference.json) | `external / 4` |
-| `frozen_reference.external.n20` | SI H.3 | 0.6333 | [`generated/frozen_reference.json`](../generated/frozen_reference.json) | `external / 20` |
-| `frozen_reference.external.n60` | SI H.3 | 0.6331 | [`generated/frozen_reference.json`](../generated/frozen_reference.json) | `external / 60` |
-| `frozen_reference.external.n102` | SI H.3 | 0.6326 | [`generated/frozen_reference.json`](../generated/frozen_reference.json) | `external / 102` |
+| `frozen_reference.external.n4` | SI F.3 | 0.6348 | [`generated/frozen_reference.json`](../generated/frozen_reference.json) | `external / 4` |
+| `frozen_reference.external.n20` | SI F.3 | 0.6333 | [`generated/frozen_reference.json`](../generated/frozen_reference.json) | `external / 20` |
+| `frozen_reference.external.n60` | SI F.3 | 0.6331 | [`generated/frozen_reference.json`](../generated/frozen_reference.json) | `external / 60` |
+| `frozen_reference.external.n102` | SI F.3 | 0.6326 | [`generated/frozen_reference.json`](../generated/frozen_reference.json) | `external / 102` |
 
 ## Worked clinical calculation
 
@@ -102,4 +102,4 @@ The complete scalar-loop calculation is in `code/survival_example.py`. Its input
 
 Main Tables 2–4 and SI Tables S1–S13 contain 285 numeric rows. The targets in `reported/table_numeric_rows.json` use the printed row order and precision. `generated/tables/Table_Main2.csv`, `Table_Main3.csv`, `Table_Main4.csv`, and `Table_S1.csv` through `Table_S13.csv` reproduce these numeric rows. Readable headings and column definitions appear in the companion LaTeX tables and the manuscript. Main Table 1 and SI Table S14 are conceptual comparisons.
 
-Figure 1 uses the 200-draw fitted-simulation means and Monte Carlo standard errors. Figure 2A uses compound-bootstrap AUC summaries, while Figures 2B–C use per-draw bound curves and their maxima. Figure S1 uses the regenerated analytic/Monte Carlo curves and rank counterexamples. Their exact input records are copied to `generated/plot_data/` and hashed in `generated/plot_input_manifest.json`.
+Figure 1 uses the 200-draw fitted-simulation means and Monte Carlo standard errors. Figure 2a uses compound-bootstrap AUC summaries, while Figure 2b-c uses per-draw bound curves and their maxima. Their exact input records are copied to `generated/plot_data/` and hashed in `generated/plot_input_manifest.json`.

@@ -1,4 +1,4 @@
-"""Verify the SI G.3 explanation against every supplied source-coordinate asset.
+"""Verify the SI E.3 explanation against every supplied source-coordinate asset.
 
 No model is refitted. Outputs go to generated/, leaving released records intact.
 """

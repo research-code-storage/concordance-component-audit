@@ -1,4 +1,4 @@
-"""Strict cohort joins and fitted perturbation coordinates for the reconstruction."""
+"""Strict cohort joins and fitted summary coordinates for the reconstruction."""
 from pathlib import Path
 import json,sys
 import numpy as np,pandas as pd

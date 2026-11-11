@@ -1,7 +1,7 @@
-"""Theory and same-fit checks of SI Sections A, C, D, G.5 and H.5, and the data of Figure 2B-C.
+"""Theory and same-fit checks of SI Sections A, E.5 and F.5, and the data of Figure 2b-c.
 
 Algorithms: 06_methods/code/{concordance,validate_methods}.py.
-Seeds are 20260923 and 20261000 + source draw.
+Seeds are 20260923 and 20261000 + training draw.
 Outputs go to the directory given by --output.
 """
 import os
@@ -9,7 +9,6 @@ os.environ.setdefault('LOKY_MAX_CPU_COUNT','1')
 from pathlib import Path
 import argparse,hashlib,itertools,json,sys
 import numpy as np,pandas as pd
-from scipy.stats import levy_stable
 ROOT=Path(__file__).resolve().parents[2]
 sys.path.insert(0,str(ROOT/'06_methods/code'))
 import validate_methods as vm
@@ -35,26 +34,16 @@ def export_expanded(out,result):
         assert abs(new-old-r['signed_change'])<2e-14
         survival.append({'case':k,'time':t.tolist(),'event':events.tolist(),'base':base.tolist(),'added':added.tolist(),'weight':weight.tolist(),'C_base':old,'C_full':new,'direct_change':new-old,**r})
     dump(out/'weighted_survival_200_cases.json',{'seed':20260923,'cases':survival})
-    # Store the actual common random inputs as well as the seed and algorithm.
-    rng=np.random.default_rng(20260923);arrays={};max_error=0.
-    for alpha in [.7,1.,1.5,2.]:
-        e1=levy_stable.rvs(alpha,0,size=200000,random_state=rng);e2=levy_stable.rvs(alpha,0,size=200000,random_state=rng)
-        tag=str(alpha).replace('.','p');arrays['alpha_'+tag+'_e1']=e1;arrays['alpha_'+tag+'_e2']=e2
-        for row in result['dilution']['cells']:
-            if row['alpha']==alpha:
-                auc=float(np.mean(row['mu']+e1+row['tau']*e2>0));assert auc==row['simulated_auc']
-                max_error=max(max_error,abs(auc-row['exact_auc']))
-    np.savez_compressed(out/'stable_mc_inputs.npz',**arrays)
-    dilution={**result['dilution'],'max_absolute_error':max_error,
-        'design_note':'For each alpha, one independent pair of length-200000 noise vectors is reused across the 15 location/scale settings. Sixty cells do not imply sixty independent Monte Carlo experiments.'}
-    dump(out/'stable_dilution.json',dilution);pd.DataFrame(dilution['cells']).to_csv(out/'stable_dilution_60_cells.csv',index=False)
-    ranks=[]
-    for values in [[0,1,2,3],[0,0,1,1]]:
-        for permutation in itertools.permutations(values):
-            p=(1+sum(x>=permutation[0]for x in permutation[1:]))/4
-            ranks.append({'values':values,'permutation':permutation,'p':p})
-    dump(out/'exchangeability_enumeration.json',{'summary':result['exchangeability'],'permutations':ranks,
-        'tie_note':'Enumerate all 24 permutations of labelled positions; tied value arrangements therefore occur with their correct multiplicities.'})
+    # Section 2.1: independently check the five-pair decomposition.
+    D=np.array([1,-1,1,3,0.]);E=np.array([-2,2,2,1,1.])
+    change=np.array([h(d+e)-h(d) for d,e in zip(D,E)])
+    example=pair_bound(D,E)
+    example.update(P=float(np.maximum(change,0).mean()),N=float(np.maximum(-change,0).mean()))
+    example['cancellation']=example['absolute_pair_change']-abs(example['signed_change'])
+    example['slack']=example['tie_aware_bound']-example['absolute_pair_change']
+    for key,expected in [('signed_change',.1),('absolute_pair_change',.5),('tie_aware_bound',.7),('inclusive_bound',.8),('P',.3),('N',.2),('cancellation',.4),('slack',.2)]:
+        assert abs(example[key]-expected)<1e-14,key
+    dump(out/'five_pair_example.json',example)
     construction={**result['construction'],'seed_formula':'20261000 + draw','draws':[{**r,'permutation_seed':20261000+r['seed']}for r in result['construction']['draws']]}
     dump(out/'label_blind_construction.json',construction)
     pd.DataFrame(result['application']['ranking_checks']).to_csv(out/'complete_rank_diagnostics.csv',index=False)
@@ -65,18 +54,10 @@ def export_expanded(out,result):
     df=pd.DataFrame(rows);df.to_csv(out/'kernel_budget_points.csv',index=False)
     selected=df[df.domain.isin(['PHH','external'])&df.design.eq('matched_centred')]
     assert len(selected)==140
-    selected.to_csv(out/'figure2BC_budget_points.csv',index=False)
-    dense=[]
-    for alpha in [.7,1.,1.5,2.]:
-        for mu in [.8,-.8]:
-            for tau in np.linspace(0,4,121):
-                dense.append({'alpha':alpha,'mu':mu,'sigma':1.,'tau':float(tau),'auc':float(levy_stable.cdf(mu/(1+tau**alpha)**(1/alpha),alpha,0))})
-    pd.DataFrame(dense).to_csv(out/'figureS1A_analytic_curves.csv',index=False)
-    pd.DataFrame(result['dilution']['counterexamples']).to_csv(out/'figureS1B_counterexamples.csv',index=False)
-    return {'scalar_cases':len(scalar),'weighted_survival_cases':len(survival),'stable_cells':len(dilution['cells']),
-        'maximum_stable_error':max_error,'rank_permutations':len(ranks),'rank_summary_rows':len(result['exchangeability']['exact_rank_checks']),
+    selected.to_csv(out/'figure2bc_bound_points.csv',index=False)
+    return {'scalar_cases':len(scalar),'weighted_survival_cases':len(survival),
         'construction_draws':len(construction['draws']),'maximum_coordinate_difference':max(r['target_coordinate_error']for r in construction['draws']),
-        'complete_rank_rows':len(result['application']['ranking_checks']),'figure2BC_points':len(selected),'kernel_budget_points':len(df),'figureS1A_points':len(dense)}
+        'complete_rank_rows':len(result['application']['ranking_checks']),'figure2bc_points':len(selected),'kernel_budget_points':len(df)}
 
 def main():
     p=argparse.ArgumentParser();p.add_argument('--output',type=Path,required=True);args=p.parse_args();out=args.output.resolve();out.mkdir(parents=True,exist_ok=True)

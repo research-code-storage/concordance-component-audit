@@ -72,7 +72,7 @@ def run(output,training_counts=(60,),seeds=tuple(range(10))):
     if all(p.exists()for p in expected):
         all_results=[json.loads(p.read_text())for p in expected];assert all(r['run_identity']==identity for r in all_results)
         (output/'all_runs.json').write_text(json.dumps({'config':config,'runs':all_results},indent=2));print('All reconstructed comparisons completed.',flush=True)
-    else:print('Requested fits saved; full summary waits for all ten source draws.',flush=True)
+    else:print('Requested fits saved; full summary waits for all ten training draws.',flush=True)
 
 if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('--output',type=Path,default=BASE/'results/experiments');p.add_argument('--training-counts',type=int,nargs='+',choices=[60],default=[60]);p.add_argument('--seeds',type=int,nargs='+',choices=list(range(10)),default=list(range(10)));a=p.parse_args();run(a.output,a.training_counts,a.seeds)

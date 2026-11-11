@@ -1,5 +1,5 @@
 {
-  "study": "Bounded nonlinear component perturbations",
+  "study": "Magnitude-constrained nonlinear component perturbations",
   "analysis_date": "2026-10-18",
   "status": "Analysis of supplied fitted component scores",
   "training_compounds": 60,
@@ -35,7 +35,7 @@
   "fold_grid_points": 101,
   "fold_grid": "linspace(min(g), max(g), 101) separately for each draw and panel",
   "fold_function": "h_i = sign * t * abs(g_i - c)",
-  "comparison_baseline": "retained same-fit linear score ell",
+  "comparison_baseline": "retained same-fit score ell",
   "evaluation_unit": "compound; arithmetic mean of profile scores within compound",
   "pairs": "all positive-negative compound pairs, weight one",
   "tie_credit": 0.5,

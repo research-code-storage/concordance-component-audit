@@ -16,7 +16,7 @@ for the paired differences between them.  Normal 95% intervals use z = Phi^{-1}(
 The estimator is computed twice, from the pair sums above and from an explicit Hoeffding
 projection of the symmetrized numerator and denominator kernels, and the two must agree.
 On a binary outcome (event versus no event) the estimator must reproduce the
-structural-component display of Supporting Information B exactly.  A leave-one-patient-out
+structural-component display of Supplementary Information B exactly.  A leave-one-patient-out
 jackknife variance is reported as a further check, and the standard errors are compared
 with those of the patient bootstrap (code/lung_bootstrap.py, which must run first).  No
 resampling and no random numbers are used here.
@@ -105,7 +105,7 @@ def jackknife(c, k):
 
 def binary_reduction(data):
     """Binary outcome with unit weights on case-control pairs (event versus no event, full
-    score): the Proposition 4 estimator must equal the display of Supporting Information B,
+    score): the Proposition 4 estimator must equal the display of Supplementary Information B,
     N/(N-1) {sum_i (V10_i - T)^2 / m^2 + sum_j (V01_j - T)^2 / n^2}."""
     y, f = data["status"], data["full_score"]
     c = ((y[:, None] == 1) & (y[None, :] == 0)).astype(float)

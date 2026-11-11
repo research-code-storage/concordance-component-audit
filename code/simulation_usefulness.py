@@ -103,6 +103,11 @@ def main():
                             for a in (0.01, 0.1)},
             "bound_equals_movement_every_replicate": bool(np.all(bd == mv))}
     comp = out["by"]["component"]
+    hidden_counts=[comp[g]['hidden_denominator'] for g in ('aligned','independent','opposed')]
+    slack_counts=[comp[g]['slack_denominator'] for g in ('aligned','independent','opposed')]
+    assert hidden_counts==[4694,4612,4689] and slack_counts==[4751,4741,4757]
+    hidden_text=', '.join(f'{v:,}' for v in hidden_counts[:-1])+' and '+f'{hidden_counts[-1]:,}'
+    slack_text=', '.join(f'{v:,}' for v in slack_counts[:-1])+' and '+f'{slack_counts[-1]:,}' 
     out["max_component_mcse"] = {k: max(v[k + "_mcse"] for v in comp.values())
                                  for k in ("net", "moved", "bound")}
 
@@ -119,29 +124,12 @@ def main():
     (args.out / "simulation_usefulness.json").write_text(json.dumps(out, indent=1))
 
     # main-text table: the component factor, which is the one that separates the regimes
-    L = [r"\begin{table}[htbp]", r"\centering", r"\small",
-         r"\caption{Net concordance change, movement and bound across component geometries. Each row averages 4800 "
-         r"replicates over the 24 scenarios sharing that component geometry, from a "
-         r"$2\times4\times3\times3$ design over sample size, signal strength, component "
-         r"geometry and score distribution. \emph{Net} is the absolute change in "
-         r"concordance after deleting the component, \emph{moved} the mean absolute "
-         r"pairwise movement, \emph{bound} the tie-aware bound of "
-         r"Proposition~1. \emph{Hidden} is the mean replicate-level moved/net ratio "
-         r"conditional on net$>0$ (4694, 4612 and 4689 replicates, respectively); "
-         r"\emph{slack} is the mean bound/moved ratio conditional on moved$>0$ "
-         r"(4751, 4741 and 4757 replicates). These are not ratios of the displayed "
-         r"column means. Monte Carlo standard errors of the displayed means are at most "
-         rf"{out['max_component_mcse']['net']:.4f} (net), {out['max_component_mcse']['moved']:.4f} "
-         rf"(moved) and {out['max_component_mcse']['bound']:.4f} (bound). The bound was violated "
-         r"in none of the 14400 replicates; Supporting Information~E reports every scenario.}",
-         r"\label{tab:usefulness}",
-         r"\begin{tabular}{lccccc}", r"\toprule",
-         r"Component geometry & Net & Moved & Bound & Hidden & Slack \\", r"\midrule"]
+    L = ['\\begin{table}[htbp]', '\\centering', '\\small', '\\caption{Net concordance change, movement and bound by component geometry. Each row averages 4,800 replicates over the 24 scenarios sharing that geometry.}', '\\label{tab:usefulness}', '\\begin{tabular}{lccccc}', '\\toprule', 'Component geometry & $|\\Delta|$ & $A_\\omega$ & $B_\\omega$ & $A_\\omega/|\\Delta|$ & $B_\\omega/A_\\omega$ \\\\', '\\midrule']
     names = {"aligned": "Aligned", "independent": "Independent", "opposed": "Opposed"}
     for k, v in out["by"]["component"].items():
         L.append(f"{names.get(k, k)} & {v['net']:.4f} & {v['moved']:.4f} & "
                  f"{v['bound']:.4f} & {v['hidden']:.2f} & {v['slack']:.2f} \\\\")
-    L += [r"\bottomrule", r"\end{tabular}", r"\end{table}"]
+    L += ['\\bottomrule', '\\end{tabular}', '\\par\\smallskip', '\\begin{minipage}{\\linewidth}', '\\footnotesize', 'The first three columns are means of $|\\Delta|$, $A_\\omega$ and $B_\\omega$, with', 'Monte Carlo standard errors at most 0.0011, 0.0016 and 0.0027, respectively.', 'The ratio columns are means of replicate-level ratios and differ from ratios of the', f'column means. They are conditional on $|\\Delta|>0$ ({hidden_text} replicates)', f'and on $A_\\omega>0$ ({slack_text} replicates).', '\\end{minipage}', '\\end{table}']
     (args.out / "table6.tex").write_text("\n".join(L) + "\n")
     print(f"\nwrote {args.out/'table6.tex'}")
     (args.out / "si_simulation_tables.tex").write_text(si_tables(out["scenario_cells"]))
@@ -149,7 +137,7 @@ def main():
 
 
 def si_tables(scenarios):
-    """Supporting Information Tables S1 (n=50) and S2 (n=200): all 72 scenarios."""
+    """Supplementary Information Tables S1 (n=50) and S2 (n=200): all 72 scenarios."""
     geo = {"aligned": "Aligned", "independent": "Independent", "opposed": "Opposed"}
     dist = {"normal": "Normal", "t3": "$t_3$", "rounded_normal": "Rounded"}
 

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Same-fit deletion versus refitting for the lung-cancer illustration.
 
-The clinical analysis (Section 4.1 and Supporting Information J) compares component
+The clinical analysis (Section 4.1 and Supplementary Information H) compares component
 deletion from a fitted Cox model with reduced-model refitting on the same 158 training
 patients.
 

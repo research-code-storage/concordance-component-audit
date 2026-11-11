@@ -28,6 +28,7 @@ for name in ('times.ttf', 'timesi.ttf', 'timesbd.ttf', 'timesbi.ttf'):
 families={f.name for f in fm.fontManager.ttflist}
 family=next((n for n in ['Times New Roman','Liberation Serif','DejaVu Serif'] if n in families))
 font=fm.findfont(family)
+panel_family=next(n for n in ['Arial','DejaVu Sans'] if n in families)
 plt.rcParams.update({
     'font.family': family, 'font.size': 10,
     'mathtext.fontset': 'custom', 'mathtext.rm': family,
@@ -100,12 +101,12 @@ for inf, colour, marker in [(True, '#155f80', 'o'), (False, '#ba5324', 's')]:
             a.errorbar(x, y, yerr=error, color=colour, linestyle=style, marker=marker,
                        markersize=3.6, linewidth=1.3, elinewidth=.8, capsize=2.5, capthick=.8, label=label)
             series.append({'metric': key, 'label': label, 'x': x, 'y': y, 'error': error})
-for a, label, letter in zip(ax, ['Mean AUC', r'Mean $\Delta$', r'Mean $A_\omega$', r'Mean $B_\omega$'], 'ABCD'):
+for a, label, letter in zip(ax, ['Mean AUC', r'Mean $\Delta$', r'Mean $A_\omega$', r'Mean $B_\omega$'], 'abcd'):
     base(a)
     a.set_ylabel(label, labelpad=5)
     a.set_xticks([0, 6, 16])
     a.set_xlim(-.75, 16.75)
-    a.text(0, 1.045, letter, transform=a.transAxes, weight='bold', size=12, va='bottom')
+    a.text(0, 1.045, letter, transform=a.transAxes, weight='bold', fontfamily=panel_family, size=12, va='bottom')
 ax[0].set_ylim(.48, .97)
 ax[0].set_yticks([.5, .6, .7, .8, .9])
 ax[1].set_ylim(-.008, .24)
@@ -118,12 +119,12 @@ ax[0].axhline(.5, color='#888888', linewidth=.65, linestyle=':')
 ax[1].axhline(0, color='#888888', linewidth=.65, linestyle=':')
 legend = ax[3].legend(loc='upper right', borderaxespad=.25, labelspacing=.35, handlelength=2.1, handletextpad=.55)
 fig.supxlabel('Embedding displacement', y=.025, fontsize=10.5)
-save(fig, 'Figure_1', {'printed_figure': 'Figure 1', 'series': series, 'legend': 'upper right of panel D'})
+save(fig, 'Fig1', {'printed_figure': 'Figure 1', 'series': series, 'legend': 'upper right of panel d'})
 
 # Main Figure 2.
 results = load('results.json')
 auc_rows = {f"{r['training_compounds']}|{r['domain']}|{r['arm']}": r for r in rows('all_results.csv')}
-budget_rows = rows('figure2BC_budget_points.csv')
+budget_rows = rows('figure2bc_bound_points.csv')
 fig, ax = plt.subplots(1, 3, figsize=(6.8, 2.85))
 fig.subplots_adjust(left=.085, right=.985, bottom=.20, top=.76, wspace=.43)
 readouts = [('softplus_original', 'Full predictor', '#1f4e79'),
@@ -149,12 +150,12 @@ ax[0].set_ylabel('Mean AUC', labelpad=4)
 ax[0].set_ylim(0, 1.04)
 ax[0].set_yticks([0, .25, .5, .75, 1])
 ax[0].axhline(.5, color='#888888', linewidth=.65, linestyle=':')
-ax[0].set_title('A', loc='left', weight='bold', pad=6)
+ax[0].set_title('a', loc='left', weight='bold', fontfamily=panel_family, pad=6)
 handles, labels = ax[0].get_legend_handles_labels()
 fig.legend(handles, labels, loc='upper left', bbox_to_anchor=(.085, .995), frameon=False,
            borderaxespad=0, labelspacing=.3, handlelength=1.6, handletextpad=.55)
 certificate_records = []
-for a, (domain, title) in zip(ax[1:], [('PHH', 'B  PHH'), ('external', 'C  DILImap')]):
+for a, (domain, title) in zip(ax[1:], [('PHH', 'b  PHH'), ('external', 'c  DILImap')]):
     record = results[f'60|{domain}|matched_centred__softplus_original']
     ts = sorted(float(t) for t in record['budget_curve'])
     assert ts == [0, .25, .5, 1, 2, 4, 8]
@@ -174,7 +175,7 @@ for a, (domain, title) in zip(ax[1:], [('PHH', 'B  PHH'), ('external', 'C  DILIm
     a.set_xlim(-.25, 8.3)
     a.set_xlabel(r'Multiplier $t$', labelpad=4)
     a.set_ylabel(r'$B_\omega(t)$', labelpad=3)
-    a.set_title(title, loc='left', fontweight='bold', pad=6)
+    a.set_title(title, loc='left', fontweight='bold', fontfamily=panel_family, pad=6)
     certificate_records.append({'domain': domain, 't': ts, 'per_draw': per, 'maximum': maxima, 'absolute_net_change_at_one': actual})
 ax[1].set_ylim(-.008, .315)
 ax[1].set_yticks([0, .1, .2, .3])
@@ -188,49 +189,8 @@ fig.legend(cert_handles, ['Per-draw bound', 'Maximum across draws', r'Maximum $|
            labelspacing=.3, handlelength=1.6, handletextpad=.55)
 for a in ax:
     base(a)
-save(fig, 'Figure_2', {'printed_figure': 'Figure 2', 'bars': bar_records,
-                      'certificate_points': certificate_records, 'legends': 'above axes; shared for panels B and C'})
+save(fig, 'Fig2', {'printed_figure': 'Figure 2', 'bars': bar_records,
+                      'certificate_points': certificate_records, 'legends': 'above axes; shared for panels b and c'})
 
-# Supporting Figure S1.
-curves = rows('figureS1A_analytic_curves.csv')
-mc = rows('stable_dilution_60_cells.csv')
-counter = rows('figureS1B_counterexamples.csv')
-fig, ax = plt.subplots(1, 2, figsize=(6.8, 3.0))
-fig.subplots_adjust(left=.09, right=.985, bottom=.18, top=.90, wspace=.29)
-colours = ['#1f4e79', '#2e8b57', '#c07000', '#7b3f9d']
-curve_records = []
-for alpha, colour in zip([.7, 1., 1.5, 2.], colours):
-    for mu, style in [(.8, '-'), (-.8, '--')]:
-        group = sorted([r for r in curves if float(r['alpha']) == alpha and float(r['mu']) == mu], key=lambda r:float(r['tau']))
-        points = sorted([r for r in mc if float(r['alpha']) == alpha and float(r['mu']) == mu], key=lambda r:float(r['tau']))
-        assert len(group) == 121 and len(points) == 5
-        x = [float(r['tau']) for r in group]; y = [float(r['auc']) for r in group]
-        px = [float(r['tau']) for r in points]; py = [float(r['simulated_auc']) for r in points]
-        ax[0].plot(x, y, linestyle=style, color=colour, linewidth=1.25, label=fr'$\alpha={alpha:g}$' if mu>0 else None)
-        ax[0].plot(px, py, 'o', color=colour, markersize=3, markeredgecolor='#222222', markeredgewidth=.3)
-        curve_records.append({'alpha': alpha, 'mu': mu, 'x': x, 'y': y, 'mc_x': px, 'mc_y': py})
-ax[0].set_xlabel(r'Noise scale $\tau$')
-ax[0].set_ylabel('AUC')
-ax[0].set_xticks([0, 1, 2, 3, 4])
-ax[0].set_ylim(.265, .75)
-ax[0].set_yticks([.3, .4, .5, .6, .7])
-ax[0].set_title('A  Symmetric-stable noise', loc='left', weight='bold', pad=9)
-ax[0].legend(loc='upper right', ncol=2, columnspacing=.9, handlelength=1.6, handletextpad=.4,
-             borderaxespad=.2, labelspacing=.3)
-for row, colour, label in zip(counter, ['#c0504d', '#1f4e79'], ['Away from 0.5', 'Across 0.5']):
-    ax[1].plot([0, 1], [float(row['baseline_auc']), float(row['noisy_auc'])], 'o-',
-               color=colour, linewidth=1.4, markersize=4.5, label=label)
-ax[1].set_xticks([0, 1], ['Baseline', 'After noise'])
-ax[1].set_xlim(-.22, 1.22)
-ax[1].set_ylabel('AUC')
-ax[1].set_ylim(.44, .73)
-ax[1].set_yticks([.45, .50, .55, .60, .65, .70])
-ax[1].set_title('B  Two-point noise', loc='left', weight='bold', pad=9)
-ax[1].legend(loc='upper left', borderaxespad=.25, handlelength=1.8, labelspacing=.4)
-for a in ax:
-    a.axhline(.5, color='#888888', linewidth=.65, linestyle=':')
-    base(a)
-save(fig, 'Figure_S1', {'printed_figure': 'Figure S1', 'analytic_and_MC_curves': curve_records,
-                      'counterexamples': counter, 'legends': 'upper corners with no data obscured'})
 (HERE.parent / 'generated/plot_verification.json').write_text(json.dumps(report, indent=2), encoding='utf-8')
-print(f'Generated Figures 1, 2 and S1 using {family}.')
+print(f'Generated Figures 1 and 2 using {family}.')

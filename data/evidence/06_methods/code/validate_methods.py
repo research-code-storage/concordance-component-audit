@@ -3,7 +3,6 @@ from pathlib import Path
 import argparse, hashlib, itertools, json, sys
 import numpy as np
 import pandas as pd
-from scipy.stats import levy_stable, skew, kurtosis, norm
 from threadpoolctl import threadpool_limits
 from concordance import pair_bound, comparable_pairs
 
@@ -47,60 +46,6 @@ def check_bounds():
     assert rejected == 3
     return {'scalar_tie_cases': count, 'weighted_survival_cases': random_cases,
             'invalid_inputs_rejected': rejected, 'unit_coefficient_sharp': True, 'status': 'PASS'}
-
-
-def dilution():
-    seed = 20260923; size = 200000; rng = np.random.default_rng(seed); rows = []
-    for alpha in [.7, 1., 1.5, 2.]:
-        e1 = levy_stable.rvs(alpha, 0, size=size, random_state=rng)
-        e2 = levy_stable.rvs(alpha, 0, size=size, random_state=rng)
-        for mu in [-.8, 0., .8]:
-            curve = []
-            for tau in [0., .5, 1., 2., 4.]:
-                exact = float(levy_stable.cdf(mu/(1+tau**alpha)**(1/alpha), alpha, 0))
-                observed = float(np.mean(mu+e1+tau*e2 > 0)); se = float(np.sqrt(exact*(1-exact)/size))
-                assert abs(exact-observed) <= 6*se+.0001
-                rows.append(dict(alpha=alpha,mu=mu,sigma=1.,tau=tau,exact_auc=exact,
-                                 simulated_auc=observed,mcse=se)); curve.append(exact)
-            assert (np.diff(curve)<0).all() if mu>0 else ((np.diff(curve)>0).all() if mu<0 else np.all(np.array(curve)==.5))
-    def h(x): return float(x>0)+.5*float(x==0)
-    examples=[]
-    for name, values in [('increase',[10.,-.1]),('cross_half',[.1,-10.])]:
-        # iid sample-level noise takes 0 or 5, independently of class and baseline.
-        auc = sum(prob*.25*h(v+n1-n0) for v,prob in zip(values,[.6,.4]) for n1,n0 in itertools.product([0.,5.],repeat=2))
-        examples.append(dict(name=name,positive_scores=values,positive_probabilities=[.6,.4],
-                             negative_score=0.,baseline_auc=.6,noise_values=[0.,5.],noisy_auc=auc))
-    np.testing.assert_allclose([r['noisy_auc'] for r in examples],[.7,.45],atol=1e-15)
-    # A symmetric nonstable added term can also yield monotone dilution.
-    t = np.linspace(0,8,801); nonstable=.5*(norm.cdf(.8+t)+norm.cdf(.8-t))
-    assert np.all(np.diff(nonstable)<=1e-15)
-    return dict(seed=seed,independent_pairs_per_curve=size,cells=rows,counterexamples=examples,
-                nonstable_dilution_example=True,status='PASS')
-
-
-def exchangeability():
-    checks=[]
-    for values in [[0,1,2,3],[0,0,1,1]]:
-        pvals=[]
-        for t in itertools.permutations(values):
-            pvals.append((1+sum(x>=t[0] for x in t[1:]))/4)
-        for level in [.25,.5,.75,1.]:
-            rate=float(np.mean(np.array(pvals)<=level));assert rate<=level
-            if len(set(values))==4:assert rate==level
-            checks.append(dict(values=values,level=level,rejection_rate=rate))
-    # Two fixed x values; one positive class randomly assigned under the null.
-    # All scores below are functions of x without consulting either assignment.
-    x=np.array([-1.,1.]); special=np.abs(x); references=np.arange(1,20)[:,None]*x
-    pvals=[]
-    for positive in [0,1]:
-        negative=1-positive
-        h=lambda d:float(d>0)+.5*float(d==0)
-        t0=h(special[positive]-special[negative])
-        ts=[h(s[positive]-s[negative]) for s in references]
-        pvals.append((1+sum(v>=t0 for v in ts))/20)
-    assert pvals==[.05,1.]
-    return dict(exact_rank_checks=checks,label_blind_nonexchangeable_pvalues=pvals,
-                nominal_level=.05,label_blind_null_rejection=.5,status='PASS')
 
 
 def aggregate(d, key):
@@ -173,7 +118,7 @@ def construction():
 def run():
     out={}
     with threadpool_limits(limits=1):
-        for name,func in [('bounds',check_bounds),('dilution',dilution),('exchangeability',exchangeability),('application',application),('construction',construction)]:
+        for name,func in [('bounds',check_bounds),('application',application),('construction',construction)]:
             out[name]=func();print(name,'PASS',flush=True)
     out['status']='PASS'
     return out

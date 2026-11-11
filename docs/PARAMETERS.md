@@ -15,7 +15,7 @@ The authoritative settings and evaluation identifiers are `05_reconstruction/pro
 | Setting | Value |
 |---|---|
 | Source holdout | 20 compounds, compound-sampling seed 12345 |
-| Training | 60 compounds per draw, draw seeds 0 through 9 |
+| Training | Ten approximately stratified random subsets (draws), each containing 60 of the remaining 82 compounds; seeds 0 through 9 |
 | Embeddings / pathways | 768 / 54 features |
 | Main reference design | `matched_centred` |
 | Other reported designs | `historical_centred` = pooled-centred; `revised_origin` = origin-preserving |
@@ -34,7 +34,7 @@ The authoritative settings and evaluation identifiers are `05_reconstruction/pro
 | Compound bootstrap | 20,000 class-stratified resamples, seed 20260922 |
 | Kernel-score permutation | 1,000 per draw, panel and design; base seed 20260929 |
 
-The saved state records the actual training identifiers, scales, prototypes and fitted parameters for every draw. The complete permutation seeds are in `08_permutation/permutation_config.json`. They use the explicit design offsets in `config.json`; they do not depend on the order of columns in a score file.
+The two summary coordinates quantify the magnitude and orientation of the reference-subtracted, scaled pathway vector (SI E.3). The main matched-centred design uses matched vehicle-control profiles and centred scaling. The saved state records the actual training identifiers, scales, prototypes and fitted parameters for every draw. The complete permutation seeds are in `08_permutation/permutation_config.json`. They use the explicit design offsets in `config.json`; they do not depend on the order of columns in a score file.
 
 Profiles are averaged within compound before calculating AUCs or pairwise quantities. Evaluation intervals resample compounds within class using shared resamples across draws and prediction scores. The mean AUC is an average of ten draw-specific AUCs, not an AUC obtained by averaging scores across draws.
 
@@ -52,7 +52,7 @@ Evaluation-sample bootstrap: 5,000 patient resamples, seed 20261005, fixed fitte
 
 The 72 cells cross n in {50, 200}, strength a in {0.01, 0.1, 0.5, 1}, geometry s in {1, 0, -1}, and normal, scaled t(3) or rounded-normal retained errors. Equal numbers of cases and controls are fixed. The retained score is 0.6 Y + error, rounded for the retained-tie design. The component is a (Z + 0.6 s Y), with independent standard normal Z. Each cell has 200 datasets. Master seed 20260927 generates the 14,400 explicit replicate seeds in `07_reference_study/results/simulation/all_14400_replicates.csv`.
 
-The movement-to-net-change ratio averages A / abs(Delta) over replicates with nonzero Delta. The bound-to-movement ratio averages B / A over replicates with positive A. The ratio of means is exported separately. Additional implementation checks of the multiplier envelope and bounded retained-score perturbations are recorded with the same datasets, as described in SI A and E.
+The movement-to-net-change ratio averages A / abs(Delta) over replicates with nonzero Delta. The bound-to-movement ratio averages B / A over replicates with positive A. The ratio of means is exported separately. Additional implementation checks of the multiplier envelope and bounded retained-score perturbations are recorded with the same datasets, as described in SI A and C.
 
 ### Population inference
 
@@ -68,6 +68,7 @@ Unconditional normal-interval coverage counts a zero or invalid estimated standa
 
 Fitting uses projected nonnegative Adam updates on CPU in float64, 1000 maximum updates, learning rate 0.001 decreasing to 0.00001, patience 80, improvement threshold 0.0001 and gradient norm cap 1. Each fitted model is evaluated at all three displacements. Figure 1 shows means and two Monte Carlo standard errors across the 200 training draws.
 
-### Nonlinear perturbations
+### Magnitude-constrained nonlinear perturbations
 
 `b_robustness/parameters.json` specifies h_i = s t abs(g_i - c), with signs -1 and 1, 101 equally spaced c values from min(g) to max(g), and multipliers 1, 2, 4 and 8. Three panels and ten draws give 24,240 folded perturbations. Equality in pair scoring remains exact; 1e-12 is the independent calculation tolerance. The finite-grid maximum is reported separately from the theoretical upper bound for the complete perturbation class.
+

@@ -51,7 +51,7 @@ def main():
  plot=G/'plot_data';plot.mkdir(exist_ok=True)
  for name in ['fitted_component_audit.json','results.json']:shutil.copy2(G/name,plot/name)
  shutil.copy2(G/'main_inference/all_results.csv',plot/'all_results.csv')
- for name in ['figure2BC_budget_points.csv','figureS1A_analytic_curves.csv','stable_dilution_60_cells.csv','figureS1B_counterexamples.csv']:shutil.copy2(G/'theory_replay'/name,plot/name)
+ for name in ['figure2bc_bound_points.csv']:shutil.copy2(G/'theory_replay'/name,plot/name)
  (G/'plot_input_manifest.json').write_text(json.dumps({p.name:{'sha256':__import__('hashlib').sha256(p.read_bytes()).hexdigest()} for p in plot.iterdir() if p.is_file()},indent=2))
  print('Main Tables 2-4, SI Tables S1-S13 and all figure inputs generated.')
 

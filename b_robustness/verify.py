@@ -43,7 +43,7 @@ def independent(ell, g, y, t, h):
 
 def main():
     p = argparse.ArgumentParser(description=__doc__)
-    p.add_argument('--results', type=Path, default=HERE/'results')
+    p.add_argument('--results', type=Path, default=REPO/'generated/nonlinear')
     a = p.parse_args()
     data = json.loads((a.results/'results.json').read_text(encoding='utf-8'))
     cfg = json.loads((HERE/'parameters.json').read_text(encoding='utf-8'))

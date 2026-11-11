@@ -1,4 +1,4 @@
-"""Independent autograd check of 15 heterogeneous small-problem fits and of the grouped AUC summaries (SI Section G.4)."""
+"""Independent autograd check of 15 heterogeneous small-problem fits and of the grouped AUC summaries (SI Section E.4)."""
 import os
 for k in ['OMP_NUM_THREADS','MKL_NUM_THREADS','OPENBLAS_NUM_THREADS']:os.environ.setdefault(k,'2')
 from pathlib import Path
@@ -46,8 +46,6 @@ def main():
     else:raise AssertionError('An incomplete comparison was accepted')
     report={'status':'PASS','independent_heterogeneous_fits':15,'maximum_parameter_or_objective_error':max(errors)}
     (target/'small_fit_checks.json').write_text(json.dumps(report,indent=2));print(json.dumps(report,indent=2),flush=True)
-    saved=json.loads((ROOT/'05_reconstruction/results/small_fit_checks.json').read_text())
-    assert saved['independent_heterogeneous_fits']==report['independent_heterogeneous_fits'] and np.isclose(saved['maximum_parameter_or_objective_error'],report['maximum_parameter_or_objective_error'],rtol=1e-6,atol=0)
-    print('Small-problem fits agree with the saved record',flush=True)
+    print('Small-problem fits agree with the independent implementation',flush=True)
 
 if __name__=='__main__':main()

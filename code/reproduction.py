@@ -1,6 +1,6 @@
-"""Run the analyses mapped to the manuscript and Supporting Information."""
+"""Run the analyses mapped to the manuscript and Supplementary Information."""
 from pathlib import Path
-import argparse,hashlib,os,subprocess,sys,time
+import argparse,hashlib,json,os,platform,subprocess,sys,time
 ROOT=Path(__file__).resolve().parents[1]
 EV='data/evidence'
 STAGES={
@@ -46,18 +46,41 @@ def main():
  p.add_argument('--manifest-only',action='store_true')
  p.add_argument('--skip-manifest',action='store_true',help='For preparing the release before its manifest is generated.')
  p.add_argument('--deep',action='store_true',help='Also replay model states, coordinate assets and small-problem gradient checks.')
+ p.add_argument('--full-inference',action='store_true',help='Regenerate all 160000 coverage datasets and 8000 bootstrap intervals.')
  a=p.parse_args();os.chdir(ROOT)
+ if a.full_inference and a.stage not in (None,'inference'):
+  p.error('--full-inference requires the full workflow or --stage inference')
  if not a.skip_manifest:manifest()
  if a.manifest_only:return
  selected=[a.stage] if a.stage else list(STAGES)
- for i,name in enumerate(selected,1):
-  print(f'[{i}/{len(selected)}] {name}',flush=True)
-  for job in STAGES[name]:run(job)
- if a.deep:
-  os.environ['CONCORDANCE_VERIFY_OUTPUT']=str(ROOT/'generated/small_fit_checks')
-  for job in [('code/verify_states.py',),
-              (EV+'/05_reconstruction/code/check_small_fits.py',),
-              (EV+'/07_reference_study/code/build_reference_assets.py','--output','generated/reference_assets')]:run(job)
+ report={'status':'RUNNING','requested_stages':selected,'completed_stages':[],
+         'deep_requested':a.deep,'deep_completed':False,'full_inference':a.full_inference,
+         'python':platform.python_version(),'platform':platform.platform()}
+ status=ROOT/'generated/reproduction.json';status.parent.mkdir(exist_ok=True)
+ def save_status():status.write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
+ save_status();start=time.monotonic()
+ try:
+  for i,name in enumerate(selected,1):
+   print(f'[{i}/{len(selected)}] {name}',flush=True)
+   jobs=STAGES[name]
+   if name=='inference' and a.full_inference:
+    jobs=[('code/inference_coverage.py','--out','generated/inference_full','--replicates','2000',
+           '--bootstrap-replicates','1000','--bootstrap-resamples','999','--truth-power','20','--truth-blocks','16','--workers','4'),
+          ('code/verify_inference.py','--full-replay','generated/inference_full')]
+   for job in jobs:run(job)
+   report['completed_stages'].append(name);save_status()
+  if a.deep:
+   os.environ['CONCORDANCE_VERIFY_OUTPUT']=str(ROOT/'generated/small_fit_checks')
+   for job in [('code/verify_states.py',),
+               (EV+'/05_reconstruction/code/check_small_fits.py',),
+               (EV+'/07_reference_study/code/build_reference_assets.py','--output','generated/reference_assets')]:run(job)
+   report['deep_completed']=True
+  report['status']='PASS'
+ except BaseException:
+  report['status']='FAILED'
+  raise
+ finally:
+  report['elapsed_seconds']=round(time.monotonic()-start,2);save_status()
  print('Selected analyses completed. Results and numerical checks are in generated/.',flush=True)
 
 if __name__=='__main__':main()

@@ -122,7 +122,7 @@ def main():
          r"fitted states, for the full predictor with 60 training compounds. "
          r"\emph{Bound} and \emph{changed pairs} are the tie-aware bound of "
          r"Proposition~\ref{prop:bound} and the pairs whose contribution actually changes "
-         r"on deletion, both maxima over the ten source draws. \emph{Deletion} is the mean "
+         r"on deletion, both maxima over the ten training draws. \emph{Deletion} is the mean "
          r"signed concordance change. \emph{Permutation} is the mean drop in concordance "
          rf"when the kernel component is permuted across compounds, over {a.permutations} permutations "
          rf"per draw, and the last column is the fraction of permutations that change "

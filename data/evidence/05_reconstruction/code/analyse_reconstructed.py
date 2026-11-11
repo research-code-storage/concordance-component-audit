@@ -18,7 +18,7 @@ def analyse(folder,write=True,output=None):
                 f=pd.DataFrame(full,columns=names);f['compound']=meta.compound;f=f.groupby('compound',sort=True)[names].mean()
                 l=pd.DataFrame(lin,columns=names);l['compound']=meta.compound;l=l.groupby('compound',sort=True)[names].mean();labels=meta.groupby('compound',sort=True).label.first().to_numpy()
                 identity=(names,f.index.tolist(),labels.tolist())
-                if previous is not None and identity!=previous:raise ValueError('Comparison panels differ across source draws')
+                if previous is not None and identity!=previous:raise ValueError('Comparison panels differ across training draws')
                 previous=identity;scores.append(f.values);linear.append(l.values)
             scores=np.array(scores);linear=np.array(linear);pos=np.flatnonzero(labels==1);neg=np.flatnonzero(labels==0)
             if len(pos)<2 or len(neg)<2:raise ValueError('Insufficient compounds per class for this uncertainty summary')

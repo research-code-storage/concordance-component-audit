@@ -1,4 +1,4 @@
-"""Frozen-reference labelling study (SI H.3), recomputed from saved profile scores."""
+"""Frozen-reference labelling study (SI F.3), recomputed from saved profile scores."""
 from pathlib import Path
 import argparse,json
 import numpy as np

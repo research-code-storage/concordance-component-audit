@@ -62,7 +62,7 @@ def main():
         if not unique_ids:
             failures.append(f"{name}: sample identifiers are not unique")
 
-    # expected sizes, as stated in Supporting Information G
+    # expected sizes, as stated in Supplementary Information E
     for name, expected in (("mhedili pathways", 7818), ("mhedili embeddings", 7818),
                            ("DILImap pathways", 763), ("DILImap embeddings", 763)):
         got = report[name]["rows"]

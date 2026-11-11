@@ -1,4 +1,4 @@
-"""Independent autograd refits of the three Softplus fits of one saved source draw (SI Section G.4)."""
+"""Independent autograd refits of the three Softplus fits of one saved training draw (SI Section E.4)."""
 import os
 os.environ.setdefault('OMP_NUM_THREADS','4');os.environ.setdefault('MKL_NUM_THREADS','4')
 import argparse,json,sys

@@ -1,4 +1,4 @@
-"""Fit the frozen-reference Softplus prediction score for SI H.3."""
+"""Fit the frozen-reference Softplus prediction score for SI F.3."""
 import os
 for k in ['OMP_NUM_THREADS','MKL_NUM_THREADS','OPENBLAS_NUM_THREADS']:os.environ.setdefault(k,'4')
 from pathlib import Path

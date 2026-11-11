@@ -93,7 +93,7 @@ def main():
         reversals=int(((D*F)<0).sum())
         tie_transitions=int(((h_full!=h_ret)&((D==0)|(F==0))).sum())
         positive_budget_pairs=int((pair_rho(D,E)>0).sum())
-        # Proposition 2: untied pairs on which the component exceeds the retained margin
+        # Proposition 2: untied pairs with abs(E_ij) > abs(D_ij)
         exceeds=(D!=0)&(np.abs(E)>np.abs(D))
         reinforced=int((exceeds&(D*E>0)).sum());opposed=int((exceeds&(D*E<0)).sum())
         assert opposed==reversals

@@ -31,7 +31,7 @@ def rank_table():
    ids,inv,n=np.unique(z['compound'],return_inverse=True,return_counts=True);full=np.bincount(inv,z['full'][:,j])/n;lin=np.bincount(inv,z['linear'][:,j])/n
    a,b=np.triu_indices(len(ids),1);counts.append(int(np.sum(np.sign(full[a]-full[b])!=np.sign(lin[a]-lin[b]))))
   rows.append(f'{name} & {len(a)} & {min(fixed)}--{max(fixed)} & {min(counts)}--{max(counts)}'+r' \\')
- return longtable(7,'Complete-rank differences from the matched-centred full predictor, over all unordered compound pairs and ten source draws. Fixed sum uses the unfitted coordinate sum; kernel deletion retains the fitted linear coefficients.','lccc','Panel & All pairs & Fixed sum & Kernel deletion',rows)
+ return longtable(7,'Complete-rank differences from the matched-centred full predictor, over all unordered compound pairs and ten draws. Fixed sum uses the unfitted coordinate sum; kernel deletion retains the fitted linear coefficients.','lccc','Panel & All pairs & Fixed sum & Kernel deletion',rows)
 
 def generated_rows(name):
  """Data rows of a generated publication table (generated/<name>)."""
@@ -42,8 +42,8 @@ def generated_rows(name):
  return rows
 
 def certificate_tables():
- text=longtable(5,'Kernel-deletion bounds for the original full-predictor fits with 60 training compounds, for every evaluation panel and coordinate design. Ranges span ten source draws. Flagged-pair counts use the inclusive screen defining $V_\\omega$; the maximum bound uses the tie-aware form $B_\\omega$ of main-text Proposition~1 on the observed pairs.','llcccc','Panel & Coordinate design & Pairs & Actual changes & Flagged pairs & Maximum $B_\omega$',generated_rows('table2.tex'))
- text+='\n\n'+longtable(6,'Component-score permutation and the deletion bound on the same fitted states, for the original full predictor with 60 training compounds. $B_\\omega$ and \\emph{changed} are the tie-aware bound of main-text Proposition~1 and the pairs whose contribution actually changes on deletion, both maxima over the ten source draws. \\emph{Deletion} is the mean net concordance change $\\Delta$, calculated as full minus retained concordance. \\emph{Permutation} is the mean drop in concordance when the kernel component is permuted across compounds, over 1000 permutations per draw, and the last column is the fraction of permutations that change concordance at all.','llccccc','Panel & Coordinate design & $B_\omega$ & Changed & Deletion & Permutation & Nonzero',generated_rows('table7.tex'))
+ text=longtable(5,'Kernel-deletion bounds for the original full-predictor fits with 60 training compounds, for every evaluation panel and coordinate design. Ranges span ten draws. Flagged-pair counts use the inclusive screen defining $V_\\omega$; the maximum bound uses the tie-aware form $B_\\omega$ of Proposition~1 on the observed pairs.','llcccc','Panel & Coordinate design & Pairs & Actual changes & Flagged pairs & Maximum $B_\omega$',generated_rows('table2.tex'))
+ text+='\n\n'+longtable(6,'Component-score permutation and the deletion bound on the same fitted states, for the original full predictor with 60 training compounds. $B_\\omega$ and \\emph{changed} are the tie-aware bound of Proposition~1 and the pairs whose contribution actually changes on deletion, both maxima over the ten draws. \\emph{Deletion} is the mean net concordance change $\\Delta$. \\emph{Permutation} is the mean drop in concordance when the kernel component is permuted across compounds, over 1000 permutations per draw, and the last column is the fraction of permutations that change concordance at all.','llccccc','Panel & Coordinate design & $B_\omega$ & Changed & Deletion & Permutation & Nonzero',generated_rows('table7.tex'))
  return text
 
 def refit_tables():
